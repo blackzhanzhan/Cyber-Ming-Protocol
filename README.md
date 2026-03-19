@@ -62,8 +62,8 @@ Cyber-Ming-Protocol 的回答不是把主权继续外包给更大的自动化系
 建议顺序：
 
 1. 先读本页的项目定义与最小闭环
-2. 再读 `wiki/01-哲学与坐标/`
-3. 最后看 `wiki/04-战报与样本/` 里的案例与证据页
+2. 再读 [GitHub Wiki 的「01-哲学与坐标」模块](https://github.com/blackzhanzhan/Cyber-Ming-Protocol/wiki/01-%E5%93%B2%E5%AD%A6%E4%B8%8E%E5%9D%90%E6%A0%87-%E9%A6%96%E9%A1%B5)
+3. 最后看 [GitHub Wiki 的「04-战报与样本」模块](https://github.com/blackzhanzhan/Cyber-Ming-Protocol/wiki/04-%E6%88%98%E6%8A%A5%E4%B8%8E%E6%A0%B7%E6%9C%AC-%E9%A6%96%E9%A1%B5) 里的案例与证据页
 
 ### 路线 B：无 Skill 手工实践
 
@@ -72,7 +72,7 @@ Cyber-Ming-Protocol 的回答不是把主权继续外包给更大的自动化系
 建议顺序：
 
 1. 读本页的最小实践闭环
-2. 进入 `wiki/02-最小闭环与核心礼法/`
+2. 进入 [GitHub Wiki 的「02-最小闭环与核心礼法」模块](https://github.com/blackzhanzhan/Cyber-Ming-Protocol/wiki/02-%E6%9C%80%E5%B0%8F%E9%97%AD%E7%8E%AF%E4%B8%8E%E6%A0%B8%E5%BF%83%E7%A4%BC%E6%B3%95-%E9%A6%96%E9%A1%B5)
 3. 用你现有的 IDE 与 Web 工具手工执行一次方案审计、执行、验收
 
 ### 路线 C：安装 Skill 增强执行
@@ -95,7 +95,7 @@ Cyber-Ming-Protocol 的回答不是把主权继续外包给更大的自动化系
 2. 使用 `web-audit-templates/` 中的模板辅助 Web 侧提问和审查
 3. 让 Web 位只负责审计、盘问与判断，不直接接管主线实现
 
-如果你还拿不准自己现在该走哪条，最稳妥的默认顺序是：先看本页的 `30 秒最小示例`，再进入 `wiki/Home.md` 选对应路线。这样不会一上来就被正文海直接淹没。
+如果你还拿不准自己现在该走哪条，最稳妥的默认顺序是：先看本页的 `30 秒最小示例`，再进入 [GitHub Wiki 首页](https://github.com/blackzhanzhan/Cyber-Ming-Protocol/wiki) 选对应路线。这样不会一上来就被正文海直接淹没。
 
 ## 无 Skill 也能实践
 
@@ -201,11 +201,11 @@ Cyber-Ming 并不要求你先安装 Skill 才能使用。
 
 如果你担心执行位把“小 bug”做成“漂亮总结”，再把清单或完成证据交给 Web 位复核。它应该查的是：这次修复是不是真的打中了同一个问题、证据是不是当前运行的，而不是替你继续写代码。
 
-更展开的一版，见 [`wiki/00-开始这里与落地形态/30-秒最小示例：同一任务的三种跑法.md`](wiki/00-开始这里与落地形态/30-秒最小示例：同一任务的三种跑法.md)。
+更展开的一版，见 [GitHub Wiki 的《30 秒最小示例：同一任务的三种跑法》](https://github.com/blackzhanzhan/Cyber-Ming-Protocol/wiki/00-30-%E7%A7%92%E6%9C%80%E5%B0%8F%E7%A4%BA%E4%BE%8B%EF%BC%9A%E5%90%8C%E4%B8%80%E4%BB%BB%E5%8A%A1%E7%9A%84%E4%B8%89%E7%A7%8D%E8%B7%91%E6%B3%95)。
 
-如果你的任务更像小 UI / 文案 / 页面调整，而不是小 bug，也可以直接看 [`wiki/00-开始这里与落地形态/30-秒最小示例：小 UI 与文案改动怎么跑.md`](wiki/00-开始这里与落地形态/30-秒最小示例：小 UI 与文案改动怎么跑.md)。
+如果你的任务更像小 UI / 文案 / 页面调整，而不是小 bug，也可以直接看 [GitHub Wiki 的《30 秒最小示例：小 UI 与文案改动怎么跑》](https://github.com/blackzhanzhan/Cyber-Ming-Protocol/wiki/00-30-%E7%A7%92%E6%9C%80%E5%B0%8F%E7%A4%BA%E4%BE%8B%EF%BC%9A%E5%B0%8F-UI-%E4%B8%8E%E6%96%87%E6%A1%88%E6%94%B9%E5%8A%A8%E6%80%8E%E4%B9%88%E8%B7%91)。
 
-如果你脑子里已经能跑通这一轮，下一步通常不是继续停在 README，而是进入 `wiki/Home.md` 选路线，或直接去 `wiki/02-最小闭环与核心礼法/` 开始正式跑一版。
+如果你脑子里已经能跑通这一轮，下一步通常不是继续停在 README，而是进入 [GitHub Wiki 首页](https://github.com/blackzhanzhan/Cyber-Ming-Protocol/wiki) 选路线，或直接去 [「02-最小闭环与核心礼法」模块](https://github.com/blackzhanzhan/Cyber-Ming-Protocol/wiki/02-%E6%9C%80%E5%B0%8F%E9%97%AD%E7%8E%AF%E4%B8%8E%E6%A0%B8%E5%BF%83%E7%A4%BC%E6%B3%95-%E9%A6%96%E9%A1%B5) 开始正式跑一版。
 
 ## 不装 Skill 与装了 Skill 的差别
 
@@ -249,12 +249,12 @@ Cyber-Ming 并不要求你先安装 Skill 才能使用。
 
 ## 去哪里深读
 
-- 总入口：`wiki/Home.md`
-- 理念与坐标：`wiki/01-哲学与坐标/`
-- 最小闭环与核心礼法：`wiki/02-最小闭环与核心礼法/`
-- 治理扩展、续命、分封与边界：`wiki/03-治理扩展、吞吐补偿与边界/`
-- 战报、样本与执行燃料：`wiki/04-战报与样本/`
-- 术语索引：`wiki/术语表.md`
+- 总入口：[GitHub Wiki 首页](https://github.com/blackzhanzhan/Cyber-Ming-Protocol/wiki)
+- 理念与坐标：[GitHub Wiki 的「01-哲学与坐标」模块](https://github.com/blackzhanzhan/Cyber-Ming-Protocol/wiki/01-%E5%93%B2%E5%AD%A6%E4%B8%8E%E5%9D%90%E6%A0%87-%E9%A6%96%E9%A1%B5)
+- 最小闭环与核心礼法：[GitHub Wiki 的「02-最小闭环与核心礼法」模块](https://github.com/blackzhanzhan/Cyber-Ming-Protocol/wiki/02-%E6%9C%80%E5%B0%8F%E9%97%AD%E7%8E%AF%E4%B8%8E%E6%A0%B8%E5%BF%83%E7%A4%BC%E6%B3%95-%E9%A6%96%E9%A1%B5)
+- 治理扩展、续命、分封与边界：[GitHub Wiki 的「03-治理扩展、吞吐补偿与边界」模块](https://github.com/blackzhanzhan/Cyber-Ming-Protocol/wiki/03-%E6%B2%BB%E7%90%86%E6%89%A9%E5%B1%95%E3%80%81%E5%90%9E%E5%90%90%E8%A1%A5%E5%81%BF%E4%B8%8E%E8%BE%B9%E7%95%8C-%E9%A6%96%E9%A1%B5)
+- 战报、样本与执行燃料：[GitHub Wiki 的「04-战报与样本」模块](https://github.com/blackzhanzhan/Cyber-Ming-Protocol/wiki/04-%E6%88%98%E6%8A%A5%E4%B8%8E%E6%A0%B7%E6%9C%AC-%E9%A6%96%E9%A1%B5)
+- 术语索引：[GitHub Wiki 的《术语表》](https://github.com/blackzhanzhan/Cyber-Ming-Protocol/wiki/%E6%9C%AF%E8%AF%AD%E8%A1%A8)
 
 ## 常见澄清
 
