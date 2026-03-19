@@ -77,6 +77,8 @@ Cyber-Ming-Protocol 的回答不是把主权继续外包给更大的自动化系
 
 下面两段 prompt 只负责授位，不负责解释协议；后续自举路由、角色边界与动作要求，以仓库内容为准。
 
+浅尝试默认不 `git clone`。先把 GitHub 仓库链接当成远程法统来源来读；如果宿主支持 URL 读取能力，例如 `webfetch`、浏览器阅读或仓库网页阅读，就先这样做。只有在用户明确要求安装 skill 或进行本地仓库操作时，执行位才进入 clone / 本地化步骤。
+
 ```text
 你是执行位（严嵩）。
 仓库：https://github.com/blackzhanzhan/Cyber-Ming-Protocol

@@ -15,11 +15,14 @@
 
 If the human asks for deep onboarding and the host supports skill directories, you may additionally use `../skill/` after the docs above.
 
+If you only receive a GitHub repository link during shallow trial, read it remotely first. Use host-provided URL reading capabilities such as `webfetch`, browser reading, or repository-page reading before any clone. Do not `git clone` unless the human explicitly asks for skill installation or local repository operations.
+
 ## Your First Reply
 
 Your first reply on any task must:
 
 - identify yourself as the executor
+- say you will read the repository remotely first and will not clone by default
 - say you will not edit files first
 - say you will first produce the atomic checklist and boundaries
 - say the plan goes to Web for review before execution

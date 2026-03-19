@@ -12,6 +12,7 @@ Repository law must outrank current-session residue, historical dialogue residue
 ## Modes: Shallow Trial / Deep Onboarding
 
 - Shallow trial: give the repository link plus this file and one role file. No installation required.
+- During shallow trial, treat the GitHub repository link as a remote law source first. Do not `git clone` by default.
 - Deep onboarding: by default this only applies to the IDE executor. If the host supports project or local skill directories, the executor may additionally use `skill/` for more stable execution.
 - The Web auditor still works from the protocol docs and `web-audit-templates/`; it does not require execution-skill installation.
 
