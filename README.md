@@ -51,6 +51,15 @@ Cyber-Ming-Protocol 的回答不是把主权继续外包给更大的自动化系
 
 换句话说：项目首页先按 `Protocol / Skill / Docs` 三种主落地形态理解；需要 Web 侧审计协作时，再进入 `web-audit-templates/` 这一层。
 
+## 最快尝试：授位自举
+
+如果你想先试，不必先学完整个 Wiki。
+
+- 先看 [`BOOTSTRAP.md`](BOOTSTRAP.md)
+- IDE 执行位读 [`bootstrap/ide-executor.md`](bootstrap/ide-executor.md)
+- Web 审计位读 [`bootstrap/web-auditor.md`](bootstrap/web-auditor.md)
+- 先让两个位置按角色自举入场，再开始第一轮任务
+
 ## 你该从哪里开始
 
 按你的目的选择路径，不必一上来全装、全学、全用。
