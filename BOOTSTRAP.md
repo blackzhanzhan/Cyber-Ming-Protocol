@@ -6,6 +6,8 @@ If you received only this repository link, start here. This file is the role gat
 
 This repository lets an IDE executor and a Web auditor self-bootstrap into Cyber-Ming without first reading everything.
 
+Bootstrap is not case intake. Role entry comes first; case review comes after bootstrap succeeds.
+
 ## Modes: Shallow Trial / Deep Onboarding
 
 - Shallow trial: give the repository link plus this file and one role file. No installation required.
