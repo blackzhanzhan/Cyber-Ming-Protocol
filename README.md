@@ -20,32 +20,34 @@ Cyber-Ming-Protocol 的回答不是把主权继续外包给更大的自动化系
 
 ## 这个项目现在提供什么
 
-这个项目已经不是单一形态的“理念仓库”，而是三层主结构同时存在：
+这个项目已经不是单一形态的“理念仓库”，而是**三种主落地形态 + 一组分离的 Web 审计协作资产**：
 
-### 1. Protocol
+### Protocol
 
 - 一套可直接学习和手工实践的治理协议
 - 核心包括：审批先行、原子清单、分轨审计、证据闭环、续命、分封与吞吐补偿
 - 即使完全不安装 Skill，你也可以按协议做事
 
-### 2. Skill
+### Skill
 
 - 把部分高频动作固化为更稳定的触发与输出骨架
 - 当前 repo-side 技能定义位于 `skill/`
 - 当前公开的 IDE-side skills 包括：`global_rules`、`approval-first-planner`、`approved-checklist-executor`、`probe-first-scout`、`legacy-project-handover`
 
-### 3. Docs / Teaching
+### Docs / Teaching
 
 - `README.md` 负责项目定义、入口分层与最小上手
 - `wiki/` 负责法统展开、案例、边界、术语与教学路线
 - 战报、样本和说明页用于帮助你理解协议为什么成立，以及怎样落地
 
-### 4. Web Audit Templates（协作资产，不是本地 Skill）
+### 补充：Web Audit Templates（分离协作资产，不是本地 Skill）
 
 - 位于 `web-audit-templates/`
 - 用于 Web 侧审计、验收、续命判断时的提示骨架
 - 它们不是本地 Skill，不需要像 IDE-side skill 那样安装
 - 它们的作用是帮助你在 Web 侧更稳定地扮演审计位，而不是替代协议本身
+
+换句话说：项目首页先按 `Protocol / Skill / Docs` 三种主落地形态理解；需要 Web 侧审计协作时，再进入 `web-audit-templates/` 这一层。
 
 ## 你该从哪里开始
 
