@@ -17,7 +17,16 @@ AI coding 进入深水区，四个问题最致命：
 
 **方法论 + 工具。核心是方法论。**
 
-可以没有工具，不可以没有方法论。不是 workflow，不是 subagent，不是一键生成框架。
+可以没有工具，不可以没有方法论。不是 workflow，不是 spec driven，不是 agent team。
+
+和它们共享一个判断：深水区任务需要治理。
+和它们分叉在一处：人类主权不可外包。
+
+- Workflow 把流程冻结成模板，它要求每次先审方案
+- Spec 把规范当真理，它要求完成必须有物理证据
+- Agent team 让 agent 共处一室自动协作，它要求人类居中路由、审计位看不到代码
+
+详见 [它和 workflow、spec driven、agent team 有什么异同](wiki/00-开始这里与落地形态/它和workflow、spec-driven、agent-team有什么异同.md)。
 
 它是把 AI coding 从黑盒推进改造成审批、执行、审计、续命分层治理的协议。
 
