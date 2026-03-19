@@ -51,16 +51,25 @@ Cyber-Ming-Protocol 的回答不是把主权继续外包给更大的自动化系
 
 换句话说：项目首页先按 `Protocol / Skill / Docs` 三种主落地形态理解；需要 Web 侧审计协作时，再进入 `web-audit-templates/` 这一层。
 
-## 最快尝试：授位自举
+## 最小自举方式
 
-如果你想先试，不必先学完整个 Wiki。
+最低成本的启动方式，就是一个仓库链接 + 两段授位词。
 
-- 先看 [`BOOTSTRAP.md`](BOOTSTRAP.md)
-- IDE 执行位读 [`bootstrap/ide-executor.md`](bootstrap/ide-executor.md)
-- Web 审计位读 [`bootstrap/web-auditor.md`](bootstrap/web-auditor.md)
-- 浅尝试：只给仓库链接和授位文件，不要求安装
-- 深接入：若宿主支持 skill 目录，默认只让 IDE 执行位进一步接入 `skill/`
-- 先让两个位置按角色自举入场，再开始第一轮任务
+下面两段 prompt 只负责授位，不负责解释协议；后续自举路由、角色边界与动作要求，以仓库内容为准。
+
+```text
+你是执行位（严嵩）。
+仓库：https://github.com/blackzhanzhan/Cyber-Ming-Protocol
+仓库中已经有自举流程。请尽快进入你的角色，并按仓库路由开始工作。
+```
+
+```text
+你是审计位（徐阶）。
+仓库：https://github.com/blackzhanzhan/Cyber-Ming-Protocol
+仓库中已经有自举流程。请尽快进入你的角色，并按仓库路由开始工作。
+```
+
+如果你想看仓库内的授位门，再读 [`BOOTSTRAP.md`](BOOTSTRAP.md)。
 
 ## 你该从哪里开始
 
