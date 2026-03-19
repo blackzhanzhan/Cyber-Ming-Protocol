@@ -58,6 +58,8 @@ Cyber-Ming-Protocol 的回答不是把主权继续外包给更大的自动化系
 - 先看 [`BOOTSTRAP.md`](BOOTSTRAP.md)
 - IDE 执行位读 [`bootstrap/ide-executor.md`](bootstrap/ide-executor.md)
 - Web 审计位读 [`bootstrap/web-auditor.md`](bootstrap/web-auditor.md)
+- 浅尝试：只给仓库链接和授位文件，不要求安装
+- 深接入：若宿主支持 skill 目录，默认只让 IDE 执行位进一步接入 `skill/`
 - 先让两个位置按角色自举入场，再开始第一轮任务
 
 ## 你该从哪里开始

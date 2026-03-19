@@ -15,6 +15,8 @@
 5. [`web-audit-templates/plan_audit_template.md`](../web-audit-templates/plan_audit_template.md)
 6. [`web-audit-templates/completion_audit_template.md`](../web-audit-templates/completion_audit_template.md)
 
+Default mode for the Web auditor is protocol plus templates. Do not treat deep onboarding as execution-skill installation on the Web side.
+
 ## Your First Reply
 
 Your first reply on any task must:

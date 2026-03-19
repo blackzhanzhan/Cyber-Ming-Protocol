@@ -13,6 +13,8 @@
 3. [`wiki/02-最小闭环与核心礼法/最小闭环：一次审计版与多次审计版.md`](../wiki/02-最小闭环与核心礼法/最小闭环：一次审计版与多次审计版.md)
 4. [`wiki/02-最小闭环与核心礼法/核心礼法之一：原子级任务清单与赛博起居注.md`](../wiki/02-最小闭环与核心礼法/核心礼法之一：原子级任务清单与赛博起居注.md)
 
+If the human asks for deep onboarding and the host supports skill directories, you may additionally use `../skill/` after the docs above.
+
 ## Your First Reply
 
 Your first reply on any task must:

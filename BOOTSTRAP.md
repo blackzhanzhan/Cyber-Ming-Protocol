@@ -9,7 +9,8 @@ This repository lets an IDE executor and a Web auditor self-bootstrap into Cyber
 ## Modes: Shallow Trial / Deep Onboarding
 
 - Shallow trial: give the repository link plus this file and one role file. No installation required.
-- Deep onboarding: if the host supports project or local skill directories, the IDE executor may additionally use `skill/` for more stable execution.
+- Deep onboarding: by default this only applies to the IDE executor. If the host supports project or local skill directories, the executor may additionally use `skill/` for more stable execution.
+- The Web auditor still works from the protocol docs and `web-audit-templates/`; it does not require execution-skill installation.
 
 ## If You Are The IDE Executor
 
