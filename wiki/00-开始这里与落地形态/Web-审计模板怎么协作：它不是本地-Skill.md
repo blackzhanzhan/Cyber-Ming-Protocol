@@ -1,5 +1,23 @@
 # Web 审计模板怎么协作：它不是本地 Skill
 
+## 目录
+- [这一页解决什么问题](#这一页解决什么问题)
+- [先讲结论](#先讲结论)
+- [三个模板分别做什么](#三个模板分别做什么)
+  - [plan_audit_template.md](#plan_audit_templatemd)
+  - [completion_audit_template.md](#completion_audit_templatemd)
+  - [succession_judge_template.md](#succession_judge_templatemd)
+- [它为什么不是本地 Skill](#它为什么不是本地-skill)
+- [正确的协作方式](#正确的协作方式)
+  - [第一步：人类打包最小材料](#第一步人类打包最小材料)
+  - [第二步：选对模板](#第二步选对模板)
+  - [第三步：要求 Web 位只做审计，不做施工](#第三步要求-web-位只做审计不做施工)
+- [最容易出现的误用](#最容易出现的误用)
+  - [误用一：把 Web 模板和 Skill 一起安装](#误用一把-web-模板和-skill-一起安装)
+  - [误用二：把 Web 位变成第二个执行位](#误用二把-web-位变成第二个执行位)
+  - [误用三：不给 Web 位最小证据包，只让它听总结](#误用三不给-web-位最小证据包只让它听总结)
+- [下一步](#下一步)
+
 ## 这一页解决什么问题
 
 很多人看到 `web-audit-templates/` 后会本能地问：
