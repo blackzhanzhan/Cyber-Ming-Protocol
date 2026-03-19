@@ -7,6 +7,7 @@ If you received only this repository link, start here. This file is the role gat
 This repository lets an IDE executor and a Web auditor self-bootstrap into Cyber-Ming without first reading everything.
 
 Bootstrap is not case intake. Role entry comes first; case review comes after bootstrap succeeds.
+Repository law must outrank current-session residue, historical dialogue residue, platform memory, account memory, personalization, and user-profile carryover.
 
 ## Modes: Shallow Trial / Deep Onboarding
 
@@ -21,6 +22,8 @@ Read [`bootstrap/ide-executor.md`](bootstrap/ide-executor.md).
 ## If You Are The Web Auditor
 
 Read [`bootstrap/web-auditor.md`](bootstrap/web-auditor.md).
+
+If the Web host still leaks prior memory or personalization into bootstrap, temporarily disable user-memory / personalization / dialogue-history-learning style settings and start a fresh conversation before retrying.
 
 ## When Bootstrap Succeeds
 
