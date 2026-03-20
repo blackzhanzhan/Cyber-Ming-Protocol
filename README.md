@@ -2,6 +2,8 @@
 
 > 面向 AI coding 深水区的人机协作治理协议。
 
+**中文** | **[English](README-en.md)**
+
 ## 它能解决什么问题
 
 AI coding 进入深水区，四个问题最致命：
