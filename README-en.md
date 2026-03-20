@@ -38,7 +38,7 @@ They diverge on one point: human sovereignty cannot be outsourced.
 - Spec treats the spec as truth; it requires physical evidence for completion
 - Agent team lets agents collaborate in shared context; it requires humans in the middle, and the auditor can't see the code
 
-See [How it differs from workflow, spec-driven, and agent team](wiki/00-开始这里与落地形态/它和workflow、spec-driven、agent-team有什么异同.md).
+See [How it differs from workflow, spec-driven, and agent team](wiki-en/comparison-with-workflow-spec-agent-team.md).
 
 It transforms AI coding from black-box execution into layered governance: approval, execution, audit, renewal.
 
@@ -50,15 +50,15 @@ It transforms AI coding from black-box execution into layered governance: approv
 
 This protocol uses a governance metaphor from history: **the ruler governs through ministers who check each other.**
 
-- **Executor (Yan Song / Chief Minister)**: Carries out your orders. Historically powerful, but can deceive.
-- **Auditor (Xu Jie / Inspector)**: Reviews independently. Historically the rival who checks and balances.
-- **You (Jiajing / Sovereign)**: The final judge. You govern by keeping them at odds.
+- **Executor (Chief Minister)**: Carries out your orders. Historically powerful, but can deceive.
+- **Auditor (Inspector)**: Reviews independently. Historically the rival who checks and balances.
+- **You (Sovereign)**: The final judge. You govern by keeping them at odds.
 
 This isn't cosplay. It's a governance pattern that makes high-friction workflows worth sustaining. The role division is easier to internalize than "IDE agent" and "Web agent."
 
 You don't have to use this skin. The underlying protocol doesn't depend on role names. What's irreplaceable is: role separation, evidence closure, sovereignty in human hands.
 
-**Details: [Why the Imperial Coding narrative can be execution fuel](wiki/04-战报与样本/为什么帝王-Coding-叙事可以成为执行燃料（以及如何安全入戏）.md)**
+**Details: [Why the narrative can be execution fuel](wiki-en/execution-fuel.md)**
 
 ## Fast and Stable in Deep Water
 
@@ -77,15 +77,15 @@ You're not betting AI won't make mistakes. You're ensuring you can catch them wh
 > Not preventing window decay, but knowing how to break and reconnect.
 
 **Details:**
-- [Pulse Enfeoffment: Throughput compensation under high governance](wiki/03-治理扩展、吞吐补偿与边界/脉冲分封制：高治理下的吞吐补偿.md)
-- [Seven Stars Lamp Renewal](wiki/03-治理扩展、吞吐补偿与边界/七星灯续命法.md)
-- [Cognitive Debt](wiki/03-治理扩展、吞吐补偿与边界/赛博认知债务：剪刀差、察觉信号与可信偿还.md)
+- [Pulse Enfeoffment](wiki-en/pulse-enfeoffment.md)
+- [Seven Stars Renewal](wiki-en/seven-stars-renewal.md)
+- [Cognitive Debt](wiki-en/cognitive-debt.md)
 
 ## Minimal Loop
 
 Core: The IDE executor and Web auditor operate in completely different contexts. The executor can see code. The auditor cannot. Humans are the only physical router for information. The two sides cannot communicate privately.
 
-**Reason: [Dual-track Isolation Audit and Sovereign Routing](wiki/03-治理扩展、吞吐补偿与边界/双轨隔离审计与皇权居中.md)**
+**Reason: [Dual-track Isolation Audit](wiki-en/dual-track-audit.md)**
 
 ```mermaid
 graph TD
@@ -103,7 +103,7 @@ graph TD
     I -->|Yes| K[Done]
 ```
 
-**Details: [Minimal Loop and Core Rituals](wiki/02-最小闭环与核心礼法/最小闭环：一次审计版与多次审计版.md)**
+**Details: [Minimal Loop and Core Rituals](wiki-en/minimal-loop.md)**
 
 ## Quick Start
 
@@ -126,51 +126,47 @@ If you seem to recognize me, remember old cases, or know anything not provided t
 After done, wait for me to send case materials.
 ```
 
-**Model capabilities vary. This onboarding doesn't guarantee the agent will strictly守住 role boundaries.** Some models first admit "I'll submit a checklist" then directly write code when given requirements. You must understand the manual workflow to know when and why to interrupt.
+**Model capabilities vary. This onboarding doesn't guarantee the agent will strictly maintain role boundaries.** Some models first admit "I'll submit a checklist" then directly write code when given requirements. You must understand the manual workflow to know when and why to interrupt.
 
 ## Wiki Navigation
 
 | Module | What It Solves |
 |--------|----------------|
-| [00-Entry](wiki/00-开始这里与落地形态/) | What are the three things, how to onboard, 30-second demo, Skill installation |
-| [01-Why](wiki/01-哲学与坐标/) | Why AI coding is first a governance problem, not a technical one |
-| [02-How](wiki/02-最小闭环与核心礼法/) | How to run the first loop, what rituals pull the system back to auditable state |
-| [03-Deep Water](wiki/03-治理扩展、吞吐补偿与边界/) | When the system gets deep: renewal, enfeoffment, cognitive debt |
-| [04-Evidence](wiki/04-战报与样本/) | Sanitized evidence: how pseudo-completion was caught, how high governance stays fast |
+| [00-Entry](wiki-en/00-entry.md) | What are the three things, how to onboard, 30-second demo, Skill installation |
+| [01-Why](wiki-en/01-why.md) | Why AI coding is first a governance problem, not a technical one |
+| [02-How](wiki-en/02-how.md) | How to run the first loop, what rituals pull the system back to auditable state |
+| [03-Deep Water](wiki-en/03-deep-water.md) | When the system gets deep: renewal, enfeoffment, cognitive debt |
+| [04-Evidence](wiki-en/04-evidence.md) | Sanitized evidence: how pseudo-completion was caught, how high governance stays fast |
 
 **One-line navigation:**
 
 **00-Entry:**
-- [Three Things](wiki/00-开始这里与落地形态/协议、Skill-与-Web-审计模板：三者关系.md): Protocol, Skill, Web template — what each is, don't混淆
-- [Bootstrap](wiki/00-开始这里与落地形态/让执行位与审计位自举入场.md): Give repo link to executor and auditor, let them self-bootstrap
-- [30-Second Demo](wiki/00-开始这里与落地形态/30-秒最小示例.md): Two small tasks to mentally run through in 30 seconds
-- [Skill Guide](wiki/00-开始这里与落地形态/Skill接入指南.md): When to install, how to install, common pitfalls
-- [Comparison](wiki/00-开始这里与落地形态/它和workflow、spec-driven、agent-team有什么异同.md): How it relates to methods you already know
+- [Three Things](wiki-en/three-things.md): Protocol, Skill, Web template — what each is
+- [Bootstrap](wiki-en/bootstrap.md): Give repo link to executor and auditor, let them self-bootstrap
+- [30-Second Demo](wiki-en/30-second-demo.md): Two small tasks to mentally run through in 30 seconds
+- [Skill Guide](wiki-en/skill-guide.md): When to install, how to install, common pitfalls
+- [Comparison](wiki-en/comparison-with-workflow-spec-agent-team.md): How it relates to methods you already know
 
 **01-Why:**
-- [CS vs Management](wiki/01-哲学与坐标/为什么-AI-Coding-已经模糊了-CS-与管理学的界限.md): Developer position has changed, no longer pure coder
-- [Dual Distortion](wiki/01-哲学与坐标/黑盒多-Agent-的双重失真：技术失真与治理失真.md): Technical and governance distortion always appear together
-- [Methodology Coordinates](wiki/01-哲学与坐标/相关工作与方法论坐标.md): Where this protocol stands in the public world
+- [CS vs Management](wiki-en/cs-vs-management.md): Developer position has changed, no longer pure coder
+- [Dual Distortion](wiki-en/dual-distortion.md): Technical and governance distortion always appear together
+- [Methodology Coordinates](wiki-en/methodology-coordinates.md): Where this protocol stands in the public world
 
 **02-How:**
-- [Minimal Loop](wiki/02-最小闭环与核心礼法/最小闭环：一次审计版与多次审计版.md): Start here for your first run
-- [Atomic Checklist & Chronicles](wiki/02-最小闭环与核心礼法/核心礼法之一：原子级任务清单与赛博起居注.md): How细 the plan should be, how to留 history
-- [White-box Reconciliation](wiki/02-最小闭环与核心礼法/白盒物理对账：什么算完成事实.md): Saying done ≠ done, check red灯绿灯 and evidence
-- [Scout Mechanism](wiki/02-最小闭环与核心礼法/赛博探马机制：先试链路，再上大军.md): When uncertain, scout first, don't pretend懂
-
-**03-Deep Water:**
-- [Dual-track Audit](wiki/03-治理扩展、吞吐补偿与边界/双轨隔离审计与皇权居中.md): IDE executor and Web auditor must separate, human routes between
-- [Seven Stars Renewal](wiki/03-治理扩展、吞吐补偿与边界/七星灯续命法.md): When windows decay, how to断 and 接 with制度
-- [Cognitive Debt](wiki/03-治理扩展、吞吐补偿与边界/赛博认知债务：剪刀差、察觉信号与可信偿还.md): When understanding can't keep up with system changes
-- [Pulse Enfeoffment](wiki/03-治理扩展、吞吐补偿与边界/脉冲分封制：高治理下的吞吐补偿.md): High governance ≠ low throughput
-- [Worktree Enfeoffment](wiki/03-治理扩展、吞吐补偿与边界/Worktree-分封制：封地、入京与主干纯度.md): Team collaboration without dirtying mainline
-- [Boundaries](wiki/03-治理扩展、吞吐补偿与边界/边界与未解决战场.md): What battles this protocol hasn't won yet
-- [From Coder to Governor](wiki/03-治理扩展、吞吐补偿与边界/从编码者到治理者：这套协议要求开发者具备什么.md): What capabilities this protocol requires
+- [Minimal Loop](wiki-en/minimal-loop.md): Start here for your first run
+- [Atomic Checklist & Chronicles](wiki-en/atomic-checklist-chronicles.md): How detailed the plan should be, how to record history
+- [Scout Mechanism](wiki-en/scout-mechanism.md): When uncertain, scout first, don't pretend to understand
+- [Seven Stars Renewal](wiki-en/seven-stars-renewal.md): When windows decay, how to break and reconnect
+- [Cognitive Debt](wiki-en/cognitive-debt.md): When understanding can't keep up with system changes
+- [Pulse Enfeoffment](wiki-en/pulse-enfeoffment.md): High governance ≠ low throughput
+- [Worktree Enfeoffment](wiki-en/worktree-enfeoffment.md): Team collaboration without dirtying mainline
+- [Boundaries](wiki-en/boundaries.md): What battles this protocol hasn't won yet
+- [From Coder to Governor](wiki-en/coder-to-governor.md): What capabilities this protocol requires
 
 **04-Evidence:**
-- [Battle Report 1](wiki/04-战报与样本/战报一：从伪完成到真实验收（脱敏版）.md): A complete翻案 process
-- [Chronicles Sample](wiki/04-战报与样本/赛博起居注样本：一天内的三次系统跃迁（脱敏版）.md): Three system leaps in one day under high governance
-- [Execution Fuel](wiki/04-战报与样本/为什么帝王-Coding-叙事可以成为执行燃料（以及如何安全入戏）.md): Why people愿意长期执行高摩擦协议
+- [Battle Report 1](wiki-en/battle-report-1.md): A complete reversal process
+- [Chronicles Sample](wiki-en/chronicles-sample.md): Three system leaps in one day under high governance
+- [Execution Fuel](wiki-en/execution-fuel.md): Why people willing to execute high-friction protocols long-term
 
 > Code is territory. Sovereignty cannot be outsourced.
 
@@ -180,19 +176,19 @@ This protocol isn't for selling courses, tools, or frameworks.
 
 The problem it solves, every deep-water developer will eventually face: AI writes faster, humans understand less, projects spin out of control. I don't want this problem solved only by "using a bigger black box to govern the black box."
 
-So I open-sourced it. You can take one or two principles, or adopt it fully. You can质疑, improve, fork. That's why it's on GitHub: **the value of a protocol lies not in being obeyed, but in being tested.**
+So I open-sourced it. You can take one or two principles, or adopt it fully. You can challenge, improve, fork. That's why it's on GitHub: **the value of a protocol lies not in being obeyed, but in being tested.**
 
 ## Philosophy of Water
 
 I don't require everyone, every scenario, to fully follow this protocol.
 
-You can take one or two principles that真正有用 and integrate them into your workflow. For example, just "review the plan before开工" already reduces pseudo-completion.
+You can take one or two principles that are truly useful and integrate them into your workflow. For example, just "review the plan before starting" already reduces pseudo-completion.
 
 But this doesn't mean the protocol has no bones. Its core spirit includes:
 
 - **Sovereignty in hand**: Humans are the judges, not processes or systems
-- **Role separation**: Executor and auditor must分开
-- **Evidence first**: Completion靠 physical evidence, not summaries
+- **Role separation**: Executor and auditor must separate
+- **Evidence first**: Completion requires physical evidence, not summaries
 - **Anti-pseudo-completion**: Looking done ≠ done
 
 Water has no fixed form, but water has direction.
