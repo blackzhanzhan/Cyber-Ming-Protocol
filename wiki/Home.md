@@ -2,6 +2,8 @@
 
 > 面向 AI coding 深水区的人机协作治理协议文档。
 
+**中文** | **[English](Home-en.md)**
+
 第一次进来？先读 [README](../README.md) 的最小闭环图和快速开始。
 
 ## 按目的选入口
