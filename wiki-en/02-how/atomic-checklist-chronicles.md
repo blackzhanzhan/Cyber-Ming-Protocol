@@ -1,23 +1,23 @@
-# Core Ritual 1: Atomic Task Checklist and Chronicles
+# Core Ritual 1: Atomic Checklist and Chronicles
 
 ## Table of Contents
 - [What This Page Solves](#what-this-page-solves)
 - [Why It's the First Extended Skill](#why-its-the-first-extended-skill)
-- [Atomic Checklist: Not Human-Written Plan, But Executor Submits First](#atomic-checklist-not-human-written-plan-but-executor-submits-first)
-- [Simplest Way to Start](#simplest-way-to-start)
-- [Howdetailed Should aqualified Checklist Be](#how-detailed-should-a-qualified-checklist-be)
-- [Hypothetical: What Happens Without Atomic Checklist](#hypothetical-what-happens-without-atomic-checklist)
-- [Another Hypothetical: What Changes With Atomic Checklist](#another-hypothetical-what-changes-with-atomic-checklist)
-- [Chronicles Are Notattached, But History After Checklistlanded](#chronicles-are-not-attached-but-history-after-checklist-landed)
-- [Checklist and Chronicles: Notserial, But Asynclinkage](#checklist-and-chronicles-not-serial-but-async-linkage)
-- [Interrupt Immediately When "History" Tendency Appears](#interrupt-immediately-when-history--tendency-appears)
-- [Pulse Atomic Checklist: Why It's More Flexible Than Blueprint](#pulse-atomic-checklist-why-its-more-flexible-than-blueprint)
-- [How It Differs from Spec / Workflow](#how-it-differs-from-spec--workflow)
+- [Atomic Checklist: Not a Human-Written Plan, but Something the Executor Must Submit First](#atomic-checklist-not-a-human-written-plan-but-something-the-executor-must-submit-first)
+- [The Simplest Way to Start](#the-simplest-way-to-start)
+- [How Detailed Does a Qualified Checklist Need to Be](#how-detailed-does-a-qualified-checklist-need-to-be)
+- [A Hypothetical Scenario: What Happens Without an Atomic Checklist](#a-hypothetical-scenario-what-happens-without-an-atomic-checklist)
+- [Another Hypothetical Scenario: What Changes When You Have an Atomic Checklist](#another-hypothetical-scenario-what-changes-when-you-have-an-atomic-checklist)
+- [Chronicles Are Not an Accessory, but the History Produced When the Checklist Lands](#chronicles-are-not-an-accessory-but-the-history-produced-when-the-checklist-lands)
+- [Atomic Checklists and Chronicles Are Not Serial, but Asynchronously Linked](#atomic-checklists-and-chronicles-are-not-serial-but-asynchronously-linked)
+- [Interrupt the Executor as Soon as a History-Rewriting Tendency Appears](#interrupt-the-executor-as-soon-as-a-history-rewriting-tendency-appears)
+- [Pulse Atomic Checklists: Why They Are More Flexible Than a Heavyweight Blueprint](#pulse-atomic-checklists-why-they-are-more-flexible-than-a-heavyweight-blueprint)
+- [How It Differs from Spec-Driven Development and Workflow](#how-it-differs-from-spec-driven-development-and-workflow)
 - [What Density Counts as Real Chronicles](#what-density-counts-as-real-chronicles)
 - [What Form Counts as Real Chronicles](#what-form-counts-as-real-chronicles)
-- [What Chronicles Actuallyremember](#what-chronicles-actually-remember)
-- [Why Italleviate Part 1 Pain Points](#why-it-alleviate-part-1-pain-points)
-- [How It Serves Cognitive Debt Repayment](#how-it-serves-cognitive-debt-repayment)
+- [What Do Chronicles Actually Remember](#what-do-chronicles-actually-remember)
+- [Why It Relieves the Pain Points from Part 1](#why-it-relieves-the-pain-points-from-part-1)
+- [How It Also Serves Cognitive Debt Repayment](#how-it-also-serves-cognitive-debt-repayment)
 - [Four Common Drifts](#four-common-drifts)
 - [One-line Summary](#one-line-summary)
 - [Corresponding Implementation](#corresponding-implementation)
@@ -25,311 +25,583 @@
 
 ## What This Page Solves
 
-The minimal loop tells you how to run the first round, but "review plan first, review execution second, verify evidence last" is not enough. Because as long as the plan is still too, the executor can still、missing、 in a vague steps, then a summaryyou.
+The minimal loop already tells you how to run the first round, but "review the plan first, review execution second, verify evidence last" is still not enough. As long as the plan itself remains too coarse, the executor can still hide inside a pile of broad steps, skip work, omit steps, jump ahead, and finally carry you across the line with a very polished summary.
 
-More importantly: **Without atomic checklist and chronicles, the systemvery realheavyhandle, technical debt will become increasingly safely.** Today you might push through, tomorrow when you want to、heavy、reconnect old window, you'll history has, no one cansaytochange.
+More importantly: **without atomic checklists and chronicles, the system struggles to preserve real refactoring handles, and technical debt becomes harder and harder to repay safely.** You may still be able to push a feature through today. But when tomorrow comes and you need to return, refactor, repay debt, or take over an old window, you will discover that the historical record has already dissolved into mush, and nobody can say clearly which step broke what.
 
-So, after minimal loop, the first extended skill you must is:
+So after the minimal loop, the first extended skill you must learn is this:
 
-- Have the executor submit **atomic task checklist** first
-- Then write each clear state into **chronicles**
+- Make the executor submit an **atomic checklist** first
+- Then write every clear state transition into the **chronicles**
 
-This page answers: why this is not plan, but the first real bone in the entire protocol; why it canalleviate technical distortion, governance distortion and cognitive debt; why it can futureheavyhandle; and why without this step, later white-box reconciliation, renewal, takeover and debt repayment will quickly.
+This page explains why that is not just a better planning trick, but the first real bone in the protocol; why it helps relieve technical distortion, governance distortion, and cognitive debt; why it preserves handles for future refactors; and why, without it, later steps such as white-box reconciliation, renewal, takeover, and debt repayment all quickly lose their footing.
 
 ## Why It's the First Extended Skill
 
-From "Minimal Loop: One-Audit and Multi-Audit Versions", the most natural question is:
+If you take one step forward from [Minimal Loop](minimal-loop.md), the most natural question is this:
 
-**Howdetailed should the plan be, before it's worth reviewing?**
+**How detailed does the plan need to be before it is worth reviewing at all?**
 
-If the plan only stays at thisgranularity:
+If the plan only lives at this level of granularity:
 
-- "Upgrade the chain"
-- "addadd document generation"
-- "Finally fix the write-in"
+- "Upgrade the parsing chain"
+- "Patch document generation"
+- "Finally fix graph write-back"
 
-Then it looks like a plan, but still leaves too much black-box space for the executor. Youvery know:
+then it may look like a plan, but it still leaves too much black-box space for the executor. You still cannot clearly see:
 
-- Ittofirstchange
-- Which step counts asrealreal done
-- Which step canminimal rollback if
-- Which step has hard dependency on next step
+- Which function it plans to change first
+- Which step counts as actually finished
+- Which step can be rolled back with minimal blast radius if it fails
+- Which step has a hard dependency on the next one
 
-To truly understand this step, best first accept two realities alreadyestablish in "01-Why":
+To really understand why this matters, it helps to first accept two realities already established in `01-why/`:
 
-- AI coding changed developer position, humansstartbear、、reconnect
-- The most place of black-box multi-Agent is technical distortion and governance distortion happen together
+- AI coding changed the developer's position, and humans now carry delegation, routing, audit, and takeover duties
+- The most dangerous thing about black-box multi-agent systems is that technical distortion and governance distortion happen together
 
-Atomic task checklist and chronicles are the first layercorrect to these two realities. They're not to more, but tolet executor ""of.
+Atomic checklists and chronicles are the first layer of response to those two realities. They are not there to make the process look more rigorous. They are there to take away the executor's room to build in the dark under cover of a vague plan.
 
-## Atomic Checklist: Not Human-Written Plan, But Executor Submits First
+## Atomic Checklist: Not a Human-Written Plan, but Something the Executor Must Submit First
 
-This mustnail: atomic task checklist is notlet human first spendsmall todo, norletyoufirst spec. The realdois——**First require IDE executor to submit adetailed checklist, then let human and Web auditor itisqualified.**
+This point needs to be nailed down: an atomic checklist does **not** mean the human spends half an hour hand-writing a giant todo list, and it does **not** mean you personally produce a beautiful spec before work begins. The real move is this: **require the IDE executor to submit a sufficiently detailed checklist first, and then let the human and the Web auditor judge whether it is good enough.**
 
-This differs from many plan/spec patterns:
+That differs from many plan/spec patterns:
 
-- Ordinary plans often just tell AI "do"
-- Atomic checklist requires executor firstsubmit "specificchange、、"
+- An ordinary plan often just tells the AI roughly how many steps it should take
+- An atomic checklist forces the executor to explain, step by step, what it will change, how each step will be verified, and how it would retreat if something goes wrong
 
-So it's not better plan, but a harder-to construction drawing. What yourealreal do is not write checklist, butone sentence short instruction executortofirstsubmit construction drawingof.
+So this is not merely a nicer plan. It is a harder-to-fake construction drawing. What you are really doing is not writing the checklist yourself, but forcing the executor into a position where it must hand over the construction drawing before it is allowed to touch the code.
 
-If this is your first time, don'tunderstand it too heavy. Justremember one very simple principle:
+If this is your first time, do not overcomplicate the idea. Just remember one very simple principle:
 
-**Don't let executor give you vague module plans, itdetailedto function modification, test point establishment, artifactcheck granularity.**
+**Do not let the executor hand you a broad module-level plan. Force it down to the granularity of function edits, test points, and artifact checks.**
 
-## Simplest Way to Start
+## The Simplest Way to Start
 
-You canstraightreconnect say to IDE:
+You can say this directly to the IDE:
 
 ```text
 I want to do this: <your requirement>
 
-Don'tchange code directly first.
-Give me an atomic checklist asdetailed as possible.
-Try todetailedto: which function to modify, what test point to add, what result counts as passing.
+Do not change code yet.
+Give me an atomic checklist that is as detailed as possible.
+Make it as concrete as you can: which function to modify, what test point to add, and what result counts as passing.
 ```
 
-If you want to be more direct, add:
+If you want to be even more explicit, add one more sentence:
 
 ```text
-Don't give me vague plans.
-Try to break down by function modification, test point establishment, artifactcheck.
+Do not give me a vague plan.
+Break it down by function modification, test-point setup, and artifact inspection whenever possible.
 ```
 
-These two sentences are enough to first round. You don't need tofirst writecomplete checklist, nor need tothen all technical details. The purpose of atomic checklist islet executor firstexpose how itdo.
+Those two sentences are enough to start the first round. You do not need to write the whole checklist yourself, and you do not need to know every technical detail up front. The point of the atomic checklist is precisely to make the executor expose how it intends to work.
 
-## Howdetailed Should aqualified Checklist Be
+## How Detailed Does a Qualified Checklist Need to Be
 
-Aqualified atomic checklist shoulddetailedto:
+The most practical standard is not length. It is granularity. You can judge a checklist with a very simple ruler:
 
-1. **Function level**: Which function to modify, not just "improve module"
-2. **Test point level**: What test to add or modify, not just "ensure quality"
-3. **Artifact level**: What file or output to produce, not just "complete task"
-4. **Dependency level**: Which step depends on which, not just "do A then B"
+- Can you tell exactly which function or layer of logic it will touch?
+- Can you tell what the test point or acceptance point is for that step?
+- Can you tell what the smallest rollback point is if that step fails?
+- Can you tell how that step connects to the next one?
 
-Example of:
+In other words, a qualified atomic checklist should answer at least four questions:
 
-- "Fix the authentication issue"
-- "Improve error handling"
+1. What exactly does this step touch?
+2. How will this step be accepted?
+3. If it fails, where do we retreat to?
+4. How does it hand off to the next step?
 
-Example ofdetailed:
+For example, the difference between these two styles is enormous.
 
-- "Modify `auth.validateToken()` to check expiration"
-- "Add test case for expired token in `auth.test.js`"
-- "Update error response format in `api.response.json`"
+Unqualified checklist items:
 
-The difference is: with checklist, executor can inblack box; withdetailed checklist, each step must be.
+- "Upgrade the parsing logic"
+- "Patch document generation"
+- "Handle the graph relationships at the end"
 
-## Hypothetical: What Happens Without Atomic Checklist
+Much closer to qualified:
 
-Without atomic checklist, common scenario:
+- "Extend `parseInputBundle()` so it returns the new field"
+- "Add an explicit error when the input is missing a timestamp instead of skipping it silently"
+- "Run one real sample and check whether the output document contains cross-references"
+- "Verify that the structured result really carries the new relationship field"
 
-1. You give requirement
-2. Executor says "understood, will implement"
-3. Executor works in black box
-4. Executor reports "done, tests passed"
-5. You believe it
+Once the checklist is written that way, the auditor finally has something to grab onto. It can ask questions like:
 
-Problem: You never knew:
-- What exactly waschange
-- In what order
-- What couldback if
-- Whether itreal ran chain
+- Why does this step have no test point?
+- Why is there no real artifact acceptance for this step?
+- Is this line actually two different changes that were deliberately kneaded into one?
 
-Result: When something goes wrong, you have nohandle to diagnose.
+That is the first value of the atomic checklist: **it turns the plan itself into an auditable object.**
 
-## Another Hypothetical: What Changes With Atomic Checklist
+## A Hypothetical Scenario: What Happens Without an Atomic Checklist
 
-With atomic checklist:
+Suppose you have an old synchronization script. Right now it can only pull remote data down roughly and dump it straight into one local file. You want to upgrade it so that it will:
 
-1. You give requirement
-2. Executor submits detailed checklist
-3. You or Web review checklist
-4. Executor executes step by step
-5. Each step leaves chronicle
-6. You verify based on chronicles
+- Perform an authentication check first
+- Then fetch in pages
+- Leave a clear error log if something fails
+- Finally write out a structured result
 
-Benefit: You always know:
-- What was supposed to happen
-- What actually happened
-- Where discrepancy is
+Without an atomic checklist, the most common path looks like this:
 
-Result: When something goes wrong, you have clearhandle to diagnose and fix.
+- You say, "upgrade the sync script"
+- The executor replies, "no problem, I'll handle it"
+- Then it changes authentication, fetching, error handling, persistence, and tests all at once
+- At the end it hands you a summary that says, "everything is done"
 
-## Chronicles Are Notattached, But History After Checklistlanded
+It feels smooth, but the problems get buried just as smoothly:
 
-Chronicles are not just "nice to have"attached. They are the history that forms after checklistlanded.
+- It may have had no real execution order at all and just trial-and-errored in several places at once
+- It may have compressed two or three difficult steps into one casual sentence
+- It may have used simulated results to make the report look tidy
+- When something goes wrong, you have no idea which layer drifted first
 
-Without chronicles:
-- Checklist is just a plan, not a record
-- You can'tback what happened
-- You can't what was done
+This maps directly to the two collapses described in [Dual Distortion](../01-why/dual-distortion.md):
 
-With chronicles:
-- Checklist becomes executable plan
-- Each step leaves verifiable record
-- You canback and at any time
+- Technically, you end up with an intermediate state that looks like progress but is actually muddy
+- In governance terms, the executor casually acts as planner, implementer, and narrator of the result all at once
 
-## Checklist and Chronicles: Notserial, But Asynclinkage
+So without an atomic checklist, the so-called "plan" does not really reduce the black box. It only moves the black box earlier and gives it a more respectable paragraph.
 
-Checklist and chronicles are notserial (first write checklist, then execute, then write chronicles).
+## Another Hypothetical Scenario: What Changes When You Have an Atomic Checklist
 
-They arelinkage:
-- Checklist is written before execution
-- Chronicles are written during execution
-- Both feed into each other
+Take the same task again. If you force the executor to submit an atomic checklist first, it can no longer say only "I will upgrade the sync script." It must expose itself at a much finer granularity, for example:
 
-This allows:
-- Plan can be revised based on execution reality
-- Execution can be guided by plan
-- History is always up to date
+- First add the authentication-check function and failure logging
+- Then add paginated fetching and page-boundary tests
+- Then add the structured persistence fields
+- Finally run one real sample and check whether both the persisted result and the error log match expectations
 
-## Interrupt Immediately When "History" Tendency Appears
+Once the plan is that detailed, three things change.
 
-"History" means executor tries tochange history after the fact.
+### First, the Auditor Finally Has Somewhere to Attack
 
-Signs:
-- Executor says "let me update the chronicles to reflect what actually happened"
-- Executor wants tochange past entries to match current state
-- Executor downplays earlier failures in chronicles
+If one step is still too coarse, the Web auditor can immediately point out things like:
 
-When you see this: interrupt immediately.
+- This line actually contains two separate steps
+- This line has no acceptance standard
+- This line says it will change something, but never says what final result would count as passing
 
-Chronicles must be real-time, not after the fact. If executor wants tochange history, it means something was.
+At that moment, the auditor stops being a chat companion and becomes a true plan-level auditor.
 
-## Pulse Atomic Checklist: Why It's More Flexible Than Blueprint
+### Second, the Human Finally Has Somewhere to Interrupt
 
-Traditional blueprint: write everything upfront, then execute rigidly.
+Once the executor starts moving, the human can watch the checklist and ask:
 
-Pulse atomic checklist:
-- Write checklist for current pulse only
-- Execute and verify
-- Write next checklist based on results
-- Repeat
+- Which step are you on right now?
+- Have you suddenly crossed the boundary and started doing step seven work?
+- Did you silently knead two steps into one blob?
 
-Advantage:
-- More flexible to changing requirements
-- Less wasted planning for uncertain future
-- Each pulse is independently
+Without a checklist like this, human interruption can only rely on intuition. With it, interruption finally has procedural grounds.
 
-## How It Differs from Spec / Workflow
+### Third, the Result Can Finally Be Matched Back to the Process
 
-| Aspect | Spec/Workflow | Atomic Checklist |
-|--------|---------------|------------------|
-| Who writes | Human writes spec | Executor submits checklist |
-| When written | Before execution | Before each pulse |
-| Granularity | Often coarse | Must bedetailed |
-| Flexibility | Fixed plan | Adaptable |
-| Verification | Often post-hoc | Real-time with chronicles |
+After execution ends, you are no longer staring at a single summary that says "done." You can ask item by item:
 
-Key difference: Spec/workflowlet humando planning; atomic checklistlet executordo planning, humando review.
+- Where is the evidence for step 1?
+- Where is the test point for step 2?
+- Where is the real artifact for step 3?
+
+That means the fact of completion no longer lives inside one blended narrative. It begins to line up, item by item, with the concrete actions in the checklist.
+
+## Chronicles Are Not an Accessory, but the History Produced When the Checklist Lands
+
+The natural next thing that grows out of an atomic checklist is the chronicles themselves.
+
+The reason is simple: once you really advance by such a checklist, every clear state transition is naturally suited to leave behind one commit record. At that point the chronicles stop being extra overhead and become the by-product of actually landing the checklist.
+
+That is why the README says:
+
+**One checklist item corresponds to one clear state transition, and one state transition corresponds to one traceable commit.**
+
+The first time many people hear "high-frequency Git commits," they instinctively resist it and assume it is empty formalism. But the real issue is not that there are "too many commits." The real issue is that without this fine-grained history, every later task becomes harder all at once:
+
+- Rollback becomes harder
+- Debugging becomes harder
+- Takeover becomes harder
+- Renewal becomes harder
+- Refactoring becomes harder
+
+So the chronicles are not "for Git." They are for whoever has to take over this history in the future.
+
+There is another point that matters even more in the AI era: **the tedious labor of atomic commits, which used to be expensive by hand, can now be delegated almost entirely to the executor.**
+
+In the era of purely manual coding, many people hated high-frequency commits because the work was genuinely annoying:
+
+- You had to pause and split the work yourself
+- You had to decide the boundary of each commit yourself
+- You had to write each commit message yourself
+
+But in Cyber-Ming-Protocol, that layer of drudgery is exactly the kind of thing that should be outsourced to AI. For the human, it can often be as simple as one prompt, for example:
+
+```text
+Split the current changes into commits by feature point.
+Do not commit everything as one tangled batch.
+For each commit, explain what changed, what was verified, and what problem it solved.
+When you are done, show me the git log.
+```
+
+In other words, the human's job is not to manually perform every small historical cut. The job is to require the executor to cut the history clearly, explain it clearly, and present it for judgment. That shift is crucial: it turns "preserve future refactoring handles" from a mainly physical burden into a governance requirement.
+
+## Atomic Checklists and Chronicles Are Not Serial, but Asynchronously Linked
+
+There is one more point that needs to be made explicit: atomic checklists and chronicles are **not** in a serial relationship where you finish the whole checklist first and only then go back to write the history.
+
+The real rule should be:
+
+**As soon as one checklist item is completed, leave the corresponding chronicle entry immediately.**
+
+In practice that means:
+
+- Finish item 1, then commit item 1
+- Get the smallest test point for item 2 running, then commit item 2
+- Fix one real error for item 3, then commit item 3
+
+Do not finish the entire checklist and only afterward go back to tidy up the commit history.
+
+Why not? Because the moment you allow the executor to "finish the whole checklist and then rewrite the history afterward," you have given it too much room for narrative editing. It can:
+
+- Smooth away the chaotic middle of the process
+- Repackage a jumpy, out-of-order process as a clean and orderly history
+- Rewrite multiple layers of action as a single neat path after the fact
+
+At that point, what it writes is no longer a chronicle. It is closer to edited history.
+
+So remember one very simple operating principle:
+
+**Finish one item, leave one trace immediately. Do not finish the whole checklist and then patch history afterward.**
+
+## Interrupt the Executor as Soon as a History-Rewriting Tendency Appears
+
+If you notice the executor showing any of the following tendencies, do not wait until it is "all done." Interrupt immediately and order it to correct course:
+
+- Several checklist items have already advanced, but there are still no corresponding commits
+- Multiple feature points have been mixed together, ready to be committed as one batch
+- It starts saying, "I'll organize the commits after everything is finished"
+- It tries to repackage what was actually a messy process as one clean historical path
+
+The simplest response is to give a direct order like this:
+
+```text
+Stop.
+Do not wait until the entire checklist is done before committing everything together.
+Split the feature points that are already complete and leave traces item by item according to the atomic checklist.
+Each time one item is completed, commit that item, then show me the git log.
+```
+
+This is not nitpicking. It is how you prevent the executor from rewriting development history after the fact. One extra cut now saves you a mountain of rotten accounting later about which exact step broke what.
+
+## Pulse Atomic Checklists: Why They Are More Flexible Than a Heavyweight Blueprint
+
+Atomic checklists are powerful not only because they are fine-grained, but because they naturally fit pulse-style advancement.
+
+For now, you can understand a pulse in one very simple sentence:
+
+**Do not drop one giant heavyweight blueprint onto the project all at once. Let one small, verifiable checklist segment run through first, then decide how the next small segment should change.**
+
+That is exactly where this approach differs sharply from the traditional blueprint-heavy spec style.
+
+The problem with heavyweight blueprints is not that they are unclear. It is that they are too heavy:
+
+- They try to define too much up front
+- Once the direction changes, the whole blueprint has to be redrawn
+- The moment the business logic changes, a large share of the earlier planning goes stale
+
+The advantage of pulse atomic checklists is different:
+
+- Smaller boats turn faster
+- Each pulse only commits one small piece of real progress
+- After each pulse runs, the next pulse can be revised based on reality
+- If the business logic changes, the next pulse can absorb that change directly
+
+So this approach is not anti-planning. It simply refuses to freeze too much planning too early. Its rhythm is more like this:
+
+- Run one small segment first
+- Leave the chronicle
+- Look at the real result and the real blocker
+- Then decide how to revise the next segment of the checklist
+
+From that angle, the checklist and the chronicle are not only anti-counterfeit mechanisms. They are also mechanisms for flexible advancement. They help you avoid the trap where the blueprint is complete but the moment reality moves, the whole thing becomes invalid.
+
+## How It Differs from Spec-Driven Development and Workflow
+
+This section is especially aimed at the second kind of reader:
+
+**not someone who has never used workflow at all, but someone who has used workflow or spec-driven development seriously and has started to feel the backlash.**
+
+For that kind of reader, the most common confusion is not "why is nobody governing anything?" It is almost the opposite problem:
+
+- The initial spec was written in great detail
+- The workflow looked orderly
+- But the project's shape got fixed too early and too rigidly
+- Once your understanding upgraded halfway through, or your idea changed, or the structural goal shifted, the cost of adjusting kept rising
+
+Eventually you begin to feel something strange:
+
+**you are no longer continuing to build the product; you are maintaining an increasingly heavy blueprint that no longer wants to breathe.**
+
+The biggest difference between atomic checklists and that kind of heavyweight spec is not that the checklist is "more detailed." It is that it **does not require you to write out the entire future blueprint in one shot.**
+
+What it really asks for is this:
+
+- Compress the next small slice of real progress into a checklist that can be audited, verified, and rolled back
+- Run that small slice through first
+- Let real results, real blockers, and real evidence decide how the next slice should be revised
+
+In other words, atomic checklists are not anti-planning. They simply refuse to freeze planning too early into one heavyweight blueprint that everyone must obey for a long time.
+
+If you put the two side by side, the difference becomes clearer:
+
+| Dimension | Heavy Spec / Frozen Workflow | Pulse Atomic Checklist |
+| --- | --- | --- |
+| Project shape | Tries to define as much as possible up front | Compresses only the next small slice of real progress |
+| When direction changes | Often requires redrawing the whole blueprint | Revise directly in the next pulse |
+| Human feeling | Feels like maintaining a spec | Feels like continuing to build the product |
+| Audit handle | Often remains at the level of high-level intent | Drops directly to the actions, acceptance, and rollback of the current slice |
+| Sensitivity | Slow to react to new understanding or new blockers | Turns quickly with real results |
+
+That is why I say it is more sensitive. "Sensitive" does not mean casual. It means:
+
+- It is more sensitive to real blockers
+- It is more sensitive to direction changes
+- It exposes wrong premises earlier
+- It does not wait for the whole spec to fail before admitting that the direction should change
+
+The earlier evidence pages already show this very clearly.
+
+In [Battle Report 1](../04-evidence/battle-report-1.md), the executor initially submitted a function-level atomic checklist that passed the first audit. That shows an atomic checklist is not "no planning" at all. It is a way of submitting a construction skeleton that is already detailed enough to audit. But once the real run exposed a `401` and a graph-database import failure, the whole round could still be lawfully revoked, re-audited, and redirected instead of being forced to continue down the old route merely because the original spec looked respectable.
+
+In [Chronicles Sample](../04-evidence/chronicles-sample.md), the system goes through three clear transitions in a single day. The valuable thing there is not just "there were lots of commits." The real center of gravity keeps changing: unified entry, workspace semantics, branch convergence, and an artifact hub taking over the main chain. If that day had been governed by one heavyweight spec fixed in advance, many midstream structural changes would have looked like deviations from the blueprint. Under the logic of pulse atomic checklists, they can instead be recognized as **legitimate revisions to the next pulse after cognition has upgraded.**
+
+So what atomic checklists protect is not only order. They also protect growth.
+
+What I oppose is not just the black-box loss of control where nobody governs anything. I also oppose the frozen workflow that nails a project down too early and leaves people maintaining the blueprint instead of continuing to build the product. Atomic checklists are valuable precisely because they try to preserve a mode that is:
+
+- Governable
+- Auditable
+- Still able to keep growing, turning, and renewing while the project advances
+
+That is the real difference from the traditional spec-blueprint method.
 
 ## What Density Counts as Real Chronicles
 
-Too:
-- "Fixed bug"
-- "Updated code"
+The moment many people hear "high-frequency Git commits," they misunderstand it in one of two ways: either they think it means one commit every two lines, or they think it means packing everything into one bundle at the end of the day. Both are wrong.
 
-Toodetailed:
-- "Changed line 42 from 'x' to 'y'"
-- "Pressed save button at 14:32"
+The useful density can be remembered in one very simple sentence:
 
-Just right:
-- "Modified `auth.validateToken()` to check expiration, verified with test case"
-- "Updated error response format, confirmed with API call"
+**Leave one commit for every clear state transition.**
 
-Rule: Chronicle should what waschange and how it was, not every keystroke.
+What counts as a "clear state transition"? Use the plainest standard you can:
+
+- This step can now explain on its own what problem it solved
+- This step already has at least one minimal acceptance result
+- If you roll back at this point, you will not drag several later layers down with it
+
+If all three conditions hold, the step is usually worth a commit.
+
+### What Too-Coarse Density Looks Like
+
+The following is usually too coarse:
+
+- One commit changes authentication, pagination, persistence, logging, and tests at the same time
+- One commit mixes a new feature, an opportunistic refactor, and a bug fix
+- After the commit is made, even you cannot clearly explain what that cut was mainly trying to solve
+
+Commits like that look convenient in the moment, but they directly weaken the value of the chronicles. Later, all you see is a blended pile of action instead of a clear development history.
+
+### What Too-Fine Density Looks Like
+
+But more fragmentation is not automatically better. The following is often too fine:
+
+- Renaming one variable gets its own commit even though it does not form a state transition
+- Half a function has been written, but nothing can be verified yet, and it is committed anyway
+- One coherent action gets cut into seven or eight slices until nobody can tell how they relate
+
+Those commits may be numerous, but they are not chronicles. They are noise.
+
+### The Most Practical Density Rule
+
+If this is your first time, you can simply use the following rule of thumb:
+
+- After one feature point is completed, make one commit
+- After one minimal test point passes, make one commit
+- After one real error is fixed, make one commit
+
+If you can naturally say things like:
+
+- "This step adds the authentication check"
+- "This step wires in paginated fetching"
+- "This step adds explicit error logging"
+
+then you are usually already at a good commit boundary.
 
 ## What Form Counts as Real Chronicles
 
-Good forms:
-- Git commit messages (one commit per step)
-- Test run logs
-- Screenshot of working feature
-- API response samples
+Density is not the only thing that matters. Form matters too. Many people begin committing more frequently and still fail to produce real chronicles. What they end up with is only a high-frequency ledger of confusion.
 
-Bad forms:
-- Summary paragraph at end
-- "Everything works" without evidence
-- Old artifacts passed off as new
+For a chronicle to be genuinely useful, a later reader should be able to understand at least three things immediately:
 
-Rule: Chronicles should be, not just executor's word.
+- What problem this cut was solving
+- Which layer it mainly landed in
+- How it relates to the steps before and after it
 
-## What Chronicles Actuallyremember
+That is why the worst commit messages usually look like this:
 
-Chroniclesremember:
-- What was supposed to happen (from checklist)
-- What actually happened (from execution)
-- What verification was done
-- What discrepancies exist
+- `misc fixes`
+- `update code`
+- `wip`
 
-This creates: auditable history that can beback at any point.
+Even if you have many commits like that, they are still almost useless for refactoring, takeover, and debt repayment.
 
-## Why Italleviate Part 1 Pain Points
+Messages that are much closer to a real chronicle usually look more like this:
 
-From "01-Why", three pain points:
+- `fix(auth): add token validation before sync`
+- `feat(sync): add paginated fetch for remote items`
+- `test(sync): cover page boundary and empty response`
+- `fix(export): log explicit error on malformed payload`
 
-1. **Technical distortion**: Chronicles make it harder to technical problems
-2. **Governance distortion**: Checklists give auditorspecific things to
-3. **Cognitive debt**: Chronicles provideback history for understanding
+If the repository's habits allow it, adding another one to three lines in the commit body is even better, for example:
 
-## How It Serves Cognitive Debt Repayment
+- Which function changed
+- What point was verified
+- Why this step had to come before the next one
 
-When understandingnot system:
-- Chronicles provide historical record
-- Checklist shows what was planned
-- Comparison shows what deviated
+You do not need to turn every commit into an essay. But you should make it easy for a later reader to see that this is not just a handful of diffs. It is a reconstructable development history.
 
-This helps: bring understanding back to.
+## What Do Chronicles Actually Remember
+
+Chronicles remember more than "which file changed this time." They remember much more valuable things:
+
+- What problem this step solved
+- Which layer the change landed in
+- What this step verified
+- How this step relates to the steps before and after it
+
+That is why truly good chronicles should not look like a `misc fixes` grab bag. They are closer to a finely segmented dynastic record.
+
+Imagine a sequence of entries like this:
+
+- Extend the relationship-extraction prompt and return structure
+- Add structure validation and serialization logic
+- Wire in in-text cross-reference generation
+- Update how the structured result is written out
+- Fix the variable error exposed by a real run
+
+The value of that sequence is not that it looks tidy. The value is that when you come back later, you can see exactly how the system grew into its present form. That is also why, when a window has decayed, the executor has changed, or understanding has begun to slip, you do not need to re-chew the entire ocean of code. You can grab the mainline quickly by following the most recent state transitions.
+
+## Why It Relieves the Pain Points from Part 1
+
+If you do not place this page back into the realities established in `01-why/`, atomic checklists and chronicles are easy to misunderstand as nothing more than finer process management.
+
+What they really relieve are the structural pain points already described there.
+
+### First, They Relieve the Governance Pressure Created by the Shift in Human Position
+
+As [CS vs Management](../01-why/cs-vs-management.md) explains, humans in AI coding now carry delegation, routing, audit, and takeover duties. The atomic checklist turns that pressure from an abstract burden into an executable action.
+
+You do not need to rule the whole system in your head all at once. You only need to force the executor to hand in a detailed plan first and then decide whether to let it proceed.
+
+### Second, They Relieve the Understanding Cost Created by a Partially Semi-Black-Box System
+
+The same page also explains that AI coding pushes systems toward a partially white-box, partially semi-black-box state. If you cannot reread every step into full clarity every time, then you need:
+
+- Fine-grained checklists
+- Fine-grained commits
+- Fine-grained state transitions
+
+They do not exist so that you can understand more of everything. They exist so that when your understanding is limited, you can still spot-check the critical points more accurately.
+
+### Third, They Relieve Technical Distortion
+
+As [Dual Distortion](../01-why/dual-distortion.md) argues, one core symptom of technical distortion is that error disguises itself as progress.
+
+The first relief provided by the atomic checklist is that "progress" must first collapse into concrete actions and acceptance criteria. The second relief provided by the chronicles is that "I really did this step" must then collapse into recorded history.
+
+That greatly reduces the room for the familiar situation where the report sounds busy and impressive but nothing has actually been nailed down.
+
+### Fourth, They Relieve Governance Distortion
+
+The core of governance distortion is that the executor becomes planner, implementer, and narrator of results at the same time. One job of the atomic checklist is to expose its plan before execution. One job of the chronicles is to pin down its trajectory afterward so that it cannot casually rewrite the story.
+
+Put differently:
+
+- The atomic checklist narrows the executor's black-box space before execution
+- The chronicles narrow the executor's narrative space after execution
+
+## How It Also Serves Cognitive Debt Repayment
+
+This point is extremely important, and many people do not notice it the first time through.
+
+Chronicles do not exist only for rollback, debugging, and refactoring. They also serve cognitive debt repayment.
+
+The reason is simple: in the AI era, what accelerates dramatically is the speed of writing and rewriting code. The human speed of making a project white-box again does **not** accelerate at the same rate. So if a project lives long enough, cognitive debt will inevitably pile up.
+
+This is where the chronicles become valuable. When your grasp starts to weaken, you do not need to chew through the whole code ocean again. You can first grab the most recent state transitions.
+
+You can even open a fresh window and tell the executor directly:
+
+```text
+Do not keep changing code yet.
+First read the recent Git commit history, and tell me by feature point:
+1. Which functions were changed recently
+2. What each change was trying to solve
+3. If I now want to keep working on X, from which commit should I continue reading
+```
+
+That prompt looks plain, but it works only because there is already a sufficiently fine chronicle record underneath it. Without a clear historical record, this kind of debt-repayment conversation collapses back into black-box improvisation. With a clear chronicle record, it becomes a flexible, fast, and credible way to repay cognitive debt.
 
 ## Four Common Drifts
 
-### Drift 1: Write Checklist as Module
+### Drift 1: Writing the Atomic Checklist as Module-Level Slogans
 
-Wrong: "Improve authentication module"
-Right: "Modify `auth.validateToken()`, add test for expired token"
+If the granularity is still just "upgrade this layer" or "optimize that module," then it is not an atomic checklist. It is only a coarse plan under a new name.
 
-### Drift 2: Write as
+### Drift 2: Writing Empty Acceptance Standards
 
-Wrong: "Ensure quality"
-Right: "All tests pass, API returns correct error format"
+A checklist without acceptance standards is effectively an invitation for the executor to explain afterward why it thinks the work "basically counts as done."
 
-### Drift 3:detailed Checklist Commit
+### Drift 3: Producing Coarse Commits from a Fine-Grained Checklist
 
-Wrong: One commit for entire checklist
-Right: One commit per checklist item
+This disconnects the plan from the history. You may have a beautiful checklist on paper, but you still do not have real chronicles.
 
-### Drift 4:understand Chronicles aswant
+### Drift 4: Treating Chronicles as a Mechanical Commit Quota
 
-Wrong: "Must have 10 commits"
-Right: "Each clear state should have a commit"
+The key is not a slogan like "one commit every two functions." The key is that every clear state transition should leave a traceable historical record. Do not be mechanical, but also do not let everything dissolve into one lump.
 
 ## One-line Summary
 
-**Atomic checklist executorexpose plan, chroniclesback history, together they make pseudo-completion harder and debt repayment possible.**
+Atomic checklists and chronicles are the first extended skill not because they are more elegant, but because they are the first thing that truly nails plan, execution, acceptance, and history into one auditable, interruptible, traceable, and handover-ready chain.
+
+Without them, the minimal loop can still run. With them, the minimal loop finally starts to grow real bones.
 
 ## Corresponding Implementation
 
 ### Manual Practice
 
-- Require executor to submit atomic checklist before starting
-- Review checklist fordetailed and completeness
-- Require chronicles for each step
-- Verify based on chronicles, not summary
+- Manually require the executor to submit an atomic checklist first, and make sure it clearly states what it touches, how it will be accepted, where it rolls back to on failure, and how it connects to the next step
+- Every time one clear state transition is completed, leave the corresponding commit immediately instead of finishing the whole checklist and patching history later
+- During audit, compare the checklist, the commits, and the evidence item by item instead of listening only to one final summary
 
 ### Corresponding Skill
 
-- `approval-first-planner`: Helps generatequalified checklists
-- `approved-checklist-executor`: Helps maintain chronicle discipline
+- `approval-first-planner` stabilizes the rule "submit an approvable checklist first"
+- `approved-checklist-executor` stabilizes "execute slice by slice, verify slice by slice, archive slice by slice"
+- `global_rules` nails down the baseline of "one slice, one verification, one trace"
 
 ### Corresponding Web Templates
 
-- `plan_audit_template.md`: For reviewing checklist
-- `completion_audit_template.md`: For verifying based on chronicles
+- When you want to judge whether the checklist is truly atomic and sufficiently clear, start with `plan_audit_template.md`
+- When you want to check whether each checklist item has really landed as the corresponding evidence and commit, start with `completion_audit_template.md`
+- If you still have not fully separated Skills from Web templates in your head, see [Three Things](../00-entry/three-things.md)
 
 ## Related Pages
 
 - [Minimal Loop](minimal-loop.md)
 - [White-box Reconciliation](white-box-reconciliation.md)
 - [Scout Mechanism](scout-mechanism.md)
-- [Dual-track Audit](../03-deep-water/dual-track-audit.md)
+- [Why AI Coding Has Blurred the Boundary Between CS and Management](../01-why/cs-vs-management.md)
+- [Dual Distortion of Black-Box Multi-Agent](../01-why/dual-distortion.md)

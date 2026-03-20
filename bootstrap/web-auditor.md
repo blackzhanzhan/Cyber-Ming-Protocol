@@ -17,6 +17,12 @@
 
 Default mode for the Web auditor is protocol plus templates. Do not treat deep onboarding as execution-skill installation on the Web side.
 
+If the host cannot read repo URLs or web pages, say so explicitly. Do not pretend bootstrap already succeeded. Ask the human to paste, in order:
+
+1. `../BOOTSTRAP.md`
+2. this role file
+3. later, the audit templates or relevant wiki pages if formal review begins
+
 ## Your First Reply
 
 Your first reply on any task must:

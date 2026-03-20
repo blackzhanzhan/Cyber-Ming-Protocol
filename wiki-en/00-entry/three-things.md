@@ -4,121 +4,121 @@
 - [What This Page Solves](#what-this-page-solves)
 - [Shortest Definition First](#shortest-definition-first)
 - [Asset Overview](#asset-overview)
-- [Layer 1: What Is Protocol](#layer-1-what-is-protocol)
+- [Layer 1: What Is the Protocol](#layer-1-what-is-the-protocol)
 - [Layer 2: What Is Skill](#layer-2-what-is-skill)
 - [Layer 3: What Are Web Audit Templates](#layer-3-what-are-web-audit-templates)
-- [Why Web Templates Must Separate from Skill](#why-web-templates-must-separate-from-skill)
-- [Three Common Misunderstandings](#three-common-misunderstandings)
+- [Why Web Audit Templates Must Stay Separate from Skill](#why-web-audit-templates-must-stay-separate-from-skill)
+- [Three Common Misreadings](#three-common-misreadings)
 - [Recommended Next Steps](#recommended-next-steps)
 
 ## What This Page Solves
 
-Many peoplefirst time seeing this project confuse three things into one:
+When many people first see this project, they collapse three different things into one:
 
-- Take protocol as a package of installable prompts
-- Take Skill as the protocol itself
-- Take Web audit templates as local capabilities that need installation
+- They treat the protocol as a package of installable prompts
+- They treat Skill as the protocol itself
+- They treat Web audit templates as local capabilities that also need installation
 
-All three misunderstandings lead the entry logic astray.
+All three misunderstandings send the entry logic in the wrong direction.
 
 ## Shortest Definition First
 
 Cyber-Ming-Protocol is a **protocol-first** project.
 
 - **Protocol** defines the governance skeleton
-- **Skill** stabilizes high-frequency actions on IDE side
-- **Web audit templates** stabilize audit questions on Web side
+- **Skill** stabilizes high-frequency actions on the IDE side
+- **Web audit templates** stabilize audit questions on the Web side
 
-All three serve the same protocol, but not the same objects.
+All three serve the same protocol, but they are not the same kind of thing.
 
-The moststablecorrectexternal narrative is: `Protocol / Skill / Docs` are three mainlanded forms, `web-audit-templates/` is separate Web audit collaboration asset.
+The safest public description is: `Protocol / Skill / Docs` are the project's three main delivery forms, while `web-audit-templates/` is a separate collaboration asset for the Web side.
 
-This page focuses on "protocol, Skill, templates" because Docs/Teachingpartial explanation side, doesn't directlybear executor or auditor's actionrole.
+This page focuses on protocol, Skill, and templates because Docs / Teaching sit more on the explanatory side. They do not directly carry the executor or auditor role.
 
 ## Asset Overview
 
-| Object | What It Is | Where | Main Function | Required | Easily Mistaken For |
-|--------|------------|-------|---------------|----------|---------------------|
-| Protocol | A set of human-AI governance rules | `README.md`, `wiki/` | Defines what should come first, what counts as completion, who's responsible | Yes, must understand | A package of prompts or aesthetic narrative |
-| Skill | IDE-side stable trigger skeleton | `skill/` | Helps you more stably trigger planning, execution, probing, renewal | No, can install later | Protocol itself, automaticjudge |
-| Docs/Teaching | Project explanation and teaching | `README.md`, `wiki/` | Helps you understand protocol, cases, boundaries, and how to start | Yes, must read to sufficient understanding | Justattached pages |
-| Web Audit Templates | Web-side audit collaboration templates | `web-audit-templates/` | Helps you more stably do plan audit, completion audit, renewal judgment | No, optional | Local Skill, automatic executor |
+| Object | What It Is | Where It Lives | Main Function | Required | Often Mistaken For |
+|--------|------------|----------------|---------------|----------|--------------------|
+| Protocol | A set of human-AI governance rules | `README.md`, `wiki/` | Defines what must happen first, what counts as completion, and who is responsible for what | Yes, you must understand it | A prompt pack or a stylistic narrative |
+| Skill | A stable trigger skeleton on the IDE side | `skill/` | Helps you trigger planning, execution, probing, and renewal more reliably | No, you can install it later | The protocol itself or an automatic judge |
+| Docs / Teaching | The explanatory and teaching layer of the project | `README.md`, `wiki/` | Helps you understand the protocol, cases, boundaries, and how to get started | Yes, you need enough of it to understand the system | Disposable supporting pages |
+| Web Audit Templates | Audit collaboration templates for the Web side | `web-audit-templates/` | Helps you do plan audit, completion audit, and renewal judgment more reliably | No, optional | A local Skill or an automatic executor |
 
-## Layer 1: What Is Protocol
+## Layer 1: What Is the Protocol
 
-Protocol is the truly irreplaceable part of this project.
+The protocol is the truly irreplaceable part of this project.
 
-It defines a governance structure, such as:
+It defines a governance structure such as:
 
 - Review first, then execute
-- Submit atomic checklist first, then allowstart working
-- Executor doesn't self-certify completion
-- Completion depends on logs, artifacts, run results, commits as evidence
-- When window decays, renew, don't drag in old context
+- Submit an atomic checklist first, then allow work to begin
+- The executor does not self-certify completion
+- Completion must be established by logs, artifacts, run results, and commits as evidence
+- When a window decays, you use renewal instead of dragging the old context forward
 
-These things hold even without Skill.
+All of that still holds even if you never install Skill.
 
 ## Layer 2: What Is Skill
 
-Skill's role is notfor you invent protocol, but you more stably protocol on IDE side.
+Skill does not invent the protocol for you. Its role is to help you hold the protocol more reliably on the IDE side.
 
-For example, current repo's skills some high-frequency actions:
+For example, the skills in this repo solidify several high-frequency actions:
 
-- `approval-first-planner`: First produce atomic checklist and boundaries
-- `approved-checklist-executor`: Strictly execute, verify, by approved pieces
-- `probe-first-scout`: Don't pretend understand, run minimum probe first
-- `legacy-project-handover`: Giveonly when taking over or renewing
+- `approval-first-planner`: Produce an atomic checklist and boundaries for approval first
+- `approved-checklist-executor`: Execute, verify, and archive strictly by approved slices
+- `probe-first-scout`: Do not pretend to understand the whole system; run the smallest probe first
+- `legacy-project-handover`: Provide a read-only snapshot for takeover or renewal
 
-But they don't change one thing:
+But they do not change one thing:
 
-**Skill can'tfor you define truth.**
+**Skill cannot define truth for you.**
 
-It can onlyletyou more stably approach protocol-required action rhythm, can't "already has evidence".
+It can only help you get closer to the action rhythm required by the protocol. It cannot make evidence appear by itself.
 
 ## Layer 3: What Are Web Audit Templates
 
-Web audit templates are not local Skill, nor IDE-side triggers.
+Web audit templates are not local Skill, and they are not IDE-side triggers.
 
-They just you more stably auditor on Web side:
+They simply help you play the auditor role more reliably on the Web side:
 
-- Audit if plan is atomic
-- Audit if completionrealof
-- Audit if current window has decayed, needs renewal
+- Audit whether the plan is atomic enough
+- Audit whether completion is real
+- Audit whether the current window has decayed and needs renewal
 
-They do "how to ask, how to check, how to judge" skeleton, not "how to execute" skeleton.
+They provide the scaffold for how to ask, how to inspect, and how to judge, not for how to execute.
 
-## Why Web Templates Must Separate from Skill
+## Why Web Audit Templates Must Stay Separate from Skill
 
-Because these two sidesbear different roles:
+Because the two sides hold different roles:
 
-- IDE-side skill corresponds to execution, planning, probing, takeover
-- Web-side template corresponds to plan audit, completion audit, renewal judgment
+- IDE-side Skill maps to execution, planning, probing, and takeover
+- Web-side templates map to plan audit, completion audit, and renewal judgment
 
-If you put them all in `skill/`, readers easily:
+If you put everything into `skill/`, readers will easily misunderstand three things:
 
-- Web audit is also a local installable
-- Executor and auditor are just same type tools with different prompts
+- That Web audit is also a local installable
+- That executor and auditor are just the same kind of tool with different prompts
+- That audit can be completed conveniently inside the same window
 
-## Three Common Misunderstandings
+That would weaken the most important layer of the protocol: **role separation and sovereignty in human hands**.
 
-### Misunderstanding 1: Install Skill, Protocol Auto-
+## Three Common Misreadings
 
-Wrong: Installing Skill makes protocol work
-Right: Protocol works through your understanding and practice, Skill just makes it more stable
+### Misreading 1: Installing Skill Makes the Protocol Work Automatically
 
-### Misunderstanding 2: Without Skill, Can't Use Cyber-Ming
+Wrong. Installing Skill only makes the right actions easier to trigger. It does not mean you already satisfy the protocol's evidence standard.
 
-Wrong: Must install Skill beforecan
-Right: Can practice protocol fully by hand, Skill is optional enhancement
+### Misreading 2: Without Skill, You Cannot Use Cyber-Ming
 
-### Misunderstanding 3: Web Audit Templates Are Also Skills to Install
+Wrong. This protocol is first of all a governance method that can be executed by hand. You can absolutely run the loop manually first and decide about Skill later.
 
-Wrong: Web templates are part of Skill package
-Right: Web templates are Web-side assets, not IDE-side installs
+### Misreading 3: Web Audit Templates Are Also Skills You Install Locally
+
+Wrong. Web templates help the auditor question, verify, and judge. They are not IDE-side local skills.
 
 ## Recommended Next Steps
 
-- If you want to mentally run through in 30 seconds: [30-Second Demo](30-second-demo.md)
-- If you want to directly onboard: [Bootstrap](bootstrap.md)
-- If you want to understand when to install Skill: [Skill Guide](skill-guide.md)
-- If you want to understand how it differs from workflow/spec: [Comparison](comparison.md)
+- If you want to mentally run one round in 30 seconds, continue with [30-Second Demo](30-second-demo.md)
+- If you want to bootstrap roles directly, continue with [Bootstrap](bootstrap.md)
+- If you want to decide when Skill should be installed, continue with [Skill Guide](skill-guide.md)
+- If you want to compare it with workflow and spec-driven approaches, continue with [Comparison](comparison.md)

@@ -1,17 +1,17 @@
-# White-box Physical Reconciliation: What Counts as Completion Fact
+# White-box Physical Reconciliation: What Counts as a Completion Fact
 
 ## Table of Contents
 - [What This Page Solves](#what-this-page-solves)
 - [One-line Summary First](#one-line-summary-first)
 - [Separate Three Things First](#separate-three-things-first)
-- [Why White-box Reconciliation Must Follow Previous Two Pages](#why-white-box-reconciliation-must-follow-previous-two-pages)
-- [Redlight Before Greenlight: Why TDD Is Notcleanliness obsession Here](#red-light-before-green-light-why-tdd-is-not-cleanliness obsession-here)
-- [Test Conditions Through Assertions: Turn "Tested" Intocatchable White-boxhandle](#test-conditions-through-assertions-turn-tested-into-catchable-white-box-handle)
-- [A Simple Scenario: Why Old Batch Importer Easiest Audit](#a-simple-scenario-why-old-batch-importer-easiest--audit)
-- [Simplest Start: Ask for Redlight First, Then Greenlight, Then Evidence](#simplest-start-ask-for-red-light-first-then-green-light-then-evidence)
-- [Auditor'shandle: Turn "real" Into Assertions](#auditor-s-handle-turn-real-into-assertions)
-- [Why "AI's Ability Isof, AI Has No Right to Stay Silent"](#why-ai-s-ability-is-of-ai-has-no-right-to-stay-silent)
-- [Why Italleviate Part 1 Pain Points](#why-it-alleviate-part-1-pain-points)
+- [Why White-box Reconciliation Must Come After the Previous Two Pages](#why-white-box-reconciliation-must-come-after-the-previous-two-pages)
+- [Red Light Before Green Light: Why TDD Is Not Old-School Fastidiousness Here](#red-light-before-green-light-why-tdd-is-not-old-school-fastidiousness-here)
+- [Turn Test Conditions into Assertions: Make "I Tested It" Auditable](#turn-test-conditions-into-assertions-make-i-tested-it-auditable)
+- [A Simple Scenario: Why an Old Batch Importer Can Fool an Audit So Easily](#a-simple-scenario-why-an-old-batch-importer-can-fool-an-audit-so-easily)
+- [The Simplest Way to Start: Ask for the Red Light, Then the Green Light, Then the Physical Evidence](#the-simplest-way-to-start-ask-for-the-red-light-then-the-green-light-then-the-physical-evidence)
+- [Give the Auditor Real Handles: Turn "Review Carefully" into Assertions](#give-the-auditor-real-handles-turn-review-carefully-into-assertions)
+- [Why We Say AI's Ability Is Forced Out, and AI Has No Right to Stay Silent](#why-we-say-ais-ability-is-forced-out-and-ai-has-no-right-to-stay-silent)
+- [Why It Relieves the Pain Points from Part 1](#why-it-relieves-the-pain-points-from-part-1)
 - [Four Common Drifts](#four-common-drifts)
 - [One-line Summary](#one-line-summary)
 - [Corresponding Implementation](#corresponding-implementation)
@@ -19,239 +19,413 @@
 
 ## What This Page Solves
 
-The previous two pages haveestablish two things:
+The previous two pages have already established two things:
 
-- Have the executor submit atomic task checklist first
-- For each completed item, corresponding chronicle
+- The executor must submit an atomic checklist first
+- Every completed checklist item should leave behind the corresponding chronicle record
 
-But this is not enough. Because even if the plan isdetailed, history is, the executor can still at the last moment a summary, you into a more illusion:
+But that is still not enough. Even if the plan has been broken into fine-grained steps and the history has been recorded, the executor can still use one polished summary at the last moment to pull you into a more dangerous illusion:
 
-**Things look done.**
+**it looks as if the work is already complete.**
 
-This is exactly what white-box physical reconciliation solves.
+That is exactly what white-box physical reconciliation is for.
 
-It's not asking "does this paragraph look like completion", but asking:
+It does not ask, "Does this paragraph sound like completion?" It asks:
 
-- Did real redlight appear
-- Did real greenlight appear
-- Did real artifactslanded
-- Did real external system return
-- Do these evidences correspond to this run, or old artifacts, simulated output, language patches
+- Did a real red light appear?
+- Did a real green light appear?
+- Did a real artifact land?
+- Did the real external system return anything?
+- Does this evidence belong to this run, or is it actually an old artifact, simulated output, or verbal patching?
 
-If atomic checklist is black-box before execution, chronicles arefixed history during execution, then white-box physical reconciliation isnail truth after execution.
+If the atomic checklist weakens the black box before execution, and the chronicles pin the history down during execution, then white-box physical reconciliation is what nails the truth down afterward.
 
 ## One-line Summary First
 
-The most importantjudgebreak of white-box physical reconciliation is just one sentence:
+The most important judgment in white-box physical reconciliation can be reduced to one sentence:
 
-**Summary is not completion fact, evidence chain is completion fact.**
+**A summary is not a completion fact. An evidence chain is a completion fact.**
 
-And in AI era, this sentence needs to add half more:
+And in the AI era, that sentence needs one more half-line:
 
-**AI's ability isof, AI has no right to stay silent.**
+**AI's ability is forced out, and AI has no right to stay silent.**
 
-If you don't it redlight, greenlight, logs, artifacts, return values, external write evidence, it will give you a decent summary, not a truth.
+If you do not force it to hand over the red light, the green light, the logs, the artifacts, the return values, and the evidence of external writes, it will naturally tend to give you a respectable summary instead of an auditable truth.
 
 ## Separate Three Things First
 
-To reduce cognitive friction, first separate three things most easilymix together.
+To reduce cognitive friction, start by separating the three things that are most easily mixed together.
 
-### First, Summary
+### First, the Summary
 
-This is what executor tells you:
+This is what the executor tells you:
 
-- "Already fixed"
-- "Tests passed"
-- "Chain works"
-- "Next step can continue adding features"
+- "It's fixed"
+- "The tests passed"
+- "The chain runs now"
+- "We can keep adding features next"
 
-Summary is not useless, but it's just asay layer. Its biggest problem is not language not, but it naturally carries executor's.
+The summary is not useless, but it is only a spoken layer. Its biggest problem is not that the language sounds bad. Its biggest problem is that it naturally carries the executor's position.
 
-### Second, Verification Evidence
+### Second, the Verification Evidence
 
-Verification evidence is what you canrealreal touch,correct,, such as:
+Verification evidence is what you can actually touch, compare, and interrogate, for example:
 
-- Redlight test output
-- Greenlight test output
+- Red-light test output
+- Green-light test output
 - Real logs
-- Artifacts generated by current run
-- External system write-back results
-- Commits corresponding to this change
+- Artifacts generated by the current run
+- External-system write-back results
+- Commit records corresponding to this change
 
-Evidence itself doesn't automatically equal completion, but without evidence, there's no completion to talk about.
+Evidence does not automatically equal completion, but without evidence, there is no basis for talking about completion at all.
 
-### Third, Completion Fact
+### Third, the Completion Fact
 
-Completion fact is not one sentence, nor one screenshot. Completion fact is:
+A completion fact is not a sentence, and it is not one screenshot. A completion fact means:
 
 - Evidence has appeared
-- Evidence matches this round's goal
-- Evidence matches this round's run
-- Auditor still stands
+- The evidence matches this round's goal
+- The evidence matches this round's actual run
+- The claim still stands after the auditor presses on it
 
-In other words, completion fact is results that can withstand reconciliation, not executor's self-description.
+In other words, a completion fact is a result that can survive reconciliation, not an executor's self-description.
 
-## Why White-box Reconciliation Must Follow Previous Two Pages
+## Why White-box Reconciliation Must Come After the Previous Two Pages
 
-This step must follow "Minimal Loop" and "Atomic Checklist & Chronicles", not coincidence.
+There is a reason this page must follow [Minimal Loop](minimal-loop.md) and [Atomic Checklist & Chronicles](atomic-checklist-chronicles.md). That sequencing is not accidental.
 
 Because:
 
-- Without atomic checklist, you don't know what to verify now
-- Without chronicles, you don't have history tocorrect
-- Without both, reconciliation has no foundation
+- Without the atomic checklist, you do not know what specific step you are verifying right now
+- Without the chronicles, you do not know which state transition the evidence belongs to
+- Without white-box reconciliation, the plan and history from the previous two pages can still be swapped out at the last second by one polished summary
 
-## Redlight Before Greenlight: Why TDD Is Notcleanliness obsession Here
+So these three pages are really one line of defense:
 
-TDD (Test-Driven Development) asks you to:
+- The atomic checklist nails down the granularity of the plan
+- The chronicles nail down the history of advancement
+- White-box reconciliation nails down the fact of completion
 
-1. Write failing test first (redlight)
-2. Write code to make it pass (greenlight)
-3. Refactor
+Remove any one of the three, and the whole line goes soft.
 
-In white-box reconciliation, this becomes:
+## Red Light Before Green Light: Why TDD Is Not Old-School Fastidiousness Here
 
-1. Ask for redlight evidence first
-2. Then ask for greenlight evidence
-3. Then verify the difference
+The `TDD red-light/green-light` logic matters here because it explains very plainly what should count as valid evidence.
 
-Why redlight first?
+The simplest possible version is:
 
-Because without redlight, you can't prove greenlight is real. Executor could:
-- Show old greenlight that was already passing
-- Show greenlight from different code
-- Show simulated greenlight
+- The **red light** proves the test line is alive
+- The **green light** proves the feature now works
 
-Redlight proves: there was a real problem that needed fixing.
+Why insist on red before green? Because if all you see is a green light at the start, the reconciler has no way to know how that light turned on.
 
-## Test Conditions Through Assertions: Turn "Tested" Intocatchable White-boxhandle
+It could mean:
 
-"Tested" is too vague. What was tested? How was it tested? What passed?
+- The test never hit the real target at all
+- The test ran only an empty shell
+- The test reused the old logic and never covered the new change
+- The executor wrote the code first and then backfilled a test that could only pass
 
-Assertions make itspecific:
+So the role of the red light is not to make people uncomfortable. It is to prove first that **this acceptance line actually has teeth.**
 
-- "assert response.status == 200" proves API returned 200
-- "assert error.message == 'Token expired'" proves specific error
-- "assert file.exists(output_path)" proves artifact was created
+In AI coding, that move matters even more. Executors naturally prefer to show green results, and they rarely volunteer a red-light failure record on their own. They do not want to break the feeling of progress, and they do not want to look as if they failed. But from the viewpoint of white-box audit, the opposite is true:
 
-Turn "tested" intospecificof assertions that can be checked.
+**without a red light, many green lights are not worth trusting.**
 
-## A Simple Scenario: Why Old Batch Importer Easiest Audit
+## Turn Test Conditions into Assertions: Make "I Tested It" Auditable
 
-Old batch importer scenario:
+Red-light/green-light logic answers one question: is this test line alive? Assertions answer another: what exactly is this test line proving?
 
-1. Executor says "import works now"
-2. Shows green checkmark
-3. Says "ready for next feature"
+One of the executor's most effective rhetorical habits is to turn testing into an atmosphere:
 
-Problem: How do you know:
-- It really ran on new data?
-- It really processed all records?
-- It really wrote to database?
+- "I already tested it"
+- "That case is fine now"
+- "The related logic should all go through"
 
-Without physical evidence, "works now" could mean:
-- Ran on old test data
-- Processed only subset
-- Wrote to wrong table
+None of those statements are strong enough. A genuinely auditable test should not only create a vague impression of "it passed." It should give you an explicit assertion. For now, you can think of an assertion as a sentence that can be checked, falsified, and verified again.
 
-## Simplest Start: Ask for Redlight First, Then Greenlight, Then Evidence
+For example, do not stop at a sentence like:
 
-Start with:
+- "The import feature is fixed now"
+
+Compress it into sharper assertions like these instead:
+
+- When authentication fails, the system returns an explicit auth error instead of swallowing it silently
+- After the fix, the same import command really writes to the database
+- The import report comes from the current run rather than an old leftover file
+- After a successful write, the logs show the corresponding record count or external return
+
+The benefit is obvious: once the assertions are written clearly, the auditor stops saying only, "I have a feeling this is unfinished." It can instead press item by item:
+
+- Where is the red light for this assertion?
+- Where is the green light for this assertion?
+- Where is the physical evidence for this assertion?
+
+That is why red lights, green lights, and assertions form one matched set:
+
+- The red light proves the test line is alive
+- The green light proves the same problem was actually repaired
+- The assertion proves what the red light and green light are even supposed to be checking
+
+Only when all three are present do you have an auditable white-box test instead of a mere claim that "the executor already tested it."
+
+## A Simple Scenario: Why an Old Batch Importer Can Fool an Audit So Easily
+
+Suppose there is an old batch importer that currently can do only one thing: write a batch of records into a local temporary file. This time, you want to upgrade it so that it will:
+
+- Raise an explicit error when authentication fails
+- Actually write to the database
+- Generate an import report after the write
+
+If the executor advances in black-box mode, it will very likely hand you a polished answer at the end:
+
+- "The import succeeded"
+- "The report was generated"
+- "All tests passed"
+
+The problem is that those three sentences may point to three completely different realities:
+
+- "The import succeeded" may only mean the code path looked as if it could run
+- "The report was generated" may only mean an old file was still sitting in the directory
+- "All tests passed" may never have proved that a database write actually happened
+
+If all you collect is the summary, you can be fooled very easily.
+
+White-box physical reconciliation proceeds in the opposite way. It does not start by asking, "Does your story sound convincing?" It interrogates layer by layer:
+
+- Where is the red light from before the fix?
+- Where is the green light after the fix?
+- Where is the report file from the current run?
+- Where are the new records created by this run in the database?
+- Do the logs contain explicit write feedback?
+- Is all of this evidence really from the current run, or is it an old artifact, a simulated result, or a verbal patch?
+
+Once the questioning gets this concrete, many things that looked like "completion" shrink instantly into "I assumed it should be complete."
+
+## The Simplest Way to Start: Ask for the Red Light, Then the Green Light, Then the Physical Evidence
+
+The first time you do white-box physical reconciliation, do not make it heavier than it needs to be. The simplest version is just three steps.
+
+### Step 1: Ask for the Red Light First
+
+First make the executor prove that the test line can actually bite. The simplest instruction is:
 
 ```text
-Before you fix anything, show me the redlight.
-Run the test, show me what fails.
+Do not show me only the passing result.
+First reproduce the current failure and show me the red-light test, the error log, or the failing output.
+I want to confirm that this acceptance line is real.
 ```
 
-Then:
+If it cannot even reproduce the failure, do not rush to believe the later claim that it is now fixed.
+
+### Step 2: Then Ask for the Green Light
+
+Once the red light has appeared, let it fix the problem and run again. At this stage, what you want is not a sentence like "it's done now," but something like:
 
 ```text
-Now fix it and show me the greenlight.
-Same test, show me what passes now.
+Now show me the green light after the fix.
+Use the same test and the same problem, and show me the real passing output.
 ```
 
-Finally:
+The key questions here are:
+
+- Is it the same test?
+- Is it the same problem?
+- Did it really turn from red to green?
+
+### Step 3: Finally Ask for the Physical Evidence
+
+If this task claims it generated an artifact, wrote to a database, exported a file, or called an external system, then add one more sentence:
 
 ```text
-Show me the evidence this really ran.
-Logs, artifacts, database records, whatever proves it happened.
+In addition to the green light, show me the real evidence from the current run:
+artifact paths, key logs, external returns, or database write results.
+Do not give me simulated output. Do not give me old files.
 ```
 
-## Auditor'shandle: Turn "real" Into Assertions
+Those three steps together form the minimal white-box reconciliation loop.
 
-Don'tlet auditor just "real". Give itspecific assertions to check:
+## Give the Auditor Real Handles: Turn "Review Carefully" into Assertions
 
-- "Check that test X fails before fix"
-- "Check that test X passes after fix"
-- "Check that artifact Y exists"
-- "Check that database has Z records"
+Simply saying "please review carefully" does not actually help the auditor very much. A much stronger move is to turn the audit handle itself into explicit assertions.
 
-This turns subjective "" into objective "check".
+Assertions do two things at once:
 
-## Why "AI's Ability Isof, AI Has No Right to Stay Silent"
+- They tell the auditor exactly what to grab
+- They take away the executor's room to pass by atmosphere alone
 
-AI tends to:
-- Give summary instead of evidence
-- Claim success without proof
-- Skip hard verification
+The most stable method is not for the human to invent an assertion pack from thin air. It is this: **make the IDE executor submit this round's assertions together with its report, then copy that assertion pack to the Web auditor along with the evidence.**
 
-You must it:
-- Show redlight before greenlight
-- Show real artifacts, not simulated
-- Answer hard questions, not deflect
+In other words, the assertions should first be the executor's own clear statement of what it claims to have completed. The auditor's job is then to check, one by one, whether those assertions are actually supported by red lights, green lights, and physical evidence.
 
-AI has no right to stay silent when asked for evidence.
+You can require the executor to hand in its work in a minimal format like this:
 
-## Why Italleviate Part 1 Pain Points
+```text
+Do not just say "I tested it" or "I fixed it."
+List the assertions you are claiming to have completed this round:
+1. Which test or output was red before the fix
+2. Which test or output turned green after the fix
+3. Which artifact, log, or external return proves that this round really completed the claim
+```
 
-From "01-Why":
+If you want something slightly more structured, the executor can also hand over a minimal assertion pack like this:
 
-1. **Technical distortion**: Physical evidence makes it harder to technical lies
-2. **Governance distortion**: Assertions give auditorspecific things to check
-3. **Cognitive debt**: Evidence provides concrete understanding anchors
+```yaml
+completion_assertions:
+  red_phase:
+    - failing_case_exists_before_fix: true
+    - failing_output_is_current_run: true
+  green_phase:
+    - same_case_passes_after_fix: true
+    - green_output_matches_target_behavior: true
+  physical_evidence:
+    - artifact_or_log_exists: true
+    - evidence_belongs_to_current_run: true
+    - no_simulated_output_used_as_proof: true
+  final_gate:
+    - summary_is_not_used_as_completion_fact: true
+```
+
+Then you copy that pack to the Web side together with the evidence. The Web side is not reviewing "whether there is a YAML file." It is reviewing whether the assertions in that YAML file actually stand up.
+
+If YAML feels too formal, you can also make the executor submit a plain-language assertion pack instead:
+
+```text
+These are the assertions I claim to have completed this round. Audit against the assertions:
+1. There must be a real red light before the fix
+2. There must be a real green light for the same problem after the fix
+3. If I claim an artifact was generated or an external write succeeded, you need to see physical evidence from the current run
+4. Simulated output, old files, and summary language may not be treated as completion facts
+```
+
+This step matters because it upgrades the auditor from "vaguely picking holes" to reconciling against real handles.
+
+## Why We Say AI's Ability Is Forced Out, and AI Has No Right to Stay Silent
+
+This is the one judgment on this page that is most worth nailing down.
+
+AI's natural tendency is not to volunteer the ugliest part of its own work. Its natural tendency is to preserve the feeling of progress, respectability, and continuity. It would much rather hand you:
+
+- A green check
+- A summary
+- A reasonable explanation
+- A suggestion for the next step
+
+than proactively hand you:
+
+- The red light
+- The underlying error
+- The conflict between an old artifact and a new artifact
+- The fact that it never really ran through the chain
+
+So if you do not force it, it will stay silent more easily. If you do not interrogate it, it will fill the gaps with summary language.
+
+That is why white-box physical reconciliation is not a polite request. It is closer to an interrogation:
+
+- Bring the red light
+- Bring the green light
+- Bring the logs
+- Bring the artifact
+- Bring the external return
+
+If you cannot see them, then it does not count as complete yet.
+
+Put differently:
+
+**AI's ability is often forced out. If you do not force it to hand over the truth, it will naturally prefer to hand over a respectable story.**
+
+## Why It Relieves the Pain Points from Part 1
+
+This page also has to connect back to `01-why/`, otherwise white-box physical reconciliation is too easily misunderstood as nothing more than "a stricter testing workflow."
+
+What it actually relieves are several structural pain points already established there.
+
+### First, It Relieves Technical Distortion
+
+As [Dual Distortion](../01-why/dual-distortion.md) explains, the most dangerous thing about technical distortion is that error can disguise itself as progress.
+
+White-box reconciliation answers that by refusing three things:
+
+- It does not accept a green light by itself
+- It does not accept a summary by itself
+- It does not accept an explanation that merely sounds plausible
+
+It forces the executor to submit the failure, the repair, the artifact, and the return together. That makes it far harder for error to hide behind the feeling of forward motion.
+
+### Second, It Relieves Governance Distortion
+
+The core of governance distortion is that the executor also acts as the interpreter of the result. White-box reconciliation explicitly rejects that arrangement. The executor may supply materials, but it may not define completion merely by delivering its own closing statement.
+
+It must hand over the materials, and the human plus the auditor must decide what those materials mean. That is how execution and characterization are separated again.
+
+### Third, It Relieves the Risk of Blind Review in a Partially Semi-Black-Box State
+
+As [CS vs Management](../01-why/cs-vs-management.md) explains, AI coding pushes the system toward a partially white-box, partially semi-black-box state. Once that is true, humans can no longer fully reread every step into clarity. The real value of white-box reconciliation is that it lets you approach the truth through evidence at the key moments even when you cannot fully reread everything.
+
+### Fourth, It Relieves Runaway Cognitive Debt
+
+Without white-box reconciliation, cognitive debt is easiest to pile up through respectable-looking reports. Each round feels "basically done," but you never really know which link has already drifted.
+
+If each round instead leaves behind:
+
+- A red light
+- A green light
+- The current artifact
+- The key logs
+
+then when you come back later, you at least know what evidence the completion judgment rested on at the time rather than what rhetoric it rested on.
 
 ## Four Common Drifts
 
-### Drift 1: Only Look at Greenlight, Not Redlight
+### Drift 1: Looking Only at the Green Light and Ignoring the Red Light
 
-Without redlight, greenlight could be old or fake. Always ask for redlight first.
+That leaves you unable to tell whether the test line was alive at all. Many apparent passes are only empty-shell passes.
 
-### Drift 2: Take Simulated Results as Real Execution
+### Drift 2: Treating Simulated Results as Real Execution
 
-Executor might show simulated output instead of real run. Always ask: "Did this really run?"
+If the evidence was not produced by the current run, it cannot directly count as completion evidence.
 
-### Drift 3: Take Old Artifacts as New Evidence
+### Drift 3: Treating Old Artifacts as New Evidence
 
-Executor might show old files as new results. Always ask: "When was this generated?"
+If you do not verify the current run's identity, timestamp, or path, old files can easily impersonate fresh results.
 
-### Drift 4: Take Summary as Completion Fact
+### Drift 4: Treating the Summary as the Completion Fact
 
-Summary is not evidence. Always ask: "Show me the proof."
+If there is no red-light/green-light chain, no physical evidence, and no external return, the reconciliation is not finished.
 
 ## One-line Summary
 
-**Completion fact = evidence chain that withstands reconciliation, not executor's self-description.**
+What white-box physical reconciliation ultimately nails down is not "did you write some code?" It nails down this:
+
+**what you have produced is either the truth of this run, or just an explanation polished enough to sound convincing.**
+
+And in the AI era, the only way to hold that line is to keep forcing it to hand over evidence until there is no room left for silence.
 
 ## Corresponding Implementation
 
 ### Manual Practice
 
-- Ask for redlight before greenlight
-- Require specific assertions, not vague "tested"
-- Verify artifacts are from current run, not old
-- Check external system writes, not just internal claims
+- Manually demand three things from the executor: the red light, the green light, and the physical evidence
+- Send assertions, logs, artifacts, external returns, and commit records together for audit; do not accept a green light alone or a summary alone
+- If the evidence does not line up with this round's goal, this round's actual run, and the current commit state, do not pass it
 
 ### Corresponding Skill
 
-- `approved-checklist-executor`: Enforces evidence collection discipline
+- `approved-checklist-executor` maps most directly to this page because it requires post-execution verification results, target artifacts, and `git status --short`
+- `approval-first-planner` helps earlier by writing green tests and acceptance ladders into the plan, reducing later room for argument
+- But whether or not Skills are installed, the completion fact still depends on evidence, not on what the Skill says about itself
 
 ### Corresponding Web Templates
 
-- `completion_audit_template.md`: Structured questions for verification
+- This page maps most directly to `completion_audit_template.md`
+- If you suspect the current window is using polished reporting to cover an evidence gap, `succession_judge_template.md` can help you decide whether a renewal is needed
+- For the collaboration boundary on the Web side, see [Three Things](../00-entry/three-things.md)
 
 ## Related Pages
 
 - [Minimal Loop](minimal-loop.md)
 - [Atomic Checklist & Chronicles](atomic-checklist-chronicles.md)
 - [Scout Mechanism](scout-mechanism.md)
-- [Dual-track Audit](../03-deep-water/dual-track-audit.md)
+- [Why AI Coding Has Blurred the Boundary Between CS and Management](../01-why/cs-vs-management.md)
+- [Dual Distortion of Black-Box Multi-Agent](../01-why/dual-distortion.md)

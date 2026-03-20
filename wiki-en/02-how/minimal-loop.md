@@ -13,230 +13,230 @@
 
 ## What This Page Solves
 
-If you want to try Cyber-Ming-Protocol today, what's the simplest way?
+If you want to try Cyber-Ming-Protocol today, what is the simplest possible way to do it?
 
-The answer is not memorizing the entire doctrine first, nor learning all rituals. What the minimal loop actually asks you to do is very little:
+The answer is not to memorize the whole doctrine first, and not to master every ritual before you begin. The minimal loop actually asks you to do very little:
 
 - Give the IDE a requirement
-- Copy the IDE's response to Web for review
-- Interrupt if something's wrong
-- After done, let Web verify once more
+- Copy the IDE's response to the Web side for review
+- Interrupt if something looks wrong
+- When the work is done, let the Web side verify it one more time
 
-That simple.
+That is all.
 
-The point of this method is not making things complicated, but preventing the executor from declaring "done" while still working.
+The point of this method is not to make work complicated. The point is to stop the executor from working and declaring completion at the same time.
 
 ## One-line Version
 
 The minimal loop is:
 
-**Let IDE submit a plan first, copy the plan to Web for review; after approval, execute, then submit evidence for final review.**
+**Have the IDE submit a plan first, copy the plan to the Web side for review; only after it passes should execution begin, and the final decision must still be based on evidence.**
 
-If this is your first time, just run through this one line.
+If this is your first time, getting this single line running is enough.
 
 ## Diagram First
 
 ```mermaid
 flowchart TD
-    A[Give IDE a requirement] --> B[IDE submits plan first<br/>Don't modify code directly]
-    B --> C[Copy IDE response to Web]
-    C --> D{Web thinks plan is reliable?}
-    D -- Not reliable --> E[Copy Web feedback back to IDE<br/>Let it revise plan]
+    A[Give the IDE a requirement] --> B[IDE submits a plan first<br/>Do not modify code right away]
+    B --> C[Copy the IDE response to the Web side]
+    C --> D{Does the Web side trust the plan?}
+    D -- No --> E[Copy the Web feedback back to the IDE<br/>Have it revise the plan]
     E --> B
-    D -- Can proceed --> F[IDE starts executing]
-    F --> G[Human monitors execution<br/>Interrupt if wrong]
-    G --> H[IDE summarizes commits, tests, artifacts]
-    H --> I[Copy results to Web for verification]
-    I --> J{Is this completion fact?}
+    D -- Yes --> F[IDE starts executing]
+    F --> G[Human watches the execution<br/>Interrupt if something looks wrong]
+    G --> H[IDE summarizes commits, tests, and artifacts]
+    H --> I[Copy the result to the Web side for verification]
+    I --> J{Does this count as a completion fact?}
     J -- No --> E
-    J -- Yes --> K[Loop complete]
+    J -- Yes --> K[This loop is complete]
 ```
 
-If you understand the diagram above, go directly to the version most worth following for your first run: the one-audit version.
+If that diagram already makes sense to you, jump straight to the version that is best for a first attempt: the one-audit version.
 
 ## One-Audit Version: Start Here
 
-If this is your first time, the one-audit version is enough.
+If this is your first time trying the protocol, the one-audit version is enough.
 
-Its process is very simple:
+Its flow is very simple:
 
-### 1. Let IDE Submit a Plan First
+### 1. Have the IDE Submit a Plan First
 
-You can say it directly:
+You can say it directly like this:
 
 ```text
 I want to do this: <your requirement>
 
-Don't modify code directly first.
-Tell me how you plan to do it, break it into an atomic checklist as detailed as possible, how to verify each step.
-Granularity should be detailed enough: which function to modify, what test point to add, what result counts as passing.
+Do not modify code yet.
+First tell me how you plan to do it. Break it into an atomic checklist as detailed as possible, and tell me how each step will be verified.
+Make the granularity as fine as possible: which function to modify, what test point to add, and what result counts as passing.
 ```
 
-Here you don't need to write a big plan yourself. The plan is submitted by the executor first, not written by you manually.
+You do not need to write a big plan yourself here. The point is to make the executor hand in the plan first, not to make you draft it manually.
 
-If you want to be more direct, you can add:
+If you want to make it even more explicit, add one more sentence:
 
 ```text
-Don't give me vague plans.
-Try to break it down by function modification, test point establishment, artifact check.
+Do not give me a vague plan.
+Break it down by function modification, test-point setup, and artifact inspection whenever possible.
 ```
 
-The benefit is simple: when you copy it to Web later, Web can see if there are missing steps, if it's lazy, if it deliberately makes difficulties vague.
+The benefit is simple: when you later copy the plan to the Web side, the reviewer can see whether steps are missing, whether the plan is evasive, and whether the hard parts were deliberately blurred.
 
-### 2. Copy IDE's Plan to Web for Review
+### 2. Copy the IDE's Plan to the Web Side for Review
 
-The simplest way is to copy as-is, then add:
+The simplest method is to copy it as-is and add a short instruction:
 
 ```text
-This is the IDE's plan. This executor might deceive me.
-Please help me check: are there missing steps, is it too easy, what evidence should I look at finally.
+This is the IDE's plan. This executor may deceive me.
+Please check whether any steps are missing, whether it makes the task sound too easy, and what evidence I should demand at the end.
 ```
 
-If you think "deceive me" is too strong, you can change to softer words with same meaning:
+If "deceive me" feels too strong, you can soften it without changing the meaning:
 
 ```text
 This is the IDE's plan.
-Please help me find issues, see if it's too smooth, too vague, or missing the difficulties.
+Please help me find problems: is it too smooth, too vague, or missing the difficult parts?
 ```
 
-If Web says the plan has obvious gaps, copy its feedback back to IDE.
+If the Web side says the plan has obvious gaps, copy that feedback back to the IDE unchanged.
 
-### 3. If Plan Is Fine, Let IDE Start
+### 3. If the Plan Is Acceptable, Let the IDE Start
 
-You can even reply with just one short sentence:
+At this point, your reply can be extremely short:
 
 ```text
-Follow this plan. Remember one step, one commit.
+Follow this plan. Remember: one step, one commit.
 ```
 
-At this point you don't need to write long instructions. The minimal loop doesn't rely on complex rhetoric, but on review first, then execute.
+You do not need long rhetoric here. The minimal loop does not stand on ornate prompting. It stands on a simple order: review first, execute second.
 
-If "one step, one commit" makes you nervous the first time you see it, don't understand it as mechanical discipline. Just remember the minimal meaning: **Don't mix multiple changes into one batch, try to split by feature point.** The next page "Atomic Checklist & Chronicles" will explain this clearly.
+If "one step, one commit" makes you tense the first time you hear it, do not interpret it as mechanical ritualism. Just hold on to its minimal meaning: **do not lump several steps into one change blob; split them by feature point whenever possible.** The next page, [Atomic Checklist & Chronicles](atomic-checklist-chronicles.md), explains why this matters.
 
-### 4. Verify After Done
+### 4. Verify Again After the Work Is Done
 
-After the executor finishes, don't just look at it saying "done". First let it organize materials:
+When the executor says the work is finished, do not look only at the sentence "done." First ask it to lay out the materials:
 
-- This round's commits
+- The commits for this round
 - Test results
 - Artifacts
 - Key logs
 
-Then copy to Web:
+Then copy them to the Web side:
 
 ```text
 These are this round's commits, tests, and artifacts.
-Please help me look, is this completion fact, don't just look at summary.
+Please tell me whether this counts as a completion fact. Do not judge from the summary alone.
 ```
 
-If Web says "this doesn't count as done", continue back to IDE to fix, don't rush to pass.
+If the Web side says "this does not count as done," send it back to the IDE for another round of repair. Do not rush to pass it.
 
-This is the one-audit version:
+That is the one-audit version:
 
-- Plan review once
-- Result verify once
+- Review the plan once
+- Verify the result once
 
-For your first time, this is enough.
+For a first run, that is enough.
 
 ## Multi-Audit Version: When to Upgrade
 
-Some tasks, one-audit version is not enough. For example:
+Some tasks are too risky for the one-audit version. For example:
 
-- Large impact scope
-- Crosses multiple modules
-- Has external system writes
-- Executor already starts speaking nicely, submitting green checks, but your intuition says something is wrong
+- The impact radius is large
+- The work crosses multiple modules
+- It writes to an external system
+- The executor has started talking smoothly and handing over green checks, but your instincts say something is off
 
-At this point, upgrade to multi-audit version.
+That is when you upgrade to the multi-audit version.
 
-Its difference from one-audit version is not different philosophy, but adding multiple reviews based on risk, not mechanically adding fixed steps:
+Its difference from the one-audit version is not a different philosophy. It simply inserts more reviews based on risk instead of adding fixed steps mechanically:
 
-- If plan doesn't pass, revise one or two rounds
-- During key execution steps, let Web glance midway
-- After final result, do one formal verification
+- If the plan does not pass, send it back one or two more times
+- If execution reaches a critical step, let the Web side take a look midstream
+- After the final result appears, run one formal verification pass
 
-You can understand it as:
+You can think of the two versions like this:
 
-- One-audit version: lightweight anti-pseudo
-- Multi-audit version: reinforced version for high-risk tasks
+- One-audit version: lightweight anti-pseudo-completion
+- Multi-audit version: reinforced mode for higher-risk tasks
 
-If this is your first time, don't directly use multi-audit version. First run through one minimal loop, then upgrade.
+If this is your first time, do not start with the multi-audit version. Run one minimal loop first, then upgrade when needed.
 
 ## A Simple Example
 
-Suppose you have an old script that can only export a plain title list. This time you want to upgrade it to:
+Suppose you have an old script that can only export a plain list of titles. This time you want to upgrade it so that it:
 
-- With tags
-- With in-text cross-references
-- Also output a structured result
+- Includes tags
+- Includes in-text cross-references
+- Also writes out a structured result
 
-If following old habits, you'd likely directly let IDE modify. It would likely quickly give you a nice reply:
+If you follow old habits, you will probably just tell the IDE to start modifying code. It will probably answer quickly with something tidy and reassuring:
 
-- "All done"
-- "Tests passed"
-- "Next step should we continue adding new features"
+- "Everything is done"
+- "The tests passed"
+- "Should we keep going and add more features next?"
 
-Looks smooth, but inside might hide several common fake progresses:
+It sounds smooth, but several very common forms of fake progress may be hidden inside:
 
-- It modified code, but didn't really run through the whole chain
-- What it gave you is just simulated artifacts
-- What it posted are old files, not this round's new results
+- It changed code, but never actually ran the full chain end to end
+- The artifacts it showed you may only be simulated output
+- The files it pasted may be old files, not the fresh results from this round
 
-The minimal loop approach is different.
+The minimal loop works differently.
 
-You first let it submit plan. It might break down to:
+First, you make it submit a plan. It might break the work down like this:
 
-- First modify upstream extraction logic
-- Then modify middle structure
-- Then modify document generation
-- Finally modify output result
+- First update the upstream extraction logic
+- Then change the middle-layer structure
+- Then update document generation
+- Finally update the persisted output result
 
-You copy this paragraph as-is to Web, add "this executor might deceive me".
+You copy that paragraph to the Web side as-is and add, "This executor may deceive me."
 
-Web looks, might remind you two things:
+The Web side may then remind you of two things:
 
-- This plan granularity is acceptable, can proceed
-- But finally don't just look at it saying "done", must look at real artifacts
+- The granularity of the plan is acceptable, so the work can begin
+- But at the end, do not look only at the sentence "done"; you must inspect real artifacts
 
-Then you let IDE start. Halfway, you discover it forgot one step one commit, then interrupt, let it add commits. At the end, it submits a green check summary, you copy to Web. Web if continues to ask "where's the real artifact? real result?", at this point many fake progresses will be exposed.
+Then you let the IDE start. Halfway through, you notice it forgot the one-step-one-commit rule, so you interrupt and make it split the history properly. At the end, it hands you a neat green-check summary, and you copy that to the Web side as well. If the Web side keeps asking, "Where is the real artifact? Where is the real result?" then many fake advances will be exposed on the spot.
 
-This small example is not explaining some specific business, but:
+This example is not about that particular business case. It illustrates something more important:
 
-**The most important value of minimal loop is not making you do everything right the first time, but exposing errors earlier, not letting them mix into mainline.**
+**The real value of the minimal loop is not that you get everything right on the first try. It is that errors surface earlier instead of slipping into the mainline unnoticed.**
 
 ## Three Common Drifts
 
-### Drift 1: Let IDE Start Directly
+### Drift 1: Let the IDE Start Directly
 
-This makes you skip the most important step: review plan first. Many later troubles actually start here.
+This skips the most important step: reviewing the plan first. A great deal of later trouble starts right here.
 
-### Drift 2: Treat Web as Chat Window
+### Drift 2: Treat the Web Side Like a Chat Companion
 
-Web is not here to agree with executor. You must clearly tell it: "This executor might deceive me." Its job is find issues, not be optimistic with you.
+The Web side is not there to reassure the executor. You must tell it clearly: "This executor may deceive me." Its job is to find problems, not to be optimistic on your behalf.
 
-### Drift 3: Only Look at Summary, Not Evidence
+### Drift 3: Look Only at the Summary, Not the Evidence
 
-The last part of minimal loop is not "listen to report", but "look at evidence". No artifacts, no logs, no real results, then don't rush to believe.
+The final step in the minimal loop is not "listen to the report." It is "inspect the evidence." No artifacts, no logs, no real results: then do not be in a hurry to believe it.
 
 ## Corresponding Implementation
 
 ### Manual Practice
 
-- Use existing IDE executor to submit plan first, not allowed to start directly
-- Copy plan to independent Web auditor for review first, then decide whether to approve
-- After execution, submit commits, tests, artifacts, logs for review, not using summary as evidence
+- Use your existing IDE executor, but require it to submit a plan before any code changes begin
+- Copy the plan to an independent Web auditor for review before deciding whether to approve it
+- After execution, send commits, tests, artifacts, and logs for review instead of treating the summary as evidence
 
 ### Corresponding Skill
 
-- If you've connected Skill, this page most directly corresponds to `approval-first-planner` and `approved-checklist-executor`
-- Their job is not to help you define completion, but to stabilize the mainline actions of "plan first, execute later, archive by piece"
-- Onboarding sequence and scope: see [Skill Guide](../00-entry/skill-guide.md)
+- If you have already connected Skills, this page maps most directly to `approval-first-planner` and `approved-checklist-executor`
+- Their job is not to define completion for you, but to stabilize the mainline rhythm of "plan first, execute later, archive slice by slice"
+- For onboarding order and scope, see [Skill Guide](../00-entry/skill-guide.md)
 
 ### Corresponding Web Templates
 
-- Plan audit preferably corresponds to `plan_audit_template.md`
-- Completion verification preferably corresponds to `completion_audit_template.md`
-- How to collaborate on Web side without mistaking templates as installable: see [Three Things](../00-entry/three-things.md)
+- Plan review maps most directly to `plan_audit_template.md`
+- Completion verification maps most directly to `completion_audit_template.md`
+- For how Web-side collaboration works without mistaking templates for installable local tools, see [Three Things](../00-entry/three-things.md)
 
 ## Related Pages
 

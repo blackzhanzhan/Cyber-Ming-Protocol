@@ -9,12 +9,14 @@ This repository lets an IDE executor and a Web auditor self-bootstrap into Cyber
 Bootstrap is not case intake. Role entry comes first; case review comes after bootstrap succeeds.
 Repository law must outrank current-session residue, historical dialogue residue, platform memory, account memory, personalization, and user-profile carryover.
 
-## Modes: Shallow Trial / Deep Onboarding
+## Modes: Recommended / Universal / Deep Onboarding
 
-- Shallow trial: give the repository link plus this file and one role file. No installation required.
-- During shallow trial, treat the GitHub repository link as a remote law source first. Do not `git clone` by default.
-- Deep onboarding: by default this only applies to the IDE executor. If the host supports project or local skill directories, the executor may additionally use `skill/` for more stable execution.
-- The Web auditor still works from the protocol docs and `web-audit-templates/`; it does not require execution-skill installation.
+- Recommended repo-link mode: give the repository link plus this file and one role file. Use this when the host can read GitHub or repo URLs, use `webfetch`, or read the repository in a browser.
+- In recommended mode, treat the GitHub repository link as a remote law source first. Do not `git clone` by default.
+- Universal no-fetch mode: if the host cannot read repo URLs, paste this file and the role file directly. Do not let the agent pretend it already read the repo.
+- Deep onboarding: this mainly applies to the IDE executor. If the host supports project-level skill directories, the executor may try the core three from the current project directory: `global_rules`, `approval-first-planner`, and `approved-checklist-executor`.
+- No host-neutral one-click installation is assumed here. If project-level skills are unsupported, fall back to the manual protocol instead of blocking the task.
+- The Web auditor still works from the protocol docs and `web-audit-templates/`; it does not require local execution-skill installation.
 
 ## If You Are The IDE Executor
 

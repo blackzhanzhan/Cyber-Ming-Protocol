@@ -3,160 +3,160 @@
 ## Table of Contents
 - [What This Page Solves](#what-this-page-solves)
 - [Demo Task 1: Fix a Small Bug](#demo-task-1-fix-a-small-bug)
-- [Demo Task 2: Change UI Copy](#demo-task-2-change-ui-copy)
-- [Three Ways Overview](#three-ways-overview)
-- [Way 1: No Skill, Manual Run](#way-1-no-skill-manual-run)
-- [Way 2: With Skill, More Stable But Notreplace Evidence](#way-2-with-skill-more-stable-but-not-replace-evidence)
-- [Way 3: Web Auditorfixed in Loop](#way-3-web-auditor-fixed-in-loop)
-- [Three Sentences You Shouldimmediately Answer](#three-sentences-you-should-immediately-answer)
+- [Demo Task 2: Revise Some UI Copy](#demo-task-2-revise-some-ui-copy)
+- [Three Ways at a Glance](#three-ways-at-a-glance)
+- [Way 1: No Skill, Run It Manually](#way-1-no-skill-run-it-manually)
+- [Way 2: With Skill, More Stable but Not a Substitute for Evidence](#way-2-with-skill-more-stable-but-not-a-substitute-for-evidence)
+- [Way 3: Keep the Web Auditor in the Loop](#way-3-keep-the-web-auditor-in-the-loop)
+- [Three Things You Should Be Able to Answer Immediately](#three-things-you-should-be-able-to-answer-immediately)
 - [Next Steps](#next-steps)
 
 ## What This Page Solves
 
-Many people still lack the last step: **How do I mentally run throughone round quickly?**
+Many people are only missing the final step: **How do I quickly run one round in my head?**
 
-This page uses two small tasks, 30 seconds to demo three ways:
+This page uses two small tasks to demonstrate three ways in 30 seconds:
 
-- No Skill, manual run
-- With Skill, more stable run
-- How Web auditorfixed in the loop
+- Run it manually without Skill
+- Run it more steadily with Skill
+- Keep the Web auditor inside the loop
 
 ## Demo Task 1: Fix a Small Bug
 
-> Fix a small bug where the settings page doesn't show successhint after save.
+> Fix a small bug where the settings page does not show a success message after saving.
 
-Why this? Because it's small enough, won'tdrag into bigheavy; but real enough, can see how plan, execution, verification connect.
+Why this task? Because it is small enough that it will not turn into a large refactor, but real enough to show how planning, execution, and verification connect.
 
-## Demo Task 2: Change UI Copy
+## Demo Task 2: Revise Some UI Copy
 
-> Make the danger operationsay copy clearer on settings page, and change delete button style to moreof warning state.
+> Make the warning copy for dangerous operations on the settings page clearer, and change the delete button to a more obvious warning state.
 
-Why this? Because it's not bug fix, but common UI/copy, can cover lighter task scenarios.
+Why this task? Because it is not a bug fix. It is a common UI and copy adjustment, so it covers lighter-weight task scenarios.
 
-## Three Ways Overview
+## Three Ways at a Glance
 
-| Way | What You Do First | What It Best Shows | What It's Not Showing |
-|-----|-------------------|-------------------|----------------------|
-| No Skill | Have IDE submit atomic checklist | Protocol can be practiced manually | Can't use without Skill |
-| With Skill | Use skill to stabilize planner/executor rhythm | Skill is enhancer | Skill auto-produces completion fact |
-| Web Audit Fixed in Loop | Give plan to Web first, then decide execute | Audit flow not lost | Web becomes second executor |
+| Way | What You Do First | What It Best Shows | What It Does Not Show |
+|-----|-------------------|--------------------|-----------------------|
+| No Skill | Have the IDE submit an atomic checklist | The protocol can be practiced manually | You cannot use it without Skill |
+| With Skill | Use Skill to stabilize the planner and executor rhythm | Skill is an enhancer | Skill automatically establishes completion facts |
+| Web Auditor in the Loop | Give the plan to Web first, then decide whether to execute | The audit flow does not get lost | The Web side becomes a second executor |
 
-## Way 1: No Skill, Manual Run
+## Way 1: No Skill, Run It Manually
 
-### Step 1: Have Executor Submit Plan, Don't Start Directly
+### Step 1: Make the Executor Submit a Plan Before It Starts
 
-For task 1, you canstraightreconnect say to IDE:
-
-```text
-I want to fix a small bug where settings page doesn't show successhint after save.
-
-Don'tchange code directly first.
-Give me an atomic checklist asdetailed as possible, tell mechange, how to verify.
-```
-
-For task 2:
+For Task 1, you can say this directly to the IDE:
 
 ```text
-I want to make the danger operationsay copy clearer on settings page, and change delete button style to moreof warning state.
+I want to fix a small bug where the settings page does not show a success message after saving.
 
-Don'tchange directly first.
-Tell meyouchange, how to verify, what page result counts as passing.
+Do not change code yet.
+First give me an atomic checklist with as much detail as possible. Tell me what you plan to change and how you will verify it.
 ```
 
-If it can break down to reasonable granularity, that's enough to continue.
-
-### Step 2: Copy Checklist to Web for Review, Then Decide Execute
-
-When plan looks decent, don't immediately let it start, but copy this checklist as-is to Web, add:
+For Task 2:
 
 ```text
-This is executor's plan. This executor might me.
-Pleasefirstlook at: are theremissing steps, is ittoo smooth, what evidence should I look atfinally.
+I want to make the warning copy for dangerous operations on the settings page clearer, and change the delete button to a more obvious warning state.
+
+Do not change anything yet.
+First tell me which places you plan to change, how you will verify them, and what page result counts as passing.
 ```
 
-If Web approves, let executor start; if Web says there are gaps, copy itsfeedback back to executor, let it revise plan and continue this loop.
+If it can break the work into a reasonable level of detail, that is already enough to continue.
 
-### Step 3: After Done, Results and Evidence Back to Web for Verification
+### Step 2: Copy the Checklist to Web for Review Before Deciding Whether to Execute
 
-After done, don't justone sentence "already fixed", but these:
+Once the plan looks solid, do not let the executor start right away. Copy the checklist to Web exactly as it is, then add this:
 
-- Current run test results or regression check results
-- Screenshots, logs, or page results proving problemrealof solved
-- Commits corresponding to this change
+```text
+This is the executor's plan. This executor may deceive me.
+Please check first: are any steps missing, is the plan making things sound too easy, and what evidence should I insist on at the end?
+```
 
-What you're practicing here is actually Cyber-Ming's minimal skeleton: review first, execute second, verify by evidence last. At this point, you haven't installed Skill, but you're already using the protocol.
+If the Web auditor approves it, let the executor start. If the Web auditor says the plan has gaps, copy that feedback back to the executor, have it revise the plan, and continue the loop.
 
-## Way 2: With Skill, More Stable But Notreplace Evidence
+### Step 3: After Execution, Send Results and Evidence Back to Web for Verification
 
-Same task in environment with Skillreconnect, the change is not task magically, but high-frequency actionsmorestable.
+When the executor says it is done, do not accept a single sentence like "already fixed." Ask for these things instead:
 
-### Planner Easier to Submit Right Things
+- Current test results or regression checks
+- Screenshots, logs, or page output that prove the problem is really solved
+- The commits corresponding to this change
 
-Like `approval-first-planner` skill, easier to first task into atomic pieces, boundaries, redlight/greenlight, verification ladder. At this point you less need to manually repeat long prompt.
+What you are practicing here is already Cyber-Ming's minimal loop: approve first, execute second, verify by evidence last. Up to this point you have not installed Skill at all, but you are already using the protocol.
 
-### Executor Easier to Maintain Rhythm
+## Way 2: With Skill, More Stable but Not a Substitute for Evidence
 
-Like `approved-checklist-executor` skill, easier to maintain actions: follow approved pieces, verify first after done, after verify.
+Put the same task into an environment where Skill is already connected and the change is not that the task magically finishes by itself. The change is that high-frequency actions become much more stable.
 
-### But Most Important Thing Didn't Change
+### The Planner Is More Likely to Submit the Right Things First
 
-No matter how stably Skill triggers, youfinally still can't justlook at formatted report.
+Skills like `approval-first-planner` make it much easier to compress a task into atomic slices, boundaries, red lights, green lights, and an acceptance ladder. That means you no longer have to repeat the same long prompt by hand every time.
 
-You still need tolook at:
+### The Executor Is More Likely to Hold the Right Rhythm
 
-- Current run tests or check output
-- Evidence problem really solved
-- Commits corresponding to this state
+Skills like `approved-checklist-executor` make it easier to maintain the rhythm of the protocol: work only on approved slices, verify first, and archive only after verification.
 
-In other words, Skill makes actions more stable, but notreplace evidence.
+### But the Most Important Thing Has Not Changed
 
-## Way 3: Web Auditorfixed in Loop
+No matter how stable the Skill trigger is, you still cannot rely on a nicely formatted report by itself.
 
-This is not optional enhancement, but key to this protocol not losing audit flow even on small tasks.
+You still need to look at:
 
-### What Web Looks at First
+- Current test output or check output
+- Evidence that the problem is truly solved
+- The commits that correspond to this state transition
 
-Firstlook at executor's atomic checklist, and tell it: this executor might me. This way Web won't executor's narrative, but first:
+In other words, Skill makes the actions more stable, but it does not replace evidence.
 
-- Are theremissing steps
-- Are difficultiestoo vague
-- What evidence shouldfinally be looked at
+## Way 3: Keep the Web Auditor in the Loop
 
-### What to Do When Web Doesn't Pass
+This is not an optional upgrade. It is what keeps the audit flow from disappearing even on small tasks.
 
-If Web says plan has gaps, don't skip it, don'tmentally run fix, but copyfeedback as-is back to executor, let it revise plan, then continue next round plan review.
+### What the Web Auditor Looks at First
 
-Thisrealreal reduces is human energy: you don't need toheavynew designprocess, just physical router, copy plan andfeedbackbackback.
+The Web auditor looks at the executor's atomic checklist first, and you explicitly tell it: "This executor may deceive me." That keeps the Web side from following the executor's optimistic story. It checks first for:
 
-### What to Do After Web Passes
+- Missing steps
+- Difficulty that has been smoothed over too much
+- What evidence really has to be reviewed at the end
 
-Web approves, executor checklist execute, verify, commit.
+### What to Do When the Web Auditor Does Not Pass the Plan
 
-Execution complete, youwant copy these materials back to Web:
+If the Web auditor says the plan has gaps, do not skip that result and do not silently fix the plan in your head. Copy the audit feedback back to the executor exactly as it is, have it revise the plan, and continue into the next round of plan review.
 
-- This round's test results, screenshots, logs
-- Corresponding commits
-- Your most risk points
+What this really saves is human energy. You do not have to redesign the whole process every time. You only have to keep acting as the physical router, moving plans and audit feedback back and forth.
 
-For plan audit,first `web-audit-templates/plan_audit_template.md`; for completion audit,first `web-audit-templates/completion_audit_template.md`.
+### What to Do After the Web Auditor Passes the Plan
 
-### What Web Doesn't Do
+Only after the Web auditor approves the plan does the executor execute, verify, and commit according to the checklist.
 
-What it really shouldn't do:
+After execution is complete, you still need to send these materials back to the Web auditor:
 
-- Don'tforyoucontinue write code
-- Don'tfor executor expand requirements
-- Don'trely on summarystraightreconnect approve
+- The test results, screenshots, and logs from this round
+- The corresponding commits
+- The risk points you personally distrust the most
 
-Its job is independent review, not second executor.
+For plan review, start with `web-audit-templates/plan_audit_template.md`. For completion review, start with `web-audit-templates/completion_audit_template.md`.
 
-## Three Sentences You Shouldimmediately Answer
+### What the Web Auditor Does Not Do
 
-1. **No Skill, can also runone round Cyber-Ming.**
-2. **With Skill, makes actions more stable, but notreplace evidence.**
-3. **No matter how small the task, atomic checklistfirst Web review; not passthenback executor revise plan, pass execute commit, results and evidencewantback Web verify.**
+The important thing is what it should not do:
+
+- It does not keep writing code for you
+- It does not casually expand the requirements on behalf of the executor
+- It does not approve work based only on a summary
+
+Its job is independent review, not becoming a second executor.
+
+## Three Things You Should Be Able to Answer Immediately
+
+1. **You can run a round of Cyber-Ming even without Skill.**
+2. **Skill makes the actions more stable, but it does not replace evidence.**
+3. **No matter how small the task is, the atomic checklist goes to the Web auditor first. If it does not pass, route it back to the executor for revision. Only after it passes do you execute and commit, and then the results and evidence go back to the Web auditor for verification.**
 
 ## Next Steps
 
-- If you haven't whether to install Skill, continuelook at [Skill Guide](skill-guide.md)
-- If you want to this demochange to more formal minimal loop, go back to [Minimal Loop](../02-how/minimal-loop.md)
+- If you have not decided whether to install Skill, continue with [Skill Guide](skill-guide.md)
+- If you want to turn this demo into a more formal minimal loop, go back to [Minimal Loop](../02-how/minimal-loop.md)

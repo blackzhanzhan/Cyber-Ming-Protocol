@@ -9,6 +9,28 @@
 
 > 面向 AI coding 深水区的人机协作治理协议。
 
+这是一套让 IDE 执行位先交原子清单、Web 审计位独立复核、人类居中裁决的深水区 AI coding 协议。
+
+### 快速启动
+
+推荐版：适合能读取 GitHub / repo 链接、支持 `webfetch`、或能在浏览器里直接阅读仓库的 agent。
+
+```text
+你是执行位（严嵩）。
+仓库：https://github.com/blackzhanzhan/Cyber-Ming-Protocol
+先读 `BOOTSTRAP.md` 与 `bootstrap/ide-executor.md`；先交原子清单与边界，不要先改代码。
+```
+
+```text
+你是审计位（徐阶）。
+仓库：https://github.com/blackzhanzhan/Cyber-Ming-Protocol
+先读 `BOOTSTRAP.md` 与 `bootstrap/web-auditor.md`；当前只做自举，不审案；只审方案与证据。
+```
+
+[`推荐版完整版`](wiki/00-开始这里与落地形态/复制即用提示词包.md#repo-link-mode) | [`万能版`](wiki/00-开始这里与落地形态/复制即用提示词包.md#universal-mode) | [`项目目录 Skill 试用词`](wiki/00-开始这里与落地形态/复制即用提示词包.md#skill-trial) | [`下一步`](BOOTSTRAP.md)
+
+## 理念与说明
+
 ### 它能解决什么问题
 
 AI coding 进入深水区，四个问题最致命：
@@ -108,26 +130,11 @@ graph TD
 
 ### 快速开始
 
-**建议先读完 Wiki 最小闭环再开始。** 最快启动方式：打开你的 IDE 和 Web，直接复制下面两段话给他们。
+完整版启动词、万能版、Skill 试用词、以及执行位 / 审计位跑偏时的一键纠偏词，都集中在这里：[`复制即用提示词包`](wiki/00-开始这里与落地形态/复制即用提示词包.md)
 
-```text
-你是执行位（严嵩）。
-仓库：https://github.com/blackzhanzhan/Cyber-Ming-Protocol
-仓库中已经有自举流程。请尽快进入你的角色，并按仓库路由开始工作。
-浅尝试默认不 git clone，先把仓库链接当远程法统来源来读。
-```
+如果你只想看授位流程与边界，直接看 [`BOOTSTRAP.md`](BOOTSTRAP.md)。
 
-```text
-你是审计位（徐阶）。
-仓库：https://github.com/blackzhanzhan/Cyber-Ming-Protocol
-当前阶段仅为自举入场，不是审案。
-仓库中已经有自举流程；仓库法统优先于当前会话、历史对话、平台记忆。
-第一轮只允许确认你的角色、先读顺序、职责边界和什么算入场成功。
-如果你发现自己似乎认识我、记得旧案卷，这应视为污染信号，不得继续审案。
-完成后等待我发送本轮案卷材料。
-```
-
-**由于模型能力有差异，这个授位不能保证 agent 立刻严格守住角色边界。** 已经观察到有模型会先承认"开工前先交清单"，但真正收到需求后仍直接写代码。所以你必须理解手工做法的流程，才知道何时该打断、为什么该打断。
+**模型能力有差异，所以授位成功不等于角色边界一定会被立即守住。** 如果执行位没先交原子清单就开工，或审计位开始代替执行，请直接回到提示词包里复制对应纠偏词，不要自己临场重写规则。
 
 ### Wiki 导航
 
@@ -142,6 +149,7 @@ graph TD
 **一句话逐篇导航：**
 
 **00-入口：**
+- [复制即用提示词包](wiki/00-开始这里与落地形态/复制即用提示词包.md)：推荐版、万能版、Skill 试用词、异常纠偏词一页拿全
 - [三者关系](wiki/00-开始这里与落地形态/协议、Skill-与-Web-审计模板：三者关系.md)：协议、Skill、Web模板各是什么，别混为一谈
 - [自举入场](wiki/00-开始这里与落地形态/让执行位与审计位自举入场.md)：把仓库链接给执行位和审计位，让它们自己读法统入场
 - [30 秒最小示例](wiki/00-开始这里与落地形态/30-秒最小示例.md)：用两个小任务 30 秒脑补完一轮怎么跑
@@ -205,98 +213,116 @@ graph TD
 
 > A human-AI governance protocol for deep-water AI coding.
 
+This is a protocol for deep-water AI coding in which the IDE executor submits an atomic checklist first, the Web auditor reviews independently, and the human stays in the center as the final arbiter.
+
+### Quick Start
+
+Recommended mode: use this if your agent can read GitHub or repo URLs, use `webfetch`, or read the repository in a browser.
+
+```text
+You are the executor (Yan Song).
+Repo: https://github.com/blackzhanzhan/Cyber-Ming-Protocol
+First read `BOOTSTRAP.md` and `bootstrap/ide-executor.md`; submit the atomic checklist and boundaries first; do not edit code yet.
+```
+
+```text
+You are the auditor (Xu Jie).
+Repo: https://github.com/blackzhanzhan/Cyber-Ming-Protocol
+First read `BOOTSTRAP.md` and `bootstrap/web-auditor.md`; this round is bootstrap only, not case review; audit plans and evidence only.
+```
+
+[Full Recommended Mode](wiki-en/00-entry/prompt-pack.md#repo-link-mode) | [Universal Mode](wiki-en/00-entry/prompt-pack.md#universal-mode) | [Project-level Skill Trial](wiki-en/00-entry/prompt-pack.md#skill-trial) | [Next](BOOTSTRAP.md)
+
+## Why It Exists
+
 ### What Problems Does It Solve
 
-When AI coding enters deep water, four problems are fatal:
+When AI coding enters deep water, four failures become fatal:
 
-- **Pseudo-completion**: Looks done, but it's just a summary
-- **Black-box distortion**: Agent covers structural problems with patches and rhetoric
-- **Context decay**: Long conversations make the window untrustworthy
-- **Refactoring loss**: Humans gradually lose the ability to understand, rollback, and take over
+- **Pseudo-completion**: it looks done, but only the summary is done
+- **Black-box distortion**: the agent hides structural problems behind patches and rhetoric
+- **Context decay**: after a long conversation, the window stops being trustworthy
+- **Refactoring loss**: humans gradually lose the handles needed to understand, recover, and take over the system
 
-This protocol doesn't outsource sovereignty. It puts AI back in a position that's governable, interruptible, auditable, and renewable.
+This protocol does not outsource sovereignty. It puts AI back into a position that is governable, interruptible, auditable, and renewable.
 
 ### Who Is It For
 
-**Type 1: People dragged by the black box.**
+**Type 1: People being dragged around by the black box.**
 
-AI writes faster and faster. You understand less and less. You can't tell what it changed. The project spins out of control. You want control back.
+AI writes faster and faster. You understand less and less. You can no longer say clearly what it changed. The project becomes harder and harder to control. You want control back.
 
-**Type 2: People who used spec-driven / workflow for deep-water tasks and felt suffocated.**
+**Type 2: People who already tried spec-driven or workflow governance in deep water and felt suffocated.**
 
-You tried spec-driven or workflow seriously. Now you feel like you're maintaining specs instead of shipping products. The process is frozen. Flexibility is gone.
+You used spec-driven or workflow seriously, and then started feeling that you were maintaining the spec instead of making the product. The process froze. Flexibility disappeared.
 
 ### What It Is
 
-**Methodology + Tools. The core is methodology.**
+**Methodology + tools. The core is the methodology.**
 
-You can have no tools, but not no methodology. It's not workflow. It's not spec-driven. It's not agent team.
+You can do without the tools. You cannot do without the methodology. It is not workflow. It is not spec-driven. It is not agent team.
 
 They share one judgment: deep-water tasks need governance.
 They diverge on one point: human sovereignty cannot be outsourced.
 
-- Workflow freezes process into templates; it requires reviewing the plan each time
-- Spec treats the spec as truth; it requires physical evidence for completion
-- Agent team lets agents collaborate in shared context; it requires humans in the middle, and the auditor can't see the code
+- Workflow freezes process into templates; this protocol requires every round to go through plan review before execution
+- Spec-driven treats the spec as truth; this protocol requires independent audit and physical evidence before completion counts
+- Agent team lets agents collaborate inside a shared engineering context; this protocol separates the executor and auditor and keeps the human as the only cross-system physical router
 
 See [How it differs from workflow, spec-driven, and agent team](wiki-en/00-entry/comparison.md).
 
-It transforms AI coding from black-box execution into layered governance: approval, execution, audit, renewal.
+It turns AI coding from black-box pushing into layered governance: approval, execution, audit, and renewal.
 
-- Protocol: A governable methodology you can learn and practice by hand
-- Skill: Stable triggers for high-frequency actions (optional)
-- Web Audit Templates: Audit skeletons for the Web side (optional)
+- Protocol: the governance protocol you can learn directly and practice by hand
+- Skill: stable triggers for high-frequency moves on the IDE side (optional)
+- Web Audit Templates: audit collaboration skeletons for the Web side (optional)
 
-### Cultural Context
+### It Is Also Fun
 
-This protocol uses a governance metaphor from history: **the ruler governs through ministers who check each other.**
+The auditor becomes Xu Jie, the executor becomes Yan Song, and you become the sovereign who keeps both of them in check.
 
-- **Executor (Chief Minister)**: Carries out your orders. Historically powerful, but can deceive.
-- **Auditor (Inspector)**: Reviews independently. Historically the rival who checks and balances.
-- **You (Sovereign)**: The final judge. You govern by keeping them at odds.
+Writing code starts to feel like an imperial governance campaign. They report upward, speak in role, and treat your prompt as the edict.
 
-This isn't cosplay. It's a governance pattern that makes high-friction workflows worth sustaining. The role division is easier to internalize than "IDE agent" and "Web agent."
+But this is not only for fun. The role narrative provides execution fuel: it makes people more willing to keep practicing a high-friction protocol over the long term instead of sliding back into the comfort of one-click generation.
 
-You don't have to use this skin. The underlying protocol doesn't depend on role names. What's irreplaceable is: role separation, evidence closure, sovereignty in human hands.
-
-**Details: [Why the narrative can be execution fuel](wiki-en/04-evidence/execution-fuel.md)**
+**See [Why the Imperial Coding narrative can become execution fuel](wiki-en/04-evidence/execution-fuel.md).**
 
 ### Fast and Stable in Deep Water
 
-Fast, not because you let AI run wild. Stable, not because you watch every step.
+Fast does not come from letting AI run wild. Stable does not come from having a human manually stare at every step.
 
-Real speed and stability come from knowing why it's fast, why it's stable.
+Real speed and stability come from knowing why it is fast and why it is stable.
 
-- **Fast**: Pulse enfeoffment turns waiting time into governance time. High governance doesn't mean low throughput.
-- **Stable**: Chronicles leave recoverable history. White-box reconciliation nails down completion facts.
-- **Not panicking**: When windows decay, there's a renewal mechanism. When cognitive debt accumulates, there's a repayment path.
+- **Fast**: pulse enfeoffment turns waiting time into governance time. High governance does not have to mean low throughput.
+- **Stable**: chronicles leave recoverable history, and white-box reconciliation nails down completion facts.
+- **Not panicking**: when windows decay, there is a renewal mechanism; when cognitive debt accumulates, there is a repayment path.
 
-You're not betting AI won't make mistakes. You're ensuring you can catch them when they do.
+You are not betting that AI will never fail. You are building the system so that when it fails, you can still catch it.
 
-> Not making AI infallible, but catching it when it fails.
-> Not making the system fast, but seeing clearly when it runs fast.
-> Not preventing window decay, but knowing how to break and reconnect.
+> It is not about making AI infallible, but about being able to catch it when it fails.
+> It is not about making the system fast, but about still seeing clearly while it runs fast.
+> It is not about preventing window decay forever, but about knowing how to cut and reconnect when decay arrives.
 
-**Details:**
+**See also:**
 - [Pulse Enfeoffment](wiki-en/03-deep-water/pulse-enfeoffment.md)
 - [Seven Stars Renewal](wiki-en/03-deep-water/seven-stars-renewal.md)
 - [Cognitive Debt](wiki-en/03-deep-water/cognitive-debt.md)
 
 ### Minimal Loop
 
-Core: The IDE executor and Web auditor operate in completely different contexts. The executor can see code. The auditor cannot. Humans are the only physical router for information. The two sides cannot communicate privately.
+Core principle: the IDE executor and the Web auditor live in completely different contexts. The executor can see the code. The auditor cannot. The human is the only physical router of information. The two sides do not pass messages privately.
 
-**Reason: [Dual-track Isolation Audit](wiki-en/03-deep-water/dual-track-audit.md)**
+**Why: [Dual-track Isolation Audit and Human-Centered Sovereignty](wiki-en/03-deep-water/dual-track-audit.md)**
 
 ```mermaid
 graph TD
     A[Requirement] --> B[IDE Executor Submits Plan]
-    B --> C[Human Copies to Web Auditor]
+    B --> C[Human Copies Plan to Web Auditor]
     C --> D{Web Auditor Approves?}
     D -->|No| E[Feedback Revision]
     E --> B
     D -->|Yes| F[IDE Executor Executes]
-    F --> G[Submit Evidence]
+    F --> G[Submit Evidence Packet]
     G --> H[Web Auditor Verifies]
     H --> I{Verification Passes?}
     I -->|No| J[Feedback Issues]
@@ -304,96 +330,82 @@ graph TD
     I -->|Yes| K[Done]
 ```
 
-**Details: [Minimal Loop and Core Rituals](wiki-en/02-how/minimal-loop.md)**
+**Methodology: [Minimal Loop](wiki-en/02-how/minimal-loop.md)**
 
 ### Quick Start
 
-**Read the Wiki minimal loop first.** Fastest way: open your IDE and Web, paste these two prompts.
+The full startup prompts, the universal fallback, the project-level Skill trial prompt, and the one-copy correction prompts all live here: [Prompt Pack](wiki-en/00-entry/prompt-pack.md)
 
-```text
-You are the executor (Chief Minister).
-Repo: https://github.com/blackzhanzhan/Cyber-Ming-Protocol
-The repo already has a bootstrap process. Enter your role and follow the repo routing.
-For shallow trial, don't git clone by default. Read the repo link as remote law source first.
-```
+If you only want the role gate and routing rules, go straight to [BOOTSTRAP.md](BOOTSTRAP.md).
 
-```text
-You are the auditor (Inspector).
-Repo: https://github.com/blackzhanzhan/Cyber-Ming-Protocol
-Current phase is bootstrap entry, not case review.
-The repo already has a bootstrap process. Repo law outranks current session, history, platform memory.
-First round: only confirm your role, reading order, responsibilities, and what counts as successful entry.
-If you seem to recognize me, remember old cases, or know anything not provided this round, treat it as contamination. Don't continue.
-After done, wait for me to send case materials.
-```
-
-**Model capabilities vary. This onboarding doesn't guarantee the agent will strictly maintain role boundaries.** Some models first admit "I'll submit a checklist" then directly write code when given requirements. You must understand the manual workflow to know when and why to interrupt.
+**Model capabilities vary, so successful role assignment does not guarantee that the boundary will be obeyed immediately.** If the executor starts coding before submitting the atomic checklist, or the auditor slides into implementation, go back to the prompt pack and copy the matching correction prompt instead of rewriting the rules by hand.
 
 ### Wiki Navigation
 
 | Module | What It Solves |
 |--------|----------------|
-| [00-Entry](wiki/00-开始这里与落地形态/) | What are the three things, how to onboard, 30-second demo, Skill installation |
-| [01-Why](wiki/01-哲学与坐标/) | Why AI coding is first a governance problem, not a technical one |
-| [02-How](wiki/02-最小闭环与核心礼法/) | How to run the first loop, what rituals pull the system back to auditable state |
-| [03-Deep Water](wiki/03-治理扩展、吞吐补偿与边界/) | When the system gets deep: renewal, enfeoffment, cognitive debt |
-| [04-Evidence](wiki/04-战报与样本/) | Sanitized evidence: how pseudo-completion was caught, how high governance stays fast |
+| [00-Entry](wiki-en/00-entry/) | What the three pieces are, how to bootstrap the roles, how to run a 30-second round, and when to install Skill |
+| [01-Why](wiki-en/01-why/) | Why AI coding is first a governance problem, not merely a technical problem |
+| [02-How](wiki-en/02-how/) | How to run your first loop and which core rituals pull the system back into an auditable state |
+| [03-Deep Water](wiki-en/03-deep-water/) | How to keep ruling after the system gets deep: renewal, enfeoffment, and cognitive debt |
+| [04-Evidence](wiki-en/04-evidence/) | Sanitized evidence: how pseudo-completion gets exposed, and how high governance can still stay fast |
 
-**One-line navigation:**
+**One-line guide to the pages:**
 
 **00-Entry:**
-- [Three Things](wiki-en/00-entry/three-things.md): Protocol, Skill, Web template — what each is
-- [Bootstrap](wiki-en/00-entry/bootstrap.md): Give repo link to executor and auditor, let them self-bootstrap
-- [30-Second Demo](wiki-en/00-entry/30-second-demo.md): Two small tasks to mentally run through in 30 seconds
-- [Skill Guide](wiki-en/00-entry/skill-guide.md): When to install, how to install, common pitfalls
-- [Comparison](wiki-en/00-entry/comparison.md): How it relates to methods you already know
+- [Prompt Pack](wiki-en/00-entry/prompt-pack.md): the recommended mode, universal mode, Skill trial prompt, and correction prompts in one place
+- [Three Things](wiki-en/00-entry/three-things.md): what the protocol, Skill, and Web audit templates each are
+- [Bootstrap](wiki-en/00-entry/bootstrap.md): give the repo link to the executor and auditor and let them bootstrap themselves in
+- [30-Second Demo](wiki-en/00-entry/30-second-demo.md): use two small tasks to mentally run one whole round in 30 seconds
+- [Skill Guide](wiki-en/00-entry/skill-guide.md): when to install Skill, how to install it, and the common pitfalls
+- [Comparison](wiki-en/00-entry/comparison.md): how this protocol relates to the methods you already know
 
 **01-Why:**
-- [CS vs Management](wiki-en/01-why/cs-vs-management.md): Developer position has changed, no longer pure coder
-- [Dual Distortion](wiki-en/01-why/dual-distortion.md): Technical and governance distortion always appear together
-- [Methodology Coordinates](wiki-en/01-why/methodology-coordinates.md): Where this protocol stands in the public world
+- [CS vs Management](wiki-en/01-why/cs-vs-management.md): the developer's position has changed and is no longer that of a pure coder
+- [Dual Distortion](wiki-en/01-why/dual-distortion.md): why technical distortion and governance distortion keep appearing together
+- [Methodology Coordinates](wiki-en/01-why/methodology-coordinates.md): where this protocol stands in the public landscape
 
 **02-How:**
 - [Minimal Loop](wiki-en/02-how/minimal-loop.md): Start here for your first run
-- [Atomic Checklist & Chronicles](wiki-en/02-how/atomic-checklist-chronicles.md): How detailed the plan should be, how to record history
-- [White-box Reconciliation](wiki-en/02-how/white-box-reconciliation.md): Saying done ≠ done, check evidence
-- [Scout Mechanism](wiki-en/02-how/scout-mechanism.md): When uncertain, scout first, don't pretend to understand
+- [Atomic Checklist and Chronicles](wiki-en/02-how/atomic-checklist-chronicles.md): how detailed the plan needs to be, and how history should be preserved
+- [White-box Reconciliation](wiki-en/02-how/white-box-reconciliation.md): saying "done" does not make it done; check the evidence
+- [Scout Mechanism](wiki-en/02-how/scout-mechanism.md): when uncertain, probe first instead of pretending to understand
 
 **03-Deep Water:**
-- [Dual-track Audit](wiki-en/03-deep-water/dual-track-audit.md): IDE executor and Web auditor must separate, human routes between
-- [Seven Stars Renewal](wiki-en/03-deep-water/seven-stars-renewal.md): When windows decay, how to break and reconnect
-- [Cognitive Debt](wiki-en/03-deep-water/cognitive-debt.md): When understanding can't keep up with system changes
-- [Pulse Enfeoffment](wiki-en/03-deep-water/pulse-enfeoffment.md): High governance ≠ low throughput
-- [Worktree Enfeoffment](wiki-en/03-deep-water/worktree-enfeoffment.md): Team collaboration without dirtying mainline
-- [Boundaries](wiki-en/03-deep-water/boundaries.md): What battles this protocol hasn't won yet
-- [From Coder to Governor](wiki-en/03-deep-water/coder-to-governor.md): What capabilities this protocol requires
+- [Dual-track Audit](wiki-en/03-deep-water/dual-track-audit.md): the IDE executor and the Web auditor must stay separate, with humans routing between them
+- [Seven Stars Renewal](wiki-en/03-deep-water/seven-stars-renewal.md): how to cut and reconnect when windows decay
+- [Cognitive Debt](wiki-en/03-deep-water/cognitive-debt.md): what to do when understanding falls behind system change
+- [Pulse Enfeoffment](wiki-en/03-deep-water/pulse-enfeoffment.md): high governance does not have to mean low throughput
+- [Worktree Enfeoffment](wiki-en/03-deep-water/worktree-enfeoffment.md): how teams collaborate without polluting mainline
+- [Boundaries](wiki-en/03-deep-water/boundaries.md): which battlefields this protocol still has not won
+- [From Coder to Governor](wiki-en/03-deep-water/coder-to-governor.md): what capabilities this protocol asks of the developer
 
 **04-Evidence:**
-- [Battle Report 1](wiki-en/04-evidence/battle-report-1.md): A complete reversal process
-- [Chronicles Sample](wiki-en/04-evidence/chronicles-sample.md): Three system leaps in one day under high governance
-- [Execution Fuel](wiki-en/04-evidence/execution-fuel.md): Why people willing to execute high-friction protocols long-term
+- [Battle Report 1](wiki-en/04-evidence/battle-report-1.md): a full reversal from pseudo-completion to real acceptance
+- [Chronicles Sample](wiki-en/04-evidence/chronicles-sample.md): three system transitions in one day under high governance
+- [Execution Fuel](wiki-en/04-evidence/execution-fuel.md): why people stay willing to execute a high-friction protocol over time
 
 > Code is territory. Sovereignty cannot be outsourced.
 
 ### Why Open Source
 
-This protocol isn't for selling courses, tools, or frameworks.
+This protocol is not for selling courses, tools, or frameworks.
 
-The problem it solves, every deep-water developer will eventually face: AI writes faster, humans understand less, projects spin out of control. I don't want this problem solved only by "using a bigger black box to govern the black box."
+The problem it addresses is one every deep-water developer will eventually meet: AI writes faster, humans understand less, and projects slip further and further out of control. I do not want the only answer to be "use a bigger black box to govern the black box."
 
-So I open-sourced it. You can take one or two principles, or adopt it fully. You can challenge, improve, fork. That's why it's on GitHub: **the value of a protocol lies not in being obeyed, but in being tested.**
+So I chose to open-source it. You can take one or two principles from it, or adopt it whole. You can question it, improve it, and fork it. That is exactly why it is on GitHub: **the value of a protocol lies not in being obeyed, but in being tested.**
 
 ### Philosophy of Water
 
-I don't require everyone, every scenario, to fully follow this protocol.
+I do not expect every person in every scenario to copy the whole protocol unchanged.
 
-You can take one or two principles that are truly useful and integrate them into your workflow. For example, just "review the plan before starting" already reduces pseudo-completion.
+You can absolutely take one or two principles that are genuinely useful and fold them into your own development habits. For example, simply requiring plan review before execution already cuts down a great deal of pseudo-completion.
 
-But this doesn't mean the protocol has no bones. Its core spirit includes:
+But that does not mean the protocol has no bones. Its core spirit includes at least these:
 
-- **Sovereignty in hand**: Humans are the judges, not processes or systems
-- **Role separation**: Executor and auditor must separate
-- **Evidence first**: Completion requires physical evidence, not summaries
-- **Anti-pseudo-completion**: Looking done ≠ done
+- **Sovereignty in hand**: the human is the judge, not the process or the system
+- **Role separation**: the executor and auditor must remain separate
+- **Evidence first**: completion stands on physical evidence, not on closing statements
+- **Anti-pseudo-completion**: looking done is not the same as being done
 
-Water has no fixed form, but water has direction.
+Water has no fixed form, but water still has a direction.

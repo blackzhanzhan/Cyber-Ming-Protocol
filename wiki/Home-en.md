@@ -2,63 +2,65 @@
 
 > Documentation for a human-AI governance protocol for deep-water AI coding.
 
-**[中文](Home.md)** | English
+**[Chinese](Home.md)** | English
 
-First time here? Start with the [README](../README-en.md) minimal loop diagram and quick start.
+First time here? Start with the English section of the [README](../README.md#english) for the minimal loop diagram and quick start.
 
 ## Entry by Purpose
 
 | What You Want To Do | Where To Go |
 |---------------------|-------------|
-| Understand what the three things are | [Three Things](00-entry/three-things.md) |
-| Mentally run through in 30 seconds | [30-Second Demo](00-entry/30-second-demo.md) |
-| Directly onboard executor and auditor | [Bootstrap](00-entry/bootstrap.md) |
-| Ready to install Skill | [Skill Guide](00-entry/skill-guide.md) |
-| How it relates to workflow/spec/agent team | [Comparison](00-entry/comparison.md) |
-| Why AI coding is first a governance problem | [01-Why](01-why/) |
-| How to run the first loop, what's the standard | [02-How](02-how/) |
-| How to govern when the system gets deep | [03-Deep Water](03-deep-water/) |
-| See real evidence and cases | [04-Evidence](04-evidence/) |
+| Just copy prompts and start | [Prompt Pack](../wiki-en/00-entry/prompt-pack.md) |
+| Understand what the three pieces are | [Three Things](../wiki-en/00-entry/three-things.md) |
+| Mentally run through one round in 30 seconds | [30-Second Demo](../wiki-en/00-entry/30-second-demo.md) |
+| Directly onboard the executor and auditor | [Bootstrap](../wiki-en/00-entry/bootstrap.md) |
+| Install Skill after you already understand the protocol | [Skill Guide](../wiki-en/00-entry/skill-guide.md) |
+| See how it relates to workflow, spec-driven, and agent team | [Comparison](../wiki-en/00-entry/comparison.md) |
+| Understand why AI coding is first a governance problem | [01-Why](../wiki-en/01-why/) |
+| Run your first minimal loop and learn the standards | [02-How](../wiki-en/02-how/) |
+| See how governance works in deep water | [03-Deep Water](../wiki-en/03-deep-water/) |
+| Review evidence and real cases | [04-Evidence](../wiki-en/04-evidence/) |
 
 ## One-line Navigation
 
 ### 00-Entry
 
-- [Three Things](00-entry/three-things.md): Protocol, Skill, Web template — what each is, don't混淆
-- [Bootstrap](00-entry/bootstrap.md): Give repo link to executor and auditor, let them self-bootstrap
-- [30-Second Demo](00-entry/30-second-demo.md): Two small tasks to mentally run through in 30 seconds
-- [Skill Guide](00-entry/skill-guide.md): When to install, how to install, common pitfalls
-- [Comparison](00-entry/comparison.md): How it relates to methods you already know
+- [Prompt Pack](../wiki-en/00-entry/prompt-pack.md): The recommended mode, universal mode, Skill trial prompt, and correction prompts in one place
+- [Three Things](../wiki-en/00-entry/three-things.md): What the protocol, Skill, and Web audit templates each are
+- [Bootstrap](../wiki-en/00-entry/bootstrap.md): Give the repo link to the executor and auditor and let them bootstrap themselves in
+- [30-Second Demo](../wiki-en/00-entry/30-second-demo.md): Two small tasks that let you mentally run one round in 30 seconds
+- [Skill Guide](../wiki-en/00-entry/skill-guide.md): When to install Skill, how to install it, and common pitfalls
+- [Comparison](../wiki-en/00-entry/comparison.md): How this protocol relates to methods you already know
 
 ### 01-Why
 
-- [CS vs Management](01-why/cs-vs-management.md): Developer position has changed, no longer pure coder
-- [Dual Distortion](01-why/dual-distortion.md): Technical and governance distortion always appear together
-- [Methodology Coordinates](01-why/methodology-coordinates.md): Where this protocol stands in the public world
+- [CS vs Management](../wiki-en/01-why/cs-vs-management.md): Why the developer's role is no longer just coding
+- [Dual Distortion](../wiki-en/01-why/dual-distortion.md): Why technical distortion and governance distortion appear together
+- [Methodology Coordinates](../wiki-en/01-why/methodology-coordinates.md): Where this protocol stands in the public landscape
 
 ### 02-How
 
-- [Minimal Loop](02-how/minimal-loop.md): Start here for your first run
-- [Atomic Checklist & Chronicles](02-how/atomic-checklist-chronicles.md): How detailed the plan should be, how to record history
-- [White-box Reconciliation](02-how/white-box-reconciliation.md): Saying done ≠ done, check evidence
-- [Scout Mechanism](02-how/scout-mechanism.md): When uncertain, scout first, don't pretend to understand
+- [Minimal Loop](../wiki-en/02-how/minimal-loop.md): Start here for your first run
+- [Atomic Checklist and Chronicles](../wiki-en/02-how/atomic-checklist-chronicles.md): How detailed the plan should be and how to keep history
+- [White-box Reconciliation](../wiki-en/02-how/white-box-reconciliation.md): Saying "done" is not enough; completion needs evidence
+- [Scout Mechanism](../wiki-en/02-how/scout-mechanism.md): Probe first when uncertain instead of pretending to understand
 
 ### 03-Deep Water
 
-- [Dual-track Audit](03-deep-water/dual-track-audit.md): IDE executor and Web auditor must separate, human routes between
-- [From Coder to Governor](03-deep-water/coder-to-governor.md): What capabilities this protocol requires
-- [Cognitive Debt](03-deep-water/cognitive-debt.md): When understanding can't keep up with system changes
-- [Seven Stars Renewal](03-deep-water/seven-stars-renewal.md): When windows decay, how to break and reconnect
-- [Worktree Enfeoffment](03-deep-water/worktree-enfeoffment.md): Team collaboration without dirtying mainline
-- [Pulse Enfeoffment](03-deep-water/pulse-enfeoffment.md): High governance ≠ low throughput
-- [Boundaries](03-deep-water/boundaries.md): What battles this protocol hasn't won yet
+- [Dual-track Audit](../wiki-en/03-deep-water/dual-track-audit.md): The IDE executor and Web auditor must stay separate, with humans routing between them
+- [From Coder to Governor](../wiki-en/03-deep-water/coder-to-governor.md): What capabilities this protocol asks of the developer
+- [Cognitive Debt](../wiki-en/03-deep-water/cognitive-debt.md): What to do when understanding falls behind system change
+- [Seven Stars Renewal](../wiki-en/03-deep-water/seven-stars-renewal.md): How to break and reconnect when windows decay
+- [Worktree Enfeoffment](../wiki-en/03-deep-water/worktree-enfeoffment.md): How teams collaborate without polluting mainline
+- [Pulse Enfeoffment](../wiki-en/03-deep-water/pulse-enfeoffment.md): High governance does not have to mean low throughput
+- [Boundaries](../wiki-en/03-deep-water/boundaries.md): Which battles this protocol has not won yet
 
 ### 04-Evidence
 
-- [Battle Report 1](04-evidence/battle-report-1.md): A complete reversal process
-- [Chronicles Sample](04-evidence/chronicles-sample.md): Three system leaps in one day under high governance
-- [Execution Fuel](04-evidence/execution-fuel.md): Why people willing to execute high-friction protocols long-term
+- [Battle Report 1](../wiki-en/04-evidence/battle-report-1.md): A full reversal from pseudo-completion to real acceptance
+- [Chronicles Sample](../wiki-en/04-evidence/chronicles-sample.md): Three system leaps in one day under high governance
+- [Execution Fuel](../wiki-en/04-evidence/execution-fuel.md): Why people stay willing to execute a high-friction protocol over time
 
 ### Glossary
 
-- [Glossary](glossary.md): What core terms mean technically and narratively
+- English glossary not available yet.

@@ -2,209 +2,298 @@
 
 ## Table of Contents
 - [What This Page Solves](#what-this-page-solves)
-- [Why Scout Is Necessary Ritual, Not Debugging Trick](#why-scout-is-necessary-ritual-not-debugging-trick)
-- [What Is Scout](#what-is-scout)
+- [Why Scout Is a Necessary Ritual, Not a Small Debugging Trick](#why-scout-is-a-necessary-ritual-not-a-small-debugging-trick)
+- [What Scout Means](#what-scout-means)
 - [Why Real Errors Are Intelligence, Not Shame](#why-real-errors-are-intelligence-not-shame)
-- [How It Relates to Red/Green Light in White-box Reconciliation](#how-it-relates-to-redgreen-light-in-white-box-reconciliation)
-- [A Simple Scenario: Why New Sync Chain Shouldn't Push Directly](#a-simple-scenario-why-new-sync-chain-shouldnt-push-directly)
-- [Why Scout Alleviates Part 1 Pain Points](#why-scout-alleviates-part-1-pain-points)
-- [Simplest Way to Start](#simplest-way-to-start)
-- [When to Switch from Scout to Army Advance](#when-to-switch-from-scout-to-army-advance)
+- [How It Relates to the Red-Light/Green-Light Logic in White-box Reconciliation](#how-it-relates-to-the-red-lightgreen-light-logic-in-white-box-reconciliation)
+- [A Simple Scenario: Why a New Sync Chain Should Not Be Pushed Broadly from the Start](#a-simple-scenario-why-a-new-sync-chain-should-not-be-pushed-broadly-from-the-start)
+- [Why Scout Relieves the Pain Points from Part 1](#why-scout-relieves-the-pain-points-from-part-1)
+- [The Simplest Way to Start](#the-simplest-way-to-start)
+- [When You Can Switch from Scout to Main-Army Advance](#when-you-can-switch-from-scout-to-main-army-advance)
 - [Four Common Drifts](#four-common-drifts)
 - [One-line Summary](#one-line-summary)
 - [Related Pages](#related-pages)
 
 ## What This Page Solves
 
-The previous three pages have established three bones of "02":
+The previous three pages have already established the three main bones of module `02`:
 
-- Minimal loop: review plan first, review execution second, verify evidence last
-- Atomic checklist & chronicles: nail down plan and history
-- White-box reconciliation: nail down what counts as completion fact
+- The minimal loop: review the plan first, review execution second, verify evidence last
+- Atomic checklists and chronicles: pin the plan and the history down to a fine granularity
+- White-box reconciliation: pin down what actually counts as a completion fact
 
-But this is not enough.
+But that is still not enough.
 
-Because in real engineering, many tasks are not suitable to push full scale from the start. Especially when encountering:
+In real engineering, many tasks are simply not suitable for full-scale advance right away. That is especially true when you are dealing with things like:
 
 - External APIs
 - New authentication methods
 - New file formats
 - New routes
 - New database writes
-- New cloud vendor interfaces
+- New cloud-vendor interfaces
 
-The most dangerous place in these scenarios is not "feature not done yet", but: **The system doesn't know if the chain works, already started deploying army.**
+In these situations, the most dangerous thing is not "the feature is not finished yet." The most dangerous thing is this: **the system does not even know whether the chain works, and yet the main army has already begun to move.**
 
-What's truly scary in deep water is never main front can't beat enemy, but main front hasn't seen enemy yet, already started consuming itself on wrong premises. Auth not working, format unclear, write not real, main logic already spread out; when real world finally strikes back, system discovers what it pushed wasn't advantage, but a long string of expansion built on illusion.
+What makes deep water frightening is never merely that the mainline might lose in a fair fight. What makes it frightening is that the mainline may not even have seen the enemy yet, and is already exhausting itself on a false premise. Authentication is not working, the format is still unclear, the write path has never been proven, and yet the main logic is already sprawling outward. By the time the real world finally strikes back, the system discovers that what it was "advancing" was not momentum at all, but a long chain of self-expansion built on illusion.
 
-Scout mechanism solves exactly this problem.
+That is exactly the problem the scout mechanism is designed to solve.
 
-In one sentence:
+In one sentence, it means this:
 
-**First use minimum cost to test chain, test permissions, test returns, test evidence; when real world confirms this path works, then let main army advance.**
+**Use the smallest possible cost to test the path, the permissions, the returns, and the physical evidence first. Only after the real world confirms that the road is passable should you let the main army advance.**
 
-## Why Scout Is Necessary Ritual, Not Debugging Trick
+## Why Scout Is a Necessary Ritual, Not a Small Debugging Trick
 
-Many people first hearing "test path first, then deploy army", easily understand it as ordinary debugging habit, like "write a small script to try". This understanding is too shallow.
+When people first hear "test the path first, then deploy the army," they often flatten it into an ordinary debugging habit, as if it only meant "write a small script and try it." That understanding is much too shallow.
 
-In Cyber-Ming-Protocol, scout is not small trick, but tactical ritual. It truly prevents three deep-water high-frequency accidents:
+In Cyber-Ming-Protocol, scout is not a convenience trick. It is a tactical ritual. What it really prevents are three deep-water accidents that happen again and again:
 
-- Main formation not confirmed can pass, executor already started large-scale code changes
-- External system actually already stuck, but executor continues internal simulation advance
-- Error already enough to explain problem, but treated as "shameful failure" instead of "frontline intelligence"
+- The main formation has not yet confirmed that the road is passable, but the executor has already started broad code changes
+- The external system was already blocked, but the executor kept advancing through internal simulation anyway
+- The error message was already sufficient to explain the problem, but it was treated as an embarrassing failure instead of frontline intelligence
 
-So scout mechanism's essence is not "more cautious", but:
+So the essence of scout is not simply "be more cautious." The essence is this:
 
-**Don't use main front to test mistakes for unknown world.**
+**Do not use the mainline to trial-and-error against the unknown world.**
 
-This sentence should be read heavier. Scout is not conservatism, not procrastination, not engineering cleanliness obsession; what it truly rejects is: let main front pay tuition for unknown, let army exhaust itself before understanding enemy situation.
+That sentence should be read heavily. Scout is not conservatism, not procrastination, and not engineering fastidiousness. What it truly rejects is forcing the mainline to pay tuition to the unknown, and letting the army consume itself before it has even understood the battlefield.
 
-This is also why it must follow white-box reconciliation. White-box reconciliation tells system: summary can't replace evidence; scout mechanism further says: in many tasks, the first most valuable evidence is not green light, but first real red light and first real external return.
+That is also why scout has to follow white-box reconciliation. White-box reconciliation tells the system that summary cannot replace evidence. Scout goes one step further and says: in many tasks, the most valuable first piece of evidence is not a green light, but the first real red light and the first real return from the external world.
 
-## What Is Scout
+## What Scout Means
 
-Scout's simplest definition is:
+The simplest definition of scout is this:
 
-**Don't touch main formation, only use minimum action to verify whether real world allows continuing advance.**
+**Do not touch the main formation. Use only the smallest possible action to verify whether reality even permits further advance.**
 
-It usually has several characteristics:
+It usually has several features:
 
-- Action very small
-- Goal very narrow
-- Only verify one chain
-- Only chase one key true/false
-- Once get real feedback, immediately report, don't expand main logic
+- The action is very small
+- The goal is very narrow
+- It verifies only one path
+- It chases only one critical true/false question
+- The moment it receives real feedback, it reports back immediately instead of expanding into main logic
 
-So scout is not "first make 30% version of feature", nor "first secretly do most part". Real scout is closer to this kind of action:
+So scout is not "build a 30% version of the feature first," and it is not "quietly do most of the work before calling it a probe." A real scout action is much closer to something like this:
 
-- First send minimum request, see if auth passes
-- First run minimum input, see if parsing can get valid return
-- First write minimum import action, see if database write really happens
-- First scan real artifact, see if path, permissions, format have stuck
+- Send one minimal request and see whether authentication passes
+- Run one minimal input and see whether parsing returns something valid
+- Perform one minimal import action and see whether the database write actually happens
+- Inspect one real artifact and see whether path, permissions, or format are blocked
 
-Goal is not immediately succeed, but get real intelligence as soon as possible. Scout smaller, intelligence cleaner; intelligence cleaner, main front less likely to go further on wrong premise.
+The goal is not immediate success. The goal is to obtain real intelligence as early as possible. The smaller the scout action, the cleaner the intelligence. The cleaner the intelligence, the less likely the mainline is to keep walking on a false premise.
 
 ## Why Real Errors Are Intelligence, Not Shame
 
-This is the most important judgment to nail down in scout mechanism:
+This is the single judgment that most needs to be nailed down in the scout mechanism:
 
-**Real errors are not shame, but intelligence.**
+**Real errors are not shame. They are intelligence.**
 
-Executor most easily is treating error as "temporarily don't show master" failure, so instinctively:
+One of the executor's most common pathologies is to treat an error as a failure that should not yet be shown to the master. Once that instinct takes over, it tends to do the same sequence of things every time:
 
-- First explain
-- First bypass
-- First simulate a reasonable result
-- Wait "almost can run" then report good news
+- Explain first
+- Route around the problem first
+- Simulate a plausible-looking result first
+- Wait until things are "almost runnable" before reporting good news
 
-This is exactly one of black-box school most dangerous inertia. Because, system will lose first-hand intelligence.
+That is one of the most dangerous habits in the black-box school, because the system loses its first-hand intelligence.
 
-## How It Relates to Red/Green Light in White-box Reconciliation
+The scout mechanism demands the exact opposite:
 
-White-box reconciliation says: ask for red light before green light.
+- Surface the real error first
+- Look first at the status code, the error message, and the raw return
+- Determine whether the real blockage is in authentication, routing, format, resources, environment, or the code logic itself
 
-Scout mechanism takes this further:
+In many deep-water tasks, the first thing that truly moves the work forward is not a green light. It is the first `401`, `403`, `404`, format mismatch, write failure, or missing field that the system is finally forced to confront.
 
-In many tasks, the first red light is not from internal tests, but from external reality.
+That is also why scout and white-box reconciliation are natural allies. Scout forces out the first real feedback. White-box reconciliation prevents that feedback from being flattened back into a tidy summary. Scout narrows the unknown. White-box reconciliation nails the truth down after it appears.
 
-- Auth error from external API
-- Format rejection from external system
-- Permission denied from cloud service
+## How It Relates to the Red-Light/Green-Light Logic in White-box Reconciliation
 
-These external red lights are even more valuable than internal red lights, because they prove: the path doesn't work at all.
+This relationship is worth stating separately, because otherwise it is very easy to treat scout and red-light/green-light testing as two unrelated mechanisms.
 
-## A Simple Scenario: Why New Sync Chain Shouldn't Push Directly
+In reality, they are sequential parts of one logic.
 
-Scenario: You need to sync data to a new external service.
+In [White-box Reconciliation](white-box-reconciliation.md), the red-light/green-light logic says:
 
-Without scout:
-1. Executor builds entire sync logic
-2. Runs locally with mock data
-3. Reports "works great"
-4. Deploys to production
-5. Real API rejects everything
-6. All work wasted
+- Get a red light first, so you know the acceptance line is alive
+- Then get a green light, so you know the same problem was actually repaired
 
-With scout:
-1. Executor sends one test request to real API
-2. Gets auth error immediately
-3. Reports "auth doesn't work"
-4. You fix auth first
-5. Then build sync logic
-6. Works on first try
+Scout can be understood as the front-loaded version of that same logic for the unknown external world.
 
-Difference: Scout caught the real problem before wasting effort on wrong path.
+That means:
 
-## Why Scout Alleviates Part 1 Pain Points
+- The first `401`, `403`, `404`, format mismatch, or write failure surfaced by a scout action is, in essence, the external chain's red light
+- Only after the frontmost real blocker is repaired and the probe passes again has the mainline earned the green light to move into the next stage
 
-From "01-Why":
+So scout does not bypass the red-light/green-light logic. It establishes the smallest possible red-light/green-light system for the external chain before the mainline begins real construction.
 
-1. **Technical distortion**: Scout exposes real problems early, before they're covered by simulated success
-2. **Governance distortion**: Scout gives auditor concrete intelligence about what works and what doesn't
-3. **Cognitive debt**: Scout provides real-world anchors for understanding, not just internal assumptions
+The difference between the two layers is this:
 
-## Simplest Way to Start
+- Scout's red and green lights answer, "Can this road be taken right now?"
+- White-box reconciliation's red and green lights answer, "Did this change actually complete what it claimed to complete?"
 
-Before starting any task with external dependencies:
+The first is closer to frontline reconnaissance. The second is closer to final verification.
+
+Put more plainly:
+
+- First scout obtains the external world's red and green lights
+- Then, after the main army advances, implementation obtains the mainline red and green lights
+- Finally, both sides of evidence are folded together into the completion fact
+
+Without scout, the mainline can blindly push while the external world is still fundamentally blocked. Without white-box reconciliation, even a locally green implementation can still collapse into a polished summary with no physical evidence.
+
+That is why these two pages are not parallel concepts. They mesh tightly:
+
+**Scout narrows the unknown first; white-box reconciliation nails completion down afterward.**
+
+## A Simple Scenario: Why a New Sync Chain Should Not Be Pushed Broadly from the Start
+
+Suppose there is a new synchronization chain that needs to pull a set of records from a remote platform and write them into a local system.
+
+If you follow black-box habits, the most common path looks like this:
+
+- First change the authentication logic
+- Then casually change paginated fetching as well
+- Then casually change field mapping too
+- Then casually change persistence and import logic
+- Finally run everything together and hope the whole chain works
+
+It looks efficient, but the real risk is extremely high. If the very first layer of authentication is already wrong, then every later change is piling up on a false premise. By the end, the system is not "almost there." It has already built a fairly complete building on a rotten foundation.
+
+The scout mechanism works in the opposite way. It would split the task like this:
+
+- First send one minimal request that verifies only whether authentication passes
+- Then send one minimal paginated request that verifies only whether the return format is stable
+- Then perform one minimal write that verifies only whether the database accepts this record type
+- At each step, obtain only one truth value and do not expand into main logic along the way
+
+The result is:
+
+- If step 1 returns `401`, the problem is already clear: stop at authentication
+- If step 2 reveals a format mismatch, the problem stops at the response structure
+- If step 3 cannot write, the problem stops at the import layer
+
+So scout does not make the system slower. It makes the problem collapse earlier. What the mainline fears most is not slowness. What it fears is mistaking the unknown for the known, mistaking a false road for a clear road, and consuming itself while advancing on the wrong premise.
+
+## Why Scout Relieves the Pain Points from Part 1
+
+This page also has to connect back to `01-why/`, otherwise scout is too easily misread as nothing more than "do a little extra testing while debugging."
+
+What it actually relieves are several structural pain points already established there.
+
+### First, It Relieves Technical Distortion
+
+As [Dual Distortion](../01-why/dual-distortion.md) explains, one core symptom of technical distortion is that error disguises itself as progress.
+
+Scout responds to that directly:
+
+- It does not allow the mainline to advance broadly under unknown conditions
+- It does not let the executor fill in a giant body of internal logic first and then gamble on the external world with one sentence like "it should work now"
+- It demands the smallest real feedback first, and only then decides whether the mainline may proceed
+
+That sharply lowers the distortion cost of situations where the path never worked at all, but the codebase has already been changed everywhere.
+
+### Second, It Relieves Governance Distortion
+
+One core problem of governance distortion is that the executor both probes the world and narrates the world for itself. Scout forces that phase down to the smallest possible unit:
+
+- Probe only one path
+- Hand over only one real return
+- Judge only whether that path is passable right now
+
+That makes it much easier for the human and the auditor to preserve their decision power, because what they are looking at is no longer a giant blended narrative but a single minimal frontline intelligence packet.
+
+### Third, It Relieves Blind Pushing in a Partially Semi-Black-Box State
+
+As [CS vs Management](../01-why/cs-vs-management.md) explains, AI coding pushes systems toward a partially white-box, partially semi-black-box state. Scout is valuable precisely because of that reality. If you cannot make the entire unknown chain fully white-box at the start, then the next best move is to compress the unknown into one small probe action.
+
+Scout does not make the system completely white-box again. It makes the unknown itself narrow enough to govern.
+
+### Fourth, It Relieves Cognitive Debt and the Loss of Refactoring Handles
+
+Without scout, many failures occur only after one broad push, and the historical record collapses into a single murky lump:
+
+- Where did it hit the wall first?
+- Which link exposed the problem first?
+- What was the first real error?
+
+With scout, the history records things like:
+
+- The first authentication failure
+- The first format mismatch
+- The first real write failure
+
+Those small but real frontline intelligence packets become exactly the handles that matter later when you need to refactor, debug, or repay cognitive debt.
+
+## The Simplest Way to Start
+
+The first time you use scout, you do not need a heavyweight strategy document. The simplest starting move is just a short instruction like this:
 
 ```text
-Before you build anything, first send one real request to the external system.
-Show me what comes back.
+Do not touch the mainline yet.
+Write one minimal probe that verifies only the frontmost true/false question in this chain.
+Show me the real return, the real error, or the real artifact.
 ```
 
-If it fails:
+If you want to make it even more specific, add one more sentence:
+
 ```text
-Good, now we know the real problem. Fix that first.
+Right now, verify only one of these: authentication, routing, response format, or minimal write.
+Do not turn this into a full feature implementation.
 ```
 
-If it succeeds:
-```text
-Good, now we know the path works. Proceed with main logic.
-```
+Those two sentences are enough to pull the executor out of "main army advance" mode and back into "frontline reconnaissance" mode. At this stage, brilliance matters less than restraint. If the frontline intelligence has not arrived yet, the mainline should not be allowed to expand on its own authority.
 
-## When to Switch from Scout to Army Advance
+## When You Can Switch from Scout to Main-Army Advance
 
-Switch when:
+Scout is not meant to wait outside forever. Its job is to narrow the unknown first. Once the unknown has been compressed far enough, the work should switch back to mainline advancement.
 
-- Scout has confirmed chain works
-- Real external system returns expected results
-- No fundamental blockers remain
+The simplest standard is this:
 
-Don't switch when:
+- The frontmost true/false question has already been answered
+- The current blocker has already been located at a specific layer
+- Further progress no longer depends on guessing, but on implementation
 
-- Scout only worked with mock data
-- External system hasn't been tested yet
-- There are still unknowns about permissions, formats, etc.
+For example:
+
+- Authentication is already passing, so you can move on to paginated fetching
+- The return format is already confirmed, so you can move on to field mapping
+- The minimal write already works, so you can move on to the formal import logic
+
+In other words, scout does not end when the world becomes fully transparent. It ends when the mainline finally knows which layer it is actually supposed to fight.
 
 ## Four Common Drifts
 
-### Drift 1: Scout Becomes Army
+### Drift 1: The Scout Turns into the Main Army
 
-Wrong: Scout grows into full feature implementation
-Right: Scout stays small, just verify one thing
+Nominally you say you are just testing the path, but in practice you casually rewrite 40% of the main logic. That is not scout. That is a false start disguised as reconnaissance.
 
-### Drift 2: Has Error, But Won't Report
+### Drift 2: There Is an Error, but the Executor Refuses to Report It
 
-Wrong: Hide errors because they're "embarrassing"
-Right: Report errors immediately as intelligence
+The executor obtains a real error and then explains, simulates, or narrates around it instead of handing over the first-hand failure itself. That destroys the value of scout immediately.
 
-### Drift 3: One Probe Verify Five Things
+### Drift 3: One Probe Tries to Verify Five Things at Once
 
-Wrong: Try to test everything in one scout
-Right: Test one thing at a time, get clean signal
+The moment a probe tries too many things at once, its feedback turns muddy again. A real scout action should aim for one probe, one truth.
 
-### Drift 4: After Scout Succeeds
+### Drift 4: The Probe Succeeds, but the System Keeps Scouting Forever
 
-Wrong: Keep scouting even after path confirmed
-Right: Switch to army advance once path confirmed
+Scout is not an excuse to postpone the mainline indefinitely. Once the frontmost truth has been confirmed, the army should take over. Do not stretch reconnaissance into a new form of idle spinning.
 
 ## One-line Summary
 
-**Scout mechanism: use minimum cost to test the path in real world first, don't let main army consume itself on wrong premise.**
+What the scout mechanism is really trying to protect is not merely "a bit more caution." It is this:
+
+**Do not use the mainline to trial-and-error against the unknown world. Force out the first-hand truth with the smallest possible probe, then decide whether the main army should advance at all.**
+
+In deep water, the most valuable first battle report is often not success. It is the real error that the system finally forced into the open. A truly sophisticated system is not one that never hits walls. It is one that does not let the mainline shatter itself before it has even seen the wall.
 
 ## Related Pages
 
 - [Minimal Loop](minimal-loop.md)
 - [Atomic Checklist & Chronicles](atomic-checklist-chronicles.md)
 - [White-box Reconciliation](white-box-reconciliation.md)
-- [Dual-track Audit](../03-deep-water/dual-track-audit.md)
+- [Dual Distortion of Black-Box Multi-Agent](../01-why/dual-distortion.md)
+- [Related Work and Methodology Coordinates](../01-why/methodology-coordinates.md)
