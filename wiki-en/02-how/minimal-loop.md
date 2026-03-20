@@ -30,29 +30,33 @@ The point of this method is not to make work complicated. The point is to stop t
 
 The minimal loop is:
 
-**Have the IDE submit a plan first, copy the plan to the Web side for review; only after it passes should execution begin, and the final decision must still be based on evidence.**
+**First make the IDE hand its plan to the human, then let the human route that plan to the Web side for review; the auditor only returns judgment, the human decides whether execution is granted, and the human also decides whether a completion fact stands.**
 
 If this is your first time, getting this single line running is enough.
 
 ## Diagram First
 
+This is not an agent-team collaboration diagram. It is a dual-track governance diagram centered on the human.
+
 ```mermaid
 flowchart TD
-    A[Give the IDE a requirement] --> B[IDE submits a plan first<br/>Do not modify code right away]
-    B --> C[Copy the IDE response to the Web side]
-    C --> D{Does the Web side trust the plan?}
-    D -- No --> E[Copy the Web feedback back to the IDE<br/>Have it revise the plan]
-    E --> B
-    D -- Yes --> F[IDE starts executing]
-    F --> G[Human watches the execution<br/>Interrupt if something looks wrong]
-    G --> H[IDE summarizes commits, tests, and artifacts]
-    H --> I[Copy the result to the Web side for verification]
-    I --> J{Does this count as a completion fact?}
-    J -- No --> E
-    J -- Yes --> K[This loop is complete]
+    A[The requirement enters the human hub] --> B[The human sends it to the IDE executor<br/>Submit a plan first, do not implement yet]
+    B --> C[The IDE returns the atomic checklist and boundaries<br/>to the human]
+    C --> D[The human routes the plan to the Web auditor]
+    D --> E[The Web auditor returns audit judgment<br/>to the human]
+    E --> F{Does the human grant execution?}
+    F -- No --> G[The human routes the feedback back to the IDE<br/>and requires replanning]
+    G --> B
+    F -- Yes --> H[The human orders the IDE executor to implement]
+    H --> I[The IDE returns commits, tests, and evidence<br/>to the human]
+    I --> J[The human routes the evidence to the Web auditor]
+    J --> K[The Web auditor returns verification judgment<br/>to the human]
+    K --> L{Does the human confirm a completion fact?}
+    L -- No --> G
+    L -- Yes --> M[This loop stands]
 ```
 
-If that diagram already makes sense to you, jump straight to the version that is best for a first attempt: the one-audit version.
+If that diagram already makes sense to you, jump straight to the version that is best for a first attempt: the one-audit version. The most important thing to keep in mind is not “the Web side passed it,” but “the Web side only returns judgment; the human still grants execution and the human still rules on completion.”
 
 ## One-Audit Version: Start Here
 

@@ -48,25 +48,27 @@
 
 ### 最小闭环
 
-核心：IDE 执行位和 Web 审计位所处上下文完全不同。执行位能看到代码，审计位看不到。人类是信息传递的唯一物理路由，两者不能私下传话。
+核心：这不是 agent team 自动协作图，而是人类居中的双轨隔离治理图。IDE 执行位和 Web 审计位所处上下文完全不同，不能私下传话；审计位只给判断，人类才准奏，人类也才终裁。
 
 ```mermaid
 graph TD
-    A[需求] --> B[IDE执行位交方案]
-    B --> C[人类复制给Web审计位]
-    C --> D{Web审计位通过?}
-    D -->|否| E[反馈修改意见]
-    E --> B
-    D -->|是| F[IDE执行位施工]
-    F --> G[提交证据]
-    G --> H[Web审计位验收]
-    H --> I{验收通过?}
-    I -->|否| J[反馈问题]
-    J --> F
-    I -->|是| K[完成]
+    A[需求进入人类中枢] --> B[人类发给IDE执行位: 先交方案]
+    B --> C[IDE执行位回交原子清单与边界]
+    C --> D[人类送Web审计位审方案]
+    D --> E[Web审计位回送审计意见]
+    E --> F{人类准奏执行?}
+    F -->|否| G[人类打回IDE重交方案]
+    G --> B
+    F -->|是| H[人类命IDE按准奏方案施工]
+    H --> I[IDE执行位回交证据包]
+    I --> J[人类送Web审计位验收]
+    J --> K[Web审计位回送验收意见]
+    K --> L{人类确认完成事实?}
+    L -->|否| G
+    L -->|是| M[本轮闭环成立]
 ```
 
-详细方法论见 [`最小闭环`](wiki/02-最小闭环与核心礼法/最小闭环：一次审计版与多次审计版.md)。
+详细方法论见 [`最小闭环`](wiki/02-最小闭环与核心礼法/最小闭环：一次审计版与多次审计版.md)。看图时只记住一句：Web 不直接放行施工，Web 只回判断；真正放行与成立完成事实，都在人类手里。
 
 ## 理念与说明
 
@@ -259,25 +261,27 @@ First read `BOOTSTRAP.md` and `bootstrap/web-auditor.md`; this round is bootstra
 
 ### Minimal Loop
 
-Core principle: the IDE executor and the Web auditor live in completely different contexts. The executor can see the code. The auditor cannot. The human is the only physical router of information. The two sides do not pass messages privately.
+Core principle: this is not an agent-team collaboration diagram. It is a dual-track governance loop centered on the human. The IDE executor and the Web auditor live in different contexts and do not pass messages privately; the auditor only returns judgment, while the human grants execution and the human also makes the final ruling.
 
 ```mermaid
 graph TD
-    A[Requirement] --> B[IDE Executor Submits Plan]
-    B --> C[Human Copies Plan to Web Auditor]
-    C --> D{Web Auditor Approves?}
-    D -->|No| E[Feedback Revision]
-    E --> B
-    D -->|Yes| F[IDE Executor Executes]
-    F --> G[Submit Evidence Packet]
-    G --> H[Web Auditor Verifies]
-    H --> I{Verification Passes?}
-    I -->|No| J[Feedback Issues]
-    J --> F
-    I -->|Yes| K[Done]
+    A[Requirement Enters the Human Hub] --> B[Human sends it to the IDE executor: submit a plan first]
+    B --> C[IDE executor returns the atomic checklist and boundaries]
+    C --> D[Human routes the plan to the Web auditor]
+    D --> E[Web auditor returns audit judgment]
+    E --> F{Does the human grant execution?}
+    F -->|No| G[Human routes it back to the IDE for replanning]
+    G --> B
+    F -->|Yes| H[Human orders the IDE executor to implement]
+    H --> I[IDE executor returns the evidence packet]
+    I --> J[Human routes the evidence to the Web auditor]
+    J --> K[Web auditor returns verification judgment]
+    K --> L{Does the human confirm a completion fact?}
+    L -->|No| G
+    L -->|Yes| M[This loop stands]
 ```
 
-Methodology: [Minimal Loop](wiki-en/02-how/minimal-loop.md)
+Methodology: [Minimal Loop](wiki-en/02-how/minimal-loop.md). Read the diagram with one rule in mind: the Web side does not directly release implementation; it only returns judgment, and the human remains the sovereign router and final arbiter.
 
 ## Why It Exists
 
