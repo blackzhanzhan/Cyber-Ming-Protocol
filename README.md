@@ -17,8 +17,7 @@
 
 推荐版适合能读取 GitHub / repo 链接、支持 `webfetch`、或能在浏览器里直接阅读仓库的 agent。
 
-<details>
-<summary>复制执行位推荐版</summary>
+执行位推荐版：
 
 ```text
 你是执行位（严嵩）。
@@ -26,18 +25,13 @@
 先读 `BOOTSTRAP.md` 与 `bootstrap/ide-executor.md`；先交原子清单与边界，不要先改代码。
 ```
 
- </details>
-
-<details>
-<summary>复制审计位推荐版</summary>
+审计位推荐版：
 
 ```text
 你是审计位（徐阶）。
 仓库：https://github.com/blackzhanzhan/Cyber-Ming-Protocol
 先读 `BOOTSTRAP.md` 与 `bootstrap/web-auditor.md`；当前只做自举，不审案；只审方案与证据。
 ```
-
- </details>
 
 ### 选入口
 
@@ -230,8 +224,7 @@ This is a protocol for deep-water AI coding in which the IDE executor submits an
 
 Recommended mode: use this if your agent can read GitHub or repo URLs, use `webfetch`, or read the repository in a browser.
 
-<details>
-<summary>Copy Recommended Executor Prompt</summary>
+Recommended executor prompt:
 
 ```text
 You are the executor (Yan Song).
@@ -239,18 +232,13 @@ Repo: https://github.com/blackzhanzhan/Cyber-Ming-Protocol
 First read `BOOTSTRAP.md` and `bootstrap/ide-executor.md`; submit the atomic checklist and boundaries first; do not edit code yet.
 ```
 
- </details>
-
-<details>
-<summary>Copy Recommended Auditor Prompt</summary>
+Recommended auditor prompt:
 
 ```text
 You are the auditor (Xu Jie).
 Repo: https://github.com/blackzhanzhan/Cyber-Ming-Protocol
 First read `BOOTSTRAP.md` and `bootstrap/web-auditor.md`; this round is bootstrap only, not case review; audit plans and evidence only.
 ```
-
- </details>
 
 ### Pick Your Path
 
