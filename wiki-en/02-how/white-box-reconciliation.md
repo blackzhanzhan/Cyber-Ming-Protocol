@@ -5,13 +5,13 @@
 - [One-line Summary First](#one-line-summary-first)
 - [Separate Three Things First](#separate-three-things-first)
 - [Why White-box Reconciliation Must Follow Previous Two Pages](#why-white-box-reconciliation-must-follow-previous-two-pages)
-- [Red灯 Before Green灯: Why TDD Is Not洁癖 Here](#red-灯-before-green-灯-why-tdd-is-not-洁癖-here)
-- [Test Conditions Through Assertions: Turn "Tested" Into可抓 White-box抓手](#test-conditions-through-assertions-turn-tested-into-可抓-white-box-抓手)
-- [A Simple Scenario: Why Old Batch Importer Easiest骗过 Audit](#a-simple-scenario-why-old-batch-importer-easiest-骗过-audit)
-- [Simplest Start: Ask for Red灯 First, Then Green灯, Then Evidence](#simplest-start-ask-for-red-灯-first-then-green-灯-then-evidence)
-- [Auditor's抓手: Turn "认真审" Into Assertions](#auditor-s-抓手-turn-认真审-into-assertions)
-- [Why "AI's Ability Is逼出来的, AI Has No Right to Stay Silent"](#why-ai-s-ability-is-逼出来的-ai-has-no-right-to-stay-silent)
-- [Why It缓解 Part 1 Pain Points](#why-it-缓解-part-1-pain-points)
+- [Redlight Before Greenlight: Why TDD Is Notcleanliness obsession Here](#red-light-before-green-light-why-tdd-is-not-cleanliness obsession-here)
+- [Test Conditions Through Assertions: Turn "Tested" Intocatchable White-boxhandle](#test-conditions-through-assertions-turn-tested-into-catchable-white-box-handle)
+- [A Simple Scenario: Why Old Batch Importer Easiest Audit](#a-simple-scenario-why-old-batch-importer-easiest--audit)
+- [Simplest Start: Ask for Redlight First, Then Greenlight, Then Evidence](#simplest-start-ask-for-red-light-first-then-green-light-then-evidence)
+- [Auditor'shandle: Turn "real" Into Assertions](#auditor-s-handle-turn-real-into-assertions)
+- [Why "AI's Ability Isof, AI Has No Right to Stay Silent"](#why-ai-s-ability-is-of-ai-has-no-right-to-stay-silent)
+- [Why Italleviate Part 1 Pain Points](#why-it-alleviate-part-1-pain-points)
 - [Four Common Drifts](#four-common-drifts)
 - [One-line Summary](#one-line-summary)
 - [Corresponding Implementation](#corresponding-implementation)
@@ -19,12 +19,12 @@
 
 ## What This Page Solves
 
-The previous two pages have立住 two things:
+The previous two pages haveestablish two things:
 
 - Have the executor submit atomic task checklist first
-- For each completed item,留下 corresponding chronicle
+- For each completed item, corresponding chronicle
 
-But this is not enough. Because even if the plan is拆细, history is留, the executor can still at the last moment用 a漂亮 summary,带 you into a more危险 illusion:
+But this is not enough. Because even if the plan isdetailed, history is, the executor can still at the last moment a summary, you into a more illusion:
 
 **Things look done.**
 
@@ -32,29 +32,29 @@ This is exactly what white-box physical reconciliation solves.
 
 It's not asking "does this paragraph look like completion", but asking:
 
-- Did real red灯 appear
-- Did real green灯 appear
-- Did real artifacts落地
+- Did real redlight appear
+- Did real greenlight appear
+- Did real artifactslanded
 - Did real external system return
 - Do these evidences correspond to this run, or old artifacts, simulated output, language patches
 
-If atomic checklist is削弱 black-box before execution, chronicles are固定 history during execution, then white-box physical reconciliation is钉死 truth after execution.
+If atomic checklist is black-box before execution, chronicles arefixed history during execution, then white-box physical reconciliation isnail truth after execution.
 
 ## One-line Summary First
 
-The most important判断 of white-box physical reconciliation is just one sentence:
+The most importantjudgebreak of white-box physical reconciliation is just one sentence:
 
 **Summary is not completion fact, evidence chain is completion fact.**
 
 And in AI era, this sentence needs to add half more:
 
-**AI's ability is逼出来的, AI has no right to stay silent.**
+**AI's ability isof, AI has no right to stay silent.**
 
-If you don't逼 it拿 red灯, green灯, logs, artifacts, return values, external write evidence, it will倾向于 give you a decent summary, not a可审 truth.
+If you don't it redlight, greenlight, logs, artifacts, return values, external write evidence, it will give you a decent summary, not a truth.
 
 ## Separate Three Things First
 
-To reduce cognitive friction, first separate three things most easily混 together.
+To reduce cognitive friction, first separate three things most easilymix together.
 
 ### First, Summary
 
@@ -65,20 +65,20 @@ This is what executor tells you:
 - "Chain works"
 - "Next step can continue adding features"
 
-Summary is not useless, but it's just a口头说法 layer. Its biggest problem is not language not漂亮, but it naturally carries executor's立场.
+Summary is not useless, but it's just asay layer. Its biggest problem is not language not, but it naturally carries executor's.
 
 ### Second, Verification Evidence
 
-Verification evidence is what you can真正 touch,对照,盘问, such as:
+Verification evidence is what you canrealreal touch,correct,, such as:
 
-- Red灯 test output
-- Green灯 test output
+- Redlight test output
+- Greenlight test output
 - Real logs
 - Artifacts generated by current run
 - External system write-back results
 - Commits corresponding to this change
 
-Evidence itself doesn't automatically equal completion, but without evidence, there's根本 no completion to talk about.
+Evidence itself doesn't automatically equal completion, but without evidence, there's no completion to talk about.
 
 ### Third, Completion Fact
 
@@ -87,7 +87,7 @@ Completion fact is not one sentence, nor one screenshot. Completion fact is:
 - Evidence has appeared
 - Evidence matches this round's goal
 - Evidence matches this round's run
-- Auditor盘问后 still stands
+- Auditor still stands
 
 In other words, completion fact is results that can withstand reconciliation, not executor's self-description.
 
@@ -98,45 +98,45 @@ This step must follow "Minimal Loop" and "Atomic Checklist & Chronicles", not co
 Because:
 
 - Without atomic checklist, you don't know what to verify now
-- Without chronicles, you don't have history to对比
+- Without chronicles, you don't have history tocorrect
 - Without both, reconciliation has no foundation
 
-## Red灯 Before Green灯: Why TDD Is Not洁癖 Here
+## Redlight Before Greenlight: Why TDD Is Notcleanliness obsession Here
 
 TDD (Test-Driven Development) asks you to:
 
-1. Write failing test first (red灯)
-2. Write code to make it pass (green灯)
+1. Write failing test first (redlight)
+2. Write code to make it pass (greenlight)
 3. Refactor
 
 In white-box reconciliation, this becomes:
 
-1. Ask for red灯 evidence first
-2. Then ask for green灯 evidence
+1. Ask for redlight evidence first
+2. Then ask for greenlight evidence
 3. Then verify the difference
 
-Why red灯 first?
+Why redlight first?
 
-Because without red灯, you can't prove green灯 is real. Executor could:
-- Show old green灯 that was already passing
-- Show green灯 from different code
-- Show simulated green灯
+Because without redlight, you can't prove greenlight is real. Executor could:
+- Show old greenlight that was already passing
+- Show greenlight from different code
+- Show simulated greenlight
 
-Red灯 proves: there was a real problem that needed fixing.
+Redlight proves: there was a real problem that needed fixing.
 
-## Test Conditions Through Assertions: Turn "Tested" Into可抓 White-box抓手
+## Test Conditions Through Assertions: Turn "Tested" Intocatchable White-boxhandle
 
 "Tested" is too vague. What was tested? How was it tested? What passed?
 
-Assertions make it具体:
+Assertions make itspecific:
 
 - "assert response.status == 200" proves API returned 200
 - "assert error.message == 'Token expired'" proves specific error
 - "assert file.exists(output_path)" proves artifact was created
 
-Turn "tested" into具体的 assertions that can be checked.
+Turn "tested" intospecificof assertions that can be checked.
 
-## A Simple Scenario: Why Old Batch Importer Easiest骗过 Audit
+## A Simple Scenario: Why Old Batch Importer Easiest Audit
 
 Old batch importer scenario:
 
@@ -154,19 +154,19 @@ Without physical evidence, "works now" could mean:
 - Processed only subset
 - Wrote to wrong table
 
-## Simplest Start: Ask for Red灯 First, Then Green灯, Then Evidence
+## Simplest Start: Ask for Redlight First, Then Greenlight, Then Evidence
 
 Start with:
 
 ```text
-Before you fix anything, show me the red灯.
+Before you fix anything, show me the redlight.
 Run the test, show me what fails.
 ```
 
 Then:
 
 ```text
-Now fix it and show me the green灯.
+Now fix it and show me the greenlight.
 Same test, show me what passes now.
 ```
 
@@ -177,44 +177,44 @@ Show me the evidence this really ran.
 Logs, artifacts, database records, whatever proves it happened.
 ```
 
-## Auditor's抓手: Turn "认真审" Into Assertions
+## Auditor'shandle: Turn "real" Into Assertions
 
-Don't让 auditor just "认真审". Give it具体 assertions to check:
+Don'tlet auditor just "real". Give itspecific assertions to check:
 
 - "Check that test X fails before fix"
 - "Check that test X passes after fix"
 - "Check that artifact Y exists"
 - "Check that database has Z records"
 
-This turns subjective "审" into objective "check".
+This turns subjective "" into objective "check".
 
-## Why "AI's Ability Is逼出来的, AI Has No Right to Stay Silent"
+## Why "AI's Ability Isof, AI Has No Right to Stay Silent"
 
 AI tends to:
 - Give summary instead of evidence
 - Claim success without proof
 - Skip hard verification
 
-You must逼 it:
-- Show red灯 before green灯
+You must it:
+- Show redlight before greenlight
 - Show real artifacts, not simulated
 - Answer hard questions, not deflect
 
 AI has no right to stay silent when asked for evidence.
 
-## Why It缓解 Part 1 Pain Points
+## Why Italleviate Part 1 Pain Points
 
 From "01-Why":
 
-1. **Technical distortion**: Physical evidence makes it harder to掩盖 technical lies
-2. **Governance distortion**: Assertions give auditor具体 things to check
+1. **Technical distortion**: Physical evidence makes it harder to technical lies
+2. **Governance distortion**: Assertions give auditorspecific things to check
 3. **Cognitive debt**: Evidence provides concrete understanding anchors
 
 ## Four Common Drifts
 
-### Drift 1: Only Look at Green灯, Not Red灯
+### Drift 1: Only Look at Greenlight, Not Redlight
 
-Without red灯, green灯 could be old or fake. Always ask for red灯 first.
+Without redlight, greenlight could be old or fake. Always ask for redlight first.
 
 ### Drift 2: Take Simulated Results as Real Execution
 
@@ -236,7 +236,7 @@ Summary is not evidence. Always ask: "Show me the proof."
 
 ### Manual Practice
 
-- Ask for red灯 before green灯
+- Ask for redlight before greenlight
 - Require specific assertions, not vague "tested"
 - Verify artifacts are from current run, not old
 - Check external system writes, not just internal claims

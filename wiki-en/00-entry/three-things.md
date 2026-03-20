@@ -13,7 +13,7 @@
 
 ## What This Page Solves
 
-Many people第一次看到 this project confuse three things into one:
+Many peoplefirst time seeing this project confuse three things into one:
 
 - Take protocol as a package of installable prompts
 - Take Skill as the protocol itself
@@ -31,17 +31,17 @@ Cyber-Ming-Protocol is a **protocol-first** project.
 
 All three serve the same protocol, but not the same objects.
 
-The most稳妥对外 narrative is: `Protocol / Skill / Docs` are three main落地 forms, `web-audit-templates/` is separate Web audit collaboration asset.
+The moststablecorrectexternal narrative is: `Protocol / Skill / Docs` are three mainlanded forms, `web-audit-templates/` is separate Web audit collaboration asset.
 
-This page focuses on "protocol, Skill, templates" because Docs/Teaching偏 explanation side, doesn't directly承担 executor or auditor's action角色.
+This page focuses on "protocol, Skill, templates" because Docs/Teachingpartial explanation side, doesn't directlybear executor or auditor's actionrole.
 
 ## Asset Overview
 
 | Object | What It Is | Where | Main Function | Required | Easily Mistaken For |
 |--------|------------|-------|---------------|----------|---------------------|
 | Protocol | A set of human-AI governance rules | `README.md`, `wiki/` | Defines what should come first, what counts as completion, who's responsible | Yes, must understand | A package of prompts or aesthetic narrative |
-| Skill | IDE-side stable trigger skeleton | `skill/` | Helps you more stably trigger planning, execution, probing, renewal | No, can install later | Protocol itself, automatic裁决器 |
-| Docs/Teaching | Project explanation and teaching | `README.md`, `wiki/` | Helps you understand protocol, cases, boundaries, and how to start | Yes, must read to sufficient understanding | Just附属宣传 pages |
+| Skill | IDE-side stable trigger skeleton | `skill/` | Helps you more stably trigger planning, execution, probing, renewal | No, can install later | Protocol itself, automaticjudge |
+| Docs/Teaching | Project explanation and teaching | `README.md`, `wiki/` | Helps you understand protocol, cases, boundaries, and how to start | Yes, must read to sufficient understanding | Justattached pages |
 | Web Audit Templates | Web-side audit collaboration templates | `web-audit-templates/` | Helps you more stably do plan audit, completion audit, renewal judgment | No, optional | Local Skill, automatic executor |
 
 ## Layer 1: What Is Protocol
@@ -51,7 +51,7 @@ Protocol is the truly irreplaceable part of this project.
 It defines a governance structure, such as:
 
 - Review first, then execute
-- Submit atomic checklist first, then allow动手
+- Submit atomic checklist first, then allowstart working
 - Executor doesn't self-certify completion
 - Completion depends on logs, artifacts, run results, commits as evidence
 - When window decays, renew, don't drag in old context
@@ -60,61 +60,61 @@ These things hold even without Skill.
 
 ## Layer 2: What Is Skill
 
-Skill's role is not替 you invent protocol, but帮 you more stably守 protocol on IDE side.
+Skill's role is notfor you invent protocol, but you more stably protocol on IDE side.
 
-For example, current repo's skills固化 some high-frequency actions:
+For example, current repo's skills some high-frequency actions:
 
-- `approval-first-planner`: First produce可审批 atomic checklist and boundaries
-- `approved-checklist-executor`: Strictly execute, verify,归档 by approved pieces
-- `probe-first-scout`: Don't pretend understand全局, run minimum probe first
-- `legacy-project-handover`: Give只读快照 when taking over or renewing
+- `approval-first-planner`: First produce atomic checklist and boundaries
+- `approved-checklist-executor`: Strictly execute, verify, by approved pieces
+- `probe-first-scout`: Don't pretend understand, run minimum probe first
+- `legacy-project-handover`: Giveonly when taking over or renewing
 
 But they don't change one thing:
 
-**Skill can't替 you define truth.**
+**Skill can'tfor you define truth.**
 
-It can only让你 more stably approach protocol-required action rhythm, can't凭空变出 "already has evidence".
+It can onlyletyou more stably approach protocol-required action rhythm, can't "already has evidence".
 
 ## Layer 3: What Are Web Audit Templates
 
 Web audit templates are not local Skill, nor IDE-side triggers.
 
-They just帮 you more stably扮演 auditor on Web side:
+They just you more stably auditor on Web side:
 
-- Audit if plan is够 atomic
-- Audit if completion真的成立
+- Audit if plan is atomic
+- Audit if completionrealof
 - Audit if current window has decayed, needs renewal
 
 They do "how to ask, how to check, how to judge" skeleton, not "how to execute" skeleton.
 
 ## Why Web Templates Must Separate from Skill
 
-Because these two sides承担 different roles:
+Because these two sidesbear different roles:
 
 - IDE-side skill corresponds to execution, planning, probing, takeover
 - Web-side template corresponds to plan audit, completion audit, renewal judgment
 
-If you put them all in `skill/`, readers easily误以为:
+If you put them all in `skill/`, readers easily:
 
 - Web audit is also a local installable
 - Executor and auditor are just same type tools with different prompts
 
 ## Three Common Misunderstandings
 
-### Misunderstanding 1: Install Skill, Protocol Auto-生效
+### Misunderstanding 1: Install Skill, Protocol Auto-
 
-Wrong: Installing Skill makes protocol自动 work
+Wrong: Installing Skill makes protocol work
 Right: Protocol works through your understanding and practice, Skill just makes it more stable
 
 ### Misunderstanding 2: Without Skill, Can't Use Cyber-Ming
 
-Wrong: Must install Skill before可以用
+Wrong: Must install Skill beforecan
 Right: Can practice protocol fully by hand, Skill is optional enhancement
 
 ### Misunderstanding 3: Web Audit Templates Are Also Skills to Install
 
 Wrong: Web templates are part of Skill package
-Right: Web templates are Web-side协作 assets, not IDE-side installs
+Right: Web templates are Web-side assets, not IDE-side installs
 
 ## Recommended Next Steps
 

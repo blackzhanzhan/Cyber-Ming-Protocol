@@ -6,7 +6,7 @@
 - [What's in Current Repo](#whats-in-current-repo)
 - [Minimal Onboarding Sequence: How to Install](#minimal-onboarding-sequence-how-to-install)
 - [Minimal Usage Sequence](#minimal-usage-sequence)
-- [A Simple判断 Method](#a-simple-判断-method)
+- [A Simplejudgebreak Method](#a-simple-judgebreak-method)
 - [Most Common Pitfalls](#most-common-pitfalls)
 - [Next Steps](#next-steps)
 
@@ -21,50 +21,50 @@ Core principle: **Understand protocol first, then decide how much to install.**
 
 ## Conclusion First: When to Install
 
-### Cases适合 Don't Install Skill First
+### Casessuitable Don't Install Skill First
 
-- You're still understanding protocol, haven't确认 will长期 adopt
-- You just want to先 read ideas, reports and boundaries
-- You want to先 use your existing IDE/Web组合 manual run一遍
-- Current task很小、很轻、很短, not worth引入 complete governance skeleton
+- You're still understanding protocol, haven'tconfirm willlong-term adopt
+- You just want tofirst read ideas, reports and boundaries
+- You want tofirst use your existing IDE/Webcombination manual runonce
+- Current taskverysmall、very、very, not worth complete governance skeleton
 
-### Cases适合 Start Installing Skill
+### Casessuitable Start Installing Skill
 
 - You've understood approval-first, atomic checklist, evidence closure three things
-- You发现 yourself经常漏 steps,漏 boundaries,漏 evidence
+- You yourselfmissing steps,missing boundaries,missing evidence
 - You want to stabilize planner/executor/probe/succession actions
-- You经常在 AI coding里遇到 pseudo-completion, lazy patches, context decay
+- You AI codingto pseudo-completion, lazy patches, context decay
 
-### Cases暂不建议 Full Install
+### Casesnot Full Install
 
-- Your host environment对 skill trigger support还不 stable
-- You haven't想好 IDE executor and Web auditor怎么分工
-- You目前 only need minimal loop, don't need complete skill panel
+- Your host environmentcorrect skill trigger supportnot stable
+- You haven't IDE executor and Web auditor
+- You only need minimal loop, don't need complete skill panel
 
-### A Simple判断 Method
+### A Simplejudgebreak Method
 
 If your recent main pain points are:
 
 - **Not sure worth learning**: Don't install first
-- **Know what to do, but always forget say全**: Can start installing
-- **Environment still乱, role division not set**: Don't full install first
-- **Already在 complex projects里 repeatedly踩 pseudo-completion and decayed context**:尽快 install core Skill
+- **Know what to do, but always forget say**: Can start installing
+- **Environment still, role division not set**: Don't full install first
+- **Already complex projects repeatedly pseudo-completion and decayed context**: install core Skill
 
 ## What's in Current Repo
 
 ### `skill/`
 
-This放的是 repo-side IDE skills:
+Thisofis repo-side IDE skills:
 
-- `global_rules`: Global rules, define不可违反 red lines
+- `global_rules`: Global rules, definenot red lines
 - `approval-first-planner`: Submit plan first, not allowed start directly
-- `approved-checklist-executor`: Execute by approved checklist, verify,归档
-- `probe-first-scout`: When不确定, probe first, don't pretend懂
-- `legacy-project-handover`: New window takeover, context renewal,只读 snapshot
+- `approved-checklist-executor`: Execute by approved checklist, verify,
+- `probe-first-scout`: Whennot, probe first, don't pretend
+- `legacy-project-handover`: New window takeover, context renewal,only snapshot
 
 ### `web-audit-templates/`
 
-This放的是 Web-side audit templates:
+Thisofis Web-side audit templates:
 
 - `plan_audit_template.md`: Audit plan
 - `completion_audit_template.md`: Audit completion
@@ -74,12 +74,12 @@ These three templates are **not local Skill**, don't belong to IDE-side installa
 
 ## Minimal Onboarding Sequence: How to Install
 
-### Shallow Trial vs Deep接入
+### Shallow Trial vs Deepreconnect
 
 - **Shallow trial**: Only give repo link and role files, no installation required, no clone
-- **Deep接入**: If host supports skill directory,才 enter installation steps
+- **Deepreconnect**: If host supports skill directory, enter installation steps
 
-Shallow trial don't clone by default. First treat GitHub repo link as remote law source to read; only when you明确 require skill installation or local repo operations,才 enter clone steps.
+Shallow trial don't clone by default. First treat GitHub repo link as remote law source to read; only when you require skill installation or local repo operations, enter clone steps.
 
 ### Step 1: Install Core Three First
 
@@ -87,12 +87,12 @@ Shallow trial don't clone by default. First treat GitHub repo link as remote law
 - `approval-first-planner`
 - `approved-checklist-executor`
 
-These three solve most core problems: plan first, execute later,归档 by piece.
+These three solve most core problems: plan first, execute later, by piece.
 
-### Step 2:补 Extensions As Needed
+### Step 2:add Extensions As Needed
 
-- `probe-first-scout`: When facing real不确定, not假 complexity
-- `legacy-project-handover`: New window takeover, context renewal, or只读 handover
+- `probe-first-scout`: When facing realnot, notfake complexity
+- `legacy-project-handover`: New window takeover, context renewal, oronly handover
 
 ### Why Not "One-click Install" Here
 
@@ -100,38 +100,38 @@ Because currently different IDE/agent hosts have different skill loading methods
 
 ## Minimal Usage Sequence
 
-Even with Skill接入, most稳妥 minimal sequence still is:
+Even with Skillreconnect, moststable minimal sequence still is:
 
 1. First let planner produce atomic checklist and boundaries
 2. Let human review and decide whether approve
-3. After approval, let executor execute by piece, verify,归档
+3. After approval, let executor execute by piece, verify,
 4. Use Web templates as needed for plan audit, completion audit, renewal judgment
 
 ## If Your Environment Doesn't Support Skill
 
-Then don't let installation问题 block you.
+Then don't let installation block you.
 
 You can still fully practice protocol: manually require planner-style output, manually require executor-style execution and evidence return, manually use Web templates organize auditor questions.
 
-**Protocol优先于 installation.**
+**Protocolfirst installation.**
 
 ## Most Common Pitfalls
 
 ### Pitfall 1: Install Skill Then Want to Skip Understanding
 
-This usually只会把 misuse become more stable.
+This usuallyonlywill misuse become more stable.
 
 ### Pitfall 2: Install Skill Then Want to Skip Approval
 
-Wrong. Skill强化的是 action skeleton, not for bypassing human approval and evidence thresholds.
+Wrong. Skillofis action skeleton, not for bypassing human approval and evidence thresholds.
 
 ### Pitfall 3: Put Web Templates Into Local Skill Process
 
-Wrong. Web templates belong to Web-side协作 assets, don't belong to IDE executor's local installation.
+Wrong. Web templates belong to Web-side assets, don't belong to IDE executor's local installation.
 
-### Pitfall 4: Take Skill as One-click External挂
+### Pitfall 4: Take Skill as One-click External
 
-Skill is just enhancer. What真正 determines success is: whether approval first, execute by piece, evidence closure, maintain human居中裁决.
+Skill is just enhancer. Whatrealreal determines success is: whether approval first, execute by piece, evidence closure, maintain human.
 
 ## Next Steps
 

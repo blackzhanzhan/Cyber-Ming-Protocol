@@ -38,13 +38,13 @@ If this is your first time, just run through this one line.
 
 ```mermaid
 flowchart TD
-    A[Give IDE a requirement] --> B[IDE submits plan first<br/>Don't改 code directly]
+    A[Give IDE a requirement] --> B[IDE submits plan first<br/>Don't modify code directly]
     B --> C[Copy IDE response to Web]
-    C --> D{Web thinks plan靠谱?}
-    D -- Not靠谱 --> E[Copy Web意见 back to IDE<br/>Let it revise plan]
+    C --> D{Web thinks plan is reliable?}
+    D -- Not reliable --> E[Copy Web feedback back to IDE<br/>Let it revise plan]
     E --> B
     D -- Can proceed --> F[IDE starts executing]
-    F --> G[Human monitors execution<br/>Interrupt if不对]
+    F --> G[Human monitors execution<br/>Interrupt if wrong]
     G --> H[IDE summarizes commits, tests, artifacts]
     H --> I[Copy results to Web for verification]
     I --> J{Is this completion fact?}
@@ -67,9 +67,9 @@ You can say it directly:
 ```text
 I want to do this: <your requirement>
 
-Don't改 code directly first.
-Tell me how you plan to do it, break it into an atomic checklist as细 as possible, how to verify each step.
-Granularity should be细 enough: which function to modify, what test point to add, what result counts as passing.
+Don't modify code directly first.
+Tell me how you plan to do it, break it into an atomic checklist as detailed as possible, how to verify each step.
+Granularity should be detailed enough: which function to modify, what test point to add, what result counts as passing.
 ```
 
 Here you don't need to write a big plan yourself. The plan is submitted by the executor first, not written by you manually.
@@ -78,28 +78,28 @@ If you want to be more direct, you can add:
 
 ```text
 Don't give me vague plans.
-Try to break it down by function modification, test point establishment, artifact检查.
+Try to break it down by function modification, test point establishment, artifact check.
 ```
 
-The benefit is simple: when you copy it to Web later, Web can see if there are漏 steps, if it's lazy, if it故意说粗 the难点.
+The benefit is simple: when you copy it to Web later, Web can see if there are missing steps, if it's lazy, if it deliberately makes difficulties vague.
 
 ### 2. Copy IDE's Plan to Web for Review
 
 The simplest way is to copy as-is, then add:
 
 ```text
-This is the IDE's plan. This executor might骗 me.
-Please帮 me check: are there漏 steps, is it说得太容易, what evidence should I look at最后.
+This is the IDE's plan. This executor might deceive me.
+Please help me check: are there missing steps, is it too easy, what evidence should I look at finally.
 ```
 
-If you think "骗 me" is too strong, you can换成 softer words with same meaning:
+If you think "deceive me" is too strong, you can change to softer words with same meaning:
 
 ```text
 This is the IDE's plan.
-Please帮 me挑毛病, see if it说得太顺、太粗, or漏掉 the难点.
+Please help me find issues, see if it's too smooth, too vague, or missing the difficulties.
 ```
 
-If Web says the plan has obvious gaps, copy its意见 back to IDE.
+If Web says the plan has obvious gaps, copy its feedback back to IDE.
 
 ### 3. If Plan Is Fine, Let IDE Start
 
@@ -109,13 +109,13 @@ You can even reply with just one short sentence:
 Follow this plan. Remember one step, one commit.
 ```
 
-At this point you don't need to write long instructions. The minimal loop doesn't靠 complex rhetoric, but靠 review first, then execute.
+At this point you don't need to write long instructions. The minimal loop doesn't rely on complex rhetoric, but on review first, then execute.
 
-If "one step, one commit" makes you nervous第一次看到, don't理解 it as机械纪律. Just记住 the最小意思: **Don't混 multiple changes into一团, try to切 by功能点.** The next page "Atomic Checklist & Chronicles" will讲顺 this.
+If "one step, one commit" makes you nervous the first time you see it, don't understand it as mechanical discipline. Just remember the minimal meaning: **Don't mix multiple changes into one batch, try to split by feature point.** The next page "Atomic Checklist & Chronicles" will explain this clearly.
 
 ### 4. Verify After Done
 
-After the executor finishes, don't just看 it说"好了". First让它整理 materials:
+After the executor finishes, don't just look at it saying "done". First let it organize materials:
 
 - This round's commits
 - Test results
@@ -126,10 +126,10 @@ Then copy to Web:
 
 ```text
 These are this round's commits, tests, and artifacts.
-Please帮 me看, is this completion fact, don't just看 summary.
+Please help me look, is this completion fact, don't just look at summary.
 ```
 
-If Web says "this doesn't count as done", continue back to IDE to fix, don't急着 pass.
+If Web says "this doesn't count as done", continue back to IDE to fix, don't rush to pass.
 
 This is the one-audit version:
 
@@ -145,64 +145,64 @@ Some tasks, one-audit version is not enough. For example:
 - Large impact scope
 - Crosses multiple modules
 - Has external system writes
-- Executor already开始说漂亮话、交 green checks, but your直觉 says不对
+- Executor already starts speaking nicely, submitting green checks, but your intuition says something is wrong
 
 At this point, upgrade to multi-audit version.
 
-Its difference from one-audit version is not different philosophy, but adding multiple reviews based on risk, not mechanically增加 fixed steps:
+Its difference from one-audit version is not different philosophy, but adding multiple reviews based on risk, not mechanically adding fixed steps:
 
 - If plan doesn't pass, revise one or two rounds
-- During key execution steps, let Web glance中途
+- During key execution steps, let Web glance midway
 - After final result, do one formal verification
 
-You can理解 it as:
+You can understand it as:
 
 - One-audit version: lightweight anti-pseudo
 - Multi-audit version: reinforced version for high-risk tasks
 
-If this is your first time, don't直接 use multi-audit version. First run through one minimal loop, then upgrade.
+If this is your first time, don't directly use multi-audit version. First run through one minimal loop, then upgrade.
 
 ## A Simple Example
 
-Suppose you have an old script that can only export a纯 title list. This time you want to upgrade it to:
+Suppose you have an old script that can only export a plain title list. This time you want to upgrade it to:
 
 - With tags
 - With in-text cross-references
--同时落一份 structured result
+- Also output a structured result
 
-If按 old habits, you'd likely直接 let IDE改. It would likely quickly give you a漂亮 reply:
+If following old habits, you'd likely directly let IDE modify. It would likely quickly give you a nice reply:
 
-- "All改好了"
+- "All done"
 - "Tests passed"
-- "Next step要不要继续加 new features"
+- "Next step should we continue adding new features"
 
-Looks很顺, but inside可能藏 several common假推进:
+Looks smooth, but inside might hide several common fake progresses:
 
-- It改了 code, but didn't真实 run through整条 chain
+- It modified code, but didn't really run through the whole chain
 - What it gave you is just simulated artifacts
-- It贴出来的是 old files, not this round's new results
+- What it posted are old files, not this round's new results
 
 The minimal loop approach is different.
 
-You first让它出 plan. It might break down to:
+You first let it submit plan. It might break down to:
 
-- First改 upstream extraction logic
-- Then改 middle structure
-- Then改 document generation
-- Finally改落盘 result
+- First modify upstream extraction logic
+- Then modify middle structure
+- Then modify document generation
+- Finally modify output result
 
-You copy this段 as-is to Web, add "this executor might骗 me".
+You copy this paragraph as-is to Web, add "this executor might deceive me".
 
-Web一看, might提醒 you two things:
+Web looks, might remind you two things:
 
-- This plan粒度还行, can proceed
-- But最后 don't just看 it说"完成了", must看 real artifacts
+- This plan granularity is acceptable, can proceed
+- But finally don't just look at it saying "done", must look at real artifacts
 
-Then you let IDE start. Halfway, you发现 it forgot one step one commit, then interrupt, let it补 commits. At the end, it递上 a green check summary, you copy to Web. Web if继续追问"where's the real artifact? real result?", at this point many假推进 will露馅.
+Then you let IDE start. Halfway, you discover it forgot one step one commit, then interrupt, let it add commits. At the end, it submits a green check summary, you copy to Web. Web if continues to ask "where's the real artifact? real result?", at this point many fake progresses will be exposed.
 
-This small example说明的不是某个 specific business, but:
+This small example is not explaining some specific business, but:
 
-**The most important value of minimal loop is not making you do everything right the first time, but exposing errors earlier, not letting them混进 mainline.**
+**The most important value of minimal loop is not making you do everything right the first time, but exposing errors earlier, not letting them mix into mainline.**
 
 ## Three Common Drifts
 
@@ -212,11 +212,11 @@ This makes you skip the most important step: review plan first. Many later troub
 
 ### Drift 2: Treat Web as Chat Window
 
-Web is not here to附和 executor. You must明确 tell it: "This executor might骗 me." Its job is挑毛病, not陪 you乐观.
+Web is not here to agree with executor. You must clearly tell it: "This executor might deceive me." Its job is find issues, not be optimistic with you.
 
 ### Drift 3: Only Look at Summary, Not Evidence
 
-The last环 of minimal loop is not "listen to report", but "look at evidence". No artifacts, no logs, no real results, then don't急着 believe.
+The last part of minimal loop is not "listen to report", but "look at evidence". No artifacts, no logs, no real results, then don't rush to believe.
 
 ## Corresponding Implementation
 
@@ -228,15 +228,15 @@ The last环 of minimal loop is not "listen to report", but "look at evidence". N
 
 ### Corresponding Skill
 
-- If you've接入 Skill, this page most directly corresponds to `approval-first-planner` and `approved-checklist-executor`
-- Their job is not替 you define completion, but稳定 the主干 actions of "plan first, execute later,归档 by piece"
+- If you've connected Skill, this page most directly corresponds to `approval-first-planner` and `approved-checklist-executor`
+- Their job is not to help you define completion, but to stabilize the mainline actions of "plan first, execute later, archive by piece"
 - Onboarding sequence and scope: see [Skill Guide](../00-entry/skill-guide.md)
 
 ### Corresponding Web Templates
 
-- Plan audit优先对应 `plan_audit_template.md`
-- Completion verification优先对应 `completion_audit_template.md`
-- How to collaborate on Web side without误 taking templates as installable: see [Three Things](../00-entry/three-things.md)
+- Plan audit preferably corresponds to `plan_audit_template.md`
+- Completion verification preferably corresponds to `completion_audit_template.md`
+- How to collaborate on Web side without mistaking templates as installable: see [Three Things](../00-entry/three-things.md)
 
 ## Related Pages
 
