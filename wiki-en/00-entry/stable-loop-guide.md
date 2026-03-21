@@ -120,7 +120,7 @@ Atomic Execution Contract and boundaries first -> human approval -> execution se
 3. Load the core three: `global_rules`, `approval-first-planner`, and `approved-checklist-executor`
 4. If the host does not support project-level Skill, explicitly say the IDE side of the stable loop is not established yet
 
-If you want the IDE side broken out more slowly into decision rules, extensions, and pitfalls, continue with [Skill Guide](skill-guide.md).
+If you still want to separate Protocol, Skill, and Web audit assets more cleanly, continue into Layer 3 with [Three Things](three-things.md).
 
 ## Web Side: Minimum Requirement
 
@@ -157,7 +157,7 @@ Hard rules:
 5. Your default output may contain only: pass / do not pass, main risks, missing items, and narrowing advice.
 ```
 
-If you want the full long-form prompt, the Gem / GPT carrier details, or the Web-side release pairing details, continue with [Web Auditor App Guide](web-auditor-app-guide.md).
+If you want to map this stabilized form against workflow, spec-driven, and agent team, continue into Layer 3 with [Comparison](comparison.md).
 
 ## After Setup, Runtime Should Still Stay Short
 
@@ -199,6 +199,6 @@ If one side is updated and the other is not, it can look as if the protocol beca
 
 ## Next Steps
 
-- If you want the IDE-side half broken out more slowly, continue with [Skill Guide](skill-guide.md)
-- If you want the Web-side half broken out more slowly, continue with [Web Auditor App Guide](web-auditor-app-guide.md)
+- If you want to continue into Layer 3, start with [Three Things](three-things.md)
+- If you want the mainstream-method comparison directly, continue with [Comparison](comparison.md)
 - If you have not yet completed Layer 1, go back to [Minimal Loop Guide](prompt-pack.md)

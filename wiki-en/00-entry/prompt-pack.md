@@ -190,8 +190,7 @@ The minimal stable loop requires both sides to be fixed in place:
 If either side is missing, you still have a manual loop, not a stable one.
 
 - Start with the [Minimal Stable Loop Guide](stable-loop-guide.md)
-- IDE-side setup: [Skill Guide](skill-guide.md)
-- Web-side prompt and app setup: [Web Auditor App Guide](web-auditor-app-guide.md)
+- If you want to judge how this fits with mainstream approaches, continue to the Layer 3 pages: [Three Things](three-things.md) and [Comparison](comparison.md)
 
 ## If Something Drifts, Copy These Correction Prompts
 
@@ -301,5 +300,4 @@ If host memory is still leaking through, explicitly tell me to disable user memo
 
 - If you already accept this Layer 1 route, the next step is not more manual prompting but the [Minimal Stable Loop Guide](stable-loop-guide.md)
 - If you have already completed your first run and want the expanded method, continue with [Minimal Loop](../02-how/minimal-loop.md)
-- If you want a slower first-run demonstration, continue with [30-Second Demo](30-second-demo.md)
-- If you want to look at bootstrap as a separate topic, continue with [Bootstrap](bootstrap.md)
+- If you want to understand how this protocol relates to mainstream approaches, continue with the Layer 3 pages: [Three Things](three-things.md) and [Comparison](comparison.md)

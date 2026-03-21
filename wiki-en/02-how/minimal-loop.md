@@ -240,7 +240,7 @@ The final step in the minimal loop is not "listen to the report." It is "inspect
 
 - If you have already connected Skills, this page maps most directly to `approval-first-planner` and `approved-checklist-executor`
 - Their job is not to define completion for you, but to stabilize the mainline rhythm of "plan first, execute later, archive slice by slice"
-- For onboarding order and scope, see [Skill Guide](../00-entry/skill-guide.md)
+- If you are ready to upgrade the manual loop into a stable form, go straight to [Minimal Stable Loop Guide](../00-entry/stable-loop-guide.md)
 
 ### Corresponding Web Templates
 
