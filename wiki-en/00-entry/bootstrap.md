@@ -12,6 +12,8 @@
 
 ## What This Page Solves
 
+This page is a support page under the Minimal Loop Guide, not a separate entrance parallel to Layer 1.
+
 If you already understand the protocol, the next lowest-effort way to try it is usually not to re-explain the whole rule set to both agents yourself. Instead, give them the repo and the role files and let them bootstrap themselves in from the repo.
 
 But this shallow trial entry works best for people who have already read the core ideas and have an intuitive grasp of the basic flow. If you do not have that yet, go back to [`../../wiki/Home-en.md`](../../wiki/Home-en.md) or the `00-entry` layer first. Role assignment will be much more stable after that.
@@ -103,6 +105,6 @@ If prompt-based clearing still does not work well, go into the host settings fir
 
 ## Next Steps
 
-- If this is your first run, go straight to [First-Time Guide](prompt-pack.md)
+- If you have not yet run Layer 1, go straight to [Minimal Loop Guide](prompt-pack.md)
 - If you want to start the protocol immediately, go back to the repo root and follow [`../../BOOTSTRAP.md`](../../BOOTSTRAP.md)
-- If you still want to understand the difference between a shallow trial and deep entry, continue with [Skill Guide](skill-guide.md)
+- If you have already completed Layer 1 and want to enter Layer 2, continue with [Minimal Stable Loop Guide](stable-loop-guide.md)

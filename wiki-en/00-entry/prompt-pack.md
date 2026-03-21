@@ -1,14 +1,14 @@
-# First-Time Guide
+# Minimal Loop Guide
 
 [Chinese](../../wiki/00-开始这里与落地形态/复制即用提示词包.md) | **English**
 
 If this is your first time using Cyber-Ming-Protocol, start here.
 
-This page is the first-time manual. Its only job is to get the first minimal loop running. It helps you choose a mode, gives you the minimal route and minimal loop, and keeps the recommended mode, universal mode, and correction prompts in one place.
+This page is the Layer 1 parent page in `00-entry`. Its only job is to get one minimal loop running by hand. Host-capability differences are still here, but only as internal branches inside the guide, not as separate entrance boards.
 
-## First-Time Route
+## The Layer 1 Route
 
-1. First decide whether you should use the recommended mode or the universal mode
+1. First decide whether your host can read the repository link directly
 2. Copy the startup prompts to the executor and auditor
 3. Make the executor submit the Atomic Execution Contract and boundaries before any implementation
 4. Route the plan to the Web auditor and decide whether execution is granted
@@ -40,15 +40,15 @@ flowchart TD
 
 Keep one sentence in mind: **the Web side only returns judgment; the human grants execution and the human also makes the final ruling.**
 
-## Pick a Mode First
+## First Check Whether the Host Can Read the Repo
 
-- **Recommended Mode**: for agents that can read GitHub or repo URLs, use `webfetch`, or read the repository in a browser
-- **Universal Mode**: for environments with no web fetching, no repo-link reading, or only plain session prompts
+- If the host can read GitHub or repo URLs, use `webfetch`, or open the repository in a browser, use the startup prompts in Case A below
+- If the host cannot fetch the web, cannot read repo links, or only supports plain session prompts, use the startup prompts in Case B below
 
-## Copy and Use: Recommended / Universal
+## Copy the Startup Prompts That Match Your Host
 
 <a id="repo-link-mode"></a>
-### Recommended Mode: The Agent Can Read the Repo Link
+### Case A: The Host Can Read the Repo Link
 
 #### Executor
 
@@ -84,7 +84,7 @@ In your first round, only:
 ```
 
 <a id="universal-mode"></a>
-### Universal Mode: No Web Fetching or Repo Reading
+### Case B: The Host Cannot Read the Web or Repo Links
 
 The two prompts below are self-contained session-law prompts. Copy either one as a whole. They do not require you to paste `BOOTSTRAP.md`, role files, or any project-structure notes afterward.
 
@@ -138,9 +138,9 @@ Other than those five confirmations, do not begin case review and do not slide i
 ```
 
 <a id="skill-trial"></a>
-## After the First Run: Enter the Minimal Stable Loop
+## After the First Run: Move into the Minimal Stable Loop
 
-If you have already run one full loop with this page, the next step is not to keep stacking manual prompts inside the same page.
+If you have already run one full loop with this page, the next step is not to look for another mode board. The next step is Layer 2: the minimal stable loop.
 
 The minimal stable loop requires both sides to be fixed in place:
 
@@ -259,7 +259,7 @@ If host memory is still leaking through, explicitly tell me to disable user memo
 
 ## After You Get It Running, Go Here Next
 
-- If you already accept the method, the next step is not more manual prompting but the [Minimal Stable Loop Guide](stable-loop-guide.md)
+- If you already accept this Layer 1 route, the next step is not more manual prompting but the [Minimal Stable Loop Guide](stable-loop-guide.md)
 - If you have already completed your first run and want the expanded method, continue with [Minimal Loop](../02-how/minimal-loop.md)
 - If you need the agent-side bootstrap gate under repo law, continue with [BOOTSTRAP.md](../../BOOTSTRAP.md)
 - If you want to decide when Skill should be installed more carefully, continue with [Skill Guide](skill-guide.md)
