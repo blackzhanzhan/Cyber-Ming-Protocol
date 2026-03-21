@@ -17,28 +17,28 @@
 
 推荐版适合能读取 GitHub / repo 链接、支持 `webfetch`、或能在浏览器里直接阅读仓库的 agent。
 
-执行位推荐版：
+复制给执行位：
 
 ```text
 你是执行位（严嵩）。
 仓库：https://github.com/blackzhanzhan/Cyber-Ming-Protocol
-先读 `BOOTSTRAP.md` 与 `bootstrap/ide-executor.md`；先交原子清单与边界，不要先改代码。
+按仓库法统自举入场；先交原子清单与边界，未准奏前不要改代码。
 ```
 
-审计位推荐版：
+复制给审计位：
 
 ```text
 你是审计位（徐阶）。
 仓库：https://github.com/blackzhanzhan/Cyber-Ming-Protocol
-先读 `BOOTSTRAP.md` 与 `bootstrap/web-auditor.md`；当前只做自举，不审案；只审方案与证据。
+按仓库法统自举入场；当前只做自举，不审案；只审方案与证据，只回判断不代执行。
 ```
 
 ### 选入口
 
-- [`推荐版完整版`](wiki/00-开始这里与落地形态/复制即用提示词包.md#repo-link-mode)
-- [`万能版`](wiki/00-开始这里与落地形态/复制即用提示词包.md#universal-mode)
-- [`项目目录 Skill 试用词`](wiki/00-开始这里与落地形态/复制即用提示词包.md#skill-trial)
-- [`BOOTSTRAP.md`](BOOTSTRAP.md)
+- [`推荐版完整版`](wiki/00-开始这里与落地形态/复制即用提示词包.md#repo-link-mode)：能读 repo 链接、`webfetch`、浏览器仓库时用这个
+- [`万能版`](wiki/00-开始这里与落地形态/复制即用提示词包.md#universal-mode)：宿主抓不了网页时用这个，直接复制独立法统 prompt
+- [`项目目录 Skill 试用词`](wiki/00-开始这里与落地形态/复制即用提示词包.md#skill-trial)：宿主支持项目级 skill 目录时用这个
+- [`BOOTSTRAP.md`](BOOTSTRAP.md)：只想看授位边界、自举顺序、入场标准时看这个
 
 ### 最小闭环
 
@@ -224,28 +224,28 @@ This is a protocol for deep-water AI coding in which the IDE executor submits an
 
 Recommended mode: use this if your agent can read GitHub or repo URLs, use `webfetch`, or read the repository in a browser.
 
-Recommended executor prompt:
+Paste to the executor:
 
 ```text
 You are the executor (Yan Song).
 Repo: https://github.com/blackzhanzhan/Cyber-Ming-Protocol
-First read `BOOTSTRAP.md` and `bootstrap/ide-executor.md`; submit the atomic checklist and boundaries first; do not edit code yet.
+Bootstrap under repo law; submit the atomic checklist and boundaries first; do not edit code before execution is granted.
 ```
 
-Recommended auditor prompt:
+Paste to the auditor:
 
 ```text
 You are the auditor (Xu Jie).
 Repo: https://github.com/blackzhanzhan/Cyber-Ming-Protocol
-First read `BOOTSTRAP.md` and `bootstrap/web-auditor.md`; this round is bootstrap only, not case review; audit plans and evidence only.
+Bootstrap under repo law; this round is bootstrap only, not case review; audit plans and evidence only; return judgment, do not implement.
 ```
 
 ### Pick Your Path
 
-- [Full Recommended Mode](wiki-en/00-entry/prompt-pack.md#repo-link-mode)
-- [Universal Mode](wiki-en/00-entry/prompt-pack.md#universal-mode)
-- [Project-level Skill Trial](wiki-en/00-entry/prompt-pack.md#skill-trial)
-- [BOOTSTRAP.md](BOOTSTRAP.md)
+- [Full Recommended Mode](wiki-en/00-entry/prompt-pack.md#repo-link-mode): use this when the host can read repo links, use `webfetch`, or open the repository in a browser
+- [Universal Mode](wiki-en/00-entry/prompt-pack.md#universal-mode): use this when the host cannot fetch the web; it is a self-contained session-law prompt
+- [Project-level Skill Trial](wiki-en/00-entry/prompt-pack.md#skill-trial): use this when the host supports project-level skill directories
+- [BOOTSTRAP.md](BOOTSTRAP.md): use this when you only want the role gate, bootstrap order, and entry conditions
 
 ### Minimal Loop
 
