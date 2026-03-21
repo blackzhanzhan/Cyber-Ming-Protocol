@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
+  <title id="title">Execution is not judgment storyboard</title>
+  <desc id="desc">Three-panel storyboard showing why execution may not collapse into judgment.</desc>
+  <defs>
+    <style>
+      .bg{fill:#F6F0E6}.panel{fill:#FFF9F0;stroke:#3A312B;stroke-width:4}.ink{stroke:#3A312B;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.red{fill:#A54A46;stroke:#3A312B;stroke-width:4}.paper{fill:#F7F1E5;stroke:#3A312B;stroke-width:4}.gold{fill:#E2B93B;stroke:#3A312B;stroke-width:4}.blue{fill:#7E8794;stroke:#3A312B;stroke-width:4}.russet{fill:#9B5B46;stroke:#3A312B;stroke-width:4}.label{font:700 28px Georgia, serif;fill:#3A312B}.small{font:600 18px 'Trebuchet MS',sans-serif;fill:#3A312B}.tiny{font:500 16px 'Trebuchet MS',sans-serif;fill:#3A312B}
+    </style>
+  </defs>
+  <rect class="bg" width="1600" height="980"/>
+  <text x="90" y="88" class="label">Execution Is Not Judgment</text>
+  <text x="90" y="124" class="small">Storyboard - the executor may build, but may not quietly decide completion</text>
+  <g transform="translate(70 220)">
+    <rect width="450" height="580" rx="24" class="panel"/>
+    <text x="34" y="46" class="small">1</text>
+    <circle cx="220" cy="160" r="42" class="russet"/>
+    <rect x="150" y="250" width="150" height="110" rx="14" class="paper" transform="rotate(8 225 305)"/>
+    <text x="225" y="430" text-anchor="middle" class="small">Execution wants to move first</text>
+  </g>
+  <g transform="translate(575 220)">
+    <rect width="450" height="580" rx="24" class="panel"/>
+    <text x="34" y="46" class="small">2</text>
+    <circle cx="220" cy="160" r="42" class="russet"/>
+    <rect x="112" y="248" width="160" height="112" rx="14" class="paper"/>
+    <rect x="272" y="248" width="92" height="112" rx="14" class="red"/>
+    <text x="225" y="430" text-anchor="middle" class="small">Unchecked execution packages code, evidence, and verdict together</text>
+  </g>
+  <g transform="translate(1080 220)">
+    <rect width="450" height="580" rx="24" class="panel"/>
+    <text x="34" y="46" class="small">3</text>
+    <circle cx="220" cy="112" r="42" class="gold"/>
+    <circle cx="116" cy="228" r="34" class="russet"/>
+    <circle cx="330" cy="228" r="34" class="blue"/>
+    <rect x="94" y="326" width="96" height="82" rx="12" class="paper"/>
+    <rect x="202" y="326" width="96" height="82" rx="12" class="paper"/>
+    <rect x="310" y="326" width="96" height="82" rx="12" class="paper"/>
+    <text x="142" y="374" text-anchor="middle" class="tiny">plan</text>
+    <text x="250" y="374" text-anchor="middle" class="tiny">evidence</text>
+    <text x="358" y="374" text-anchor="middle" class="tiny">judgment</text>
+    <text x="225" y="470" text-anchor="middle" class="small">The hub and auditor split the package so execution cannot crown itself</text>
+  </g>
+</svg>
