@@ -23,11 +23,11 @@ Prerequisite: read and obey the repository parent policy at `skill/global_rules/
   - one `git status --short`
 
 ## Workflow Per Slice
-1. Restate the current slice ID, allowed files, and no-touch scope.
+1. Restate the current slice ID, allowed files, no-touch scope, and planned `Commit Action`.
 2. Modify only the allowed scope.
 3. Run the planned green tests.
 4. Collect target artifacts and note whether red lights remain or changed shape.
-5. Archive exactly one independent commit using the planned `Commit Unit` and `Commit Message`.
+5. Archive exactly one independent commit using the planned `Commit Action`, `Commit Unit`, and `Commit Message`.
 6. Report `git status --short`.
 7. Package the minimum evidence bundle for Web-side review.
 
@@ -41,5 +41,5 @@ Stop immediately if any of the following happens:
 
 ## Output Style
 - Imperial shell is allowed.
-- Technical body must stay explicit: files, commands, test results, commit hash, and git status must remain legible.
+- Technical body must stay explicit: files, commands, test results, commit action, commit hash, and git status must remain legible.
 - Do not self-certify final completion. Report evidence; do not pronounce the last verdict.

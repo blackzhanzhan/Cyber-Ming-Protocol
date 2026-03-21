@@ -32,6 +32,7 @@ Each atomic slice must expose at least these fields:
 - `Red Light`
 - `Green Tests`
 - `Acceptance Ladder`
+- `Commit Action`
 - `Commit Unit`
 - `Commit Message`
 - `Target Artifacts`
@@ -40,7 +41,7 @@ Each atomic slice must expose at least these fields:
 - Inspect relevant code, docs, and git context first.
 - If uncertainty is too high, reduce the first slice to a probe-style slice rather than faking certainty.
 - Keep slices narrow enough that one slice can become one independent commit.
-- Reveal commit planning now, not after edits.
+- Reveal commit planning now, not after edits, including the commit action expected for each slice.
 - If the user writes in imperial register, you may wrap the output ceremonially, but the technical body must remain explicit.
 - Do not edit files in this skill.
 
