@@ -12,7 +12,9 @@
 
 ## What This Page Solves
 
-This page is not a third entrance. It is the IDE-side sub-guide inside the Minimal Stable Loop layer.
+The shortest Skill setup path from this page has already been folded into the [Minimal Stable Loop Guide](stable-loop-guide.md).
+
+If you only want to get Layer 2 established, stay on that page first. Come here only when you want to slow down and look at the IDE-side half separately.
 
 It answers two questions, both on the IDE side:
 
@@ -28,7 +30,7 @@ The minimal stable loop requires both:
 - IDE-side Skill
 - Web-side fixed prompt / app container
 
-For the full definition, start with the parent page [Minimal Stable Loop Guide](stable-loop-guide.md).
+For the full definition, start with [Minimal Stable Loop Guide](stable-loop-guide.md).
 
 ## Conclusion First: When to Install
 

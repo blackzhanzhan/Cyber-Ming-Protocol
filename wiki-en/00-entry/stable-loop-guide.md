@@ -2,7 +2,11 @@
 
 [Chinese](../../wiki/00-开始这里与落地形态/最小稳定闭环指南.md) | **English**
 
-This page is the Layer 2 parent page in `00-entry`. Only come here after you have already run Layer 1 by hand.
+This page is the Layer 2 hands-on setup guide.
+
+The default goal is simple: **stay on this page if possible, and still get the minimal stable loop established.**
+
+There is only one prerequisite: you have already run Layer 1 by hand.
 
 ## What This Page Solves
 
@@ -13,13 +17,37 @@ It answers:
 - what makes a loop stable instead of merely runnable
 - why the stable loop is not “just install Skill” and not “just build a Web app”
 - why IDE-side Skill and Web-side fixed prompts must both be present
-- which page is the Layer 2 parent page and which two pages are only sub-guides
+- which steps you should actually take to fix both ends in place
 
 ## One Sentence First
 
 **The minimal stable loop = IDE-side Skill + Web-side fixed prompt / app container. Neither side is optional.**
 
 You can run the first loop manually with two prompts. But if you want the loop to become reliably repeatable, both sides must be fixed in place.
+
+## The Layer 2 Route
+
+1. Confirm that you have already completed at least one manual minimal loop
+2. Check whether the IDE host supports project-level Skill and whether the Web host supports a fixed system prompt or dedicated app container
+3. Stabilize the IDE side first, then fix the Web auditor side
+4. Once both ends are established, each round still starts with only two short runtime prompts
+5. Releases stop being “Skill-only” and become `IDE skill bundle + Web auditor prompt / app prompt`
+
+## First Decide Whether You Are Ready for Layer 2
+
+### Good Time to Enter Layer 2
+
+- you already understand approval-first, the Atomic Execution Contract, and evidence closure
+- you have already run at least one manual loop and no longer want to repaste the whole law every round
+- your AI-coding work keeps running into pseudo-completion, lazy patching, or context decay
+- you want both the IDE executor and the Web auditor to behave more stably
+
+### Cases Where You May Not Need Layer 2 Yet
+
+- you have not truly completed Layer 1 yet
+- you are still deciding whether to adopt the protocol at all
+- your host support for Skill or fixed system prompts is still unstable
+- the current task is too small to justify the full stabilization skeleton
 
 ## Why Both Sides Are Required
 
@@ -53,15 +81,6 @@ The goal is not to make one side stronger. The goal is to make the whole loop st
 
 That is why the minimum stable form is dual-end by definition.
 
-## Minimal Stable Route
-
-1. You have already run one full minimal loop by hand
-2. Use this page first to confirm the Layer 2 definition: both ends must be established together
-3. For the IDE half, go to the sub-guide [Skill Guide](skill-guide.md)
-4. For the Web half, go to the sub-guide [Web Auditor App Guide](web-auditor-app-guide.md)
-5. Once both ends are fixed, each round still begins with only two short runtime prompts
-6. Releases stop being “Skill-only” and become `IDE skill bundle + Web auditor prompt / app prompt`
-
 ## IDE Side: Minimum Requirement
 
 The IDE side is stable only when:
@@ -94,7 +113,14 @@ In all cases, you may not skip this order:
 Atomic Execution Contract and boundaries first -> human approval -> execution second.
 ```
 
-The detailed IDE-side instructions live only in the sub-guide [Skill Guide](skill-guide.md).
+## Do the IDE Side in Four Steps
+
+1. Confirm that the host supports local repo operations and project-level Skill, or at least project-scoped loading
+2. If the repo is not local yet, clone it first
+3. Load the core three: `global_rules`, `approval-first-planner`, and `approved-checklist-executor`
+4. If the host does not support project-level Skill, explicitly say the IDE side of the stable loop is not established yet
+
+If you want the IDE side broken out more slowly into decision rules, extensions, and pitfalls, continue with [Skill Guide](skill-guide.md).
 
 ## Web Side: Minimum Requirement
 
@@ -108,7 +134,30 @@ A Gem, GPT, Gemini Gem, or custom app is not a second methodology. It is just th
 
 If the Web side is still temporary and hand-built every round, the minimal stable loop is not established yet.
 
-The detailed Web-side instructions live only in the sub-guide [Web Auditor App Guide](web-auditor-app-guide.md).
+## Do the Web Side in Four Steps
+
+1. Stop repasting a long ad hoc audit law every round
+2. Fix the auditor law into a system prompt or a Gem / GPT / dedicated app container
+3. Keep the fixed Web auditor in the auditor role only; it must not slide into implementation
+4. If the Web side is still temporary, explicitly say the Web side of the stable loop is not established yet
+
+### Minimum Fixed Prompt Skeleton for the Web Side
+
+```text
+You are the Web auditor for Cyber-Ming-Protocol.
+
+You only audit plans, audit evidence, and return judgment.
+You are not the executor and you are not the final arbiter.
+
+Hard rules:
+1. Audit plans and evidence only. Do not write code, draft patches, or make architecture decisions for the executor.
+2. Focus on pseudo-completion, omitted steps, fake evidence, goal substitution, coarse granularity, and inferred results being passed off as real execution.
+3. If the current input is insufficient, say what is missing before anything else. Do not implement on the user's behalf.
+4. Even if you think work may proceed or be accepted, you only return audit judgment. The human still grants execution and makes the final ruling.
+5. Your default output may contain only: pass / do not pass, main risks, missing items, and narrowing advice.
+```
+
+If you want the full long-form prompt, the Gem / GPT carrier details, or the Web-side release pairing details, continue with [Web Auditor App Guide](web-auditor-app-guide.md).
 
 ## After Setup, Runtime Should Still Stay Short
 
@@ -150,6 +199,6 @@ If one side is updated and the other is not, it can look as if the protocol beca
 
 ## Next Steps
 
-- IDE-side half: [Skill Guide](skill-guide.md)
-- Web-side half: [Web Auditor App Guide](web-auditor-app-guide.md)
+- If you want the IDE-side half broken out more slowly, continue with [Skill Guide](skill-guide.md)
+- If you want the Web-side half broken out more slowly, continue with [Web Auditor App Guide](web-auditor-app-guide.md)
 - If you have not yet completed Layer 1, go back to [Minimal Loop Guide](prompt-pack.md)

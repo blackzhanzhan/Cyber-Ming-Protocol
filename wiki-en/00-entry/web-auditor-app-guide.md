@@ -4,7 +4,9 @@
 
 ## What This Page Solves
 
-This page is not a third entrance. It is the Web-side sub-guide inside the Minimal Stable Loop layer.
+The shortest Web-side fixed-prompt path from this page has already been folded into the [Minimal Stable Loop Guide](stable-loop-guide.md).
+
+If you only want to get Layer 2 established, stay on that page first. Come here only when you want to slow down and look at the Web-side half separately.
 
 It covers only the Web side of the stable loop:
 
@@ -23,7 +25,7 @@ The minimal stable loop requires both:
 
 This page only solves the second half.
 
-For the full definition, start with the parent page [Minimal Stable Loop Guide](stable-loop-guide.md).
+For the full definition, start with [Minimal Stable Loop Guide](stable-loop-guide.md).
 
 ## What Counts as a Fixed Web Prompt
 
