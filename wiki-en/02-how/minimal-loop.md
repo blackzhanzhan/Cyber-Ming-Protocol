@@ -47,7 +47,7 @@ This is not an agent-team collaboration diagram. It is a dual-track governance d
 ```mermaid
 flowchart TD
     A[The requirement enters the human hub] --> B[The human sends it to the IDE executor<br/>Submit a plan first, do not implement yet]
-    B --> C[The IDE returns the atomic checklist and boundaries<br/>to the human]
+    B --> C[The IDE returns the Atomic Execution Contract and boundaries<br/>to the human]
     C --> D[The human routes the plan to the Web auditor]
     D --> E[The Web auditor returns audit judgment<br/>to the human]
     E --> F{Does the human grant execution?}
@@ -78,7 +78,7 @@ You can say it directly like this:
 I want to do this: <your requirement>
 
 Do not modify code yet.
-First tell me how you plan to do it. Break it into an atomic checklist as detailed as possible, and tell me how each step will be verified.
+First tell me how you plan to do it. Break it into an Atomic Execution Contract as detailed as possible, and tell me how each step will be verified.
 Make the granularity as fine as possible: which function to modify, what test point to add, and what result counts as passing.
 ```
 
@@ -121,7 +121,7 @@ Follow this plan. Remember: one step, one commit.
 
 You do not need long rhetoric here. The minimal loop does not stand on ornate prompting. It stands on a simple order: review first, execute second.
 
-If "one step, one commit" makes you tense the first time you hear it, do not interpret it as mechanical ritualism. Just hold on to its minimal meaning: **do not lump several steps into one change blob; split them by feature point whenever possible.** The next page, [Atomic Checklist & Chronicles](atomic-checklist-chronicles.md), explains why this matters.
+If "one step, one commit" makes you tense the first time you hear it, do not interpret it as mechanical ritualism. Just hold on to its minimal meaning: **do not lump several steps into one change blob; split them by feature point whenever possible.** The next page, [Atomic Execution Contract & Chronicles](atomic-checklist-chronicles.md), explains why this matters.
 
 ### 4. Verify Again After the Work Is Done
 
@@ -250,7 +250,7 @@ The final step in the minimal loop is not "listen to the report." It is "inspect
 
 ## Related Pages
 
-- [Atomic Checklist & Chronicles](atomic-checklist-chronicles.md)
+- [Atomic Execution Contract & Chronicles](atomic-checklist-chronicles.md)
 - [White-box Reconciliation](white-box-reconciliation.md)
 - [Scout Mechanism](scout-mechanism.md)
 - [Dual-track Audit](../03-deep-water/dual-track-audit.md)

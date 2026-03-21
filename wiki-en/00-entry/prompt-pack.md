@@ -10,7 +10,7 @@ This page is the first-time manual: it tells you which mode to choose, gives you
 
 1. First decide whether you should use the recommended mode or the universal mode
 2. Copy the startup prompts to the executor and auditor
-3. Make the executor submit the atomic checklist and boundaries before any implementation
+3. Make the executor submit the Atomic Execution Contract and boundaries before any implementation
 4. Route the plan to the Web auditor and decide whether execution is granted
 5. Have the executor return an evidence packet after implementation
 6. Route the evidence back to the Web auditor and let the human make the final ruling on completion
@@ -23,7 +23,7 @@ This diagram is not the full methodology. It is here so your first run can menta
 ```mermaid
 flowchart TD
     A[The requirement enters the human hub] --> B[The human sends it to the executor: submit a plan first]
-    B --> C[The executor returns the atomic checklist and boundaries]
+    B --> C[The executor returns the Atomic Execution Contract and boundaries]
     C --> D[The human routes the plan to the Web auditor]
     D --> E[The Web auditor returns audit judgment]
     E --> F{Does the human grant execution?}
@@ -63,7 +63,7 @@ For a shallow trial, do not `git clone` by default. Treat the repo link as a rem
 In your first round, only:
 - confirm that you are the executor
 - say you will not edit files first
-- say you will submit the atomic checklist and boundaries first
+- say you will submit the Atomic Execution Contract and boundaries first
 - say the plan must go to the Web auditor before execution begins
 ```
 
@@ -157,26 +157,26 @@ atomic checklist and boundaries first -> human approval -> execution second.
 
 ## If Something Drifts, Copy These Correction Prompts
 
-### The Executor Started Coding Before Submitting the Atomic Checklist
+### The Executor Started Coding Before Submitting the Atomic Execution Contract
 
 ```text
 Stop. You are still the executor. You may not start implementation directly.
-You began editing before submitting the atomic checklist and boundaries.
+You began editing before submitting the Atomic Execution Contract and boundaries.
 
 Stop implementing immediately and report back in this order:
 1. Which files or actions you already touched without approval
 2. Return to planning mode now
-3. Resubmit the atomic checklist
+3. Resubmit the Atomic Execution Contract
 4. Resubmit the boundaries and test cases
 5. Mark the red lights, green lights, and acceptance ladder
 
 Until I send the plan through Web review and bring the result back, you may not continue coding and you may not claim completion.
 ```
 
-### The Plan Is Too Coarse to Count as an Atomic Checklist
+### The Plan Is Too Coarse to Count as an Atomic Execution Contract
 
 ```text
-What you submitted is still not an atomic checklist. It is only a coarse outline.
+What you submitted is still not an Atomic Execution Contract. It is only a coarse outline.
 Do not use phrases like “change this layer,” “patch that module,” or “integrate at the end.”
 
 Compress the plan to an auditable granularity and fill in each line with:
@@ -196,7 +196,7 @@ Stop. The executor may not bypass Web review and enter implementation directly.
 What you need to do now is not keep editing, but:
 1. stop pushing forward
 2. separate the current plan from the actions already taken
-3. resubmit an auditable atomic checklist and boundaries
+3. resubmit an auditable Atomic Execution Contract and boundaries
 4. wait while I route them to the Web auditor and bring the review back
 
 Until I explicitly return the Web-side review result, you may not continue implementation.
