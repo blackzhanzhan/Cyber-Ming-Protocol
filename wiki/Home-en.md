@@ -6,6 +6,8 @@
 
 First time here? Start with the English section of the [README](../README.md#english), then follow the three learning layers in `00`: first run the [Minimal Loop Guide](../wiki-en/00-entry/prompt-pack.md), then move into the [Minimal Stable Loop Guide](../wiki-en/00-entry/stable-loop-guide.md), and only after that enter Layer 3 when you want to understand how this relates to mainstream approaches.
 
+![Cyber-Ming core cast](../assets/visual-protocol/characters/trio-relationship.svg)
+
 ## The Three Learning Layers in 00
 
 | Learning Layer | What This Layer Solves | Go Here |
@@ -21,7 +23,7 @@ The route is simple: complete Layer 1 first, then Layer 2. Only when you start a
 ### 00-Entry
 
 - Layer 1: Minimal Loop
-  - [Minimal Loop Guide](../wiki-en/00-entry/prompt-pack.md): a hands-on first run that tries to keep prompt copying, the 30-second mental model, and the bootstrap essentials in one practical flow
+  - [Minimal Loop Guide](../wiki-en/00-entry/prompt-pack.md): a hands-on first run that keeps prompt copying, the 30-second mental model, bootstrap essentials, and correction prompts in one practical flow
 - Layer 2: Minimal Stable Loop
   - [Minimal Stable Loop Guide](../wiki-en/00-entry/stable-loop-guide.md): a hands-on stability path that tries to keep the Skill setup and Web-side fixed-prompt setup in one practical flow
 - Layer 3: Relation and Adoption

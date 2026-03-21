@@ -12,6 +12,8 @@
 
 很多人看到 Cyber-Ming-Protocol 会问：这和我已经知道的 workflow、spec driven、agent team 到底什么关系？是不是换了个皮肤？还是完全不同的东西？
 
+![Contract-driven 对比图](../../assets/visual-protocol/diagrams/contract-vs-spec-workflow.svg)
+
 这一页一次讲清：**不是完全无关，也不是完全相同。**
 
 它们共享一个判断：深水区任务需要治理。
@@ -68,6 +70,8 @@ Cyber-Ming 的立场相反：**人必须居中路由。**
 所以如果真要对外定位，更准确的说法不是“Cyber-Ming 也是一种 spec-driven”，而是：
 
 **Cyber-Ming 是一种 contract-driven 的深水区治理方法。**
+
+![Contract-driven 脉冲漫画](../../assets/visual-protocol/comics/contract-driven-pulse.svg)
 
 它吸收 spec-driven 的优点——先有方案、先有边界、先有可审对象；但它拒绝把整张未来蓝图过早冻结成重 spec。它改用原子执行合同来承接每一小段真实推进。
 

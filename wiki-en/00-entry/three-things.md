@@ -21,6 +21,10 @@ It does not answer "how do I run the loop right now?" It answers a different que
 - what `Protocol / Skill / Web audit assets` each are
 - which of these are methodologies, and which are only carriers or stabilizers when you compare them with mainstream approaches
 
+![Cyber-Ming core cast](../../assets/visual-protocol/characters/trio-relationship.svg)
+
+The cast helps people remember the governance split at a glance. This page goes one layer deeper and separates the delivery forms themselves: characters are not the comparison object; `Protocol / Skill / Web audit assets` are.
+
 When many people first see this project, they collapse three different things into one:
 
 - They treat the protocol as a package of installable prompts

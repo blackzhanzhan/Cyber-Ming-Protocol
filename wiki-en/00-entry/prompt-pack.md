@@ -24,23 +24,7 @@ Host-capability differences are still here, but only as internal branches inside
 
 This diagram is not the full methodology. It is here so your first run can mentally lock onto the minimal loop.
 
-```mermaid
-flowchart TD
-    A[The requirement enters the human hub] --> B[The human sends it to the executor: submit a plan first]
-    B --> C[The executor returns the Atomic Execution Contract and boundaries]
-    C --> D[The human routes the plan to the Web auditor]
-    D --> E[The Web auditor returns audit judgment]
-    E --> F{Does the human grant execution?}
-    F -- No --> G[The human routes it back and requires replanning]
-    G --> B
-    F -- Yes --> H[The human orders the executor to implement]
-    H --> I[The executor returns the evidence packet]
-    I --> J[The human routes the evidence to the Web auditor]
-    J --> K[The Web auditor returns verification judgment]
-    K --> L{Does the human confirm a completion fact?}
-    L -- No --> G
-    L -- Yes --> M[This loop stands]
-```
+![Minimal loop diagram](../../assets/visual-protocol/diagrams/minimal-loop.svg)
 
 Keep one sentence in mind: **the Web side only returns judgment; the human grants execution and the human also makes the final ruling.**
 
@@ -55,6 +39,10 @@ If you only want the minimum skeleton first, remember these three steps:
 | 3 | Collect evidence after implementation and route it back to Web verification | Completion stands on evidence, not on the executor's self-report |
 
 If those three steps already make sense in your head, continue directly to the copy-paste section below.
+
+![Human not stamper](../../assets/visual-protocol/comics/human-not-stamper.svg)
+
+This comic compresses the main Layer 1 danger into one memory hook: the risk is not only that AI grows stronger, but that execution pressure quietly turns the human into a late-stage stamp machine.
 
 ## Only Remember Three Things About Bootstrap
 
