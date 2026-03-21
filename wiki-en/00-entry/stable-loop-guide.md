@@ -33,10 +33,6 @@ You can run the first loop manually with two prompts. But if you want the loop t
 4. Once both ends are established, each round still starts with only two short runtime prompts
 5. Releases stop being “Skill-only” and become `IDE skill bundle + Web auditor prompt / app prompt`
 
-![Skill versus no Skill](../../assets/visual-protocol/diagrams/skill-vs-no-skill.svg)
-
-This image explains one judgment only: Skill does not produce truth. It keeps the executor, contract rhythm, and renewal mechanics from drifting so easily. Evidence and audit still establish reality.
-
 ## First Decide Whether You Are Ready for Layer 2
 
 ### Good Time to Enter Layer 2

@@ -21,10 +21,6 @@
 - `Protocol / Skill / Web 审计资产` 分别是什么
 - 当你把它和主流方案比较时，哪些是方法论，哪些只是载体或强化器
 
-![Cyber-Ming core cast](../../assets/visual-protocol/characters/trio-relationship.svg)
-
-角色系统负责让治理关系被一眼记住；但这页要继续往下分清：角色不是交付物类别，`Protocol / Skill / Web 审计资产` 才是你真正要拿来比较和接入的对象。
-
 很多人第一次看到这个项目时会把三件东西混成一件：
 
 - 把协议当成一包可安装的 prompt

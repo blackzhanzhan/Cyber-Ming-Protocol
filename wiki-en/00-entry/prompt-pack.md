@@ -24,8 +24,6 @@ Host-capability differences are still here, but only as internal branches inside
 
 This diagram is not the full methodology. It is here so your first run can mentally lock onto the minimal loop.
 
-![Minimal loop diagram](../../assets/visual-protocol/diagrams/minimal-loop.svg)
-
 Keep one sentence in mind: **the Web side only returns judgment; the human grants execution and the human also makes the final ruling.**
 
 ## Run It in Your Head in 30 Seconds First
@@ -39,10 +37,6 @@ If you only want the minimum skeleton first, remember these three steps:
 | 3 | Collect evidence after implementation and route it back to Web verification | Completion stands on evidence, not on the executor's self-report |
 
 If those three steps already make sense in your head, continue directly to the copy-paste section below.
-
-![Human not stamper](../../assets/visual-protocol/comics/human-not-stamper.svg)
-
-This comic compresses the main Layer 1 danger into one memory hook: the risk is not only that AI grows stronger, but that execution pressure quietly turns the human into a late-stage stamp machine.
 
 ## Only Remember Three Things About Bootstrap
 

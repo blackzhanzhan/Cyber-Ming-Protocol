@@ -12,8 +12,6 @@ If [Three Things](three-things.md) helps you separate what this repo actually sh
 
 Many people seeing Cyber-Ming-Protocol ask: What's the relationship with workflow, spec-driven, and agent team that I already know? Is it just a different skin? Or completely different?
 
-![Contract-driven comparison diagram](../../assets/visual-protocol/diagrams/contract-vs-spec-workflow.svg)
-
 This page explains once: **Not completely unrelated, not completely identical.**
 
 They share one judgment: deep-water tasks need governance.
@@ -70,8 +68,6 @@ This is different from a traditional spec not because it is merely “more detai
 So if you want the external positioning stated cleanly, the more accurate sentence is not “Cyber-Ming is another spec-driven method.” It is:
 
 **Cyber-Ming is a contract-driven method for deep-water AI coding governance.**
-
-![Contract-driven pulse comic](../../assets/visual-protocol/comics/contract-driven-pulse.svg)
 
 It absorbs what is valuable in spec-driven development—plan first, boundary first, auditable object first. But it refuses to freeze the whole future into one heavyweight spec. Instead, it uses the Atomic Execution Contract to govern each real slice of forward motion.
 
