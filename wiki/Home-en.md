@@ -4,29 +4,29 @@
 
 **[Chinese](Home.md)** | English
 
-First time here? Start with the English section of the [README](../README.md#english), run the [Minimal Loop Guide](../wiki-en/00-entry/prompt-pack.md), and then move into the [Minimal Stable Loop Guide](../wiki-en/00-entry/stable-loop-guide.md).
+First time here? Start with the English section of the [README](../README.md#english), then follow the three learning layers in `00`: first run the [Minimal Loop Guide](../wiki-en/00-entry/prompt-pack.md), then move into the [Minimal Stable Loop Guide](../wiki-en/00-entry/stable-loop-guide.md), and only after that enter Layer 3 when you want to understand how this relates to mainstream approaches.
 
-## The Two Learning Layers in 00
+## The Three Learning Layers in 00
 
-| Learning Layer | What You Learn First | Main Entry | Supporting Pages |
-|----------------|----------------------|------------|------------------|
-| Layer 1: Minimal Loop | Manually run one loop with two prompts and internalize the human-centered route, plan-first rule, and evidence-based acceptance | [Minimal Loop Guide](../wiki-en/00-entry/prompt-pack.md) | [30-Second Demo](../wiki-en/00-entry/30-second-demo.md), [Bootstrap](../wiki-en/00-entry/bootstrap.md), [Three Things](../wiki-en/00-entry/three-things.md), [Comparison](../wiki-en/00-entry/comparison.md) |
-| Layer 2: Minimal Stable Loop | Upgrade the manual loop into a stable dual-end setup with both sides fixed in place | [Minimal Stable Loop Guide](../wiki-en/00-entry/stable-loop-guide.md) | [Skill Guide](../wiki-en/00-entry/skill-guide.md), [Web Auditor App Guide](../wiki-en/00-entry/web-auditor-app-guide.md) |
+| Learning Layer | What This Layer Solves | Go Here |
+|----------------|------------------------|---------|
+| Layer 1: Minimal Loop | How to run one loop by hand, where to paste the prompts, when Web review happens, and why completion depends on evidence | [Minimal Loop Guide](../wiki-en/00-entry/prompt-pack.md) |
+| Layer 2: Minimal Stable Loop | How to stabilize the protocol so that IDE-side Skill and the Web-side fixed prompt are both established | [Minimal Stable Loop Guide](../wiki-en/00-entry/stable-loop-guide.md) |
+| Layer 3: Relation and Adoption | How this connects to mainstream methods, what this repo actually delivers, and how to adopt it into an existing setup | [Three Things](../wiki-en/00-entry/three-things.md) / [Comparison](../wiki-en/00-entry/comparison.md) |
 
-The remaining pages no longer act as parallel first-screen entrances. They are support pages for these two learning layers. The route is simple: run Layer 1 first, then move into Layer 2; if you get stuck, return to the supporting pages for examples, concepts, or setup details.
+The route is simple: complete Layer 1 first, then Layer 2. Only when you start asking how this fits with mainstream approaches or your current stack should you move into Layer 3.
 
 ## One-line Navigation
 
 ### 00-Entry
 
-- [Minimal Loop Guide](../wiki-en/00-entry/prompt-pack.md): the Layer 1 parent page; run one manual loop first, with host-capability differences handled inside the page instead of as separate entrance boards
-- [30-Second Demo](../wiki-en/00-entry/30-second-demo.md): a 30-second mental simulation for Layer 1
-- [Bootstrap](../wiki-en/00-entry/bootstrap.md): once you understand Layer 1, use this to hand repo law to the executor and auditor
-- [Three Things](../wiki-en/00-entry/three-things.md): concept support for Layer 1; clarifies the protocol, Skill, and Web audit templates
-- [Comparison](../wiki-en/00-entry/comparison.md): positioning support for Layer 1; clarifies how this protocol differs from workflow, spec-driven, and agent team
-- [Minimal Stable Loop Guide](../wiki-en/00-entry/stable-loop-guide.md): the Layer 2 parent page; defines what stability means and why both ends must be fixed together
-- [Skill Guide](../wiki-en/00-entry/skill-guide.md): the IDE-side sub-guide for Layer 2
-- [Web Auditor App Guide](../wiki-en/00-entry/web-auditor-app-guide.md): the Web-side sub-guide for Layer 2
+- Layer 1: Minimal Loop
+  - [Minimal Loop Guide](../wiki-en/00-entry/prompt-pack.md): a hands-on first run that tries to keep prompt copying, the 30-second mental model, and the bootstrap essentials in one practical flow
+- Layer 2: Minimal Stable Loop
+  - [Minimal Stable Loop Guide](../wiki-en/00-entry/stable-loop-guide.md): a hands-on stability path that tries to keep the Skill setup and Web-side fixed-prompt setup in one practical flow
+- Layer 3: Relation and Adoption
+  - [Three Things](../wiki-en/00-entry/three-things.md): what this repo actually ships, and how Protocol / Skill / Web audit assets differ
+  - [Comparison](../wiki-en/00-entry/comparison.md): how this relates to workflow, spec-driven, and agent team, and how to adopt it into an existing stack
 
 ### 01-Why
 
