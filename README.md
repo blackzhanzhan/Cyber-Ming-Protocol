@@ -38,7 +38,7 @@
 - [`推荐版完整版`](wiki/00-开始这里与落地形态/复制即用提示词包.md#repo-link-mode)：能读 repo 链接、`webfetch`、浏览器仓库时用这个
 - [`万能版`](wiki/00-开始这里与落地形态/复制即用提示词包.md#universal-mode)：宿主抓不了网页时用这个，直接复制独立法统 prompt
 - [`项目目录 Skill 试用词`](wiki/00-开始这里与落地形态/复制即用提示词包.md#skill-trial)：宿主支持项目级 skill 目录时用这个
-- [`BOOTSTRAP.md`](BOOTSTRAP.md)：只想看授位边界、自举顺序、入场标准时看这个
+- [`BOOTSTRAP.md`](BOOTSTRAP.md)：交给 agent，让它按仓库法统自举入场
 
 ### 最小闭环
 
@@ -245,7 +245,7 @@ Bootstrap under repo law; this round is bootstrap only, not case review; audit p
 - [Full Recommended Mode](wiki-en/00-entry/prompt-pack.md#repo-link-mode): use this when the host can read repo links, use `webfetch`, or open the repository in a browser
 - [Universal Mode](wiki-en/00-entry/prompt-pack.md#universal-mode): use this when the host cannot fetch the web; it is a self-contained session-law prompt
 - [Project-level Skill Trial](wiki-en/00-entry/prompt-pack.md#skill-trial): use this when the host supports project-level skill directories
-- [BOOTSTRAP.md](BOOTSTRAP.md): use this when you only want the role gate, bootstrap order, and entry conditions
+- [BOOTSTRAP.md](BOOTSTRAP.md): hand this to the agent so it can bootstrap itself under repo law
 
 ### Minimal Loop
 
