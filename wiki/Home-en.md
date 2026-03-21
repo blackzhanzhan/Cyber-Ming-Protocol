@@ -4,37 +4,29 @@
 
 **[Chinese](Home.md)** | English
 
-First time here? Start with the English section of the [README](../README.md#english), run the [First-Time Guide](../wiki-en/00-entry/prompt-pack.md), and then move into the [Minimal Stable Loop Guide](../wiki-en/00-entry/stable-loop-guide.md).
+First time here? Start with the English section of the [README](../README.md#english), run the [Minimal Loop Guide](../wiki-en/00-entry/prompt-pack.md), and then move into the [Minimal Stable Loop Guide](../wiki-en/00-entry/stable-loop-guide.md).
 
-## Entry by Purpose
+## The Two Learning Layers in 00
 
-| What You Want To Do | Where To Go |
-|---------------------|-------------|
-| Start your first run here | [First-Time Guide](../wiki-en/00-entry/prompt-pack.md) |
-| You already ran once and now want stability | [Minimal Stable Loop Guide](../wiki-en/00-entry/stable-loop-guide.md) |
-| Understand what the three pieces are | [Three Things](../wiki-en/00-entry/three-things.md) |
-| Mentally run through one round in 30 seconds | [30-Second Demo](../wiki-en/00-entry/30-second-demo.md) |
-| Directly onboard the executor and auditor | [Bootstrap](../wiki-en/00-entry/bootstrap.md) |
-| Set up IDE-side Skill after you understand the protocol | [Skill Guide](../wiki-en/00-entry/skill-guide.md) |
-| Fix the Web auditor prompt into an app or system prompt | [Web Auditor App Guide](../wiki-en/00-entry/web-auditor-app-guide.md) |
-| See how it relates to workflow, spec-driven, and agent team | [Comparison](../wiki-en/00-entry/comparison.md) |
-| Understand why AI coding is first a governance problem | [01-Why](../wiki-en/01-why/) |
-| Read the detailed methodology after your first run | [02-How](../wiki-en/02-how/) |
-| See how governance works in deep water | [03-Deep Water](../wiki-en/03-deep-water/) |
-| Review evidence and real cases | [04-Evidence](../wiki-en/04-evidence/) |
+| Learning Layer | What You Learn First | Main Entry | Supporting Pages |
+|----------------|----------------------|------------|------------------|
+| Layer 1: Minimal Loop | Manually run one loop with two prompts and internalize the human-centered route, plan-first rule, and evidence-based acceptance | [Minimal Loop Guide](../wiki-en/00-entry/prompt-pack.md) | [30-Second Demo](../wiki-en/00-entry/30-second-demo.md), [Bootstrap](../wiki-en/00-entry/bootstrap.md), [Three Things](../wiki-en/00-entry/three-things.md), [Comparison](../wiki-en/00-entry/comparison.md) |
+| Layer 2: Minimal Stable Loop | Upgrade the manual loop into a stable dual-end setup with both sides fixed in place | [Minimal Stable Loop Guide](../wiki-en/00-entry/stable-loop-guide.md) | [Skill Guide](../wiki-en/00-entry/skill-guide.md), [Web Auditor App Guide](../wiki-en/00-entry/web-auditor-app-guide.md) |
+
+The remaining pages no longer act as parallel first-screen entrances. They are support pages for these two learning layers. The route is simple: run Layer 1 first, then move into Layer 2; if you get stuck, return to the supporting pages for examples, concepts, or setup details.
 
 ## One-line Navigation
 
 ### 00-Entry
 
-- [First-Time Guide](../wiki-en/00-entry/prompt-pack.md): the minimal route, minimal loop, recommended mode, universal mode, and correction prompts in one place
-- [Minimal Stable Loop Guide](../wiki-en/00-entry/stable-loop-guide.md): what counts as a stable loop, why IDE-side Skill plus Web-side fixed prompts must both be present, and why releases must pair them
-- [Three Things](../wiki-en/00-entry/three-things.md): What the protocol, Skill, and Web audit templates each are
-- [Bootstrap](../wiki-en/00-entry/bootstrap.md): Give the repo link to the executor and auditor and let them bootstrap themselves in
-- [30-Second Demo](../wiki-en/00-entry/30-second-demo.md): Two small tasks that let you mentally run one round in 30 seconds
-- [Skill Guide](../wiki-en/00-entry/skill-guide.md): How to clone the repo and set up project-level Skill on the IDE side
-- [Web Auditor App Guide](../wiki-en/00-entry/web-auditor-app-guide.md): How to fix the Web-side system prompt into a Gem, GPT, or other app container
-- [Comparison](../wiki-en/00-entry/comparison.md): How this protocol relates to methods you already know
+- [Minimal Loop Guide](../wiki-en/00-entry/prompt-pack.md): the Layer 1 parent page; run one manual loop first, with host-capability differences handled inside the page instead of as separate entrance boards
+- [30-Second Demo](../wiki-en/00-entry/30-second-demo.md): a 30-second mental simulation for Layer 1
+- [Bootstrap](../wiki-en/00-entry/bootstrap.md): once you understand Layer 1, use this to hand repo law to the executor and auditor
+- [Three Things](../wiki-en/00-entry/three-things.md): concept support for Layer 1; clarifies the protocol, Skill, and Web audit templates
+- [Comparison](../wiki-en/00-entry/comparison.md): positioning support for Layer 1; clarifies how this protocol differs from workflow, spec-driven, and agent team
+- [Minimal Stable Loop Guide](../wiki-en/00-entry/stable-loop-guide.md): the Layer 2 parent page; defines what stability means and why both ends must be fixed together
+- [Skill Guide](../wiki-en/00-entry/skill-guide.md): the IDE-side sub-guide for Layer 2
+- [Web Auditor App Guide](../wiki-en/00-entry/web-auditor-app-guide.md): the Web-side sub-guide for Layer 2
 
 ### 01-Why
 
