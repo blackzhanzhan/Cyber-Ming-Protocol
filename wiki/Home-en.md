@@ -4,20 +4,20 @@
 
 **[Chinese](Home.md)** | English
 
-First time here? Start with the English section of the [README](../README.md#english) for the minimal loop diagram and quick start.
+First time here? Start with the English section of the [README](../README.md#english), then continue into the [First-Time Guide](../wiki-en/00-entry/prompt-pack.md).
 
 ## Entry by Purpose
 
 | What You Want To Do | Where To Go |
 |---------------------|-------------|
-| Just copy prompts and start | [Prompt Pack](../wiki-en/00-entry/prompt-pack.md) |
+| Start your first run here | [First-Time Guide](../wiki-en/00-entry/prompt-pack.md) |
 | Understand what the three pieces are | [Three Things](../wiki-en/00-entry/three-things.md) |
 | Mentally run through one round in 30 seconds | [30-Second Demo](../wiki-en/00-entry/30-second-demo.md) |
 | Directly onboard the executor and auditor | [Bootstrap](../wiki-en/00-entry/bootstrap.md) |
 | Install Skill after you already understand the protocol | [Skill Guide](../wiki-en/00-entry/skill-guide.md) |
 | See how it relates to workflow, spec-driven, and agent team | [Comparison](../wiki-en/00-entry/comparison.md) |
 | Understand why AI coding is first a governance problem | [01-Why](../wiki-en/01-why/) |
-| Run your first minimal loop and learn the standards | [02-How](../wiki-en/02-how/) |
+| Read the detailed methodology after your first run | [02-How](../wiki-en/02-how/) |
 | See how governance works in deep water | [03-Deep Water](../wiki-en/03-deep-water/) |
 | Review evidence and real cases | [04-Evidence](../wiki-en/04-evidence/) |
 
@@ -25,7 +25,7 @@ First time here? Start with the English section of the [README](../README.md#eng
 
 ### 00-Entry
 
-- [Prompt Pack](../wiki-en/00-entry/prompt-pack.md): The recommended mode, universal mode, Skill trial prompt, and correction prompts in one place
+- [First-Time Guide](../wiki-en/00-entry/prompt-pack.md): the minimal route, minimal loop, recommended mode, universal mode, correction prompts, and Skill trial in one place
 - [Three Things](../wiki-en/00-entry/three-things.md): What the protocol, Skill, and Web audit templates each are
 - [Bootstrap](../wiki-en/00-entry/bootstrap.md): Give the repo link to the executor and auditor and let them bootstrap themselves in
 - [30-Second Demo](../wiki-en/00-entry/30-second-demo.md): Two small tasks that let you mentally run one round in 30 seconds
@@ -40,7 +40,7 @@ First time here? Start with the English section of the [README](../README.md#eng
 
 ### 02-How
 
-- [Minimal Loop](../wiki-en/02-how/minimal-loop.md): Start here for your first run
+- [Minimal Loop](../wiki-en/02-how/minimal-loop.md): Come back here after your first run for the expanded method
 - [Atomic Checklist and Chronicles](../wiki-en/02-how/atomic-checklist-chronicles.md): How detailed the plan should be and how to keep history
 - [White-box Reconciliation](../wiki-en/02-how/white-box-reconciliation.md): Saying "done" is not enough; completion needs evidence
 - [Scout Mechanism](../wiki-en/02-how/scout-mechanism.md): Probe first when uncertain instead of pretending to understand

@@ -1,16 +1,52 @@
-# Prompt Pack
+# First-Time Guide
 
 [Chinese](../../wiki/00-开始这里与落地形态/复制即用提示词包.md) | **English**
 
-If your goal right now is simply: **start fast, correct drift fast, and stop improvising prompts by hand**, start with this page.
+If this is your first time using Cyber-Ming-Protocol, start here.
+
+This page is the first-time manual: it tells you which mode to choose, gives you the minimal route and minimal loop, and then keeps the recommended mode, universal mode, correction prompts, and Skill trial in one place.
+
+## First-Time Route
+
+1. First decide whether you should use the recommended mode or the universal mode
+2. Copy the startup prompts to the executor and auditor
+3. Make the executor submit the atomic checklist and boundaries before any implementation
+4. Route the plan to the Web auditor and decide whether execution is granted
+5. Have the executor return an evidence packet after implementation
+6. Route the evidence back to the Web auditor and let the human make the final ruling on completion
+7. If anything drifts, come back to this page and copy the matching correction prompt
+
+## Diagram First
+
+This diagram is not the full methodology. It is here so your first run can mentally lock onto the minimal loop.
+
+```mermaid
+flowchart TD
+    A[The requirement enters the human hub] --> B[The human sends it to the executor: submit a plan first]
+    B --> C[The executor returns the atomic checklist and boundaries]
+    C --> D[The human routes the plan to the Web auditor]
+    D --> E[The Web auditor returns audit judgment]
+    E --> F{Does the human grant execution?}
+    F -- No --> G[The human routes it back and requires replanning]
+    G --> B
+    F -- Yes --> H[The human orders the executor to implement]
+    H --> I[The executor returns the evidence packet]
+    I --> J[The human routes the evidence to the Web auditor]
+    J --> K[The Web auditor returns verification judgment]
+    K --> L{Does the human confirm a completion fact?}
+    L -- No --> G
+    L -- Yes --> M[This loop stands]
+```
+
+Keep one sentence in mind: **the Web side only returns judgment; the human grants execution and the human also makes the final ruling.**
 
 ## Pick a Mode First
 
 - **Recommended Mode**: for agents that can read GitHub or repo URLs, use `webfetch`, or read the repository in a browser
-- **Universal Mode**: for environments with no web fetching, no repo-link reading, or when you want to paste the law files manually
+- **Universal Mode**: for environments with no web fetching, no repo-link reading, or only plain session prompts
 - **Project-level Skill Trial**: for hosts that support project-level skill directories and can try the core three inside the current project
 
-## Copy and Use
+## Copy and Use: Recommended / Universal
 
 <a id="repo-link-mode"></a>
 ### Recommended Mode: The Agent Can Read the Repo Link
@@ -103,7 +139,7 @@ Other than those five confirmations, do not begin case review and do not slide i
 ```
 
 <a id="skill-trial"></a>
-### Project-level Skill Trial
+## If You Want to Try Skill, Use This
 
 ```text
 If your host supports project-level skill directories, prefer trying the core three inside the current project directory first:
@@ -119,7 +155,7 @@ Whether it is supported or not, you may not skip this order:
 atomic checklist and boundaries first -> human approval -> execution second.
 ```
 
-## If Something Goes Wrong, Copy These Correction Prompts
+## If Something Drifts, Copy These Correction Prompts
 
 ### The Executor Started Coding Before Submitting the Atomic Checklist
 
@@ -223,9 +259,8 @@ Return immediately to bootstrap state and only reconfirm:
 If host memory is still leaking through, explicitly tell me to disable user memory, personalization, or history learning and restart in a fresh conversation.
 ```
 
-## A Little Explanation at the End
+## If You Want the Deeper Methodology, Go Here Next
 
-- This page is built to solve “copy first and get moving,” not to replace the full protocol explanation
-- If repo-link reading is available, use the recommended mode first; only fall back to the universal mode when you must
-- For Web-side plan audit or completion audit, pair this page with the files in `web-audit-templates/`
-- If you want more context afterward, continue with [BOOTSTRAP.md](../../BOOTSTRAP.md), [Minimal Loop](../02-how/minimal-loop.md), or [Skill Guide](skill-guide.md)
+- If you have already completed your first run and want the expanded method, continue with [Minimal Loop](../02-how/minimal-loop.md)
+- If you need the agent-side bootstrap gate under repo law, continue with [BOOTSTRAP.md](../../BOOTSTRAP.md)
+- If you want to decide when Skill should be installed more carefully, continue with [Skill Guide](skill-guide.md)

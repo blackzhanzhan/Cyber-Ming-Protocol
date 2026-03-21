@@ -103,6 +103,6 @@ If prompt-based clearing still does not work well, go into the host settings fir
 
 ## Next Steps
 
-- If you just want ready-to-copy startup and correction prompts, go straight to [Prompt Pack](prompt-pack.md)
+- If this is your first run, go straight to [First-Time Guide](prompt-pack.md)
 - If you want to start the protocol immediately, go back to the repo root and follow [`../../BOOTSTRAP.md`](../../BOOTSTRAP.md)
 - If you still want to understand the difference between a shallow trial and deep entry, continue with [Skill Guide](skill-guide.md)

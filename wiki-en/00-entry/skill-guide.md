@@ -135,6 +135,6 @@ Skill is just an enhancer. What really determines success is: whether approval f
 
 ## Next Steps
 
-- If you already want copy-ready recommended-mode, universal-mode, or Skill-trial prompts, go to [Prompt Pack](prompt-pack.md)
+- If this is your first run, start with [First-Time Guide](prompt-pack.md)
 - If you're still judging protocol/Skill/template relationships, go back to [Three Things](three-things.md)
 - If you want to mentally run through in 30 seconds first, see [30-Second Demo](30-second-demo.md)
