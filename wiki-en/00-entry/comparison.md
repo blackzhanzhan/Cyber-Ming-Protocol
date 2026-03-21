@@ -2,7 +2,13 @@
 
 ## What This Page Solves
 
-This page is a positioning-support page under Layer 1, not a new entrance parallel to the two learning layers.
+This page also belongs to Layer 3: **Relation and Adoption**.
+
+If [Three Things](three-things.md) helps you separate what this repo actually ships, this page answers the next question:
+
+- what this shares with mainstream approaches
+- where it diverges from them
+- how to adopt this protocol when you are already using workflow, spec-driven, or agent team patterns
 
 Many people seeing Cyber-Ming-Protocol ask: What's the relationship with workflow, spec-driven, and agent team that I already know? Is it just a different skin? Or completely different?
 
@@ -120,6 +126,7 @@ Process, specification, and collaboration mechanism are all tools—not the deci
 
 ## Related Pages
 
+- [Three Things](three-things.md): separate the comparison objects first, then return here to map against mainstream approaches
 - [Minimal Loop Guide](prompt-pack.md): return to the Layer 1 parent page
 - [Minimal Stable Loop Guide](stable-loop-guide.md): if you have already completed Layer 1, continue into Layer 2
 - [CS vs Management](../01-why/cs-vs-management.md): Developer position has changed

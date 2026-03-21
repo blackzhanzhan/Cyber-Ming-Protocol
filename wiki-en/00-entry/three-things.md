@@ -13,7 +13,13 @@
 
 ## What This Page Solves
 
-This page is a concept-support page under Layer 1, not a new entrance parallel to the two learning layers.
+This page belongs to Layer 3: **Relation and Adoption**.
+
+It does not answer "how do I run the loop right now?" It answers a different question that often gets mixed up before any comparison can even begin:
+
+- what this repo actually ships
+- what `Protocol / Skill / Web audit assets` each are
+- which of these are methodologies, and which are only carriers or stabilizers when you compare them with mainstream approaches
 
 When many people first see this project, they collapse three different things into one:
 
@@ -35,7 +41,7 @@ All three serve the same protocol, but they are not the same kind of thing.
 
 The safest public description is: `Protocol / Skill / Docs` are the project's three main delivery forms, while `web-audit-templates/` is a separate collaboration asset for the Web side.
 
-This page focuses on protocol, Skill, and templates because Docs / Teaching sit more on the explanatory side. They do not directly carry the executor or auditor role.
+This page focuses on protocol, Skill, and templates because many comparisons start by comparing the wrong layer: they mix delivery forms with methodologies, and everything after that becomes muddy.
 
 ## Asset Overview
 
@@ -120,7 +126,6 @@ Wrong. Web templates help the auditor question, verify, and judge. They are not 
 
 ## Recommended Next Steps
 
-- If you want to return to the Layer 1 parent page, continue with [Minimal Loop Guide](prompt-pack.md)
-- If you want to mentally run one round in 30 seconds, continue with [30-Second Demo](30-second-demo.md)
-- If you have already completed Layer 1 and want to enter Layer 2, continue with [Minimal Stable Loop Guide](stable-loop-guide.md)
-- If you already know you need the IDE-side or Web-side setup, continue with [Skill Guide](skill-guide.md) and [Web Auditor App Guide](web-auditor-app-guide.md)
+- If you want to stay inside Layer 3, continue with [Comparison](comparison.md) and map this against mainstream approaches
+- If you have not yet completed Layer 1, go back to [Minimal Loop Guide](prompt-pack.md)
+- If you have already completed Layer 1 and now want Layer 2, go back to [Minimal Stable Loop Guide](stable-loop-guide.md)
