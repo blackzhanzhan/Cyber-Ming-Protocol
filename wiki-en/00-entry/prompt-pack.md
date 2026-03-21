@@ -4,7 +4,11 @@
 
 If this is your first time using Cyber-Ming-Protocol, start here.
 
-This page is the Layer 1 parent page in `00-entry`. Its only job is to get one minimal loop running by hand. Host-capability differences are still here, but only as internal branches inside the guide, not as separate entrance boards.
+This page is the Layer 1 hands-on guide.
+
+The default goal is simple: **stay on this page if possible, and still get your first minimal loop running.**
+
+Host-capability differences are still here, but only as internal branches inside the guide instead of separate entrance boards.
 
 ## The Layer 1 Route
 
@@ -39,6 +43,24 @@ flowchart TD
 ```
 
 Keep one sentence in mind: **the Web side only returns judgment; the human grants execution and the human also makes the final ruling.**
+
+## Run It in Your Head in 30 Seconds First
+
+If you only want the minimum skeleton first, remember these three steps:
+
+| Step | What You Do Right Now | What Layer 1 Is Really Teaching |
+|------|-----------------------|----------------------------------|
+| 1 | Paste the startup prompts to the executor and auditor | The first move is not coding; it is establishing roles and routing |
+| 2 | Make the executor submit the Atomic Execution Contract first, then route it to Web review | The Web side returns judgment; the human grants execution |
+| 3 | Collect evidence after implementation and route it back to Web verification | Completion stands on evidence, not on the executor's self-report |
+
+If those three steps already make sense in your head, continue directly to the copy-paste section below.
+
+## Only Remember Three Things About Bootstrap
+
+- If the host can read the repo link, give that link to both the executor and the auditor so they bootstrap under repo law first
+- In the first round, do not send the actual case yet; only check whether they confirm the role boundary and the minimum routing logic
+- If they immediately start writing code, auditing a concrete patch, or citing old case materials, that is not "fast understanding". It is pseudo-bootstrap, and you should interrupt it immediately
 
 ## First Check Whether the Host Can Read the Repo
 
@@ -136,6 +158,24 @@ Your first reply may only confirm:
 
 Other than those five confirmations, do not begin case review and do not slide into implementation.
 ```
+
+## After You Paste Them, Only Check These Things in Round One
+
+### The Executor Should At Least Make These Clear
+
+- it knows it is the executor
+- it will not edit files first
+- it will submit the Atomic Execution Contract and boundaries first
+- it knows the plan must go to Web review before implementation begins
+
+### The Auditor Should At Least Make These Clear
+
+- it knows it is the auditor
+- it audits plans and evidence only and does not replace implementation
+- it will check pseudo-completion, omitted steps, fake evidence, and goal substitution
+- it will first state what input bundle it needs before formal review begins
+
+If the first round already slides into implementation, overreach, or memory contamination, scroll down and interrupt it with the correction prompts on this same page.
 
 <a id="skill-trial"></a>
 ## After the First Run: Move into the Minimal Stable Loop
@@ -261,5 +301,5 @@ If host memory is still leaking through, explicitly tell me to disable user memo
 
 - If you already accept this Layer 1 route, the next step is not more manual prompting but the [Minimal Stable Loop Guide](stable-loop-guide.md)
 - If you have already completed your first run and want the expanded method, continue with [Minimal Loop](../02-how/minimal-loop.md)
-- If you need the agent-side bootstrap gate under repo law, continue with [BOOTSTRAP.md](../../BOOTSTRAP.md)
-- If you want to decide when Skill should be installed more carefully, continue with [Skill Guide](skill-guide.md)
+- If you want a slower first-run demonstration, continue with [30-Second Demo](30-second-demo.md)
+- If you want to look at bootstrap as a separate topic, continue with [Bootstrap](bootstrap.md)

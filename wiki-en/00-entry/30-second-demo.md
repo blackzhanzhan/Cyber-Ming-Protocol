@@ -15,7 +15,9 @@
 
 Many people are only missing the final step: **How do I quickly run one minimal loop in my head?**
 
-This page is a support page for the Minimal Loop Guide. It does not cover Skill setup or Web app hardening. It uses two small tasks to show, in 30 seconds, how Layer 1 runs.
+The minimum skeleton from this page has already been folded into the [Minimal Loop Guide](prompt-pack.md).
+
+If this is your first run, stay on that page first. This page keeps two slower, more expanded examples for people who want to rehearse the loop one more time before starting.
 
 ## Demo Task 1: Fix a Small Bug
 

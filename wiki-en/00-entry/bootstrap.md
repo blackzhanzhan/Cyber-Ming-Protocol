@@ -12,7 +12,9 @@
 
 ## What This Page Solves
 
-This page is a support page under the Minimal Loop Guide, not a separate entrance parallel to Layer 1.
+The shortest bootstrap guidance from this page has already been folded into the [Minimal Loop Guide](prompt-pack.md).
+
+If this is your first run, stay on that page first. Come here only when you want to slow down and look at bootstrap as a separate topic.
 
 If you already understand the protocol, the next lowest-effort way to try it is usually not to re-explain the whole rule set to both agents yourself. Instead, give them the repo and the role files and let them bootstrap themselves in from the repo.
 
