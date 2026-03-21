@@ -1,4 +1,4 @@
-# Skill Guide (IDE Side)
+# Skill Guide (IDE-side Sub-guide for the Minimal Stable Loop)
 
 ## Table of Contents
 - [What This Page Solves](#what-this-page-solves)
@@ -12,7 +12,9 @@
 
 ## What This Page Solves
 
-This page answers two questions, both on the IDE side:
+This page is not a third entrance. It is the IDE-side sub-guide inside the Minimal Stable Loop layer.
+
+It answers two questions, both on the IDE side:
 
 - **When to install**: Should you install Skill now?
 - **How to install**: If so, in what sequence?
@@ -26,7 +28,7 @@ The minimal stable loop requires both:
 - IDE-side Skill
 - Web-side fixed prompt / app container
 
-For the full definition, see [Minimal Stable Loop Guide](stable-loop-guide.md).
+For the full definition, start with the parent page [Minimal Stable Loop Guide](stable-loop-guide.md).
 
 ## Conclusion First: When to Install
 
@@ -168,8 +170,7 @@ Skill is only an enhancer. What determines success is whether you still keep app
 
 ## Next Steps
 
-- If you have not yet completed your first run, start with [First-Time Guide](prompt-pack.md)
-- If you want the full dual-end definition, go to [Minimal Stable Loop Guide](stable-loop-guide.md)
-- If you want the Web-side setup, go to [Web Auditor App Guide](web-auditor-app-guide.md)
+- If you want to return to the Layer 2 parent page, go to [Minimal Stable Loop Guide](stable-loop-guide.md)
+- If you have not yet completed Layer 1, start with [Minimal Loop Guide](prompt-pack.md)
+- If you want the Web-side half, go to [Web Auditor App Guide](web-auditor-app-guide.md)
 - If you're still judging protocol/Skill/template relationships, go back to [Three Things](three-things.md)
-- If you want to mentally run through in 30 seconds first, see [30-Second Demo](30-second-demo.md)

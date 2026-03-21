@@ -1,10 +1,12 @@
-# Web Auditor App Guide
+# Web Auditor App Guide (Web-side Sub-guide for the Minimal Stable Loop)
 
 [Chinese](../../wiki/00-开始这里与落地形态/Web审计端固定提示词与专有应用指南.md) | **English**
 
 ## What This Page Solves
 
-This page covers only the Web side of the stable loop:
+This page is not a third entrance. It is the Web-side sub-guide inside the Minimal Stable Loop layer.
+
+It covers only the Web side of the stable loop:
 
 - how to fix the auditor law into a system prompt
 - how to place that prompt inside a Gem, GPT, or other dedicated app container
@@ -21,7 +23,7 @@ The minimal stable loop requires both:
 
 This page only solves the second half.
 
-For the full definition, see [Minimal Stable Loop Guide](stable-loop-guide.md).
+For the full definition, start with the parent page [Minimal Stable Loop Guide](stable-loop-guide.md).
 
 ## What Counts as a Fixed Web Prompt
 
@@ -106,6 +108,6 @@ and the protocol will look unstable when the real issue is only that the two end
 
 ## Next Steps
 
-- If you still have not completed your first run, go back to [First-Time Guide](prompt-pack.md)
+- If you want to return to the Layer 2 parent page, go back to [Minimal Stable Loop Guide](stable-loop-guide.md)
+- If you still have not completed Layer 1, go back to [Minimal Loop Guide](prompt-pack.md)
 - If the IDE side is not set up yet, continue with [Skill Guide](skill-guide.md)
-- If you want the full dual-end definition, return to [Minimal Stable Loop Guide](stable-loop-guide.md)

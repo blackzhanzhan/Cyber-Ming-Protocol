@@ -2,15 +2,18 @@
 
 [Chinese](../../wiki/00-开始这里与落地形态/最小稳定闭环指南.md) | **English**
 
+This page is the Layer 2 parent page in `00-entry`. Only come here after you have already run Layer 1 by hand.
+
 ## What This Page Solves
 
-This page is not about how to run your first loop. It is about what counts as the **minimal stable loop** after that.
+This page is not about how to run your first loop. It is about how Layer 2 becomes the **minimal stable loop** after that.
 
 It answers:
 
 - what makes a loop stable instead of merely runnable
 - why the stable loop is not “just install Skill” and not “just build a Web app”
 - why IDE-side Skill and Web-side fixed prompts must both be present
+- which page is the Layer 2 parent page and which two pages are only sub-guides
 
 ## One Sentence First
 
@@ -53,10 +56,11 @@ That is why the minimum stable form is dual-end by definition.
 ## Minimal Stable Route
 
 1. You have already run one full minimal loop by hand
-2. The IDE-side agent can clone the repository and load project-level Skill
-3. The Web-side auditor runs under a fixed system prompt or a dedicated app container
-4. After setup, each round still begins with only two short runtime prompts
-5. Releases stop being “Skill-only” and become `IDE skill bundle + Web auditor prompt / app prompt`
+2. Use this page first to confirm the Layer 2 definition: both ends must be established together
+3. For the IDE half, go to the sub-guide [Skill Guide](skill-guide.md)
+4. For the Web half, go to the sub-guide [Web Auditor App Guide](web-auditor-app-guide.md)
+5. Once both ends are fixed, each round still begins with only two short runtime prompts
+6. Releases stop being “Skill-only” and become `IDE skill bundle + Web auditor prompt / app prompt`
 
 ## IDE Side: Minimum Requirement
 
@@ -90,7 +94,7 @@ In all cases, you may not skip this order:
 Atomic Execution Contract and boundaries first -> human approval -> execution second.
 ```
 
-For the detailed IDE-side sub-guide, see [Skill Guide](skill-guide.md).
+The detailed IDE-side instructions live only in the sub-guide [Skill Guide](skill-guide.md).
 
 ## Web Side: Minimum Requirement
 
@@ -104,7 +108,7 @@ A Gem, GPT, Gemini Gem, or custom app is not a second methodology. It is just th
 
 If the Web side is still temporary and hand-built every round, the minimal stable loop is not established yet.
 
-For the Web-side sub-guide, see [Web Auditor App Guide](web-auditor-app-guide.md).
+The detailed Web-side instructions live only in the sub-guide [Web Auditor App Guide](web-auditor-app-guide.md).
 
 ## After Setup, Runtime Should Still Stay Short
 
@@ -146,6 +150,6 @@ If one side is updated and the other is not, it can look as if the protocol beca
 
 ## Next Steps
 
-- IDE-side setup: [Skill Guide](skill-guide.md)
-- Web-side fixed prompts and app containers: [Web Auditor App Guide](web-auditor-app-guide.md)
-- If you have not yet completed your first manual loop, go back to [First-Time Guide](prompt-pack.md)
+- IDE-side half: [Skill Guide](skill-guide.md)
+- Web-side half: [Web Auditor App Guide](web-auditor-app-guide.md)
+- If you have not yet completed Layer 1, go back to [Minimal Loop Guide](prompt-pack.md)
