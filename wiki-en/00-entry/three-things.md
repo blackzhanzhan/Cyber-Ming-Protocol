@@ -4,14 +4,16 @@
 - [What This Page Solves](#what-this-page-solves)
 - [Shortest Definition First](#shortest-definition-first)
 - [Asset Overview](#asset-overview)
-- [Layer 1: What Is the Protocol](#layer-1-what-is-the-protocol)
-- [Layer 2: What Is Skill](#layer-2-what-is-skill)
-- [Layer 3: What Are Web Audit Templates](#layer-3-what-are-web-audit-templates)
+- [Part 1: What Is the Protocol](#part-1-what-is-the-protocol)
+- [Part 2: What Is Skill](#part-2-what-is-skill)
+- [Part 3: What Are Web Audit Templates](#part-3-what-are-web-audit-templates)
 - [Why Web Audit Templates Must Stay Separate from Skill](#why-web-audit-templates-must-stay-separate-from-skill)
 - [Three Common Misreadings](#three-common-misreadings)
 - [Recommended Next Steps](#recommended-next-steps)
 
 ## What This Page Solves
+
+This page is a concept-support page under Layer 1, not a new entrance parallel to the two learning layers.
 
 When many people first see this project, they collapse three different things into one:
 
@@ -44,7 +46,7 @@ This page focuses on protocol, Skill, and templates because Docs / Teaching sit 
 | Docs / Teaching | The explanatory and teaching layer of the project | `README.md`, `wiki/` | Helps you understand the protocol, cases, boundaries, and how to get started | Yes, you need enough of it to understand the system | Disposable supporting pages |
 | Web Audit Templates | Audit collaboration templates for the Web side | `web-audit-templates/` | Helps you do plan audit, completion audit, and renewal judgment more reliably | No, optional | A local Skill or an automatic executor |
 
-## Layer 1: What Is the Protocol
+## Part 1: What Is the Protocol
 
 The protocol is the truly irreplaceable part of this project.
 
@@ -58,7 +60,7 @@ It defines a governance structure such as:
 
 All of that still holds even if you never install Skill.
 
-## Layer 2: What Is Skill
+## Part 2: What Is Skill
 
 Skill does not invent the protocol for you. Its role is to help you hold the protocol more reliably on the IDE side.
 
@@ -75,7 +77,7 @@ But they do not change one thing:
 
 It can only help you get closer to the action rhythm required by the protocol. It cannot make evidence appear by itself.
 
-## Layer 3: What Are Web Audit Templates
+## Part 3: What Are Web Audit Templates
 
 Web audit templates are not local Skill, and they are not IDE-side triggers.
 
@@ -118,7 +120,7 @@ Wrong. Web templates help the auditor question, verify, and judge. They are not 
 
 ## Recommended Next Steps
 
+- If you want to return to the Layer 1 parent page, continue with [Minimal Loop Guide](prompt-pack.md)
 - If you want to mentally run one round in 30 seconds, continue with [30-Second Demo](30-second-demo.md)
-- If you want to bootstrap roles directly, continue with [Bootstrap](bootstrap.md)
-- If you want to decide when Skill should be installed, continue with [Skill Guide](skill-guide.md)
-- If you want to compare it with workflow and spec-driven approaches, continue with [Comparison](comparison.md)
+- If you have already completed Layer 1 and want to enter Layer 2, continue with [Minimal Stable Loop Guide](stable-loop-guide.md)
+- If you already know you need the IDE-side or Web-side setup, continue with [Skill Guide](skill-guide.md) and [Web Auditor App Guide](web-auditor-app-guide.md)

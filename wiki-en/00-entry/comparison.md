@@ -2,6 +2,8 @@
 
 ## What This Page Solves
 
+This page is a positioning-support page under Layer 1, not a new entrance parallel to the two learning layers.
+
 Many people seeing Cyber-Ming-Protocol ask: What's the relationship with workflow, spec-driven, and agent team that I already know? Is it just a different skin? Or completely different?
 
 This page explains once: **Not completely unrelated, not completely identical.**
@@ -118,6 +120,8 @@ Process, specification, and collaboration mechanism are all tools—not the deci
 
 ## Related Pages
 
+- [Minimal Loop Guide](prompt-pack.md): return to the Layer 1 parent page
+- [Minimal Stable Loop Guide](stable-loop-guide.md): if you have already completed Layer 1, continue into Layer 2
 - [CS vs Management](../01-why/cs-vs-management.md): Developer position has changed
 - [Dual Distortion](../01-why/dual-distortion.md): Technical and governance distortion always appear together
 - [Methodology Coordinates](../01-why/methodology-coordinates.md): Where this protocol stands in public world (more detailed comparison)
