@@ -32,6 +32,31 @@ What this report proves is not that "AI eventually succeeded again," but that:
 
 If you are an evidence-first reader, the most valuable thing here is not the rhetoric, but the reversal chain itself.
 
+## First Clarify What This Page Is About
+
+To prevent misreading, two things need to be fixed in place first.
+
+### First, the “deep water” here is primarily deep water in code logic and human-AI governance
+
+The deep water in this report is first of all about:
+
+- code logic becoming deep enough that summaries drift away from reality
+- execution chains and acceptance chains becoming long enough to create pseudo-completion risk
+- humans becoming vulnerable to being led away from the physical world by a respectable-looking report
+- the executor, auditor, and human core needing a real redistribution of power
+
+It is **not** mainly about the deep water of giant-company projects, long-lived technical debt, complex team collaboration, or organizational coordination cost. Those are real battlefields too, but they are not the primary battlefield this protocol is currently aimed at.
+
+### Second, this example is run through by hand on purpose
+
+This case is intentionally run through with the manual method, not because Skill or system prompts do not matter, but because the proof target needs to stay clean:
+
+- this page is not primarily proving that some Skill is powerful
+- it is not primarily proving that some system prompt is powerful
+- it is proving that **the minimal loop itself, the power-balancing structure itself, and the human-centered sovereign routing itself are already strong enough to drag pseudo-completion back into the real world**
+
+In other words, the point of this report is not that the add-ons are strong. The point is that the protocol skeleton is strong.
+
 ## Minimal Evidence Chain
 
 If the whole report is compressed into the shortest possible case file, the real thing worth seeing is not the long story, but this reversal chain:

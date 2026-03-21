@@ -18,6 +18,7 @@ description: Parent policy layer for approval-first coding workflows under both 
 - Before any approved implementation, the planning layer must output:
   - a Markdown table titled `最小改动原子执行合同`
   - a YAML block titled `边界条件与测试用例键值对`
+- The YAML block must act as a white-box acceptance bridge rather than a generic test dump. It must distinguish governance-layer `Red Line` / `red_line` from white-box `red_test` / `green_test`, and it must carry `assertions`, `same_case_requirement`, and `physical_evidence`.
 - Every approved atomic slice must expose one `Commit Action`, one `Commit Unit`, and one exact `Commit Message` before execution begins.
 - One slice, one verification, one commit, one `git status --short`.
 - Verified but unarchived work remains `史册债务`.

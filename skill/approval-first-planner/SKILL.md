@@ -1,6 +1,6 @@
 ---
 name: approval-first-planner
-description: Use for implementation-style tasks that modify code, files, pages, or project structure. Inspect first, then output an approval-first execution contract with atomic slices, red and green gates, acceptance ladder, commit plan, target artifacts, and a boundary/test YAML block. Do not edit files.
+description: Use for implementation-style tasks that modify code, files, pages, or project structure. Inspect first, then output an approval-first execution contract with atomic slices, red lines, green tests, acceptance ladder, commit plan, target artifacts, and a white-box acceptance YAML bridge. Do not edit files.
 ---
 
 # Approval-First Planner
@@ -29,7 +29,7 @@ Each atomic slice must expose at least these fields:
 - `Objective`
 - `Allowed Files`
 - `Do Not Touch`
-- `Red Light`
+- `Red Line`
 - `Green Tests`
 - `Acceptance Ladder`
 - `Commit Action`
@@ -37,11 +37,24 @@ Each atomic slice must expose at least these fields:
 - `Commit Message`
 - `Target Artifacts`
 
+## Required YAML Shape
+The `边界条件与测试用例键值对` block must not collapse governance red lines and white-box test chains into one blur.
+
+It must distinguish:
+
+- governance-layer `red_line`
+- white-box `assertions`
+- white-box `red_test`
+- white-box `green_test`
+- `same_case_requirement`
+- `physical_evidence`
+
 ## Planning Rules
 - Inspect relevant code, docs, and git context first.
 - If uncertainty is too high, reduce the first slice to a probe-style slice rather than faking certainty.
 - Keep slices narrow enough that one slice can become one independent commit.
 - Reveal commit planning now, not after edits, including the commit action expected for each slice.
+- Do not confuse `Red Line` with `red_test`: the former is a governance boundary, the latter is a white-box failing verification.
 - If the user writes in imperial register, you may wrap the output ceremonially, but the technical body must remain explicit.
 - Do not edit files in this skill.
 
