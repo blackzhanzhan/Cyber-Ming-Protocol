@@ -4,17 +4,19 @@
 
 **[Chinese](Home.md)** | English
 
-First time here? Start with the English section of the [README](../README.md#english), then continue into the [First-Time Guide](../wiki-en/00-entry/prompt-pack.md).
+First time here? Start with the English section of the [README](../README.md#english), run the [First-Time Guide](../wiki-en/00-entry/prompt-pack.md), and then move into the [Minimal Stable Loop Guide](../wiki-en/00-entry/stable-loop-guide.md).
 
 ## Entry by Purpose
 
 | What You Want To Do | Where To Go |
 |---------------------|-------------|
 | Start your first run here | [First-Time Guide](../wiki-en/00-entry/prompt-pack.md) |
+| You already ran once and now want stability | [Minimal Stable Loop Guide](../wiki-en/00-entry/stable-loop-guide.md) |
 | Understand what the three pieces are | [Three Things](../wiki-en/00-entry/three-things.md) |
 | Mentally run through one round in 30 seconds | [30-Second Demo](../wiki-en/00-entry/30-second-demo.md) |
 | Directly onboard the executor and auditor | [Bootstrap](../wiki-en/00-entry/bootstrap.md) |
-| Install Skill after you already understand the protocol | [Skill Guide](../wiki-en/00-entry/skill-guide.md) |
+| Set up IDE-side Skill after you understand the protocol | [Skill Guide](../wiki-en/00-entry/skill-guide.md) |
+| Fix the Web auditor prompt into an app or system prompt | [Web Auditor App Guide](../wiki-en/00-entry/web-auditor-app-guide.md) |
 | See how it relates to workflow, spec-driven, and agent team | [Comparison](../wiki-en/00-entry/comparison.md) |
 | Understand why AI coding is first a governance problem | [01-Why](../wiki-en/01-why/) |
 | Read the detailed methodology after your first run | [02-How](../wiki-en/02-how/) |
@@ -25,11 +27,13 @@ First time here? Start with the English section of the [README](../README.md#eng
 
 ### 00-Entry
 
-- [First-Time Guide](../wiki-en/00-entry/prompt-pack.md): the minimal route, minimal loop, recommended mode, universal mode, correction prompts, and Skill trial in one place
+- [First-Time Guide](../wiki-en/00-entry/prompt-pack.md): the minimal route, minimal loop, recommended mode, universal mode, and correction prompts in one place
+- [Minimal Stable Loop Guide](../wiki-en/00-entry/stable-loop-guide.md): what counts as a stable loop, why IDE-side Skill plus Web-side fixed prompts must both be present, and why releases must pair them
 - [Three Things](../wiki-en/00-entry/three-things.md): What the protocol, Skill, and Web audit templates each are
 - [Bootstrap](../wiki-en/00-entry/bootstrap.md): Give the repo link to the executor and auditor and let them bootstrap themselves in
 - [30-Second Demo](../wiki-en/00-entry/30-second-demo.md): Two small tasks that let you mentally run one round in 30 seconds
-- [Skill Guide](../wiki-en/00-entry/skill-guide.md): When to install Skill, how to install it, and common pitfalls
+- [Skill Guide](../wiki-en/00-entry/skill-guide.md): How to clone the repo and set up project-level Skill on the IDE side
+- [Web Auditor App Guide](../wiki-en/00-entry/web-auditor-app-guide.md): How to fix the Web-side system prompt into a Gem, GPT, or other app container
 - [Comparison](../wiki-en/00-entry/comparison.md): How this protocol relates to methods you already know
 
 ### 01-Why

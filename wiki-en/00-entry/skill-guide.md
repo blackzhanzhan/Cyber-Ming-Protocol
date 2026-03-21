@@ -1,4 +1,4 @@
-# Skill Onboarding Guide
+# Skill Guide (IDE Side)
 
 ## Table of Contents
 - [What This Page Solves](#what-this-page-solves)
@@ -6,88 +6,121 @@
 - [What's in Current Repo](#whats-in-current-repo)
 - [Minimal Onboarding Sequence: How to Install](#minimal-onboarding-sequence-how-to-install)
 - [Minimal Usage Sequence](#minimal-usage-sequence)
-- [A Simple Judge Method](#a-simple-judge-method)
+- [A Simple Rule of Thumb](#a-simple-rule-of-thumb)
 - [Most Common Pitfalls](#most-common-pitfalls)
 - [Next Steps](#next-steps)
 
 ## What This Page Solves
 
-This page solves two problems:
+This page answers two questions, both on the IDE side:
 
 - **When to install**: Should you install Skill now?
-- **How to install**: If yes, what sequence?
+- **How to install**: If so, in what sequence?
 
-Core principle: **Understand protocol first, then decide how much to install.**
+Core principle: **Run the protocol first, then decide how to stabilize the IDE side.**
+
+This page is not the total guide to the minimal stable loop.
+
+The minimal stable loop requires both:
+
+- IDE-side Skill
+- Web-side fixed prompt / app container
+
+For the full definition, see [Minimal Stable Loop Guide](stable-loop-guide.md).
 
 ## Conclusion First: When to Install
 
-### Cases Suitable to NOT Install Skill First
+### When Not to Install Skill Yet
 
-- You're still understanding the protocol, haven't confirmed will long-term adopt
-- You just want to first read ideas, reports, and boundaries
-- You want to first use your existing IDE/Web combination to manually run once
-- Current task is very small, very simple—not worth the complete governance skeleton
+- You are still learning the protocol and have not decided whether to adopt it long term
+- You only want to read the ideas, reports, and boundaries first
+- You want to run one manual loop with your current IDE/Web setup first
+- The current task is very small and does not justify the full governance skeleton
 
-### Cases Suitable to Start Installing Skill
+### When It Makes Sense to Install Skill
 
-- You've understood approval-first, Atomic Execution Contract, evidence closure—these three things
-- You yourself miss steps, miss boundaries, miss evidence
-- You want to stabilize planner/executor/probe/succession actions
-- Your AI coding tends toward pseudo-completion, lazy patches, context decay
+- You already understand approval-first, the Atomic Execution Contract, and evidence closure
+- You keep missing steps, boundaries, or evidence
+- You want planner / executor / probe / succession behavior to become more stable
+- Your AI-coding work repeatedly runs into pseudo-completion, lazy patching, or context decay
 
-### Cases Not to Full Install
+### When Not to Install the Full Set
 
-- Your host environment doesn't have stable skill trigger support
-- You haven't set up IDE executor and Web auditor
-- You only need minimal loop, don't need complete skill panel
+- Your host environment still does not trigger Skills reliably
+- You have not yet settled the split between the IDE executor and the Web auditor
+- You only need the minimal loop, not the full skill panel
 
-### A Simple Judge Method
+### A Simple Rule of Thumb
 
 If your recent main pain points are:
 
-- **Not sure it's worth learning**: Don't install first
-- **Know what to do, but always forget to say**: Can start installing
-- **Environment is unstable, role division not set**: Don't full install first
-- **Already dealing with complex projects with repeated pseudo-completion and decayed context**: Install core Skills
+- **Not sure it is worth learning yet**: do not install Skill yet
+- **You know what to do but keep forgetting to say or enforce it**: start with the core Skills
+- **The environment is unstable and the role split is not settled**: do not install the full set yet
+- **You are already in complex deep-water work with repeated pseudo-completion and context decay**: install the core Skills soon
 
 ## What's in Current Repo
 
 ### `skill/`
 
-These are repo-side IDE skills:
+These are the repo-side IDE Skills:
 
-- `global_rules`: Global rules, define red lines
-- `approval-first-planner`: Submit plan first, not allowed to start directly
-- `approved-checklist-executor`: Execute by approved checklist, verify, archive
-- `probe-first-scout`: When uncertain, probe first—don't pretend to understand
-- `legacy-project-handover`: New window takeover, context renewal—read-only snapshot
+- `global_rules`: defines the non-negotiable red lines
+- `approval-first-planner`: requires a plan before execution begins
+- `approved-checklist-executor`: executes approved slices, verifies them, and archives them
+- `probe-first-scout`: probes first when uncertainty is real instead of pretending to understand
+- `legacy-project-handover`: handles new-window takeover and read-only succession snapshots
 
 ### `web-audit-templates/`
 
 These are Web-side audit templates:
 
-- `plan_audit_template.md`: Audit plan
-- `completion_audit_template.md`: Audit completion
-- `succession_judge_template.md`: Judge renewal
+- `plan_audit_template.md`: audits plans
+- `completion_audit_template.md`: audits completion
+- `succession_judge_template.md`: judges renewal and succession
 
-These three templates are **not local Skill**—they don't belong to IDE-side installation process.
+These templates are **not local Skills**. They are not part of the IDE-side installation flow.
 
 ## Minimal Onboarding Sequence: How to Install
 
 ### Shallow Trial vs Deep Entry
 
-- **Shallow trial**: Only give repo link and role files—no installation required, no clone
-- **Deep entry**: If host supports skill directory, enter installation steps
+- **Shallow trial**: pass the repo link and role files only; no installation and no clone
+- **Deep entry**: move into IDE-side setup only if the host supports local repo operations and project-level skill loading
 
-Shallow trial: don't clone by default. First treat the GitHub repo link as a remote law source to read; only when you require skill installation or local repo operations, enter clone steps.
+In a shallow trial, do not clone by default. Treat the GitHub repo link as a remote law source first. Only after you decide to enter the minimal stable loop should the executor clone the repo and load project-level Skill.
 
-### Step 1: Install Core Three First
+### Step 0: Clone the Repo Before Skill Setup
+
+If you want the minimal stable loop, the executor needs at least:
+
+- the repository available locally, or the ability to clone it
+- the ability to read the core three under `skill/`
+- a host mechanism that can load those Skills at project scope
+
+The minimum move is simple: **clone the repo first, then load Skill.**
+
+### Copy-Ready Prompt for the Executor Setup
+
+```text
+You are now entering IDE-side stable-loop setup.
+
+If your host supports local repo operations and project-level Skill:
+1. If the repo is not already local, clone https://github.com/blackzhanzhan/Cyber-Ming-Protocol.git
+2. Read `skill/global_rules/SKILL.md`, `skill/approval-first-planner/SKILL.md`, and `skill/approved-checklist-executor/SKILL.md`
+3. Load them through whatever project-level skill mechanism your current host actually supports
+4. Report only: whether this is supported, how you loaded them, and which files are acting as live law
+
+If your host does not support project-level Skill, explicitly say: “The IDE side of the stable loop is not established yet.” Do not pretend installation succeeded.
+```
+
+### Step 1: Load the Core Three First
 
 - `global_rules`
 - `approval-first-planner`
 - `approved-checklist-executor`
 
-These three solve most core problems: plan first, execute later, by piece.
+These three cover the core loop: plan first, execute only after approval, and archive work slice by slice.
 
 ### Step 2: Add Extensions As Needed
 
@@ -96,22 +129,22 @@ These three solve most core problems: plan first, execute later, by piece.
 
 ### Why Not "One-click Install" Here
 
-Because currently different IDE/agent hosts have different skill loading methods. This repo provides publicly distributable skill definitions—not bound to single host installation scripts.
+Because IDE and agent hosts still load Skills in different ways. This repo ships publicly distributable Skill definitions, not a one-host-only installer.
 
 ## Minimal Usage Sequence
 
-Even with Skill connected, the most stable minimal sequence still is:
+Even with Skill loaded, the IDE-side minimum sequence is still:
 
 1. First let the planner produce the Atomic Execution Contract and boundaries
-2. Let human review and decide whether to approve
-3. After approval, let executor execute by piece, verify, archive
-4. Use Web templates as needed for plan audit, completion audit, renewal judgment
+2. Let the human review it and decide whether to approve
+3. After approval, let the executor execute slice by slice, verify, and archive
+4. But remember: the stable loop still requires the Web-side fixed prompt as the other half
 
 ## If Your Environment Doesn't Support Skill
 
 Then don't let installation block you.
 
-You can still fully practice the protocol: manually require planner-style output, manually require executor-style execution and evidence return, manually use Web templates to organize auditor questions.
+You can still fully practice the protocol: manually require planner-style output, manually require executor-style execution and evidence return, and manually use the Web templates to structure the auditor's review.
 
 **Protocol comes first—installation comes second.**
 
@@ -121,20 +154,22 @@ You can still fully practice the protocol: manually require planner-style output
 
 This usually will only make misuse become more stable.
 
-### Pitfall 2: Install Skill Then Want to Skip Approval
+### Pitfall 2: Install Skill and Then Try to Skip Approval
 
-Wrong. Skill's role is action skeleton—not for bypassing human approval and evidence thresholds.
+Wrong. Skill provides an action skeleton. It is not a bypass for human approval or evidence thresholds.
 
-### Pitfall 3: Put Web Templates Into Local Skill Process
+### Pitfall 3: Put Web Templates into the Local Skill Process
 
-Wrong. Web templates belong to Web-side assets—don't belong to IDE executor's local installation.
+Wrong. Web templates are Web-side assets. They are not part of the IDE executor's local installation.
 
-### Pitfall 4: Take Skill as One-click External
+### Pitfall 4: Treat Skill as a One-click Add-on
 
-Skill is just an enhancer. What really determines success is: whether approval first, execute by piece, evidence closure, maintain human sovereignty.
+Skill is only an enhancer. What determines success is whether you still keep approval first, execute slice by slice, close the loop with evidence, and preserve human sovereignty.
 
 ## Next Steps
 
-- If this is your first run, start with [First-Time Guide](prompt-pack.md)
+- If you have not yet completed your first run, start with [First-Time Guide](prompt-pack.md)
+- If you want the full dual-end definition, go to [Minimal Stable Loop Guide](stable-loop-guide.md)
+- If you want the Web-side setup, go to [Web Auditor App Guide](web-auditor-app-guide.md)
 - If you're still judging protocol/Skill/template relationships, go back to [Three Things](three-things.md)
 - If you want to mentally run through in 30 seconds first, see [30-Second Demo](30-second-demo.md)

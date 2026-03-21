@@ -15,7 +15,7 @@
 
 If this is your first time entering the repo, do not start with this page.
 
-Start with the [First-Time Guide](../00-entry/prompt-pack.md) instead. That page now carries the first-run manual: the minimal route, the minimal loop diagram, the recommended mode, the universal mode, the correction prompts, and the Skill trial all live there.
+Start with the [First-Time Guide](../00-entry/prompt-pack.md) instead. That page now carries the first-run manual: the minimal route, the minimal loop diagram, the recommended mode, the universal mode, and the correction prompts all live there.
 
 This page is now the better place to return to after your first run, when you want the expanded methodology and the difference between the one-audit and multi-audit versions.
 

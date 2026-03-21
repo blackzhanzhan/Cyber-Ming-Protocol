@@ -4,7 +4,7 @@
 
 If this is your first time using Cyber-Ming-Protocol, start here.
 
-This page is the first-time manual: it tells you which mode to choose, gives you the minimal route and minimal loop, and then keeps the recommended mode, universal mode, correction prompts, and Skill trial in one place.
+This page is the first-time manual. Its only job is to get the first minimal loop running. It helps you choose a mode, gives you the minimal route and minimal loop, and keeps the recommended mode, universal mode, and correction prompts in one place.
 
 ## First-Time Route
 
@@ -44,7 +44,6 @@ Keep one sentence in mind: **the Web side only returns judgment; the human grant
 
 - **Recommended Mode**: for agents that can read GitHub or repo URLs, use `webfetch`, or read the repository in a browser
 - **Universal Mode**: for environments with no web fetching, no repo-link reading, or only plain session prompts
-- **Project-level Skill Trial**: for hosts that support project-level skill directories and can try the core three inside the current project
 
 ## Copy and Use: Recommended / Universal
 
@@ -139,21 +138,20 @@ Other than those five confirmations, do not begin case review and do not slide i
 ```
 
 <a id="skill-trial"></a>
-## If You Want to Try Skill, Use This
+## After the First Run: Enter the Minimal Stable Loop
 
-```text
-If your host supports project-level skill directories, prefer trying the core three inside the current project directory first:
-- `global_rules`
-- `approval-first-planner`
-- `approved-checklist-executor`
+If you have already run one full loop with this page, the next step is not to keep stacking manual prompts inside the same page.
 
-First verify that the host really supports project-level skills. Do not pretend installation succeeded.
-If it does, tell me how you would load them from the current project directory.
-If it does not, fall back to the manual protocol clearly and do not let installation block the task.
+The minimal stable loop requires both sides to be fixed in place:
 
-Whether it is supported or not, you may not skip this order:
-Atomic Execution Contract and boundaries first -> human approval -> execution second.
-```
+- IDE side: project-level Skill
+- Web side: fixed system prompt / Gem / GPT / other dedicated app container
+
+If either side is missing, you still have a manual loop, not a stable one.
+
+- Start with the [Minimal Stable Loop Guide](stable-loop-guide.md)
+- IDE-side setup: [Skill Guide](skill-guide.md)
+- Web-side prompt and app setup: [Web Auditor App Guide](web-auditor-app-guide.md)
 
 ## If Something Drifts, Copy These Correction Prompts
 
@@ -259,8 +257,9 @@ Return immediately to bootstrap state and only reconfirm:
 If host memory is still leaking through, explicitly tell me to disable user memory, personalization, or history learning and restart in a fresh conversation.
 ```
 
-## If You Want the Deeper Methodology, Go Here Next
+## After You Get It Running, Go Here Next
 
+- If you already accept the method, the next step is not more manual prompting but the [Minimal Stable Loop Guide](stable-loop-guide.md)
 - If you have already completed your first run and want the expanded method, continue with [Minimal Loop](../02-how/minimal-loop.md)
 - If you need the agent-side bootstrap gate under repo law, continue with [BOOTSTRAP.md](../../BOOTSTRAP.md)
 - If you want to decide when Skill should be installed more carefully, continue with [Skill Guide](skill-guide.md)
