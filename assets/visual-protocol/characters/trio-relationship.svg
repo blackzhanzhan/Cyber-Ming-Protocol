@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
+  <title id="title">Cyber-Ming core cast relationship map</title>
+  <desc id="desc">Relationship diagram for Xiao Huanglong, Xu Jie, and Yan Song showing human routing, execution, and audit separation.</desc>
+  <defs>
+    <style>
+      .bg{fill:#F6F0E6}
+      .panel{fill:#FFF9F0;stroke:#3A312B;stroke-width:4}
+      .ink{stroke:#3A312B;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .arrow{fill:none;stroke:#7F3733;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+      .soft{fill:none;stroke:#8B8379;stroke-width:4;stroke-dasharray:10 10;marker-end:url(#arrow-gray)}
+      .no{fill:none;stroke:#B9493E;stroke-width:5;stroke-dasharray:12 10}
+      .gold{fill:#E2B93B;stroke:#3A312B;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .cream{fill:#F5E4B8;stroke:#3A312B;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .cloud{fill:#E9E0D3;stroke:#3A312B;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .blue{fill:#7E8794;stroke:#3A312B;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .blue-dark{fill:#56606D;stroke:#3A312B;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .russet{fill:#9B5B46;stroke:#3A312B;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .russet-dark{fill:#7A4638;stroke:#3A312B;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .paper{fill:#F7F1E5;stroke:#3A312B;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .seal{fill:#A54A46;stroke:#3A312B;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .skin{fill:#E8C3A1;stroke:#3A312B;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .label{font:700 30px Georgia, serif; fill:#3A312B}
+      .small{font:600 22px 'Trebuchet MS', sans-serif; fill:#3A312B}
+      .tiny{font:500 18px 'Trebuchet MS', sans-serif; fill:#3A312B}
+    </style>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto">
+      <path d="M0 0 L14 7 L0 14 Z" fill="#7F3733"/>
+    </marker>
+    <marker id="arrow-gray" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto">
+      <path d="M0 0 L14 7 L0 14 Z" fill="#8B8379"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1600" height="980"/>
+  <text x="100" y="92" class="label">Cyber-Ming core cast</text>
+  <text x="100" y="130" class="small">One hub, one executor, one auditor. No private shortcut.</text>
+
+  <rect x="640" y="120" width="320" height="250" rx="32" class="panel"/>
+  <path d="M745 294 C693 324 703 356 756 362 C818 369 851 334 867 307" class="gold"/>
+  <ellipse cx="803" cy="260" rx="88" ry="100" class="gold"/>
+  <ellipse cx="803" cy="270" rx="52" ry="70" class="cream"/>
+  <circle cx="803" cy="185" r="72" class="gold"/>
+  <ellipse cx="803" cy="200" rx="56" ry="40" class="cream"/>
+  <path d="M760 132 L737 96 L775 113" class="gold"/>
+  <path d="M846 132 L869 96 L831 113" class="gold"/>
+  <circle cx="776" cy="180" r="8" fill="#3A312B"/>
+  <circle cx="829" cy="180" r="8" fill="#3A312B"/>
+  <path d="M776 218 Q804 231 830 218" class="ink" fill="none"/>
+  <path d="M750 320 C770 340 840 340 860 320" class="cloud"/>
+  <text x="802" y="338" text-anchor="middle" class="small">Xiao Huanglong</text>
+  <text x="802" y="362" text-anchor="middle" class="tiny">Human hub / route / final ruling</text>
+
+  <rect x="160" y="510" width="360" height="300" rx="30" class="panel"/>
+  <ellipse cx="342" cy="580" rx="56" ry="64" class="skin"/>
+  <rect x="297" y="528" width="90" height="28" rx="12" class="blue-dark"/>
+  <path d="M287 555 L254 526 L301 518 L317 552" class="blue-dark"/>
+  <path d="M397 555 L430 526 L383 518 L367 552" class="blue-dark"/>
+  <circle cx="322" cy="575" r="7" fill="#3A312B"/>
+  <circle cx="361" cy="575" r="7" fill="#3A312B"/>
+  <path d="M304 567 Q322 560 337 566" class="ink" fill="none"/>
+  <path d="M347 566 Q362 560 379 567" class="ink" fill="none"/>
+  <path d="M296 740 L318 620 L386 620 L408 740 Z" class="blue"/>
+  <rect x="325" y="620" width="55" height="95" rx="20" class="blue-dark"/>
+  <rect x="404" y="626" width="72" height="96" rx="10" class="paper" transform="rotate(8 440 674)"/>
+  <circle cx="423" cy="705" r="10" class="seal"/>
+  <text x="342" y="772" text-anchor="middle" class="small">Xu Jie</text>
+  <text x="342" y="798" text-anchor="middle" class="tiny">Independent auditor</text>
+
+  <rect x="1080" y="510" width="360" height="300" rx="30" class="panel"/>
+  <ellipse cx="1262" cy="580" rx="56" ry="64" class="skin"/>
+  <rect x="1217" y="528" width="90" height="28" rx="12" class="russet-dark"/>
+  <path d="M1207 555 L1174 526 L1221 518 L1237 552" class="russet-dark"/>
+  <path d="M1317 555 L1350 526 L1303 518 L1287 552" class="russet-dark"/>
+  <circle cx="1242" cy="575" r="7" fill="#3A312B"/>
+  <circle cx="1281" cy="579" r="7" fill="#3A312B"/>
+  <path d="M1223 567 Q1244 561 1259 568" class="ink" fill="none"/>
+  <path d="M1268 570 Q1284 562 1301 569" class="ink" fill="none"/>
+  <path d="M1208 742 L1234 620 L1302 620 L1360 742 Z" class="russet"/>
+  <rect x="1238" y="620" width="55" height="95" rx="20" class="russet-dark"/>
+  <rect x="1310" y="618" width="78" height="108" rx="12" class="paper" transform="rotate(10 1349 672)"/>
+  <circle cx="1332" cy="707" r="10" class="seal"/>
+  <text x="1262" y="772" text-anchor="middle" class="small">Yan Song</text>
+  <text x="1262" y="798" text-anchor="middle" class="tiny">Executor / drift risk</text>
+
+  <path d="M762 368 C676 430 540 502 429 535" class="arrow"/>
+  <path d="M400 515 C520 490 660 428 760 350" class="arrow"/>
+  <text x="524" y="448" class="tiny">audit package</text>
+  <text x="520" y="486" class="tiny">judgment back</text>
+
+  <path d="M846 350 C946 425 1076 490 1200 514" class="arrow"/>
+  <path d="M1230 536 C1119 499 980 424 892 366" class="arrow"/>
+  <text x="1022" y="447" class="tiny">grant / deny</text>
+  <text x="1022" y="486" class="tiny">contract + evidence</text>
+
+  <path d="M520 620 C705 620 895 620 1080 620" class="no"/>
+  <path d="M520 702 C705 702 895 702 1080 702" class="no"/>
+  <line x1="660" y1="578" x2="936" y2="744" class="ink"/>
+  <line x1="660" y1="744" x2="936" y2="578" class="ink"/>
+  <text x="800" y="602" text-anchor="middle" class="small">No private shortcut</text>
+
+  <rect x="610" y="844" width="380" height="86" rx="18" class="panel"/>
+  <text x="800" y="880" text-anchor="middle" class="small">Governance law</text>
+  <text x="800" y="906" text-anchor="middle" class="tiny">Execution may not become judgment. Audit may not become implementation.</text>
+</svg>
