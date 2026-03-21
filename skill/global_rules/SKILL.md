@@ -16,7 +16,7 @@ description: Parent policy layer for approval-first coding workflows under both 
 - `脉冲准奏` or `连环执行` means an already approved checklist may continue automatically slice by slice until a blocker appears.
 - Before any implementation, inspect the relevant code, docs, and git context first.
 - Before any approved implementation, the planning layer must output:
-  - a Markdown table titled `最小改动原子清单`
+  - a Markdown table titled `最小改动原子执行合同`
   - a YAML block titled `边界条件与测试用例键值对`
 - Every approved atomic slice must expose one `Commit Unit` and one exact `Commit Message` before execution begins.
 - One slice, one verification, one commit, one `git status --short`.

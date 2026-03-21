@@ -41,7 +41,7 @@ First time here? Start with the English section of the [README](../README.md#eng
 ### 02-How
 
 - [Minimal Loop](../wiki-en/02-how/minimal-loop.md): Come back here after your first run for the expanded method
-- [Atomic Execution Contract and Chronicles](../wiki-en/02-how/atomic-checklist-chronicles.md): Why the contract form is lighter than heavy specs and harder than ordinary plans
+- [Atomic Execution Contract and Chronicles](../wiki-en/02-how/atomic-execution-contract-chronicles.md): Why the contract form is lighter than heavy specs and harder than ordinary plans
 - [White-box Reconciliation](../wiki-en/02-how/white-box-reconciliation.md): Saying "done" is not enough; completion needs evidence
 - [Scout Mechanism](../wiki-en/02-how/scout-mechanism.md): Probe first when uncertain instead of pretending to understand
 

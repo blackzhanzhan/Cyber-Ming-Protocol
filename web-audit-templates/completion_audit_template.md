@@ -5,7 +5,7 @@
 - You need Web-side review to decide whether completion facts are truly established.
 
 ## Minimum Input Package
-- planner definition of the slice
+- approved Atomic Execution Contract definition of the slice
 - actual modified files
 - verification commands and results
 - target artifacts or screenshots

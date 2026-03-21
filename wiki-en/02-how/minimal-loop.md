@@ -121,7 +121,7 @@ Follow this plan. Remember: one step, one commit.
 
 You do not need long rhetoric here. The minimal loop does not stand on ornate prompting. It stands on a simple order: review first, execute second.
 
-If "one step, one commit" makes you tense the first time you hear it, do not interpret it as mechanical ritualism. Just hold on to its minimal meaning: **do not lump several steps into one change blob; split them by feature point whenever possible.** The next page, [Atomic Execution Contract & Chronicles](atomic-checklist-chronicles.md), explains why this matters.
+If "one step, one commit" makes you tense the first time you hear it, do not interpret it as mechanical ritualism. Just hold on to its minimal meaning: **do not lump several steps into one change blob; split them by feature point whenever possible.** The next page, [Atomic Execution Contract & Chronicles](atomic-execution-contract-chronicles.md), explains why this matters.
 
 ### 4. Verify Again After the Work Is Done
 
@@ -250,7 +250,7 @@ The final step in the minimal loop is not "listen to the report." It is "inspect
 
 ## Related Pages
 
-- [Atomic Execution Contract & Chronicles](atomic-checklist-chronicles.md)
+- [Atomic Execution Contract & Chronicles](atomic-execution-contract-chronicles.md)
 - [White-box Reconciliation](white-box-reconciliation.md)
 - [Scout Mechanism](scout-mechanism.md)
 - [Dual-track Audit](../03-deep-water/dual-track-audit.md)

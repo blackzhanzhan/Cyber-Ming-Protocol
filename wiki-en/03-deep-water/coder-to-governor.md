@@ -311,7 +311,7 @@ Only then does the human avoid degrading from architectural ruler into a cleanup
 
 - [Why AI Coding Has Blurred the Boundary Between CS and Management](../01-why/cs-vs-management.md)
 - [Dual-track Isolation Audit and Human-Centered Sovereignty](dual-track-audit.md)
-- [Core Ritual 1: Atomic Task Checklist and Chronicles](../02-how/atomic-checklist-chronicles.md)
+- [Core Ritual 1: Atomic Execution Contract and Chronicles](../02-how/atomic-execution-contract-chronicles.md)
 - [White-box Physical Reconciliation: What Counts as Completion Fact](../02-how/white-box-reconciliation.md)
 - [Cyber Cognitive Debt: The Widening Gap, Warning Signals, and Credible Repayment](cognitive-debt.md)
 - [Seven Stars Renewal](seven-stars-renewal.md)

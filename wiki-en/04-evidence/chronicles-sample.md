@@ -376,7 +376,7 @@ That is also a misreading. The public version has already peeled away the busine
 
 ## Related Pages
 
-- [Core Ritual 1: Atomic Task Checklist and Chronicles](../02-how/atomic-checklist-chronicles.md)
+- [Core Ritual 1: Atomic Execution Contract and Chronicles](../02-how/atomic-execution-contract-chronicles.md)
 - [Worktree Enfeoffment: Fiefs, Returning to Court, and Mainline Purity](../03-deep-water/worktree-enfeoffment.md)
 - [Pulse Enfeoffment: Throughput Compensation Under High Governance](../03-deep-water/pulse-enfeoffment.md)
 - [From Coder to Governor: What This Protocol Requires of Developers](../03-deep-water/coder-to-governor.md)

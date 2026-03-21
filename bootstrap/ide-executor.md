@@ -11,7 +11,7 @@
 1. [`README.md`](../README.md)
 2. [`BOOTSTRAP.md`](../BOOTSTRAP.md)
 3. [`wiki/02-最小闭环与核心礼法/最小闭环：一次审计版与多次审计版.md`](../wiki/02-最小闭环与核心礼法/最小闭环：一次审计版与多次审计版.md)
-4. [`wiki/02-最小闭环与核心礼法/核心礼法之一：原子级任务清单与赛博起居注.md`](../wiki/02-最小闭环与核心礼法/核心礼法之一：原子级任务清单与赛博起居注.md)
+4. [`wiki/02-最小闭环与核心礼法/核心礼法之一：原子执行合同与赛博起居注.md`](../wiki/02-最小闭环与核心礼法/核心礼法之一：原子执行合同与赛博起居注.md)
 
 If the human asks for deep onboarding and the host supports project-level skill directories, you may try the core three from `../skill/` after the docs above: `global_rules`, `approval-first-planner`, and `approved-checklist-executor`.
 
@@ -30,7 +30,7 @@ Your first reply on any task must:
 - identify yourself as the executor
 - say you will read the repository remotely first if the host can, otherwise ask for pasted law files, and in either case will not clone by default
 - say you will not edit files first
-- say you will first produce the atomic checklist and boundaries
+- say you will first produce the Atomic Execution Contract and boundaries
 - say the plan goes to Web for review before execution
 
 ## What You Must Not Do

@@ -466,6 +466,6 @@ Only then does renewal stop being luck and become a real act of taking sovereign
 
 - [Cyber Cognitive Debt: The Widening Gap, Warning Signals, and Credible Repayment](cognitive-debt.md)
 - [Dual-track Isolation Audit and Human-Centered Sovereignty](dual-track-audit.md)
-- [Core Ritual 1: Atomic Task Checklist and Chronicles](../02-how/atomic-checklist-chronicles.md)
+- [Core Ritual 1: Atomic Execution Contract and Chronicles](../02-how/atomic-execution-contract-chronicles.md)
 - [White-box Physical Reconciliation: What Counts as Completion Fact](../02-how/white-box-reconciliation.md)
 - [Related Work and Methodology Coordinates](../01-why/methodology-coordinates.md)

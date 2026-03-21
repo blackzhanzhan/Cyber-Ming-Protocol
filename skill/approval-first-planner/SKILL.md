@@ -19,7 +19,7 @@ Prerequisite: read and obey the repository parent policy at `skill/global_rules/
 ## Output Contract
 Your response must stop before editing and must include:
 1. A short stop-before-edit notice.
-2. A Markdown table titled `最小改动原子清单`.
+2. A Markdown table titled `最小改动原子执行合同`.
 3. A YAML block titled `边界条件与测试用例键值对`.
 4. An explicit approval gate.
 

@@ -33,6 +33,6 @@ If the Web host still leaks prior memory or personalization into bootstrap, temp
 Bootstrap is successful only when both roles can state:
 
 - who executes, who audits, who arbitrates
-- the executor will not edit first; it will first provide the atomic checklist and boundaries
+- the executor will not edit first; it will first provide the Atomic Execution Contract and boundaries
 - the auditor will review plans and evidence, not implement
 - completion requires Web-side review of plan and result, not executor self-certification

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Legacy Handover"
+  short_description: "Read git and docs to recover project state"

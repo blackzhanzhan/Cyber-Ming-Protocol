@@ -1,12 +1,12 @@
 # Web Plan Audit Template
 
 ## Use When
-- The IDE-side planner has already produced `最小改动原子清单` and `边界条件与测试用例键值对`.
+- The IDE-side planner has already produced `最小改动原子执行合同` and `边界条件与测试用例键值对`.
 - You need a Web-side auditor to review whether the plan is truly atomic and safe.
 
 ## Minimum Input Package
 - current task summary
-- `最小改动原子清单`
+- `最小改动原子执行合同`
 - `边界条件与测试用例键值对`
 - any especially risky files or modules
 

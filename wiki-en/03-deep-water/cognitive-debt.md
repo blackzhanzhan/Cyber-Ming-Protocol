@@ -308,7 +308,7 @@ Only then does it remain governable debt instead of growing into a forbidden zon
 ## Related Pages
 
 - [Why AI Coding Has Blurred the Boundary Between CS and Management](../01-why/cs-vs-management.md)
-- [Core Ritual 1: Atomic Task Checklist and Chronicles](../02-how/atomic-checklist-chronicles.md)
+- [Core Ritual 1: Atomic Execution Contract and Chronicles](../02-how/atomic-execution-contract-chronicles.md)
 - [White-box Physical Reconciliation: What Counts as Completion Fact](../02-how/white-box-reconciliation.md)
 - [Dual-track Isolation Audit and Human-Centered Sovereignty](dual-track-audit.md)
 - [Seven Stars Renewal](seven-stars-renewal.md)

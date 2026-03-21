@@ -93,7 +93,7 @@ In other words, a completion fact is a result that can survive reconciliation, n
 
 ## Why White-box Reconciliation Must Come After the Previous Two Pages
 
-There is a reason this page must follow [Minimal Loop](minimal-loop.md) and [Atomic Execution Contract & Chronicles](atomic-checklist-chronicles.md). That sequencing is not accidental.
+There is a reason this page must follow [Minimal Loop](minimal-loop.md) and [Atomic Execution Contract & Chronicles](atomic-execution-contract-chronicles.md). That sequencing is not accidental.
 
 Because:
 
@@ -425,7 +425,7 @@ And in the AI era, the only way to hold that line is to keep forcing it to hand 
 ## Related Pages
 
 - [Minimal Loop](minimal-loop.md)
-- [Atomic Execution Contract & Chronicles](atomic-checklist-chronicles.md)
+- [Atomic Execution Contract & Chronicles](atomic-execution-contract-chronicles.md)
 - [Scout Mechanism](scout-mechanism.md)
 - [Why AI Coding Has Blurred the Boundary Between CS and Management](../01-why/cs-vs-management.md)
 - [Dual Distortion of Black-Box Multi-Agent](../01-why/dual-distortion.md)
