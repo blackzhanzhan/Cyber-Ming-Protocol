@@ -30,7 +30,7 @@ Core principle: **Understand protocol first, then decide how much to install.**
 
 ### Cases Suitable to Start Installing Skill
 
-- You've understood approval-first, atomic checklist, evidence closure—these three things
+- You've understood approval-first, Atomic Execution Contract, evidence closure—these three things
 - You yourself miss steps, miss boundaries, miss evidence
 - You want to stabilize planner/executor/probe/succession actions
 - Your AI coding tends toward pseudo-completion, lazy patches, context decay
@@ -102,7 +102,7 @@ Because currently different IDE/agent hosts have different skill loading methods
 
 Even with Skill connected, the most stable minimal sequence still is:
 
-1. First let the planner produce atomic checklist and boundaries
+1. First let the planner produce the Atomic Execution Contract and boundaries
 2. Let human review and decide whether to approve
 3. After approval, let executor execute by piece, verify, archive
 4. Use Web templates as needed for plan audit, completion audit, renewal judgment

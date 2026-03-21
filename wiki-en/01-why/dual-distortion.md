@@ -156,7 +156,7 @@ Once you understand these two distortions, you can understand why Cyber-Ming-Pro
 
 - Separate the executor and the auditor to counter the executor also acting as judge
 - Preserve the human physical routing right to counter private backchannel progress
-- Require the atomic checklist first to counter working blind
+- Require the Atomic Execution Contract first to counter working blind
 - Require white-box reconciliation to counter summaries impersonating completion facts
 - Keep high-frequency Git chronicles to counter the loss of refactoring handles
 - Keep renewal and takeover mechanisms to counter window decay with no one left to rebuild order

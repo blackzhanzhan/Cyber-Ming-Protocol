@@ -293,7 +293,7 @@ In deep water, the most valuable first battle report is often not success. It is
 ## Related Pages
 
 - [Minimal Loop](minimal-loop.md)
-- [Atomic Checklist & Chronicles](atomic-checklist-chronicles.md)
+- [Atomic Execution Contract & Chronicles](atomic-checklist-chronicles.md)
 - [White-box Reconciliation](white-box-reconciliation.md)
 - [Dual Distortion of Black-Box Multi-Agent](../01-why/dual-distortion.md)
 - [Related Work and Methodology Coordinates](../01-why/methodology-coordinates.md)

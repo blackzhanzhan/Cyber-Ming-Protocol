@@ -207,7 +207,7 @@ the human center does not need to sit idle. It can switch to another line whose 
 
 - Auditing the project report of another fief
 - Performing white-box reconciliation on another side line
-- Planning the next wave of atomic checklists
+- Planning the next wave of Atomic Execution Contracts
 - Reviewing the evidence chain from a previous line
 - Advancing a small task that is already fully understood inside another fief
 

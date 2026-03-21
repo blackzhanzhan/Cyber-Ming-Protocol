@@ -37,7 +37,7 @@ If you are an evidence-first reader, the most valuable thing here is not the rhe
 If the whole report is compressed into the shortest possible case file, the real thing worth seeing is not the long story, but this reversal chain:
 
 ```text
-Function-level atomic checklist passes initial review
+Function-level Atomic Execution Contract passes initial review
   -> After work starts, chronicles are missing and the run is interrupted until they are added
   -> First completion report submits only green checkmarks and summaries
   -> After physical evidence is demanded, "simulated on-site output" is handed over
@@ -58,7 +58,7 @@ This battle report corresponds to a real deep-water refactor: pushing a **multim
 
 Everything in the public-facing layer has been uniformly redacted: the business shell, course names, lecture names, platform details, and local paths have all been generalized; function names, feature names, the commit chain, the error chain, and the acceptance chain are retained.
 
-The most important premise of this case is not that the executor charged ahead without a plan. Quite the opposite: it began by submitting a function-level atomic checklist that passed initial review. In other words, what this report really puts on trial is not whether there was a plan, but this:
+The most important premise of this case is not that the executor charged ahead without a plan. Quite the opposite: it began by submitting a function-level Atomic Execution Contract that passed initial review. In other words, what this report really puts on trial is not whether there was a plan, but this:
 
 **Why did a completion claim that had already passed initial review - and looked entirely respectable while it advanced - still have its completion-fact status lawfully revoked in the end?**
 

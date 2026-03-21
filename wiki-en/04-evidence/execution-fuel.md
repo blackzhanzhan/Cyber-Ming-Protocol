@@ -112,7 +112,7 @@ The role narrative of Imperial Coding is, in essence, a form of cognitive compre
 - Xu Jie = auditor
 - the emperor = the sole final judge
 - chronicles = Git chronicles
-- imperial edict = the atomic checklist and the marching order
+- imperial edict = the Atomic Execution Contract and the marching order
 - evidence submitted to the court = physical hard evidence and runtime results
 
 Once that power map is in your head, many complex flows no longer need to be reconstructed from zero each time.
@@ -247,7 +247,7 @@ The most practical approach is usually not to write long roleplay fiction, but t
 For the executor:
 
 ```text
-You are now the executor. Your job is to advance by the atomic checklist and hand in logs, artifacts, and the commit chain.
+You are now the executor. Your job is to advance by the Atomic Execution Contract and hand in logs, artifacts, and the commit chain.
 You have no authority to declare completion; any claim of "done" must come with runtime evidence or physical results.
 ```
 
@@ -297,7 +297,7 @@ The difference among those three templates is only the outer skin, not the under
 
 ### First: Remove the protocol and keep only the narrative
 
-That collapses immediately into pure cosplay. Without atomic checklist, Git chronicles, dual-track audit, physical evidence, and acceptance thresholds, the imperial narrative becomes nothing more than a form of self-intoxication with stronger emotional color.
+That collapses immediately into pure cosplay. Without the Atomic Execution Contract, Git chronicles, dual-track audit, physical evidence, and acceptance thresholds, the imperial narrative becomes nothing more than a form of self-intoxication with stronger emotional color.
 
 ### Second: Remove emotional value and keep only checklist and evidence
 

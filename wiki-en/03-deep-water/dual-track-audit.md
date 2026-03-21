@@ -115,7 +115,7 @@ That is why the Web audit position in this protocol is not a stopgap. It has a c
 
 By default, the Web auditor cannot see the entire repository, nor does it naturally inherit the executor's whole engineering context. It starts with only what the human routes to it, such as:
 
-- The atomic checklist
+- The Atomic Execution Contract
 - Key diffs
 - Red lights and green lights
 - Logs and artifacts
@@ -189,7 +189,7 @@ The executor position has a very clear job:
 - Push local changes forward
 - Submit plans, logs, artifacts, and evidence packets
 
-It may be fast. It may be aggressive. It may do a great deal of physical work. It may also be the one that organizes the atomic checklist, commit history, and test output into a readable package. But there is one power it does not own: **the power to define what counts as completion fact.**
+It may be fast. It may be aggressive. It may do a great deal of physical work. It may also be the one that organizes the Atomic Execution Contract, commit history, and test output into a readable package. But there is one power it does not own: **the power to define what counts as completion fact.**
 
 Once the one doing the work also gets to declare what counts as finished, language starts swapping standards immediately. The executor is not necessarily best at truly finishing the work. It is often best at packaging "looks finished" into "is finished."
 
@@ -264,7 +264,7 @@ The human is still nominally responsible, but has already been excluded from the
 
 Dual-track isolation audit and human-centered sovereignty work very differently. The executor is only allowed to submit:
 
-- The atomic checklist
+- The Atomic Execution Contract
 - The current logs
 - The red lights and green lights
 - The artifacts and external returns
@@ -328,7 +328,7 @@ What dual-track isolation audit and human-centered sovereignty are really trying
 
 **Let the one who does the work submit the paper, let the one who doubts it do the interrogation, and let the human always retain sovereignty over defining truth and judging completion.**
 
-Without that institutional layer, the atomic checklist, white-box physical reconciliation, and cyber scouts from earlier chapters gradually collapse back into isolated techniques. Only once this layer is standing do they become a governance method that can actually run for the long term.
+Without that institutional layer, the Atomic Execution Contract, white-box physical reconciliation, and cyber scouts from earlier chapters gradually collapse back into isolated techniques. Only once this layer is standing do they become a governance method that can actually run for the long term.
 
 ## Corresponding Implementation
 

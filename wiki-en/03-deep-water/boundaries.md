@@ -55,7 +55,7 @@ The earlier pages all assume that you still possess at least some minimal govern
 
 As long as those things still exist, then even if the project is already complex, deep-water, and hard to change, this protocol can still begin imposing structure:
 
-- You can split atomic checklists
+- You can split Atomic Execution Contracts
 - You can run dual-track audit
 - You can do white-box physical reconciliation
 - You can renew or repay debt when necessary

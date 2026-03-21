@@ -63,7 +63,7 @@ It should make at least four things explicit:
 
 - It knows it is the executor
 - It will not change files first
-- It will submit an atomic checklist and boundaries first
+- It will submit the Atomic Execution Contract and boundaries first
 - It knows the plan must go to the Web auditor for review before execution begins
 
 ### Auditor First Round

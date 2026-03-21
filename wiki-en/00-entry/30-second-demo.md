@@ -37,7 +37,7 @@ Why this task? Because it is not a bug fix. It is a common UI and copy adjustmen
 
 | Way | What You Do First | What It Best Shows | What It Does Not Show |
 |-----|-------------------|--------------------|-----------------------|
-| No Skill | Have the IDE submit an atomic checklist | The protocol can be practiced manually | You cannot use it without Skill |
+| No Skill | Have the IDE submit an Atomic Execution Contract | The protocol can be practiced manually | You cannot use it without Skill |
 | With Skill | Use Skill to stabilize the planner and executor rhythm | Skill is an enhancer | Skill automatically establishes completion facts |
 | Web Auditor in the Loop | Give the plan to Web first, then decide whether to execute | The audit flow does not get lost | The Web side becomes a second executor |
 
@@ -51,7 +51,7 @@ For Task 1, you can say this directly to the IDE:
 I want to fix a small bug where the settings page does not show a success message after saving.
 
 Do not change code yet.
-First give me an atomic checklist with as much detail as possible. Tell me what you plan to change and how you will verify it.
+First give me an Atomic Execution Contract with as much detail as possible. Tell me what you plan to change and how you will verify it.
 ```
 
 For Task 2:
@@ -116,7 +116,7 @@ This is not an optional upgrade. It is what keeps the audit flow from disappeari
 
 ### What the Web Auditor Looks at First
 
-The Web auditor looks at the executor's atomic checklist first, and you explicitly tell it: "This executor may deceive me." That keeps the Web side from following the executor's optimistic story. It checks first for:
+The Web auditor looks at the executor's Atomic Execution Contract first, and you explicitly tell it: "This executor may deceive me." That keeps the Web side from following the executor's optimistic story. It checks first for:
 
 - Missing steps
 - Difficulty that has been smoothed over too much
@@ -154,7 +154,7 @@ Its job is independent review, not becoming a second executor.
 
 1. **You can run a round of Cyber-Ming even without Skill.**
 2. **Skill makes the actions more stable, but it does not replace evidence.**
-3. **No matter how small the task is, the atomic checklist goes to the Web auditor first. If it does not pass, route it back to the executor for revision. Only after it passes do you execute and commit, and then the results and evidence go back to the Web auditor for verification.**
+3. **No matter how small the task is, the Atomic Execution Contract goes to the Web auditor first. If it does not pass, route it back to the executor for revision. Only after it passes do you execute and commit, and then the results and evidence go back to the Web auditor for verification.**
 
 ## Next Steps
 

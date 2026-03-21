@@ -182,7 +182,7 @@ That is why the protocol emphasizes:
 
 - Separation between executor and auditor
 - Human retention of the cross-system physical routing right
-- An atomic checklist before execution
+- An Atomic Execution Contract before execution
 - Git chronicles as an index of historical truth
 - White-box reconciliation as the basis for completion facts
 - Renewal, takeover, and debt repayment after window decay

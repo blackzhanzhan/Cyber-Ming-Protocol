@@ -51,7 +51,7 @@ The protocol is the truly irreplaceable part of this project.
 It defines a governance structure such as:
 
 - Review first, then execute
-- Submit an atomic checklist first, then allow work to begin
+- Submit the Atomic Execution Contract first, then allow work to begin
 - The executor does not self-certify completion
 - Completion must be established by logs, artifacts, run results, and commits as evidence
 - When a window decays, you use renewal instead of dragging the old context forward
@@ -64,7 +64,7 @@ Skill does not invent the protocol for you. Its role is to help you hold the pro
 
 For example, the skills in this repo solidify several high-frequency actions:
 
-- `approval-first-planner`: Produce an atomic checklist and boundaries for approval first
+- `approval-first-planner`: Produce the Atomic Execution Contract and boundaries for approval first
 - `approved-checklist-executor`: Execute, verify, and archive strictly by approved slices
 - `probe-first-scout`: Do not pretend to understand the whole system; run the smallest probe first
 - `legacy-project-handover`: Provide a read-only snapshot for takeover or renewal

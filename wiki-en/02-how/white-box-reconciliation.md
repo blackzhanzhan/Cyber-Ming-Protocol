@@ -21,7 +21,7 @@
 
 The previous two pages have already established two things:
 
-- The executor must submit an atomic checklist first
+- The executor must submit the Atomic Execution Contract first
 - Every completed checklist item should leave behind the corresponding chronicle record
 
 But that is still not enough. Even if the plan has been broken into fine-grained steps and the history has been recorded, the executor can still use one polished summary at the last moment to pull you into a more dangerous illusion:
@@ -38,7 +38,7 @@ It does not ask, "Does this paragraph sound like completion?" It asks:
 - Did the real external system return anything?
 - Does this evidence belong to this run, or is it actually an old artifact, simulated output, or verbal patching?
 
-If the atomic checklist weakens the black box before execution, and the chronicles pin the history down during execution, then white-box physical reconciliation is what nails the truth down afterward.
+If the Atomic Execution Contract weakens the black box before execution, and the chronicles pin the history down during execution, then white-box physical reconciliation is what nails the truth down afterward.
 
 ## One-line Summary First
 
@@ -93,17 +93,17 @@ In other words, a completion fact is a result that can survive reconciliation, n
 
 ## Why White-box Reconciliation Must Come After the Previous Two Pages
 
-There is a reason this page must follow [Minimal Loop](minimal-loop.md) and [Atomic Checklist & Chronicles](atomic-checklist-chronicles.md). That sequencing is not accidental.
+There is a reason this page must follow [Minimal Loop](minimal-loop.md) and [Atomic Execution Contract & Chronicles](atomic-checklist-chronicles.md). That sequencing is not accidental.
 
 Because:
 
-- Without the atomic checklist, you do not know what specific step you are verifying right now
+- Without the Atomic Execution Contract, you do not know what specific step you are verifying right now
 - Without the chronicles, you do not know which state transition the evidence belongs to
 - Without white-box reconciliation, the plan and history from the previous two pages can still be swapped out at the last second by one polished summary
 
 So these three pages are really one line of defense:
 
-- The atomic checklist nails down the granularity of the plan
+- The Atomic Execution Contract nails down the granularity of the plan
 - The chronicles nail down the history of advancement
 - White-box reconciliation nails down the fact of completion
 
@@ -425,7 +425,7 @@ And in the AI era, the only way to hold that line is to keep forcing it to hand 
 ## Related Pages
 
 - [Minimal Loop](minimal-loop.md)
-- [Atomic Checklist & Chronicles](atomic-checklist-chronicles.md)
+- [Atomic Execution Contract & Chronicles](atomic-checklist-chronicles.md)
 - [Scout Mechanism](scout-mechanism.md)
 - [Why AI Coding Has Blurred the Boundary Between CS and Management](../01-why/cs-vs-management.md)
 - [Dual Distortion of Black-Box Multi-Agent](../01-why/dual-distortion.md)

@@ -119,4 +119,4 @@ That is why it is best understood as a governance-layer protocol. It does not re
 - [Why AI Coding Has Already Blurred the Boundary Between CS and Management](cs-vs-management.md)
 - [The Dual Distortion of Black-Box Multi-Agent: Technical Distortion and Governance Distortion](dual-distortion.md)
 - [Dual-track Isolation Audit and Sovereign Routing](../03-deep-water/dual-track-audit.md)
-- [Atomic Checklist and Chronicles](../02-how/atomic-checklist-chronicles.md)
+- [Atomic Execution Contract and Chronicles](../02-how/atomic-checklist-chronicles.md)
