@@ -49,6 +49,61 @@ description: Parent policy layer for approval-first coding workflows under both 
 - Multiple approved slices must never be merged into one large commit.
 - A slice without independent verification and independent archival is incomplete in protocol terms.
 
+## Campaign Runtime Law
+- Any serious campaign must have one unified runtime container rather than scattered oral state.
+- The runtime should distinguish at least:
+  - current machine truth
+  - event stream
+  - evidence index
+  - human-readable tree or summary
+- A recommended minimal layout is:
+  - `state.json`
+  - `journal.jsonl`
+  - `evidence_index.json`
+  - `tree.md`
+- Do not treat `PROCESS_LOG`-style history as the current runtime truth.
+- The current runtime truth should always answer:
+  - what the root campaign is
+  - which contract is active now
+  - what child contract, if any, is currently blocking the parent
+  - where execution must return after the child is resolved
+
+## Contract Tree Law
+- Contracts must form an explicit tree, not a pile of unrelated plans.
+- Every contract should declare at least:
+  - `contract_id`
+  - `root_campaign`
+  - `parent_contract_id`
+  - `status`
+  - `goal`
+  - `return_to`
+- A child contract may pause a parent contract, but it may not silently replace it.
+- If a child contract is opened because a red line was crossed, record:
+  - which red line was crossed
+  - why the parent could not continue honestly
+  - which parent step the execution must return to
+
+## Parent-Child Return Law
+- When a child contract is opened, the parent contract should move to a state like:
+  - `paused_for_child`
+- When the child is resolved, execution must explicitly return to the parent unless:
+  - the parent was honestly abandoned
+  - a new root campaign was explicitly declared
+- Do not let local firefighting quietly become the new mainline.
+- If the executor cannot state where execution returns after a child contract, then the contract tree is malformed.
+
+## Runtime Naming Law
+- Avoid letting one file pretend to be both the whole campaign and the active contract.
+- Prefer:
+  - one runtime directory per campaign
+  - one machine state file for the active contract tree
+  - one human-readable tree file for fast orientation
+- The human-readable tree should be simple enough that a novice can answer:
+  - what war we are fighting
+  - what sub-war is open
+  - why it opened
+  - where we go back after it closes
+
 ## Enforcement
 - Other skills may narrow scope but may not weaken these rules.
 - If a separate skill conflicts with this file, this file wins.
