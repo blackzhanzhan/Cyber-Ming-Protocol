@@ -40,6 +40,8 @@
 - [`最小闭环指南`](wiki/00-开始这里与落地形态/复制即用提示词包.md)：第一层；先手工跑通一轮最小闭环，宿主能力差异放在页内分支里处理
 - [`最小稳定闭环指南`](wiki/00-开始这里与落地形态/最小稳定闭环指南.md)：第二层；跑通后再进入双端同时固化的稳定形态
 - [`三者关系`](wiki/00-开始这里与落地形态/协议、Skill-与-Web-审计模板：三者关系.md) / [`异同对比`](wiki/00-开始这里与落地形态/它和workflow、spec-driven、agent-team有什么异同.md)：第三层；当你开始关心它和主流方案什么关系、怎么接到现有体系里时再进入
+- [`Campaign Runtime 说明`](article/campaign-runtime/README.md)：新一层；当你开始出现“主合同和子合同越来越多、执行着执行着回不去主线”时，从这里进入新的运行时框架
+- [`Campaign Runtime 待办清单`](article/campaign-runtime/TODO.md)：如果你想继续升级这套协议的开发框架，从这份待办清单接着补
 - [`BOOTSTRAP.md`](BOOTSTRAP.md)：如果你不是人类，而是 agent，请用这个入场
 
 ### 最小闭环
