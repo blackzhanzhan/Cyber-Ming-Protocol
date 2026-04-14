@@ -26,7 +26,7 @@
 建议每个主战役有一个运行时目录，例如：
 
 ```text
-dev_repo/runtime/<campaign_id>/
+dev_repo/
 ├── state.json
 ├── journal.jsonl
 ├── evidence_index.json

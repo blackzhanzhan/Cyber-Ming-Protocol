@@ -57,10 +57,10 @@ description: Parent policy layer for approval-first coding workflows under both 
   - evidence index
   - human-readable tree or summary
 - A recommended minimal layout is:
-  - `dev_repo/runtime/<campaign_id>/state.json`
-  - `dev_repo/runtime/<campaign_id>/journal.jsonl`
-  - `dev_repo/runtime/<campaign_id>/evidence_index.json`
-  - `dev_repo/runtime/<campaign_id>/tree.md`
+  - `dev_repo/state.json`
+  - `dev_repo/journal.jsonl`
+  - `dev_repo/evidence_index.json`
+  - `dev_repo/tree.md`
 - Do not treat `PROCESS_LOG`-style history as the current runtime truth.
 - The current runtime truth should always answer:
   - what the root campaign is
@@ -98,6 +98,14 @@ description: Parent policy layer for approval-first coding workflows under both 
   - the active branch
   - unresolved siblings
   - `return_to`
+
+## Runtime Bootstrap Law
+- When a new project begins implementation and lacks a process-truth scaffold, create:
+  - `dev_repo/state.json`
+  - `dev_repo/journal.jsonl`
+  - `dev_repo/evidence_index.json`
+  - `dev_repo/tree.md`
+- Do not default to nested runtime folders unless the user explicitly wants multiple concurrent campaigns.
 
 ## Parent-Child Return Law
 - When a child contract is opened, the parent contract should move to a state like:
