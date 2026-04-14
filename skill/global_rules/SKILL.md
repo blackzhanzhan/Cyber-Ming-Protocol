@@ -83,6 +83,22 @@ description: Parent policy layer for approval-first coding workflows under both 
   - why the parent could not continue honestly
   - which parent step the execution must return to
 
+## Contract Tree Pruning Law
+- The live tree shown to humans should remain short enough to navigate.
+- Once a child branch is:
+  - `completed`
+  - `abandoned`
+  - or no longer needed for active navigation
+  collapse it from the live tree view.
+- Keep its evidence in:
+  - `journal.jsonl`
+  - `evidence_index.json`
+- The visible tree should mainly preserve:
+  - the root campaign
+  - the active branch
+  - unresolved siblings
+  - `return_to`
+
 ## Parent-Child Return Law
 - When a child contract is opened, the parent contract should move to a state like:
   - `paused_for_child`
