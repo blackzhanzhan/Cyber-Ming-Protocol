@@ -57,10 +57,10 @@ description: Parent policy layer for approval-first coding workflows under both 
   - evidence index
   - human-readable tree or summary
 - A recommended minimal layout is:
-  - `state.json`
-  - `journal.jsonl`
-  - `evidence_index.json`
-  - `tree.md`
+  - `dev_repo/runtime/<campaign_id>/state.json`
+  - `dev_repo/runtime/<campaign_id>/journal.jsonl`
+  - `dev_repo/runtime/<campaign_id>/evidence_index.json`
+  - `dev_repo/runtime/<campaign_id>/tree.md`
 - Do not treat `PROCESS_LOG`-style history as the current runtime truth.
 - The current runtime truth should always answer:
   - what the root campaign is
