@@ -76,12 +76,20 @@ For example, the skills in this repo solidify several high-frequency actions:
 - `approved-checklist-executor`: Execute, verify, and archive strictly by approved slices
 - `probe-first-scout`: Do not pretend to understand the whole system; run the smallest probe first
 - `legacy-project-handover`: Provide a read-only snapshot for takeover or renewal
+- `auditor-succession-prompt`: Package a clean renewal packet for a fresh Web auditor seat
+- `free-development-mode`: Continue long-running development under explicit red-line control after the user deliberately activates it
 
 But they do not change one thing:
 
 **Skill cannot define truth for you.**
 
-It can only help you get closer to the action rhythm required by the protocol. It cannot make evidence appear by itself.
+But it can now do one more important thing:
+
+**it can bootstrap and maintain the place where current truth should live.**
+
+When serious work begins, the corresponding skill layer can bootstrap `dev_repo/` so that `state.json`, `journal.jsonl`, `evidence_index.json`, and `tree.md` hold current runtime truth in repository artifacts rather than only inside chat residue.
+
+That does not make Skill the judge of truth. It means Skill can create and maintain the runtime container where auditable truth is recorded.
 
 ## Part 3: What Are Web Audit Templates
 

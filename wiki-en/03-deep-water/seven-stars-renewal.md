@@ -448,13 +448,15 @@ Only then does renewal stop being luck and become a real act of taking sovereign
 
 - When you suspect the old window has started using explanation to preserve momentum instead of using evidence to preserve credibility, pause first instead of dragging it onward
 - By default, rotate the executor position asynchronously first: let the still-clear auditor judge whether the current executor has already decayed
-- Make the new executor read the Git chronicles, the latest blockers, and the key evidence first; require a project status report before deciding whether to march again
+- If the repo already has `dev_repo/`, make the new executor read `state.json` and `tree.md` first, then add the Git chronicles, the latest blockers, and the key evidence
+- Require a project status report before deciding whether to march again
 
 ### Corresponding Skills
 
 - `legacy-project-handover` maps most directly to the snapshot and brief needed for a new window to take over
 - `probe-first-scout` is useful when you are unsure how bad the situation already is and need a minimum probe before attempting aggressive repair through an old narrative
 - `global_rules` continues to preserve the skeleton of "audit before action" and "no completion without evidence," so that renewal does not immediately collapse back into blind rushing
+- `auditor-succession-prompt` packages a cleaner renewal packet for the auditor side and should prefer the current `dev_repo` execution packet when it exists
 
 ### Corresponding Web Templates
 

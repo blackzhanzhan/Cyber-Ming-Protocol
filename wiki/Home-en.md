@@ -6,6 +6,8 @@
 
 First time here? Start with the English section of the [README](../README.md#english), then follow the three learning layers in `00`: first run the [Minimal Loop Guide](../wiki-en/00-entry/prompt-pack.md), then move into the [Minimal Stable Loop Guide](../wiki-en/00-entry/stable-loop-guide.md), and only after that enter Layer 3 when you want to understand how this relates to mainstream approaches.
 
+If you have already entered the stage where parent and child contracts keep multiplying and you want current progress to live in repo artifacts instead of chat alone, read the [Campaign Runtime Guide](../dev_repo/README.md) alongside the wiki.
+
 ## The Three Learning Layers in 00
 
 | Learning Layer | What This Layer Solves | Go Here |

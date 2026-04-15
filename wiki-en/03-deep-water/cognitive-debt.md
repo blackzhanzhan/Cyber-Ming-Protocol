@@ -203,6 +203,8 @@ This is the final load-bearing beam of the page.
 
 Credible repayment of cognitive debt does not rely on the original author remembering the project, and it does not rely on a polished summary from the executor. It relies on a **reconstruction of the current project state that uses Git chronicles as historical material, logs and tests as evidence, and interrogation from a fresh window as the questioning mechanism.**
 
+Once a project has entered nested contracts and long-running execution, `dev_repo/state.json` and `dev_repo/tree.md` add another important layer: they tell you the active contract, whether the parent is paused, and where execution returns afterward. That lets repayment start from runtime truth instead of from competing progress narratives.
+
 One clarification matters here: this section only explains its role in repaying debt. It does not expand the full ritual of renewal. The complete renewal and handover method is developed in [Seven Stars Renewal](seven-stars-renewal.md). Here we care about one narrower question: **once you already know that cognitive debt must be handled, how do you reconstruct current project state without lying to yourself?**
 
 The steadiest method can be compressed into four steps.
@@ -219,12 +221,13 @@ The old window is most likely to keep speaking through:
 
 So the first step in credible repayment is not asking the old narrative where the project stands. It is handing the question to a relatively clean position and making it read the historical record first, then submit a report as if it were taking over the project fresh.
 
-### Step 2: Feed It the Git Chronicles First, Then Ask Where the Project Actually Stands
+### Step 2: Feed It the Git Chronicles and the Current Runtime Snapshot First, Then Ask Where the Project Actually Stands
 
 The key here is not to let the new window improvise a neat summary. The key is to constrain its understanding through the chronicles before it speaks.
 
 What you really want it to do is this:
 
+- If the repo already has `dev_repo/`, read `state.json`, `tree.md`, and when needed `journal.jsonl` first
 - Read the recent relevant Git chronicles first
 - Describe the current project state on top of those chronicles
 - Attach the matching commits, logs, assertions, or key code snippets to every major judgment whenever possible
@@ -242,6 +245,7 @@ If the output of step two is still merely a respectable summary, that is not eno
 The most common and most valuable follow-up questions usually land on points like these:
 
 - Which commits support this conclusion?
+- What is the active contract right now, is the parent paused, and where does execution return afterward?
 - Did this feature pass a real test, or has the executor merely claimed that it passed?
 - What is the biggest unresolved blocker right now, and where is the corresponding log or error?
 - Which key source segments are involved here? Please provide only the minimum necessary snippets.
@@ -258,6 +262,8 @@ If credible repayment does not produce a result artifact, it easily collapses ba
 - Which parts are only temporary judgment and not fully established yet
 - What the biggest unresolved blocker is
 - What the safest next starting point is
+
+If the project already has `dev_repo/`, that snapshot should preferably keep living in `state.json`, `tree.md`, and the surrounding runtime artifacts instead of ending as one more isolated chat answer.
 
 At that point, one segment of cognitive debt has truly been repaid. Not because you suddenly understand everything, but because you have regained a project state that can be audited, questioned, and used to keep moving.
 
