@@ -5,6 +5,14 @@ const { stdin, stdout } = require("node:process");
 const { ADAPTERS } = require("./adapters");
 const { formatInstallSummary, inspectRuntime, installRuntime } = require("./install");
 const { detectBinary } = require("./utils");
+const { banner, chip, frame, kv, line, menuOption, paint, renderCast, section, splitBlockLines, ANSI } = require("./theme");
+
+const RUNTIME_BLURBS = {
+  claude: "Anthropic host with project/global skills and CLAUDE.md starter entry.",
+  codex: "OpenAI host with project skill/ and global ~/.codex/skills routes.",
+  cursor: "Editor-side host; project rules and skills are the stable first route.",
+  opencode: "Agent host with XDG-friendly config and native skills directories.",
+};
 
 function parseArgs(argv) {
   const args = argv.slice(2);
@@ -54,33 +62,33 @@ function parseArgs(argv) {
 }
 
 function getHelpText() {
-  return `Cyber-Ming installer
-
-Usage:
-  npx cyber-ming@latest
-  npx cyber-ming@latest init [runtime flags] [scope flags]
-  npx cyber-ming@latest doctor [runtime flags] [scope flags]
-
-Runtime flags:
-  --claude
-  --codex
-  --cursor
-  --opencode
-  --all
-
-Scope flags:
-  --global, -g
-  --local, --project, -l
-
-Path flags:
-  --config-dir <path>
-
-Examples:
-  npx cyber-ming@latest
-  npx cyber-ming@latest --claude --global
-  npx cyber-ming@latest --codex --local
-  npx cyber-ming@latest doctor --all --project
-`;
+  return [
+    banner(),
+    section("Usage"),
+    "  npx cyber-ming@latest",
+    "  npx cyber-ming@latest init [runtime flags] [scope flags]",
+    "  npx cyber-ming@latest doctor [runtime flags] [scope flags]",
+    "",
+    section("Runtime Flags"),
+    "  --claude",
+    "  --codex",
+    "  --cursor",
+    "  --opencode",
+    "  --all",
+    "",
+    section("Scope Flags"),
+    "  --global, -g",
+    "  --local, --project, -l",
+    "",
+    section("Path Flags"),
+    "  --config-dir <path>",
+    "",
+    section("Examples"),
+    "  npx cyber-ming@latest",
+    "  npx cyber-ming@latest --claude --global",
+    "  npx cyber-ming@latest --codex --local",
+    "  npx cyber-ming@latest doctor --all --project",
+  ].join("\n");
 }
 
 function detectRuntimeStatus(runtime) {
@@ -101,12 +109,22 @@ async function promptForRuntimes() {
       index: index + 1,
     }));
 
-    stdout.write("Select runtimes to install:\n");
+    stdout.write(`${banner()}\n\n`);
+    stdout.write(`${renderCast().join("\n")}\n\n`);
+    stdout.write(`${section("Host Selection", "Choose the runtimes that should enter Cyber-Ming law")}\n`);
+    stdout.write(`${line("-", 62, ANSI.ash)}\n`);
     for (const item of statuses) {
-      const marker = item.detected ? "detected" : "not detected";
-      stdout.write(`  ${item.index}. ${item.adapter.displayName} [${marker}]\n`);
+      const marker = item.detected ? chip("found", "FOUND") : chip("ready", "PROJECT READY");
+      const block = menuOption(
+        item.index,
+        item.adapter.displayName,
+        RUNTIME_BLURBS[item.runtime] || "Install Cyber-Ming starter law and skill routes for this host.",
+        [marker],
+      );
+      stdout.write(`${frame("", splitBlockLines(block), { color: ANSI.ink, width: 74 }).join("\n")}\n`);
     }
-    const answer = await rl.question("Enter numbers separated by commas (or 'all'): ");
+    stdout.write(`${paint(ANSI.ash, "Project installs do not require every host binary to be present. Runtime truth is established through files first.")}\n`);
+    const answer = await rl.question(`${paint(ANSI.vermilion, "Enter numbers separated by commas (or 'all'): ")} `);
     if (!answer.trim() || answer.trim().toLowerCase() === "all") {
       return Object.keys(ADAPTERS);
     }
@@ -129,12 +147,37 @@ async function promptForScope(runtimes) {
   const rl = readline.createInterface({ input: stdin, output: stdout });
   try {
     const allSupportGlobal = runtimes.every((runtime) => ADAPTERS[runtime].supportedScopes.includes("global"));
-    stdout.write("Select install scope:\n");
-    stdout.write("  1. Project\n");
+    stdout.write(`\n${section("Scope", "Decide where Cyber-Ming should take effect")}\n`);
+    stdout.write(
+      `${frame(
+        "",
+        splitBlockLines(
+          menuOption(
+            1,
+            "Project",
+            "Versioned with the current repo. Best for first adoption, teamwork, and visible governance.",
+            [chip("found", "RECOMMENDED")],
+          ),
+        ),
+        { color: ANSI.ink, width: 88 },
+      ).join("\n")}\n`,
+    );
     if (allSupportGlobal) {
-      stdout.write("  2. Global\n");
+      stdout.write(
+        `${frame(
+          "",
+          splitBlockLines(
+            menuOption(
+              2,
+              "Global",
+              "Shared across projects for this host. Use when you want Cyber-Ming available as a default operating posture.",
+            ),
+          ),
+          { color: ANSI.ink, width: 88 },
+        ).join("\n")}\n`,
+      );
     }
-    const answer = await rl.question("Enter number: ");
+    const answer = await rl.question(`${paint(ANSI.vermilion, "Enter number: ")} `);
     if (answer.trim() === "2" && allSupportGlobal) {
       return "global";
     }
@@ -169,6 +212,12 @@ async function runInit(parsed, repoRoot) {
     scope = await promptForScope(selectedRuntimes);
   }
 
+  if (parsed.selectedRuntimes.length > 0) {
+    stdout.write(`${banner()}\n\n`);
+    stdout.write(`${renderCast().join("\n")}\n\n`);
+    stdout.write(`${section("Install", "Applying Cyber-Ming law to the selected runtime routes")}\n`);
+  }
+
   const results = [];
   for (const runtime of selectedRuntimes) {
     results.push(
@@ -179,7 +228,9 @@ async function runInit(parsed, repoRoot) {
     );
   }
 
-  stdout.write("\nInstall complete.\n\n");
+  stdout.write(`\n${line()}\n`);
+  stdout.write(`${paint(ANSI.sage, "INSTALL COMPLETE", { bold: true })}\n`);
+  stdout.write(`${paint(ANSI.ash, "Starter law, docs bundle, and runtime-specific skill routes are now in place.")}\n\n`);
   for (const result of results) {
     stdout.write(`${formatInstallSummary(result)}\n\n`);
   }
@@ -191,9 +242,13 @@ function runDoctor(parsed) {
 
   validateConfigDir(selectedRuntimes, parsed.configDir);
 
+  stdout.write(`${banner()}\n\n`);
+  stdout.write(`${section("Doctor", "Checking runtime routes, starter entrypoints, and managed skill presence")}\n`);
+  stdout.write(`${line("-", 62, ANSI.ash)}\n`);
+
   for (const runtime of selectedRuntimes) {
     const status = detectRuntimeStatus(runtime);
-    stdout.write(`${status.adapter.displayName} [binary ${status.detected ? "detected" : "not detected"}]\n`);
+    stdout.write(`${section(status.adapter.displayName, status.detected ? chip("found", "BINARY FOUND") : chip("missing", "BINARY MISSING"))}\n`);
     for (const scope of scopes) {
       if (!status.adapter.supportedScopes.includes(scope)) {
         stdout.write(`  ${scope}: unsupported\n`);
@@ -203,11 +258,11 @@ function runDoctor(parsed) {
         configDir: parsed.configDir,
         projectDir: parsed.projectDir,
       });
-      stdout.write(`  ${scope} root: ${report.root}\n`);
-      stdout.write(`  ${scope} skills dir: ${report.skillsDir}\n`);
-      stdout.write(`  ${scope} starter: ${report.hasStarter ? "present" : "missing"} (${report.starterTarget})\n`);
-      stdout.write(`  ${scope} manifest: ${report.hasManifest ? "present" : "missing"} (${report.manifestPath})\n`);
-      stdout.write(`  ${scope} installed skills: ${report.installedSkills.length}\n`);
+      stdout.write(kv(`${scope} Root`, report.root) + "\n");
+      stdout.write(kv(`${scope} Skills`, report.skillsDir) + "\n");
+      stdout.write(kv(`${scope} Starter`, `${report.hasStarter ? chip("found", "PRESENT") : chip("missing", "MISSING")} ${paint(ANSI.ash, `(${report.starterTarget})`)}`) + "\n");
+      stdout.write(kv(`${scope} Manifest`, `${report.hasManifest ? chip("found", "PRESENT") : chip("missing", "MISSING")} ${paint(ANSI.ash, `(${report.manifestPath})`)}`) + "\n");
+      stdout.write(kv(`${scope} Count`, String(report.installedSkills.length)) + "\n");
     }
     stdout.write("\n");
   }
@@ -216,7 +271,7 @@ function runDoctor(parsed) {
 async function runCli(argv, repoRoot) {
   const parsed = parseArgs(argv);
   if (parsed.help) {
-    stdout.write(getHelpText());
+    stdout.write(`${getHelpText()}\n`);
     return 0;
   }
 

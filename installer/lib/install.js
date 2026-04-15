@@ -2,10 +2,10 @@ const fs = require("fs");
 const os = require("os");
 const path = require("path");
 const { ADAPTERS, FIRST_PROMPT, listSkillSources } = require("./adapters");
+const { bullet, kv, paint, section, ANSI } = require("./theme");
 const {
   copyDir,
   ensureDir,
-  formatList,
   loadTemplate,
   upsertManagedBlock,
   writeFile,
@@ -152,19 +152,18 @@ function inspectRuntime(runtime, scope, options) {
 
 function formatInstallSummary(result) {
   return [
-    `${result.adapter.displayName} (${result.adapter.key})`,
-    `scope: ${result.scope}`,
-    `install root: ${result.root}`,
-    `skills: ${result.skillsDir}`,
-    `starter: ${result.starterTarget}`,
-    `starter docs: ${result.docsRoot}`,
-    `manifest: ${result.manifestPath}`,
-    `installed skills:\n${formatList(result.installedSkills)}`,
-    `next launch: ${result.launchCommand}`,
-    `first prompt: ${FIRST_PROMPT}`,
-  ]
-    .filter(Boolean)
-    .join("\n");
+    section(result.adapter.displayName, paint(ANSI.ash, result.adapter.key)),
+    kv("Scope", result.scope),
+    kv("Install Root", result.root),
+    kv("Skills Dir", result.skillsDir),
+    kv("Starter", result.starterTarget),
+    kv("Docs Bundle", result.docsRoot),
+    kv("Manifest", result.manifestPath),
+    kv("Next Launch", result.launchCommand),
+    kv("First Prompt", FIRST_PROMPT),
+    "  Installed Skills",
+    ...result.installedSkills.map((name) => bullet(name, "    ")),
+  ].join("\n");
 }
 
 module.exports = {
