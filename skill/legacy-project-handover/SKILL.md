@@ -24,10 +24,11 @@ Prerequisite: read and obey the repository parent policy at `skill/global_rules/
 - Do not drift into broad research beyond what is needed to reconstruct the present state.
 
 ## Workflow
-1. Read the most recent 10-30 commits and cluster them by engineering theme.
-2. Read the core architecture and process documents actually governing the current project state.
-3. Inspect only the mainline code paths needed to understand current delivery status.
-4. Produce a short brief using exactly these headings: `阶段`, `已完成`, `瓶颈`, `下一步`.
+1. If `dev_repo/state.json` and `dev_repo/tree.md` exist, read them first as the current process truth.
+2. Read the most recent 10-30 commits and cluster them by engineering theme.
+3. Read the core architecture and process documents actually governing the current project state.
+4. Inspect only the mainline code paths needed to understand current delivery status.
+5. Produce a short brief using exactly these headings: `阶段`, `已完成`, `瓶颈`, `下一步`.
 
 ## Output Standard
 - `阶段`: current delivery stage based on recent execution evidence.
@@ -37,6 +38,7 @@ Prerequisite: read and obey the repository parent policy at `skill/global_rules/
 
 ## Rules
 - Prefer recent execution evidence over old architectural intent.
+- Prefer `dev_repo/{state.json,tree.md,journal.jsonl,evidence_index.json}` over `PROCESS_LOG` when reconstructing the present tense.
 - Do not guess; anchor every claim in commits, docs, or current code.
 - Keep the brief concise enough to be pasted directly into a fresh execution window as the current project snapshot.
 - Default to plain technical register; an imperial outer shell is allowed, but technical clarity takes priority.

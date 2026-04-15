@@ -19,10 +19,110 @@ description: Parent policy layer for approval-first coding workflows under both 
   - a Markdown table titled `最小改动原子执行合同`
   - a YAML block titled `边界条件与测试用例键值对`
 - The YAML block must act as a white-box acceptance bridge rather than a generic test dump. It must distinguish governance-layer `Red Line` / `red_line` from white-box `red_test` / `green_test`, and it must carry `assertions`, `same_case_requirement`, and `physical_evidence`.
+- In that YAML block, keep structural keys stable when needed for machine readability, but default all human-facing explanations, assertions, evidence labels, and acceptance strings to Chinese unless the user explicitly requests another language.
 - Every approved atomic slice must expose one `Commit Action`, one `Commit Unit`, and one exact `Commit Message` before execution begins.
 - One slice, one verification, one commit, one `git status --short`.
 - Verified but unarchived work remains `史册债务`.
 - No completion claim is accepted without evidence. Summaries never replace runtime output, artifacts, logs, or git state.
+- Red lines are the primary steering mechanism during execution. Executors should optimize for continuous forward motion until a declared red line or a materially equivalent assumption failure is hit.
+- When replanning is required, prefer a narrow **red-line delta contract** over a full restart of the campaign.
+- During any long-running command or runtime operation, the executor must provide an explicit progress update at least every 3 minutes until the operation ends, fails, or is deliberately stopped.
+- Long-running silence is a protocol violation even when the underlying command is still healthy.
+- In any continuous execution mode, a commit boundary is not a valid external stop boundary by itself.
+- In any continuous execution mode, a legal stop must be explainable as:
+  - `blocker_class`
+  - `stop_reason`
+  - `next_exact_action`
+- If those three fields cannot be stated honestly, the executor should assume the campaign is still in motion.
+
+## User-Activated Free Development Mode
+- `自由开发模式` is optional and must never auto-activate.
+- It may activate only after the user has aligned a high-friction or complex requirement and then explicitly opts in with language such as `开启自由开发模式`, `进入自由开发`, or an equally unambiguous instruction.
+- Activation does not suspend any safety, honesty, evidence, repository, or red-line rules in this file.
+- Once activated, the executor should route into the dedicated `free-development-mode` skill rather than reusing approval-first planning language by habit.
+- The dedicated free-development skill owns:
+  - route selection
+  - anti-drift path discipline
+  - fake-method / poison-method avoidance
+  - long-running execution posture
+- The primary success criterion is real acceptance on the target surface or runtime, not local plausibility or paper completion.
+- When the user asks for real-chain delivery, agent-managed knowledge-base behavior, or frontdesk/live behavior, end-to-end verification should dominate over local-only proofs.
+- `One step, one commit` remains a hard red line in this mode. Every meaningful forward step must still be independently verified and archived.
+- `Long command, three-minute update` remains a hard discipline in this mode. Long-running execution must surface periodic progress, not just a final outcome.
+- `One commit, one stop` is explicitly forbidden in this mode.
+- After explicit activation, the executor may continue across the next smallest valid steps without re-seeking approval for every micro-slice, unless a declared red line, scope break, or materially false assumption forces a stop.
+- Rollback is an encouraged cost-control tool in this mode, not a sign of failure.
+- `自由开发模式` ends when:
+  - the user explicitly exits it
+  - a hard red line requires re-alignment
+  - the campaign reaches a real acceptance closeout
+
+## Development Routing Law
+
+There are now two official implementation routes, and they must stay distinct:
+
+### Route A: Contract Development
+
+Use when:
+- the user asks for a plan before edits
+- the scope is still being aligned
+- the work needs an approval-first contract
+
+Required route:
+- `approval-first-planner`
+- then, after explicit approval, `approved-checklist-executor`
+
+Default outputs:
+- execution contract
+- YAML acceptance bridge
+- atomic slices
+
+### Route B: Free Development
+
+Use only after explicit user activation of `自由开发模式`.
+
+Required route:
+- dedicated `free-development-mode` skill
+
+Default outputs:
+- direct execution posture
+- explicit mainline route choice
+- explicit anti-drift / anti-fake-method / poison-method guidance
+- real-chain evidence instead of repeated planning ceremony
+
+Default execution assumptions in this route:
+- long-running development is allowed without drifting off the mainline
+- do not cross hard red lines
+- do not quietly change the requirement
+- do not trade framework discipline for “fast trying”
+
+Parallel experimentation rule:
+- only when a major route split is real and technically defensible may the executor use `worktree + subagent` for parallel attempts
+- exploratory branching is not a license for speculative side quests
+- each branch must have:
+  - one explicit route hypothesis
+  - one explicit stop condition
+  - one explicit integration verdict
+- do not create parallel branches merely to “see what happens”
+
+### Separation Rule
+
+- Do not drag contract-development formatting into free-development mode by default.
+- Do not drag free-development autonomy into contract mode without explicit user activation.
+- Both routes still obey:
+  - evidence-first
+  - one-step-one-commit
+  - hard red lines
+
+### Execution Truth Rule
+
+- If a project exposes an explicit execution-lock artifact such as `active_contract.json`, treat it as the current execution truth.
+- A historical log or architecture note must not be treated as the current execution truth when such a lock exists.
+- The planning layer must not re-enter by default while an execution lock is active unless:
+  - a declared red line is crossed
+  - the execution lock itself records that replanning is allowed
+  - continuing without replanning would be dishonest
+- If the project exposes a contract runner alongside that lock, the execution layer should prefer the runner as the canonical state-transition mechanism.
 
 ## Dual Register Principle
 - This protocol has one invariant skeleton and two surface registers:
@@ -48,85 +148,83 @@ description: Parent policy layer for approval-first coding workflows under both 
 - The execution layer must follow that plan strictly.
 - Multiple approved slices must never be merged into one large commit.
 - A slice without independent verification and independent archival is incomplete in protocol terms.
+- New evidence alone does not force a new contract. Only red-line crossings, scope breaks, or materially false assumptions do.
 
 ## Campaign Runtime Law
-- Any serious campaign must have one unified runtime container rather than scattered oral state.
-- The runtime should distinguish at least:
-  - current machine truth
-  - event stream
-  - evidence index
-  - human-readable tree or summary
-- A recommended minimal layout is:
+- Serious work should attach to one explicit campaign runtime rather than oral context.
+- A minimal campaign runtime should expose:
+  - `state.json`
+  - `journal.jsonl`
+  - `evidence_index.json`
+  - `tree.md`
+- When a repo chooses to store development-process truth inside a dedicated folder such as `dev_repo/`, prefer:
   - `dev_repo/state.json`
   - `dev_repo/journal.jsonl`
   - `dev_repo/evidence_index.json`
   - `dev_repo/tree.md`
-- Do not treat `PROCESS_LOG`-style history as the current runtime truth.
+- Do not force `tmp/campaigns/` as the only valid location if the repo deliberately centralizes process truth elsewhere.
 - The current runtime truth should always answer:
   - what the root campaign is
   - which contract is active now
-  - what child contract, if any, is currently blocking the parent
-  - where execution must return after the child is resolved
+  - whether a child contract has paused the parent
+  - where execution returns after the child closes
+- It should also answer the minimum purpose of every visible contract without relying on chat sessions.
 
 ## Contract Tree Law
-- Contracts must form an explicit tree, not a pile of unrelated plans.
-- Every contract should declare at least:
+- Contracts should form an explicit parent/child tree.
+- Each contract should be able to declare:
   - `contract_id`
-  - `root_campaign`
   - `parent_contract_id`
+  - `root_campaign`
   - `status`
+  - `summary`
   - `goal`
   - `return_to`
-- A child contract may pause a parent contract, but it may not silently replace it.
-- If a child contract is opened because a red line was crossed, record:
+- A child contract may pause a parent, but it may not silently replace it.
+- If a child contract opens because a red line was crossed, record:
   - which red line was crossed
   - why the parent could not continue honestly
-  - which parent step the execution must return to
+  - which parent step execution must return to
+
+## Contract Summary Law
+- Every visible contract should carry one short `summary`.
+- `summary` answers the minimum human-readable question:
+  - 这刀在干什么
+- `goal` may remain fuller and more strategic, but `summary` must stay display-sized.
+- Do not leave a live contract as identifier + status only.
 
 ## Contract Tree Pruning Law
-- The live tree shown to humans should remain short enough to navigate.
-- Once a child branch is:
+- The live contract tree should remain navigable.
+- When a child branch becomes:
   - `completed`
   - `abandoned`
-  - or no longer needed for active navigation
-  collapse it from the live tree view.
-- Keep its evidence in:
+  - or otherwise no longer required for active navigation
+  collapse it from the live tree view rather than letting the visible tree grow forever.
+- Do not erase its evidence; archive it in:
   - `journal.jsonl`
   - `evidence_index.json`
-- The visible tree should mainly preserve:
+- The live tree should keep:
   - the root campaign
   - the active branch
   - unresolved siblings
-  - `return_to`
+  - explicit `return_to`
+- Every visible live-tree line should render as:
+  - `contract_id — summary [status]`
+- When a branch is collapsed into history, preserve summaries in the collapsed bucket instead of reverting to bare ids.
 
 ## Runtime Bootstrap Law
-- When a new project begins implementation and lacks a process-truth scaffold, create:
+- When entering a new project that lacks process-truth scaffolding, automatically create:
   - `dev_repo/state.json`
   - `dev_repo/journal.jsonl`
   - `dev_repo/evidence_index.json`
   - `dev_repo/tree.md`
-- Do not default to nested runtime folders unless the user explicitly wants multiple concurrent campaigns.
+- Create those four siblings directly under `dev_repo/`.
+- Do not create nested runtime folders by default unless the user explicitly asks for multiple concurrent campaigns.
+- Prefer the shared helper at `scripts/bootstrap_dev_repo_runtime.py` relative to this skill directory.
 
 ## Parent-Child Return Law
-- When a child contract is opened, the parent contract should move to a state like:
-  - `paused_for_child`
-- When the child is resolved, execution must explicitly return to the parent unless:
-  - the parent was honestly abandoned
-  - a new root campaign was explicitly declared
-- Do not let local firefighting quietly become the new mainline.
-- If the executor cannot state where execution returns after a child contract, then the contract tree is malformed.
-
-## Runtime Naming Law
-- Avoid letting one file pretend to be both the whole campaign and the active contract.
-- Prefer:
-  - one runtime directory per campaign
-  - one machine state file for the active contract tree
-  - one human-readable tree file for fast orientation
-- The human-readable tree should be simple enough that a novice can answer:
-  - what war we are fighting
-  - what sub-war is open
-  - why it opened
-  - where we go back after it closes
+- If execution cannot state where it returns after the current child contract, the contract tree is malformed.
+- A local firefight may unblock the mainline, but it may not quietly become the new mainline.
 
 ## Enforcement
 - Other skills may narrow scope but may not weaken these rules.

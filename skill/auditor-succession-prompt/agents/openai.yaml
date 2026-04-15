@@ -1,0 +1,4 @@
+interface:
+  display_name: "Auditor Succession Prompt"
+  short_description: "Package a copy-ready renewal prompt for a fresh audit seat"
+  default_prompt: "Use $auditor-succession-prompt to prepare a copy-ready renewal packet for a fresh Web auditor seat under the Seven-Stars protocol."

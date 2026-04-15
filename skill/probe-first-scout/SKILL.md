@@ -30,6 +30,7 @@ Your response must include:
 - Prefer the smallest probe that can answer the operational uncertainty.
 - Do not let the probe mutate into the real implementation.
 - Keep the probe isolated from mainline behavior and broad refactors.
+- If the repo has no `dev_repo/` runtime yet, make runtime bootstrap an explicit precondition or first micro-slice instead of silently probing without process truth.
 - If the user writes imperially, the outer shell may be ceremonial, but the probe plan must remain technically explicit.
 
 ## Probe Deliverables
