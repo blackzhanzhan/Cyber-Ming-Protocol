@@ -30,6 +30,9 @@ def parse_specs(items: list[str]) -> list[tuple[str, Path]]:
 
 def pixel_block_lines(image_path: Path, width: int) -> list[str]:
     image = Image.open(image_path).convert("RGBA")
+    bbox = image.getbbox()
+    if bbox:
+        image = image.crop(bbox)
     aspect = image.height / image.width if image.width else 1
     target_width = width
     target_height = max(2, int(target_width * aspect))
@@ -77,6 +80,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Render pixel PNGs as ANSI terminal blocks.")
     parser.add_argument("--image", action="append", default=[], help="label=path, may be repeated")
     parser.add_argument("--width", type=int, default=18, help="Logical pixel width in terminal cells")
+    parser.add_argument("--no-labels", action="store_true", help="Render image blocks only, without label header rows.")
     args = parser.parse_args()
 
     specs = parse_specs(args.image)
@@ -88,7 +92,7 @@ def main() -> int:
         if not image_path.exists():
             raise SystemExit(f"Missing image: {image_path}")
         block = pixel_block_lines(image_path, args.width)
-        columns.append([label, *block])
+        columns.append(block if args.no_labels else [label, *block])
 
     print(join_columns(columns))
     return 0
