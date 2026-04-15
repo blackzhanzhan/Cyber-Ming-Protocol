@@ -3,3 +3,4 @@ article/
 node_modules/
 .env.local
 .env.*.local
+scripts/nano_banana_generate.py

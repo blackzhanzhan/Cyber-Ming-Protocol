@@ -29,6 +29,8 @@
 
 这三种理解都会把入口逻辑带偏。
 
+![Skill 稳定节奏，不替代真相](../../assets/visual-protocol/comics/skill-stabilizes-not-truth.png)
+
 ## 先给一句最短定义
 
 Cyber-Ming-Protocol 是**协议优先**的项目。
