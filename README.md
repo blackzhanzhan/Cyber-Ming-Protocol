@@ -64,6 +64,8 @@ AI coding 进入深水区，四个问题最致命：
 
 这套协议不把主权继续外包，而是把 AI 放回可治理、可打断、可审计、可续命的位置。
 
+![人类不是盖章员](assets/visual-protocol/comics/human-not-stamper.png)
+
 ### 它适合谁
 
 **第一类：被黑盒拖着走的人。**

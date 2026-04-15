@@ -27,6 +27,8 @@
 
 所以需要一个统一的 **campaign runtime**。
 
+![当前真相不在对话里](../assets/visual-protocol/comics/runtime-truth-not-in-chat.png)
+
 ## 它怎么出现
 
 现在默认不是让人手工先建一个 `dev_repo/` 目录再开始说理。

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import base64
+import io
 import json
 import mimetypes
 import os
@@ -11,6 +12,7 @@ import urllib.parse
 from pathlib import Path
 
 import requests
+from PIL import Image
 
 
 def load_dotenv(dotenv_path: Path) -> None:
@@ -27,12 +29,28 @@ def load_dotenv(dotenv_path: Path) -> None:
             os.environ[key] = value
 
 
-def file_to_inline_part(image_path: Path) -> dict:
+def file_to_inline_part(image_path: Path, max_dim: int | None) -> dict:
     mime_type = mimetypes.guess_type(str(image_path))[0] or "image/png"
+    image_bytes = image_path.read_bytes()
+
+    if max_dim:
+        image = Image.open(io.BytesIO(image_bytes)).convert("RGBA")
+        width, height = image.size
+        longest = max(width, height)
+        if longest > max_dim:
+            ratio = max_dim / float(longest)
+            image = image.resize(
+                (max(1, int(width * ratio)), max(1, int(height * ratio))),
+                Image.Resampling.LANCZOS,
+            )
+        output = io.BytesIO()
+        image.save(output, format="PNG", optimize=True)
+        image_bytes = output.getvalue()
+
     return {
         "inlineData": {
             "mimeType": mime_type,
-            "data": base64.b64encode(image_path.read_bytes()).decode("ascii"),
+            "data": base64.b64encode(image_bytes).decode("ascii"),
         }
     }
 
@@ -47,6 +65,7 @@ def main() -> int:
     parser.add_argument("--base-url", default=None, help="Override API base URL.")
     parser.add_argument("--model", default=None, help="Override model name.")
     parser.add_argument("--emit-json", action="store_true", help="Print response metadata as JSON.")
+    parser.add_argument("--reference-max-dim", type=int, default=768, help="Downscale references before upload.")
     args = parser.parse_args()
 
     load_dotenv(Path(args.dotenv))
@@ -64,7 +83,7 @@ def main() -> int:
         ref_path = Path(reference).expanduser().resolve()
         if not ref_path.exists():
             raise SystemExit(f"Reference image not found: {ref_path}")
-        parts.append(file_to_inline_part(ref_path))
+        parts.append(file_to_inline_part(ref_path, args.reference_max_dim))
 
     payload = {
         "contents": [{"parts": parts}],

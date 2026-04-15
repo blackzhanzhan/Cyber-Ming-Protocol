@@ -26,6 +26,8 @@ Cyber-Ming-Protocol 反复使用“主权”“审计”“裁决”“制衡”
 - 完成由谁裁决
 - 出错后由谁接手
 
+![为什么 AI coding 会让 CS 与管理学界限模糊](../../assets/visual-protocol/comics/cs-vs-management.png)
+
 这些问题当然仍然建立在 CS 之上，但它们本身已经带有强烈的治理性质。也正因此，AI coding 在深水区里，开始天然模糊 CS 与管理学的边界。
 
 ## 传统编程主要把人放在执行位
