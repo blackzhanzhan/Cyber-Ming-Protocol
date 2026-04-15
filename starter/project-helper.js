@@ -2,58 +2,23 @@
 
 const fs = require("fs");
 const path = require("path");
-const { spawnSync } = require("child_process");
 
 const runtimeRoot = path.resolve(__dirname, "..");
 const projectRoot = path.resolve(runtimeRoot, "..");
 const installRoot = path.join(runtimeRoot, "install");
 const docsRoot = path.join(runtimeRoot, "docs");
-const assetsRoot = path.join(runtimeRoot, "assets", "visual-protocol", "pixel");
-const renderScript = path.join(__dirname, "render-terminal-pixel.py");
-const richAssets = [
-  ["小黄龙", path.join(assetsRoot, "xiao-huanglong-64.png")],
-  ["徐阶", path.join(assetsRoot, "xu-jie-64.png")],
-  ["严嵩", path.join(assetsRoot, "yan-song-64.png")],
-];
-
-function renderRichCast() {
-  if (!fs.existsSync(renderScript)) {
-    return null;
-  }
-  for (const [, imagePath] of richAssets) {
-    if (!fs.existsSync(imagePath)) {
-      return null;
-    }
-  }
-  const result = spawnSync(
-    "python3",
-    [
-      renderScript,
-      "--width",
-      "12",
-      ...richAssets.flatMap(([label, imagePath]) => ["--image", `${label}=${imagePath}`]),
-    ],
-    {
-      encoding: "utf8",
-      stdio: ["ignore", "pipe", "ignore"],
-    },
-  );
-  if (result.status !== 0) {
-    return null;
-  }
-  return result.stdout.trim();
-}
 
 function printBanner() {
   console.log("==============================================================");
-  console.log("CYBER-MING PROJECT HELPER");
+  console.log(" ██████╗██╗   ██╗██████╗ ███████╗██████╗      ███╗   ███╗██╗███╗   ██╗ ██████╗ ");
+  console.log("██╔════╝╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗     ████╗ ████║██║████╗  ██║██╔════╝ ");
+  console.log("██║      ╚████╔╝ ██████╔╝█████╗  ██████╔╝     ██╔████╔██║██║██╔██╗ ██║██║  ███╗");
+  console.log("██║       ╚██╔╝  ██╔══██╗██╔══╝  ██╔══██╗     ██║╚██╔╝██║██║██║╚██╗██║██║   ██║");
+  console.log("╚██████╗   ██║   ██████╔╝███████╗██║  ██║     ██║ ╚═╝ ██║██║██║ ╚████║╚██████╔╝");
+  console.log(" ╚═════╝   ╚═╝   ╚═════╝ ╚══════╝╚═╝  ╚═╝     ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ");
   console.log("Runtime truth for deep-water AI coding");
   console.log("==============================================================");
   console.log("");
-  const richCast = renderRichCast();
-  if (richCast) {
-    console.log(richCast);
-  }
   console.log("");
 }
 

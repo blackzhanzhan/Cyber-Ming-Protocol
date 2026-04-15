@@ -50,25 +50,13 @@ function copyStarterDocs(repoRoot, docsRoot) {
   );
 }
 
-function copyStarterAssets(repoRoot, assetsRoot) {
-  ensureDir(assetsRoot);
-  copyDir(
-    path.join(repoRoot, "assets", "visual-protocol", "pixel"),
-    path.join(assetsRoot, "visual-protocol", "pixel"),
-  );
-}
-
 function installProjectHelper(repoRoot, projectDir) {
   const helperSource = path.join(repoRoot, "starter", "project-helper.js");
-  const renderSource = path.join(repoRoot, "scripts", "render_terminal_pixel.py");
   const helperTarget = path.join(projectDir, ".cyber-ming", "bin", "cyber-ming.js");
-  const renderTarget = path.join(projectDir, ".cyber-ming", "bin", "render-terminal-pixel.py");
   const projectShimTarget = path.join(projectDir, "bin", "cyber-ming.js");
 
   writeFile(helperTarget, fs.readFileSync(helperSource, "utf8"));
   fs.chmodSync(helperTarget, 0o755);
-  writeFile(renderTarget, fs.readFileSync(renderSource, "utf8"));
-  fs.chmodSync(renderTarget, 0o755);
 
   writeFile(
     projectShimTarget,
@@ -83,7 +71,6 @@ function installProjectHelper(repoRoot, projectDir) {
 
   return {
     helperTarget,
-    renderTarget,
     projectShimTarget,
   };
 }
@@ -103,14 +90,12 @@ function installRuntime(repoRoot, runtime, scope, options) {
   const starterTarget = adapter.resolveStarterTarget(scope, projectDir, root);
   const manifestPath = buildManifestPath(adapter, scope, projectDir, root);
   const docsRoot = buildDocsRoot(scope, projectDir, root);
-  const assetsRoot = scope === "project" ? path.join(projectDir, ".cyber-ming", "assets") : path.join(root, "cyber-ming", "assets");
   const docsReferenceRoot = buildDocsReferenceRoot(scope, docsRoot);
   const { skillRoot, entries } = listSkillSources(repoRoot);
   const projectHelper = scope === "project" ? installProjectHelper(repoRoot, projectDir) : null;
 
   ensureDir(skillsDir);
   copyStarterDocs(repoRoot, docsRoot);
-  copyStarterAssets(repoRoot, assetsRoot);
 
   for (const name of entries) {
     const sourceDir = path.join(skillRoot, name);
@@ -139,7 +124,6 @@ function installRuntime(repoRoot, runtime, scope, options) {
     skillsDir,
     starterTarget,
     docsRoot,
-    assetsRoot,
     docsReferenceRoot,
     projectHelper,
     installedSkills: entries,
@@ -154,7 +138,6 @@ function installRuntime(repoRoot, runtime, scope, options) {
     skillsDir,
     starterTarget,
     docsRoot,
-    assetsRoot,
     docsReferenceRoot,
     projectHelper,
     installedSkills: entries,
@@ -203,7 +186,6 @@ function formatInstallSummary(result) {
     kv("Skills Dir", result.skillsDir),
     kv("Starter", result.starterTarget),
     kv("Docs Bundle", result.docsRoot),
-    kv("Asset Bundle", result.assetsRoot),
     kv("Manifest", result.manifestPath),
     ...(result.projectHelper
       ? [
