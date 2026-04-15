@@ -1,0 +1,21 @@
+{
+  "style": "low-resolution pixel game character art",
+  "baseline": "xiao-huanglong-pixel-direct-v4-front",
+  "characters": {
+    "xiao_huanglong": {
+      "label": "小黄龙",
+      "role": "主权 / 路由 / 终裁",
+      "path": "assets/visual-protocol/pixel/xiao-huanglong-64.png"
+    },
+    "xu_jie": {
+      "label": "徐阶",
+      "role": "审计 / 追证 / 盘问",
+      "path": "assets/visual-protocol/pixel/xu-jie-64.png"
+    },
+    "yan_song": {
+      "label": "严嵩",
+      "role": "执行 / 推进 / 施工",
+      "path": "assets/visual-protocol/pixel/yan-song-64.png"
+    }
+  }
+}

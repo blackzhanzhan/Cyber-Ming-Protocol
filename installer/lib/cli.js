@@ -6,6 +6,7 @@ const { ADAPTERS } = require("./adapters");
 const { formatInstallSummary, inspectRuntime, installRuntime } = require("./install");
 const { detectBinary } = require("./utils");
 const { banner, chip, frame, kv, line, menuOption, paint, renderCast, section, splitBlockLines, ANSI } = require("./theme");
+const { renderRichCast } = require("./rich-cast");
 
 const RUNTIME_BLURBS = {
   claude: "Anthropic host with project/global skills and CLAUDE.md starter entry.",
@@ -100,7 +101,7 @@ function detectRuntimeStatus(runtime) {
   };
 }
 
-async function promptForRuntimes() {
+async function promptForRuntimes(repoRoot) {
   const rl = readline.createInterface({ input: stdin, output: stdout });
   try {
     const statuses = Object.keys(ADAPTERS).map((runtime, index) => ({
@@ -110,7 +111,10 @@ async function promptForRuntimes() {
     }));
 
     stdout.write(`${banner()}\n\n`);
-    stdout.write(`${renderCast().join("\n")}\n\n`);
+    const richCast = renderRichCast(repoRoot, path.join(repoRoot, "scripts", "render_terminal_pixel.py"));
+    if (richCast) {
+      stdout.write(`${richCast}\n\n`);
+    }
     stdout.write(`${section("Host Selection", "Choose the runtimes that should enter Cyber-Ming law")}\n`);
     stdout.write(`${line("-", 62, ANSI.ash)}\n`);
     for (const item of statuses) {
@@ -199,7 +203,7 @@ function validateConfigDir(selectedRuntimes, configDir) {
 async function runInit(parsed, repoRoot) {
   let selectedRuntimes = parsed.selectedRuntimes;
   if (selectedRuntimes.length === 0) {
-    selectedRuntimes = await promptForRuntimes();
+    selectedRuntimes = await promptForRuntimes(repoRoot);
   }
   if (selectedRuntimes.length === 0) {
     throw new Error("No runtimes selected.");
@@ -214,7 +218,10 @@ async function runInit(parsed, repoRoot) {
 
   if (parsed.selectedRuntimes.length > 0) {
     stdout.write(`${banner()}\n\n`);
-    stdout.write(`${renderCast().join("\n")}\n\n`);
+    const richCast = renderRichCast(repoRoot, path.join(repoRoot, "scripts", "render_terminal_pixel.py"));
+    if (richCast) {
+      stdout.write(`${richCast}\n\n`);
+    }
     stdout.write(`${section("Install", "Applying Cyber-Ming law to the selected runtime routes")}\n`);
   }
 
