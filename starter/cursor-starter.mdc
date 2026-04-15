@@ -1,0 +1,28 @@
+---
+description: Cyber-Ming starter governance rule
+globs:
+alwaysApply: true
+---
+
+# Cyber-Ming Starter
+
+This workspace uses **Cyber-Ming-Protocol**.
+
+- Bootstrap under repository law before editing.
+- Default to contract development before code changes.
+- Enter `自由开发模式` only when the user explicitly activates it.
+- If `dev_repo/state.json`, `journal.jsonl`, `evidence_index.json`, or `tree.md` exist, treat them as current runtime truth.
+- In fresh or takeover sessions, reconstruct state before edits.
+
+Recommended first prompt:
+
+```text
+{{FIRST_PROMPT}}
+```
+
+Reference docs live at:
+
+- `{{DOCS_ROOT}}/BOOTSTRAP.md`
+- `{{DOCS_ROOT}}/bootstrap/ide-executor.md`
+- `{{DOCS_ROOT}}/bootstrap/web-auditor.md`
+- `{{DOCS_ROOT}}/dev_repo-runtime.md`

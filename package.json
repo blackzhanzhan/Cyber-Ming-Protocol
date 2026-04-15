@@ -1,0 +1,26 @@
+{
+  "name": "cyber-ming",
+  "version": "0.2.0-beta.2",
+  "description": "Installer and starter for the Cyber-Ming Protocol governance skills.",
+  "bin": {
+    "cyber-ming": "bin/cyber-ming.js"
+  },
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "files": [
+    "bin",
+    "installer",
+    "skill",
+    "starter",
+    "BOOTSTRAP.md",
+    "bootstrap",
+    "web-audit-templates"
+  ],
+  "scripts": {
+    "cyber-ming": "node bin/cyber-ming.js",
+    "doctor": "node bin/cyber-ming.js doctor"
+  },
+  "license": "MIT"
+}
