@@ -22,7 +22,11 @@
 
 Cyber-Ming-Protocol 之所以反对黑盒多-Agent，不是因为它讨厌并行，也不是因为它反对工具变强，而是因为在深水区里，这两种失真一旦叠加，代价会远高于表面上的速度红利。
 
+![双重失真不是单线出血](../../assets/visual-protocol/comics/double-distortion-not-single-bleed.png)
+
 ## 技术失真：系统看起来在推进，实际上在偏航
+
+![技术失真：看起来在推进，实际上在偏航](../../assets/visual-protocol/comics/technical-distortion-looks-like-progress.png)
 
 所谓技术失真，不只是指“答案错了”。更常见、更危险的，是系统给出了大量看似合理、局部可运行、语言上自洽的中间产物，让人误以为开发在推进，但底层结构却正在偏航。
 
@@ -41,6 +45,8 @@ Cyber-Ming-Protocol 之所以反对黑盒多-Agent，不是因为它讨厌并行
 - 关键链路没有物理验证，却用一段看起来合理的总结陈词过关
 
 在浅水区，这种问题也许只是一次低级失误；在深水区，它会直接把你带进错误的分支历史，污染未来所有判断。
+
+![总结不是完成事实](../../assets/visual-protocol/comics/summary-not-completion.png)
 
 ### 第二，惰性修补掩盖结构问题
 
@@ -84,6 +90,8 @@ Cyber-Ming-Protocol 之所以反对黑盒多-Agent，不是因为它讨厌并行
 
 所谓治理失真，就是系统里原本应该分开的权力开始混在一起，原本应该保留的人类控制点开始被绕开，最后没有任何一方真正对结果负责。
 
+![治理失真：系统里已经没人真正掌权了](../../assets/visual-protocol/comics/governance-distortion-no-one-in-charge.png)
+
 ### 第一，执行位兼任裁决位
 
 这是最核心的一条。谁在执行，谁就顺手宣布自己完成了；谁生成了结果，谁就顺手定义什么算通过。
@@ -91,6 +99,8 @@ Cyber-Ming-Protocol 之所以反对黑盒多-Agent，不是因为它讨厌并行
 这在黑盒流派里看上去很自然，因为大家习惯把“做事的人”也默认成“汇报事实的人”。但一旦执行位本身就是高吞吐、强语言包装、弱羞耻感的数字执行体，这种设计几乎等于邀请伪完成大规模进入系统。
 
 没有独立裁决位，完成标准就会不断被语言偷换。
+
+![双轨审计不是自说自话](../../assets/visual-protocol/comics/dual-track-not-self-review.png)
 
 ### 第二，人类被降格成事后审批员
 
