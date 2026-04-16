@@ -24,17 +24,17 @@
 - 默认入口：
 
 ```bash
-npx cyber-ming@latest
+npx @blackzhanzhan/cyber-ming@latest
 ```
 
 - 常见命令：
 
 ```bash
-npx cyber-ming@latest init --claude --global
-npx cyber-ming@latest init --codex --project
-npx cyber-ming@latest init --cursor --project
-npx cyber-ming@latest init --opencode --global
-npx cyber-ming@latest doctor --all --project
+npx @blackzhanzhan/cyber-ming@latest init --claude --global
+npx @blackzhanzhan/cyber-ming@latest init --codex --project
+npx @blackzhanzhan/cyber-ming@latest init --cursor --project
+npx @blackzhanzhan/cyber-ming@latest init --opencode --global
+npx @blackzhanzhan/cyber-ming@latest doctor --all --project
 ```
 
 - 要求：`Node.js >= 18.17.0`
@@ -245,17 +245,17 @@ If you want to wire this protocol directly into common hosts, the CLI installer 
 - Default entry:
 
 ```bash
-npx cyber-ming@latest
+npx @blackzhanzhan/cyber-ming@latest
 ```
 
 - Common commands:
 
 ```bash
-npx cyber-ming@latest init --claude --global
-npx cyber-ming@latest init --codex --project
-npx cyber-ming@latest init --cursor --project
-npx cyber-ming@latest init --opencode --global
-npx cyber-ming@latest doctor --all --project
+npx @blackzhanzhan/cyber-ming@latest init --claude --global
+npx @blackzhanzhan/cyber-ming@latest init --codex --project
+npx @blackzhanzhan/cyber-ming@latest init --cursor --project
+npx @blackzhanzhan/cyber-ming@latest init --opencode --global
+npx @blackzhanzhan/cyber-ming@latest doctor --all --project
 ```
 
 - Requirement: `Node.js >= 18.17.0`

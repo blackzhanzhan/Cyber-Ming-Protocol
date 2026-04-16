@@ -59,7 +59,7 @@ function printHelp() {
   console.log(`  - ${path.join(docsRoot, "dev_repo-runtime.md")}`);
   console.log("");
   console.log("For fresh installs or upgrades, use the source CLI:");
-  console.log("  npx cyber-ming@latest init --help");
+  console.log("  npx @blackzhanzhan/cyber-ming@latest init --help");
 }
 
 function printDoctor() {

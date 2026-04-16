@@ -1,6 +1,6 @@
 {
-  "name": "cyber-ming",
-  "version": "0.2.0-beta.3",
+  "name": "@blackzhanzhan/cyber-ming",
+  "version": "0.2.0-beta.4",
   "description": "Installer and starter for the Cyber-Ming Protocol governance skills.",
   "bin": {
     "cyber-ming": "bin/cyber-ming.js"

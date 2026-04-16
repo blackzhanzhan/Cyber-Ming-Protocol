@@ -64,9 +64,9 @@ function getHelpText() {
   return [
     banner(),
     section("Usage"),
-    "  npx cyber-ming@latest",
-    "  npx cyber-ming@latest init [runtime flags] [scope flags]",
-    "  npx cyber-ming@latest doctor [runtime flags] [scope flags]",
+    "  npx @blackzhanzhan/cyber-ming@latest",
+    "  npx @blackzhanzhan/cyber-ming@latest init [runtime flags] [scope flags]",
+    "  npx @blackzhanzhan/cyber-ming@latest doctor [runtime flags] [scope flags]",
     "",
     section("Runtime Flags"),
     "  --claude",
@@ -83,10 +83,10 @@ function getHelpText() {
     "  --config-dir <path>",
     "",
     section("Examples"),
-    "  npx cyber-ming@latest",
-    "  npx cyber-ming@latest --claude --global",
-    "  npx cyber-ming@latest --codex --local",
-    "  npx cyber-ming@latest doctor --all --project",
+    "  npx @blackzhanzhan/cyber-ming@latest",
+    "  npx @blackzhanzhan/cyber-ming@latest --claude --global",
+    "  npx @blackzhanzhan/cyber-ming@latest --codex --local",
+    "  npx @blackzhanzhan/cyber-ming@latest doctor --all --project",
   ].join("\n");
 }
 
