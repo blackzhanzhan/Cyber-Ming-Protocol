@@ -13,6 +13,8 @@
 
 很多人第一次听到 `git worktree` 时，脑中浮现的往往只是一个很小的技术用途：多开几个工作目录，切换不同分支时少一点来回 checkout 的麻烦。
 
+![Worktree 分封不是 Git 小技巧](../../assets/visual-protocol/comics/worktree-feudal-not-git-trick.png)
+
 如果只把它理解到这里，这一页就没有必要存在。
 
 在 Cyber-Ming-Protocol 里，Worktree 分封制根本不是“更方便的 Git 姿势”，而是一套直接指向深水区团队协作的治理制度。它要解决的，不是“怎么让多人都能同时改代码”，而是一个更硬的问题：
