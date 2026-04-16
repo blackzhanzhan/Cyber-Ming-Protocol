@@ -27,6 +27,8 @@
 
 Cyber-Ming-Protocol 完全承认这些判断。它不反对流程、不反对方案、不反对分工。
 
+![不是完全无关，但也不是一回事](../../assets/visual-protocol/comics/related-not-identical.png)
+
 ## 分叉在哪
 
 | 方法 | 它怎么做 | Cyber-Ming 怎么做 | 分叉点 |
@@ -38,6 +40,8 @@ Cyber-Ming-Protocol 完全承认这些判断。它不反对流程、不反对方
 ## 最关键的一刀：人类主权不可外包
 
 Workflow、spec driven、agent team 都有一个共同倾向：**让人退到流程或系统后面，让自动化接管更多决策。**
+
+![人类不是盖章员](../../assets/visual-protocol/comics/human-not-stamper.png)
 
 Cyber-Ming 的立场相反：**人必须居中路由。**
 
@@ -68,6 +72,8 @@ Cyber-Ming 的立场相反：**人必须居中路由。**
 所以如果真要对外定位，更准确的说法不是“Cyber-Ming 也是一种 spec-driven”，而是：
 
 **Cyber-Ming 是一种 contract-driven 的深水区治理方法。**
+
+![Contract-driven 比重 spec 更适合脉冲开发](../../assets/visual-protocol/comics/contract-driven-pulse.png)
 
 它吸收 spec-driven 的优点——先有方案、先有边界、先有可审对象；但它拒绝把整张未来蓝图过早冻结成重 spec。它改用原子执行合同来承接每一小段真实推进。
 

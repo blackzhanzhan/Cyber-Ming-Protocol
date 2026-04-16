@@ -29,8 +29,6 @@
 
 这三种理解都会把入口逻辑带偏。
 
-![Skill 稳定节奏，不替代真相](../../assets/visual-protocol/comics/skill-stabilizes-not-truth.png)
-
 ## 先给一句最短定义
 
 Cyber-Ming-Protocol 是**协议优先**的项目。
@@ -44,6 +42,8 @@ Cyber-Ming-Protocol 是**协议优先**的项目。
 对外叙事最稳妥的总句式是：`Protocol / Skill / Docs` 是三种主落地形态，`web-audit-templates/` 是分离的 Web 审计协作资产。
 
 这一页之所以重点讲“协议、Skill、模板”，就是因为很多比较一开始就比错了对象：把交付形态和方法论混成一层，后面再谈和 workflow / spec-driven / agent-team 的关系就会全乱掉。
+
+![别把协议、Skill、模板混成一件东西](../../assets/visual-protocol/comics/dont-mix-protocol-skill-template.png)
 
 ## 几种资产总表
 
@@ -71,6 +71,8 @@ Cyber-Ming-Protocol 是**协议优先**的项目。
 ## 第二部分：Skill 是什么
 
 Skill 的作用，不是替你发明协议，而是帮你在 IDE 侧更稳定地守住协议。
+
+![Skill 稳定节奏，不替代真相](../../assets/visual-protocol/comics/skill-stabilizes-not-truth.png)
 
 例如当前 repo 里的 skill 会把一些高频动作固化下来：
 
@@ -112,6 +114,8 @@ Web 审计模板不是本地 Skill，也不是在 IDE 里触发的执行器。
 ## 为什么 Web 模板要和 Skill 分开
 
 因为这两边承担的是不同角色：
+
+![Web 模板不是本地 Skill](../../assets/visual-protocol/comics/web-template-not-local-skill.png)
 
 - IDE-side skill 对应执行、规划、探测、接手
 - Web-side template 对应方案审计、完成审计、续命判断
