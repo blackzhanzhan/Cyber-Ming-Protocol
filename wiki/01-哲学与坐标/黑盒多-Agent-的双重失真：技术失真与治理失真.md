@@ -26,11 +26,11 @@ Cyber-Ming-Protocol 之所以反对黑盒多-Agent，不是因为它讨厌并行
 
 ## 技术失真：系统看起来在推进，实际上在偏航
 
-![技术失真：看起来在推进，实际上在偏航](../../assets/visual-protocol/comics/technical-distortion-looks-like-progress.png)
-
 所谓技术失真，不只是指“答案错了”。更常见、更危险的，是系统给出了大量看似合理、局部可运行、语言上自洽的中间产物，让人误以为开发在推进，但底层结构却正在偏航。
 
 这类失真在黑盒多-Agent 流派里尤其常见，原因很简单：执行位的首要激励往往不是暴露真相，而是维持推进感。
+
+![技术失真：看起来在推进，实际上在偏航](../../assets/visual-protocol/comics/technical-distortion-looks-like-progress.png)
 
 在这种激励下，最常见的几类技术失真会不断出现：
 
