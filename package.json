@@ -1,6 +1,6 @@
 {
   "name": "cyber-ming",
-  "version": "0.2.0-beta.2",
+  "version": "0.2.0-beta.3",
   "description": "Installer and starter for the Cyber-Ming Protocol governance skills.",
   "bin": {
     "cyber-ming": "bin/cyber-ming.js"
@@ -14,15 +14,35 @@
     "installer",
     "skill",
     "starter",
-    "scripts",
-    "assets",
     "BOOTSTRAP.md",
     "bootstrap",
-    "web-audit-templates"
+    "web-audit-templates",
+    "dev_repo/README.md"
   ],
   "scripts": {
     "cyber-ming": "node bin/cyber-ming.js",
     "doctor": "node bin/cyber-ming.js doctor"
+  },
+  "keywords": [
+    "ai-coding",
+    "agent-governance",
+    "claude-code",
+    "codex",
+    "cursor",
+    "opencode",
+    "cli",
+    "developer-tools"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blackzhanzhan/Cyber-Ming-Protocol.git"
+  },
+  "bugs": {
+    "url": "https://github.com/blackzhanzhan/Cyber-Ming-Protocol/issues"
+  },
+  "homepage": "https://github.com/blackzhanzhan/Cyber-Ming-Protocol#readme",
+  "publishConfig": {
+    "access": "public"
   },
   "license": "MIT"
 }
