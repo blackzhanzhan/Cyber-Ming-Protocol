@@ -28,6 +28,8 @@ The issue is not that someone subjectively enjoys talking about programming as g
 
 Those questions still rest on CS, but they already have strong governance characteristics of their own. That is why AI coding, once it reaches deep water, naturally starts to blur the boundary between CS and management.
 
+![Why AI coding blurs CS and management](../../assets/visual-protocol/comics-en/cs-vs-management.png)
+
 ## Traditional Programming Mainly Places Humans in the Executor Role
 
 Before strong agents entered the scene, no matter how programmers layered systems or collaborated with each other, the core work was still mostly executed by hand:
@@ -51,6 +53,8 @@ Management certainly existed, but it had not yet attached itself to every line o
 ## AI Coding Changes Not Tool Power, but Human Position
 
 What AI coding really changes is not simply that autocomplete got stronger. It is that, for the first time in ordinary development, a continuously delegable digital executor has entered the scene.
+
+![AI changes not tool strength, but human position](../../assets/visual-protocol/comics-en/ai-position-not-tool-strength.png)
 
 Once the executor can:
 
@@ -112,6 +116,8 @@ In the past, the person who wrote the code was often also the person who validat
 
 As soon as those two powers stop being separated, pseudo-completion appears very quickly. What the executor is best at is not always doing the work correctly. It is often packaging "close enough" as "already done." That is why institutionalized audit and judgment have to appear inside the development process.
 
+![Execution power does not equal adjudication power](../../assets/visual-protocol/comics-en/execution-is-not-judgment.png)
+
 ### Second, Information Routing Itself Becomes Governance Action
 
 In traditional development, copying a log, forwarding a diff, or assembling context was often treated as low-value support work. In AI coding, those actions become governance in the strict sense. What you send to whom, in what order, with what included materials, and with what noise removed directly determines the world the executor and auditor get to see.
@@ -156,6 +162,8 @@ They still need to understand the code, the architecture, the dependencies, the 
 So the right statement is not that development and testing have merged. It is this:
 
 **The same developer, in AI coding, now carries both the role of technical judge and the role of governance center.**
+
+![Humans are not stamp-officers](../../assets/visual-protocol/comics-en/human-not-stamper.png)
 
 ## This Does Not Mean CS Exits; It Means CS No Longer Monopolizes All Problems
 

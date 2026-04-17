@@ -25,6 +25,8 @@ It answers:
 
 You can run the first loop manually with two prompts. But if you want the loop to become reliably repeatable, both sides must be fixed in place.
 
+![A stable loop is not just one side becoming stable](../../assets/visual-protocol/comics-en/stable-loop-not-one-sided.png)
+
 ## The Layer 2 Route
 
 1. Confirm that you have already completed at least one manual minimal loop
@@ -50,6 +52,8 @@ You can run the first loop manually with two prompts. But if you want the loop t
 - the current task is too small to justify the full stabilization skeleton
 
 ## Why Both Sides Are Required
+
+![Skill stabilizes rhythm, not truth](../../assets/visual-protocol/comics-en/skill-stabilizes-not-truth.png)
 
 ### Skill Alone Does Not Create a Stable Loop
 
@@ -189,6 +193,8 @@ At minimum:
 ## Why Releases Must Ship Both Sides
 
 Once you adopt the minimal stable loop as a real working mode, a release cannot be “just a Skill update.”
+
+![If both sides do not ship together, the versions drift apart](../../assets/visual-protocol/comics-en/release-sync-not-one-sided.png)
 
 The more accurate release unit is:
 

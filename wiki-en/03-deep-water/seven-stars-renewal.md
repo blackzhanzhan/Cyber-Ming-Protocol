@@ -26,6 +26,8 @@ In Cyber-Ming-Protocol, Seven Stars Renewal is not about "how to switch windows 
 
 **When the old window is no longer trustworthy, how do you let it die properly in institutional terms, and let the new window inherit the work in a legitimate way?**
 
+![Renewal reads the runtime snapshot first](../../assets/visual-protocol/comics-en/renewal-read-runtime-first.png)
+
 So the real questions on this page are:
 
 - When does the old window count as decayed and not worth forcing any further?
@@ -43,6 +45,8 @@ The reason is simple. The executor position and the audit position do not carry 
 ## Spotting the Problem: When the Old Window Has Already Decayed
 
 The most dangerous thing about window decay is not a sudden total failure. Much more often, the window still appears to be advancing. It still replies. It still proposes plans. It still produces summaries. But what it says is becoming less and less trustworthy.
+
+![When the old window has already decayed](../../assets/visual-protocol/comics-en/old-window-rot-signals.png)
 
 The most dangerous moment is not when the window is obviously dead. It is when:
 
@@ -98,6 +102,8 @@ The essence of window decay is not merely that the model starts making mistakes.
 ## Explaining the Problem: Why the Old Window Decays
 
 Here we need to turn "decay" from a vague feeling into a structural issue.
+
+![Why the old window rots](../../assets/visual-protocol/comics-en/why-old-window-rots.png)
 
 An old window does not decay only because token counts grow, and not only because model memory is imperfect. The deeper reason is that any long-running executor position accumulates three kinds of inertia if it runs long enough.
 
@@ -213,6 +219,8 @@ That is not a tool difference. It is a sovereignty difference.
 
 Now the logic is complete. The public literature is better at continuing tasks, extending windows, and storing more history, but not at deciding whether the current window should be cut off. The institutional answer Seven Stars Renewal gives is therefore this: **default to asynchronous renewal, not synchronized restart.**
 
+![Asynchronous renewal is not synchronized restart](../../assets/visual-protocol/comics-en/async-renewal-not-sync-restart.png)
+
 `README.md` already states the principle clearly: this is rotational renewal through asynchronous context reset. You do not wipe every position in one sweep. You rotate positions according to their decay rate.
 
 Why is the default asynchronous? Because the executor position and the audit position carry different loads.
@@ -310,6 +318,8 @@ The spirit of this step is not conserving window count. It is maximizing the val
 ### Step 4: Light the Executor Lamp - Make the New Yan Song Read the Git Chronicles First, Not Start Coding Immediately
 
 Renewing the executor position is actually quite simple. In the minimal version, it may require only one thing:
+
+![The new Yan Song reads the chronicles first and does not start coding immediately](../../assets/visual-protocol/comics-en/new-yansong-read-journal-first.png)
 
 - Make the new executor window read the recent relevant `git log`
 

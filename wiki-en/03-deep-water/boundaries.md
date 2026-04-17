@@ -41,6 +41,8 @@ The most important judgment to nail down first is this:
 
 **At the moment, this protocol is much closer to a mid-to-late-stage governance method than to a complete and mature takeover method for chaotic legacy systems.**
 
+![A completely undisciplined legacy mess is another kind of war](../../assets/visual-protocol/comics-en/spaghetti-is-another-war.png)
+
 That is not retreat. It is constitutional honesty.
 
 ## Why Taking Over a Completely Undisciplined Legacy Mess Is a Different Kind of War
@@ -128,6 +130,8 @@ Only after that exists again do scouting, audit, debt repayment, renewal, and en
 
 Among the methods currently visible, I have not yet seen one that is both clearly more stable and clearly lower-cost while also elegantly skipping this step.
 
+![Function census: rebuild the registry first, then govern](../../assets/visual-protocol/comics-en/function-census-governance-frontier.png)
+
 So the method that currently feels closest to practical is not asking one strong agent to swallow the entire legacy mess in one bite. It is performing a dumb but necessary survey first:
 
 **Treat functions as the smallest citizens of the project. Register them first, then talk about governance.**
@@ -193,6 +197,8 @@ Only at that point do you obtain something that looks less like hallucination an
 ### What It Improves First Is Takeover Ability, Not Direct Debugging Ability
 
 This distinction needs to be stated heavily.
+
+![It improves takeover first, not direct debugging](../../assets/visual-protocol/comics-en/handover-better-not-direct-debug.png)
 
 The greatest value of a function census is that it lets a territory with no registry start exposing minimum governance handles again. What it improves first is:
 

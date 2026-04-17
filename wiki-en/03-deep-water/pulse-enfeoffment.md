@@ -38,9 +38,13 @@ The first judgment to nail down is this:
 
 **Pulse enfeoffment is first a throughput-compensation mechanism, not a new pillar. It solves "how high governance avoids being dragged down by idle time," not "how to reduce governance."**
 
+![High governance does not equal low throughput](../../assets/visual-protocol/comics-en/high-governance-not-low-throughput.png)
+
 ## Spotting the Problem: Why Many People Mistake High Governance for Low Throughput
 
 The misunderstanding is natural, because from the surface Cyber-Ming-Protocol really does seem to add actions to the development flow:
+
+![Why high governance is often misread as low throughput](../../assets/visual-protocol/comics-en/misread-high-governance-throughput.png)
 
 - One more round of plan audit
 - Several more midstream interruptions
@@ -195,6 +199,8 @@ So the precondition for pulsed switching is not merely "nothing is happening her
 ### Step 3: Turn Waiting Time into Governance Time on Another Line
 
 This is the real core of pulse enfeoffment.
+
+![Turn waiting time into governance time](../../assets/visual-protocol/comics-en/turn-waiting-into-governance-time.png)
 
 While one executor position is:
 

@@ -26,6 +26,8 @@ This diagram is not the full methodology. It is here so your first run can menta
 
 Keep one sentence in mind: **the Web side only returns judgment; the human grants execution and the human also makes the final ruling.**
 
+![The minimal loop is not automatic collaboration](../../assets/visual-protocol/comics-en/minimal-loop-not-agent-team.png)
+
 ## Run It in Your Head in 30 Seconds First
 
 If you only want the minimum skeleton first, remember these three steps:
@@ -37,6 +39,8 @@ If you only want the minimum skeleton first, remember these three steps:
 | 3 | Collect evidence after implementation and route it back to Web verification | Completion stands on evidence, not on the executor's self-report |
 
 If those three steps already make sense in your head, continue directly to the copy-paste section below.
+
+![Humans are not stamp-officers](../../assets/visual-protocol/comics-en/human-not-stamper.png)
 
 ## Only Remember Three Things About Bootstrap
 
@@ -141,6 +145,8 @@ Your first reply may only confirm:
 Other than those five confirmations, do not begin case review and do not slide into implementation.
 ```
 
+![Execution power does not equal adjudication power](../../assets/visual-protocol/comics-en/execution-is-not-judgment.png)
+
 ## After You Paste Them, Only Check These Things in Round One
 
 ### The Executor Should At Least Make These Clear
@@ -175,6 +181,8 @@ If either side is missing, you still have a manual loop, not a stable one.
 - If you want to judge how this fits with mainstream approaches, continue to the Layer 3 pages: [Three Things](three-things.md) and [Comparison](comparison.md)
 
 ## If Something Drifts, Copy These Correction Prompts
+
+![Summary is not completion](../../assets/visual-protocol/comics-en/summary-not-completion.png)
 
 ### The Executor Started Coding Before Submitting the Atomic Execution Contract
 

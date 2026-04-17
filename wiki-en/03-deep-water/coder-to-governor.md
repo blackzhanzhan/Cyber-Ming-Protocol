@@ -26,6 +26,8 @@ The conclusion should be nailed down immediately:
 
 **This protocol does not remove the human from the battlefield. It rewrites the human burden from low-level coding execution into higher-level decomposition, audit, routing, interruption, truth-checking, and debt repayment.**
 
+![Only knowing how to code is no longer enough](../../assets/visual-protocol/comics-en/only-code-is-not-enough.png)
+
 If the traditional coder's central question was "how do I write this block of code," then the governor in this protocol must keep dealing with a different cluster of questions:
 
 - How should the task actually be cut up?
@@ -133,6 +135,8 @@ So the more precise statement is not "the developer becomes a manager." It is th
 ## Solving the Problem: The Six Capabilities This Protocol Really Requires
 
 At this point we can stop treating "governor" as an abstract noun and break it down into concrete capabilities.
+
+![The six capabilities this protocol really requires](../../assets/visual-protocol/comics-en/six-governance-abilities.png)
 
 The important move here is not to mythologize the human into an all-knowing being. It is simply to admit that inside this protocol the human center must keep bearing at least the following six capabilities. They interlock. Lose any one of them, and the whole protocol starts to buckle.
 

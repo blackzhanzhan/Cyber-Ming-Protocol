@@ -40,6 +40,10 @@ The minimal loop is:
 
 If this is your first time, getting this single line running is enough.
 
+![The minimal loop is not automatic collaboration](../../assets/visual-protocol/comics-en/minimal-loop-not-agent-team.png)
+
+![The minimal loop is not automatic collaboration](../../assets/visual-protocol/comics-en/minimal-loop-not-agent-team.png)
+
 ## Diagram First
 
 This is not an agent-team collaboration diagram. It is a dual-track governance diagram centered on the human.
@@ -67,6 +71,10 @@ If that diagram already makes sense to you, jump straight to the version that is
 ## One-Audit Version: Start Here
 
 If this is your first time trying the protocol, the one-audit version is enough.
+
+![Start with the one-audit version](../../assets/visual-protocol/comics-en/first-time-single-audit.png)
+
+![Start with the one-audit version](../../assets/visual-protocol/comics-en/first-time-single-audit.png)
 
 Its flow is very simple:
 
@@ -111,6 +119,10 @@ Please help me find problems: is it too smooth, too vague, or missing the diffic
 
 If the Web side says the plan has obvious gaps, copy that feedback back to the IDE unchanged.
 
+![Execution power does not equal adjudication power](../../assets/visual-protocol/comics-en/execution-is-not-judgment.png)
+
+![Execution power does not equal adjudication power](../../assets/visual-protocol/comics-en/execution-is-not-judgment.png)
+
 ### 3. If the Plan Is Acceptable, Let the IDE Start
 
 At this point, your reply can be extremely short:
@@ -120,6 +132,10 @@ Follow this plan. Remember: one step, one commit.
 ```
 
 You do not need long rhetoric here. The minimal loop does not stand on ornate prompting. It stands on a simple order: review first, execute second.
+
+![The Web side is not a chat companion](../../assets/visual-protocol/comics-en/web-not-chat-window.png)
+
+![The Web side is not a chat companion](../../assets/visual-protocol/comics-en/web-not-chat-window.png)
 
 If "one step, one commit" makes you tense the first time you hear it, do not interpret it as mechanical ritualism. Just hold on to its minimal meaning: **do not lump several steps into one change blob; split them by feature point whenever possible.** The next page, [Atomic Execution Contract & Chronicles](atomic-execution-contract-chronicles.md), explains why this matters.
 
@@ -141,6 +157,10 @@ Please tell me whether this counts as a completion fact. Do not judge from the s
 
 If the Web side says "this does not count as done," send it back to the IDE for another round of repair. Do not rush to pass it.
 
+![A summary is not a completion fact](../../assets/visual-protocol/comics-en/summary-not-completion.png)
+
+![A summary is not a completion fact](../../assets/visual-protocol/comics-en/summary-not-completion.png)
+
 That is the one-audit version:
 
 - Review the plan once
@@ -151,6 +171,10 @@ For a first run, that is enough.
 ## Multi-Audit Version: When to Upgrade
 
 Some tasks are too risky for the one-audit version. For example:
+
+![Multi-audit is not theatrical overkill, but extra balancing power](../../assets/visual-protocol/comics-en/multi-audit-is-extra-check.png)
+
+![Multi-audit is not theatrical overkill, but extra balancing power](../../assets/visual-protocol/comics-en/multi-audit-is-extra-check.png)
 
 - The impact radius is large
 - The work crosses multiple modules

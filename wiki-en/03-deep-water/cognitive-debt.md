@@ -37,6 +37,8 @@ In other words, although the title says "the widening gap, warning signals, and 
 
 We need to begin from a reality already established in [Why AI Coding Has Blurred the Boundary Between CS and Management](../01-why/cs-vs-management.md):
 
+![Where cognitive debt actually comes from](../../assets/visual-protocol/comics-en/cognitive-debt-from-scissor-gap.png)
+
 **AI coding keeps widening the gap between the speed at which the system changes and the speed at which humans can understand it reliably.**
 
 In the era of fully manual coding, the person writing the code also bore most of the cost of understanding it. The code might still be messy. Names might still drift. Even a few weeks later, it might already feel unfamiliar. But that unfamiliarity was still broadly constrained by the speed of human production itself. You wrote a certain amount, forgot a certain amount, and reloaded a certain amount, all at roughly the same order of magnitude.
@@ -136,6 +138,8 @@ So the most frightening part of cognitive debt is not "I temporarily forgot some
 
 This is the section most likely to get muddled unless we state it very cleanly.
 
+![These mechanisms slow expansion; they do not directly repay the debt](../../assets/visual-protocol/comics-en/credible-repayment-rebuild-understanding.png)
+
 Many people instinctively treat copy-paste, dual-track audit, and high-frequency historical traces as debt-repayment methods. But the more accurate statement is: **they are not repayment first. They are mechanisms for slowing expansion first.**
 
 In other words, they solve "how not to let the debt grow too fast," not "how to settle it once and for all."
@@ -201,6 +205,8 @@ Only when the total gap still accumulates into the danger zone, and the human an
 
 This is the final load-bearing beam of the page.
 
+![Credible repayment: rebuilding project understanding](../../assets/visual-protocol/comics-en/credible-repayment-rebuild-understanding.png)
+
 Credible repayment of cognitive debt does not rely on the original author remembering the project, and it does not rely on a polished summary from the executor. It relies on a **reconstruction of the current project state that uses Git chronicles as historical material, logs and tests as evidence, and interrogation from a fresh window as the questioning mechanism.**
 
 Once a project has entered nested contracts and long-running execution, `dev_repo/state.json` and `dev_repo/tree.md` add another important layer: they tell you the active contract, whether the parent is paused, and where execution returns afterward. That lets repayment start from runtime truth instead of from competing progress narratives.
@@ -224,6 +230,8 @@ So the first step in credible repayment is not asking the old narrative where th
 ### Step 2: Feed It the Git Chronicles and the Current Runtime Snapshot First, Then Ask Where the Project Actually Stands
 
 The key here is not to let the new window improvise a neat summary. The key is to constrain its understanding through the chronicles before it speaks.
+
+![Renewal reads the runtime snapshot first](../../assets/visual-protocol/comics-en/renewal-read-runtime-first.png)
 
 What you really want it to do is this:
 

@@ -311,6 +311,8 @@ When AI coding enters deep water, four failures become fatal:
 
 This protocol does not outsource sovereignty. It puts AI back into a position that is governable, interruptible, auditable, and renewable.
 
+![Humans are not stamp-officers](assets/visual-protocol/comics-en/human-not-stamper.png)
+
 ### Who Is It For
 
 **Type 1: People being dragged around by the black box.**

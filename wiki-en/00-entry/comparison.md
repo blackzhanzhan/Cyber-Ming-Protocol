@@ -27,6 +27,8 @@ They diverge on one point: human sovereignty cannot be outsourced.
 
 Cyber-Ming-Protocol fully acknowledges these judgments. It doesn't oppose process, doesn't oppose plan, doesn't oppose division.
 
+![Not completely unrelated, but not the same thing either](../../assets/visual-protocol/comics-en/related-not-identical.png)
+
 ## Where They Diverge
 
 | Method | How It Does | How Cyber-Ming Does | Divergence Point |
@@ -40,6 +42,8 @@ Cyber-Ming-Protocol fully acknowledges these judgments. It doesn't oppose proces
 Workflow, spec-driven, and agent team all have one shared tendency: **Let people retreat behind process or system, let automation take over more decisions.**
 
 Cyber-Ming's position is opposite: **Human must route in the middle.**
+
+![Humans are not stamp-officers](../../assets/visual-protocol/comics-en/human-not-stamper.png)
 
 - Executor can't self-certify completion
 - Auditor can't take over execution
@@ -68,6 +72,8 @@ This is different from a traditional spec not because it is merely “more detai
 So if you want the external positioning stated cleanly, the more accurate sentence is not “Cyber-Ming is another spec-driven method.” It is:
 
 **Cyber-Ming is a contract-driven method for deep-water AI coding governance.**
+
+![Contract-driven fits pulsed development better than heavyweight specs](../../assets/visual-protocol/comics-en/contract-driven-pulse.png)
 
 It absorbs what is valuable in spec-driven development—plan first, boundary first, auditable object first. But it refuses to freeze the whole future into one heavyweight spec. Instead, it uses the Atomic Execution Contract to govern each real slice of forward motion.
 

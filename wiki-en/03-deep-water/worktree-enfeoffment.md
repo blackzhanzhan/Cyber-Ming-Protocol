@@ -30,6 +30,8 @@ The central judgment is this:
 
 **The essence of collaboration is not sharing context. It is partitioning context.**
 
+![Worktree enfeoffment is not a Git trick](../../assets/visual-protocol/comics-en/worktree-feudal-not-git-trick.png)
+
 One more boundary should also be stated honestly. What this page offers first is a governance model for deep-water team collaboration, not a fully battle-tested field manual that has already settled every institutional detail for very large teams. It is already strong enough to answer questions about mainline purity, units of collaboration, responsibility boundaries, and the rhythm of entering the capital. But role allocation, cross-fief conflict arbitration, organizational cost, and merge rhythm in larger teams still need more real samples before they can be treated as settled.
 
 ## Spotting the Problem: Why the Mainline Gets Dirty So Quickly in Team Collaboration
@@ -85,6 +87,8 @@ So the first judgment this page needs to nail down is:
 ## Explaining the Problem: Why What Really Needs Enfeoffment Is Not Directories but Context Sovereignty
 
 What is genuinely new about worktree enfeoffment is not that it opens more directories. It rewrites the collaboration problem from "how do we share one workspace" into "how do we cut several sovereignty boundaries apart."
+
+![What really needs enfeoffment is not directories but context sovereignty](../../assets/visual-protocol/comics-en/feudalize-context-sovereignty.png)
 
 ### First, the Object of Enfeoffment Is Not AI but Human Developers
 
@@ -202,6 +206,8 @@ So the core of entering the capital is not "submit the code." It is this:
 ### Step 4: Failed Fiefs May Be Discarded; Mainline Purity May Not Be
 
 This sounds like the coldest part of the model, but it is actually the most practical.
+
+![Failed fiefs may be discarded; mainline purity may not be](../../assets/visual-protocol/comics-en/fief-failures-discardable-mainline-purity-not.png)
 
 The most valuable thing about worktree enfeoffment is not that every fief succeeds. It is that even failure no longer has to contaminate the mainline.
 

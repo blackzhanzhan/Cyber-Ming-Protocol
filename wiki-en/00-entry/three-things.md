@@ -43,6 +43,8 @@ The safest public description is: `Protocol / Skill / Docs` are the project's th
 
 This page focuses on protocol, Skill, and templates because many comparisons start by comparing the wrong layer: they mix delivery forms with methodologies, and everything after that becomes muddy.
 
+![Do not mix protocol, skill, and templates into one thing](../../assets/visual-protocol/comics-en/dont-mix-protocol-skill-template.png)
+
 ## Asset Overview
 
 | Object | What It Is | Where It Lives | Main Function | Required | Often Mistaken For |
@@ -69,6 +71,8 @@ All of that still holds even if you never install Skill.
 ## Part 2: What Is Skill
 
 Skill does not invent the protocol for you. Its role is to help you hold the protocol more reliably on the IDE side.
+
+![Skill stabilizes rhythm, not truth](../../assets/visual-protocol/comics-en/skill-stabilizes-not-truth.png)
 
 For example, the skills in this repo solidify several high-frequency actions:
 
@@ -106,6 +110,8 @@ They provide the scaffold for how to ask, how to inspect, and how to judge, not 
 ## Why Web Audit Templates Must Stay Separate from Skill
 
 Because the two sides hold different roles:
+
+![Web templates are not local skills](../../assets/visual-protocol/comics-en/web-template-not-local-skill.png)
 
 - IDE-side Skill maps to execution, planning, probing, and takeover
 - Web-side templates map to plan audit, completion audit, and renewal judgment

@@ -33,6 +33,8 @@ You only get a meaningful coordinate system if you admit the overlaps first. Cyb
 
 Those insights are not unique to this protocol. What makes Cyber-Ming-Protocol diverge is not that it notices these problems, but that it moves the problem center from "how to make agents work more reliably" to "how to preserve human sovereignty in deep water while suppressing pseudo-completion, mainline pollution, and refactoring loss."
 
+![Not completely unrelated, but not the same thing either](../../assets/visual-protocol/comics-en/related-not-identical.png)
+
 ## 70% to 90% Similar: The Long-Running Agent Harness Line
 
 Based on the public material available now, the closest line of thinking is the engineering approach around long-running agent harnesses. Anthropic's [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) and [Claude Code overview](https://docs.anthropic.com/en/docs/claude-code/overview) already make many of these realities explicit. They clearly recognize that:
@@ -56,6 +58,8 @@ So the similarity in problem awareness is high, but there is still a visible dif
 ## 50% to 70% Similar: The Spec-Driven / Workflow-Driven Line
 
 This layer includes GSD, OpenSpec, Spec Kit, and the broader plan-first or workflow-first line. OpenAI's [Agents overview](https://developers.openai.com/api/docs/guides/agents), [Codex overview](https://developers.openai.com/codex/overview), and [Codex subagents](https://developers.openai.com/codex/subagents) also provide a public reference point that leans more toward workflow and orchestration. Their common features are:
+
+![Blueprint law and court law are not the same thing](../../assets/visual-protocol/comics-en/blueprint-vs-court-law.png)
 
 - They emphasize the importance of specs, task breakdown, and context structure
 - They reject the idea that requirements should live only in chat history
@@ -107,6 +111,8 @@ That is also why the easiest part of this protocol to misread is not the technic
 Public tools such as Codex, Claude Code, and other agent frameworks have already done substantial work on parallel delegation, log evidence, sandbox execution, hooks, subagents, and checkpoints. Relevant public entry points include [Claude Code overview](https://docs.anthropic.com/en/docs/claude-code/overview), [Create custom subagents](https://docs.anthropic.com/en/docs/claude-code/sub-agents), [Agents overview](https://developers.openai.com/api/docs/guides/agents), and [Codex overview](https://developers.openai.com/codex/overview). Cyber-Ming-Protocol is not trying to throw all of that away, and it is not claiming to be better at automatically writing code.
 
 It is answering a different layer of question:
+
+![Not a replacement, but a governance layer](../../assets/visual-protocol/comics-en/governance-layer-not-replacement.png)
 
 If mainstream frameworks are mostly answering "how do we make agents write more," then this protocol is answering:
 

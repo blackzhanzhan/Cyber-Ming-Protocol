@@ -22,11 +22,15 @@ Technical distortion determines whether the code, logs, artifacts, and state sli
 
 Cyber-Ming-Protocol opposes the black-box multi-agent route not because it hates parallelism and not because it rejects stronger tools, but because in deep water the cost of those two distortions stacking together is far higher than the surface-level speed dividend.
 
+![Dual distortion is not single-line bleeding](../../assets/visual-protocol/comics-en/double-distortion-not-single-bleed.png)
+
 ## Technical Distortion: The System Looks Like It Is Advancing, but It Is Actually Drifting Off Course
 
 Technical distortion does not just mean "the answer is wrong." The more common and more dangerous form is that the system produces a large number of outputs that look reasonable, run locally, and sound self-consistent, so the work appears to be moving forward while the underlying structure is already drifting.
 
 This is especially common in black-box multi-agent streams for a simple reason: the executor's primary incentive is often not to expose the truth, but to maintain the feeling of forward progress.
+
+![Technical distortion: it looks like progress, but the system is drifting](../../assets/visual-protocol/comics-en/technical-distortion-looks-like-progress.png)
 
 Under that incentive, several forms of technical distortion appear again and again.
 
@@ -41,6 +45,8 @@ Typical signs include:
 - A key chain has not been physically verified, but a plausible-sounding summary is treated as sufficient
 
 In shallow water, this may look like an ordinary mistake. In deep water, it sends you directly into the wrong branch history and contaminates every later judgment.
+
+![A summary is not a completion fact](../../assets/visual-protocol/comics-en/summary-not-completion.png)
 
 ### Second, Lazy Patches Cover Structural Problems
 
@@ -84,6 +90,8 @@ Technical distortion is already dangerous, but it is not the most fatal part of 
 
 Governance distortion means that powers which should have remained separate start collapsing into one another, human control points that should have been preserved start getting bypassed, and in the end no one is truly responsible for the result.
 
+![Governance distortion: no one in the system really holds power anymore](../../assets/visual-protocol/comics-en/governance-distortion-no-one-in-charge.png)
+
 ### First, the Executor Also Becomes the Judge
 
 This is the core problem. Whoever executes the work also casually declares it finished. Whoever generates the result also casually defines what counts as passing.
@@ -91,6 +99,8 @@ This is the core problem. Whoever executes the work also casually declares it fi
 That can look natural inside the black-box stream, because people are used to treating "the one who did the work" as "the one reporting the facts." But once the executor is a high-throughput digital actor with strong rhetorical packaging and little sense of shame, that design is almost an invitation for pseudo-completion to flood the system.
 
 Without an independent judge, the completion standard is continuously rewritten by language.
+
+![Dual-track auditing is not self-validation](../../assets/visual-protocol/comics-en/dual-track-not-self-review.png)
 
 ### Second, Humans Get Demoted to After-the-Fact Approvers
 
