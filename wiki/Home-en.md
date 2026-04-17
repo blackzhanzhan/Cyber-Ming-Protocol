@@ -49,6 +49,8 @@ The route is simple: complete Layer 1 first, then Layer 2. Only when you start a
 - [From Coder to Governor](../wiki-en/03-deep-water/coder-to-governor.md): What capabilities this protocol asks of the developer
 - [Cognitive Debt](../wiki-en/03-deep-water/cognitive-debt.md): What to do when understanding falls behind system change
 - [Seven Stars Renewal](../wiki-en/03-deep-water/seven-stars-renewal.md): How to break and reconnect when windows decay
+- [Parent Contracts](../wiki-en/03-deep-water/parent-contracts.md): Why a child contract may pause a parent contract but must not silently replace it
+- [Free Development Mode](../wiki-en/03-deep-water/free-development-mode.md): How to continue long-running work under uncertainty without giving up governance
 - [Worktree Enfeoffment](../wiki-en/03-deep-water/worktree-enfeoffment.md): How teams collaborate without polluting mainline
 - [Pulse Enfeoffment](../wiki-en/03-deep-water/pulse-enfeoffment.md): High governance does not have to mean low throughput
 - [Boundaries](../wiki-en/03-deep-water/boundaries.md): Which battles this protocol has not won yet

@@ -407,6 +407,8 @@ But this is not only for fun. The role narrative provides execution fuel: it mak
 - [Dual-track Audit](wiki-en/03-deep-water/dual-track-audit.md): the IDE executor and the Web auditor must stay separate, with humans routing between them
 - [Seven Stars Renewal](wiki-en/03-deep-water/seven-stars-renewal.md): how to cut and reconnect when windows decay
 - [Cognitive Debt](wiki-en/03-deep-water/cognitive-debt.md): what to do when understanding falls behind system change
+- [Parent Contracts](wiki-en/03-deep-water/parent-contracts.md): why a child contract may pause a parent contract but must not silently replace it
+- [Free Development Mode](wiki-en/03-deep-water/free-development-mode.md): how to continue under uncertainty without dropping governance
 - [Pulse Enfeoffment](wiki-en/03-deep-water/pulse-enfeoffment.md): high governance does not have to mean low throughput
 - [Worktree Enfeoffment](wiki-en/03-deep-water/worktree-enfeoffment.md): how teams collaborate without polluting mainline
 - [Boundaries](wiki-en/03-deep-water/boundaries.md): which battlefields this protocol still has not won
