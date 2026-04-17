@@ -45,13 +45,9 @@ In one sentence, it means this:
 
 ![Scout is not sneakwork](../../assets/visual-protocol/comics-en/scout-not-sneakwork.png)
 
-![Scout is not sneakwork](../../assets/visual-protocol/comics-en/scout-not-sneakwork.png)
-
 ## Why Scout Is a Necessary Ritual, Not a Small Debugging Trick
 
 When people first hear "test the path first, then deploy the army," they often flatten it into an ordinary debugging habit, as if it only meant "write a small script and try it." That understanding is much too shallow.
-
-![Scout is not a debugging trick, but a necessary ritual](../../assets/visual-protocol/comics-en/scout-is-ritual-not-debug-trick.png)
 
 ![Scout is not a debugging trick, but a necessary ritual](../../assets/visual-protocol/comics-en/scout-is-ritual-not-debug-trick.png)
 
@@ -74,8 +70,6 @@ That is also why scout has to follow white-box reconciliation. White-box reconci
 The simplest definition of scout is this:
 
 **Do not touch the main formation. Use only the smallest possible action to verify whether reality even permits further advance.**
-
-![What counts as scout](../../assets/visual-protocol/comics-en/what-counts-as-scout.png)
 
 ![What counts as scout](../../assets/visual-protocol/comics-en/what-counts-as-scout.png)
 
@@ -118,8 +112,6 @@ The scout mechanism demands the exact opposite:
 - Determine whether the real blockage is in authentication, routing, format, resources, environment, or the code logic itself
 
 In many deep-water tasks, the first thing that truly moves the work forward is not a green light. It is the first `401`, `403`, `404`, format mismatch, write failure, or missing field that the system is finally forced to confront.
-
-![Real errors are intelligence, not shame](../../assets/visual-protocol/comics-en/error-is-intel-not-shame.png)
 
 ![Real errors are intelligence, not shame](../../assets/visual-protocol/comics-en/error-is-intel-not-shame.png)
 

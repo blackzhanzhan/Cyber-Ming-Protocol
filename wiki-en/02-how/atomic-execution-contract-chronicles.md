@@ -39,8 +39,6 @@ This page explains why that is not just a better planning trick, but the first r
 
 ![Contract-driven fits pulsed development better than heavyweight specs](../../assets/visual-protocol/comics-en/contract-driven-pulse.png)
 
-![Contract-driven fits pulsed development better than heavyweight specs](../../assets/visual-protocol/comics-en/contract-driven-pulse.png)
-
 ## Why This Must Be Understood as the Atomic Execution Contract
 
 Because at this point it is no longer just:
@@ -106,8 +104,6 @@ So this is not merely a nicer plan. It is a harder-to-fake execution contract. W
 If this is your first time, do not overcomplicate the idea. Just remember one very simple principle:
 
 **Do not let the executor hand you a broad module-level plan. Force it down to the granularity of function edits, test points, and artifact checks, and make sure the auditor could reconcile it line by line.**
-
-![Atomic execution contracts are not module-level slogans](../../assets/visual-protocol/comics-en/atomic-contract-not-module-slogan.png)
 
 ![Atomic execution contracts are not module-level slogans](../../assets/visual-protocol/comics-en/atomic-contract-not-module-slogan.png)
 
@@ -184,8 +180,6 @@ Suppose you have an old synchronization script. Right now it can only pull remot
 
 ![What happens without an atomic execution contract](../../assets/visual-protocol/comics-en/no-atomic-contract-chaos.png)
 
-![What happens without an atomic execution contract](../../assets/visual-protocol/comics-en/no-atomic-contract-chaos.png)
-
 - Perform an authentication check first
 - Then fetch in pages
 - Leave a clear error log if something fails
@@ -215,8 +209,6 @@ So without an Atomic Execution Contract, the so-called "plan" does not really re
 ## Another Hypothetical Scenario: What Changes When You Have an Atomic Execution Contract
 
 Take the same task again. If you force the executor to submit an Atomic Execution Contract first, it can no longer say only "I will upgrade the sync script." It must expose itself at a much finer granularity, for example:
-
-![What changes when you do have an atomic execution contract](../../assets/visual-protocol/comics-en/with-atomic-contract-changes.png)
 
 ![What changes when you do have an atomic execution contract](../../assets/visual-protocol/comics-en/with-atomic-contract-changes.png)
 
@@ -260,8 +252,6 @@ That means the fact of completion no longer lives inside one blended narrative. 
 ## Chronicles Are Not an Accessory, but the History Produced When the Contract Lands
 
 The natural next thing that grows out of an Atomic Execution Contract is the chronicles themselves.
-
-![Chronicles are not an accessory, but the history record](../../assets/visual-protocol/comics-en/journal-is-not-accessory.png)
 
 ![Chronicles are not an accessory, but the history record](../../assets/visual-protocol/comics-en/journal-is-not-accessory.png)
 

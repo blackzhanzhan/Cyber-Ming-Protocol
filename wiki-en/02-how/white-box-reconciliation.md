@@ -42,8 +42,6 @@ If the Atomic Execution Contract weakens the black box before execution, and the
 
 ![A summary is not a completion fact](../../assets/visual-protocol/comics-en/summary-not-completion.png)
 
-![A summary is not a completion fact](../../assets/visual-protocol/comics-en/summary-not-completion.png)
-
 ## One-line Summary First
 
 The most important judgment in white-box physical reconciliation can be reduced to one sentence:
@@ -56,15 +54,11 @@ And in the AI era, that sentence needs one more half-line:
 
 ![What counts as a completion fact](../../assets/visual-protocol/comics-en/what-counts-as-completion-fact.png)
 
-![What counts as a completion fact](../../assets/visual-protocol/comics-en/what-counts-as-completion-fact.png)
-
 If you do not force it to hand over the red light, the green light, the logs, the artifacts, the return values, and the evidence of external writes, it will naturally tend to give you a respectable summary instead of an auditable truth.
 
 ## Separate Three Things First
 
 To reduce cognitive friction, start by separating the three things that are most easily mixed together.
-
-![Separate the summary, the evidence, and the completion fact](../../assets/visual-protocol/comics-en/separate-summary-evidence-fact.png)
 
 ![Separate the summary, the evidence, and the completion fact](../../assets/visual-protocol/comics-en/separate-summary-evidence-fact.png)
 
@@ -127,8 +121,6 @@ The `TDD red-light/green-light` logic matters here because it explains very plai
 
 ![Red light before green light](../../assets/visual-protocol/comics-en/red-before-green.png)
 
-![Red light before green light](../../assets/visual-protocol/comics-en/red-before-green.png)
-
 The simplest possible version is:
 
 - The **red light** proves the test line is alive
@@ -152,8 +144,6 @@ In AI coding, that move matters even more. Executors naturally prefer to show gr
 ## Turn Test Conditions into Assertions: Make "I Tested It" Auditable
 
 Red-light/green-light logic answers one question: is this test line alive? Assertions answer another: what exactly is this test line proving?
-
-![Turn “I tested it” into assertions](../../assets/visual-protocol/comics-en/assertions-not-vibes.png)
 
 ![Turn “I tested it” into assertions](../../assets/visual-protocol/comics-en/assertions-not-vibes.png)
 

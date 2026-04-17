@@ -39,13 +39,9 @@ So dual-track isolation audit and human-centered sovereignty do not exist for th
 
 ![Dual-track auditing is not self-validation](../../assets/visual-protocol/comics-en/dual-track-not-self-review.png)
 
-![Dual-track auditing is not self-validation](../../assets/visual-protocol/comics-en/dual-track-not-self-review.png)
-
 ## Why Letting a Stronger Agent Audit Itself Still Is Not Enough
 
 When black-box routes run into quality problems, their first reaction is often not separation of powers, but escalation:
-
-![A stronger agent auditing itself is still not enough](../../assets/visual-protocol/comics-en/stronger-agent-self-review-not-enough.png)
 
 ![A stronger agent auditing itself is still not enough](../../assets/visual-protocol/comics-en/stronger-agent-self-review-not-enough.png)
 
@@ -71,8 +67,6 @@ So the first boundary this page needs to nail down is this:
 ## Why a Subagent Still Does Not Automatically Count as an Independent Audit Position
 
 We need to nail down one more layer here. Many people already accept that the same executor should not audit itself, so they move to a more modern proposal that feels safer than it really is:
-
-![A subagent does not automatically equal an independent auditor](../../assets/visual-protocol/comics-en/subagent-not-independent-auditor.png)
 
 ![A subagent does not automatically equal an independent auditor](../../assets/visual-protocol/comics-en/subagent-not-independent-auditor.png)
 
@@ -124,8 +118,6 @@ And that forced narrowing is precisely what Cyber-Ming-Protocol wants from audit
 ## The Web Auditor's Narrow Context Is Not a Defect but a Clean-Room Advantage
 
 That is why the Web audit position in this protocol is not a stopgap. It has a clear institutional advantage.
-
-![Narrow context is not a defect, but a clean-room advantage](../../assets/visual-protocol/comics-en/narrow-context-clean-room-advantage.png)
 
 ![Narrow context is not a defect, but a clean-room advantage](../../assets/visual-protocol/comics-en/narrow-context-clean-room-advantage.png)
 
@@ -226,8 +218,6 @@ Without this third layer, the first two layers will be stitched back together ve
 
 ![Humans are not stamp-officers](../../assets/visual-protocol/comics-en/human-not-stamper.png)
 
-![Humans are not stamp-officers](../../assets/visual-protocol/comics-en/human-not-stamper.png)
-
 That means:
 
 - The human decides what materials are sent to audit
@@ -268,8 +258,6 @@ So the real meaning of human-centered sovereignty is not "the human must do ever
 ## A Simple Scenario: How the System Slips Without Dual-Track
 
 Suppose you are connecting a new external write path. The executor takes the requirement and quickly does a few things: changes authentication, changes field mapping, adds logs, runs tests, and writes a neat summary. It then hands back polished claims like these:
-
-![How the system slips without dual-track](../../assets/visual-protocol/comics-en/no-dual-track-slippery-slope.png)
 
 ![How the system slips without dual-track](../../assets/visual-protocol/comics-en/no-dual-track-slippery-slope.png)
 
