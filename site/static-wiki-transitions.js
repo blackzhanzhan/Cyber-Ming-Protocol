@@ -1,9 +1,13 @@
 (function () {
   const root = document.documentElement;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const turnDuration = 620;
   const ready = () => {
-    root.classList.remove("page-entering", "page-leaving");
+    ensureTurnLayer();
     document.body.classList.add("page-ready");
+    requestAnimationFrame(() => {
+      root.classList.remove("page-entering", "page-leaving");
+    });
   };
 
   if (document.readyState === "loading") {
@@ -36,12 +40,22 @@
     if (!isSameSite(destination) || isSameDocumentHash(destination)) return;
 
     event.preventDefault();
+    ensureTurnLayer();
     root.classList.remove("page-entering");
     root.classList.add("page-leaving");
     window.setTimeout(() => {
       window.location.href = destination.href;
-    }, 280);
+    }, turnDuration);
   });
+
+  function ensureTurnLayer() {
+    if (document.querySelector(".page-turn-layer")) return;
+    const layer = document.createElement("div");
+    layer.className = "page-turn-layer";
+    layer.setAttribute("aria-hidden", "true");
+    layer.innerHTML = '<div class="page-turn-sheet"><span></span></div>';
+    document.body.appendChild(layer);
+  }
 
   function isSameSite(url) {
     const current = window.location;
