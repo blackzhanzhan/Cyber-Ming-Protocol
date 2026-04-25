@@ -21,7 +21,7 @@
 npm run site:check
 ```
 
-推送到 `main` 后，GitHub Actions 会把 `site/dist` 发布到 GitHub Pages。第一次启用时，如果仓库尚未开启 Pages，请在 GitHub 仓库的 **Settings -> Pages** 中选择 **GitHub Actions** 作为发布来源。
+推送到 `main` 后，GitHub Actions 会把 `site/dist` 发布到 GitHub Pages。工作流会尝试自动启用 Pages；如果组织或仓库策略阻止自动启用，请在 GitHub 仓库的 **Settings -> Pages** 中选择 **GitHub Actions** 作为发布来源。
 
 ### 这是什么
 
@@ -256,7 +256,7 @@ The protocol is now available as a bilingual static teaching wiki that works as 
 npm run site:check
 ```
 
-After pushes to `main`, GitHub Actions publishes `site/dist` to GitHub Pages. On the first run, if Pages is not enabled yet, open the repository's **Settings -> Pages** and choose **GitHub Actions** as the publishing source.
+After pushes to `main`, GitHub Actions publishes `site/dist` to GitHub Pages. The workflow attempts to enable Pages automatically; if repository or organization policy blocks automatic enablement, open the repository's **Settings -> Pages** and choose **GitHub Actions** as the publishing source.
 
 ### What This Is
 
