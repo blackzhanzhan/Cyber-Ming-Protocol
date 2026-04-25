@@ -164,6 +164,16 @@ img {
   font-size: clamp(3rem, 7vw, 6.8rem);
 }
 
+.intro-hero {
+  grid-template-columns: 1fr;
+  align-items: start;
+  padding-bottom: 28px;
+}
+
+.intro-hero .lead {
+  max-width: 880px;
+}
+
 .hero-comic,
 .article-comic {
   margin: 0;
@@ -176,6 +186,10 @@ img {
 .article-comic img {
   width: 100%;
   height: auto;
+}
+
+.homepage-comic {
+  margin: 28px 0;
 }
 
 .text-link {
@@ -208,6 +222,76 @@ img {
 
 .contract-strip span + span {
   border-left: 2px solid var(--line);
+}
+
+.front-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 28px 0 42px;
+}
+
+.front-panel {
+  border-top: 3px solid var(--line);
+  border-bottom: 1px solid var(--soft-line);
+  padding: 18px 0 20px;
+}
+
+.front-panel h2,
+.section-intro h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.55rem, 2.4vw, 2.4rem);
+  line-height: 1.12;
+}
+
+.front-panel p {
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+.command-panel pre {
+  overflow: auto;
+  margin: 18px 0 0;
+  padding: 16px;
+  border: 2px solid var(--line);
+  background: #1f1d1a;
+  color: #fff4df;
+}
+
+.stage-map {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+  border: 2px solid var(--line);
+  background: var(--paper-strong);
+}
+
+.stage-map li {
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  text-align: center;
+  font-weight: 800;
+}
+
+.stage-map li + li {
+  border-left: 2px solid var(--line);
+}
+
+.entry-panel .gate-link {
+  margin-top: 10px;
+}
+
+.section-intro {
+  margin: 10px 0 8px;
+  padding-top: 28px;
+  border-top: 3px solid var(--line);
 }
 
 .section-stack {
@@ -457,6 +541,7 @@ img {
   }
 
   .hero,
+  .front-grid,
   .section-band,
   .wiki-shell {
     grid-template-columns: 1fr;
@@ -483,6 +568,7 @@ img {
   }
 
   .contract-strip,
+  .stage-map,
   .article-list,
   .article-nav,
   .sidebar nav {
@@ -490,6 +576,11 @@ img {
   }
 
   .contract-strip span + span {
+    border-left: 0;
+    border-top: 2px solid var(--line);
+  }
+
+  .stage-map li + li {
     border-left: 0;
     border-top: 2px solid var(--line);
   }

@@ -145,6 +145,32 @@ function emitLanguageIndex(lang) {
   const output = path.join(distDir, lang, "index.html");
   const featured = docs.find((doc) => doc.id === "prompt-pack") ?? docs[0];
   const comic = comicFor(output, featured, lang);
+  const isZh = lang === "zh";
+  const front = {
+    eyebrow: isZh ? "协议山门" : "Protocol Front Gate",
+    lead: isZh
+      ? "Cyber-Ming 是一套面向 AI Coding 的教学型治理协议：先立合同，再执行，再审计，以证据闭环替代黑盒自动化幻觉。"
+      : "Cyber-Ming is a teaching-first governance protocol for AI coding: contract first, execute second, audit with evidence, and keep the human center visible.",
+    enter: isZh ? "进入入口页" : "Enter The Entry Page",
+    overviewTitle: isZh ? "它解决什么" : "What It Solves",
+    overviewBody: isZh
+      ? "这不是另一个 agent swarm，也不是把人降格成盖章者。它把开发协作拆成可审计的最小闭环：需求、提案、执行、证据、审计、裁断。"
+      : "It is not another agent swarm, and it does not turn the human into a rubber stamp. It teaches the smallest auditable loop: requirement, proposal, execution, evidence, audit, and judgment.",
+    interfaceTitle: isZh ? "主界面怎么理解" : "The Main Interface",
+    interfaceBody: isZh
+      ? "网站主界面是一张教学地图：先从入口页拿到可复制提示词，再沿六卷阅读协议、审计、分封、证据与边界。"
+      : "The site interface is a learning map: start with the copy-ready entry prompt, then move through the six sections for protocol, audit, delegation, evidence, and boundaries.",
+    installTitle: isZh ? "安装方式" : "Installation",
+    installBody: isZh
+      ? "仓库提供 npm CLI 与 Codex skill 形态。先安装协议包，再用 doctor 检查本地法统是否就绪。"
+      : "The repository ships as an npm CLI and Codex skill set. Install the protocol package, then run doctor to check the local setup.",
+    wikiTitle: isZh ? "教学 wiki 路径" : "Teaching Wiki Path",
+    wikiBody: isZh
+      ? "如果你已经知道自己要学协议，直接入入口页；如果你是在评估体系，先读下方六卷目录。"
+      : "If you already want to learn the protocol, enter the entry page. If you are evaluating the system, scan the six-section map below first.",
+    sectionKicker: isZh ? "六卷目录" : "Six-Section Map",
+    sectionTitle: isZh ? "从山门入殿，从入口页入卷" : "From Front Gate To Entry Page",
+  };
   const sectionList = sections.map((section) => {
     const sectionDocs = docsForSection(section.id, lang).filter((doc) => doc.type !== "auxiliary");
     return `
@@ -162,7 +188,7 @@ function emitLanguageIndex(lang) {
 
   const body = `
     <main class="home">
-      <section class="hero">
+      <section class="hero front-hero intro-hero">
         <div class="hero-copy">
           <p class="eyebrow">${lang === "zh" ? "教学知识库" : "Teaching Wiki"}</p>
           <h1>${lang === "zh" ? "Cyber-Ming Protocol" : "Cyber-Ming Protocol"}</h1>
@@ -172,13 +198,47 @@ function emitLanguageIndex(lang) {
             <a class="text-link muted" href="${switchLanguageUrl(output, lang)}">${lang === "zh" ? "English" : "中文"}</a>
           </div>
         </div>
-        ${comic ? `<figure class="hero-comic"><img src="${comic}" alt="${escapeHtml(titleFor(featured, lang))}"></figure>` : ""}
       </section>
       <section class="contract-strip" aria-label="Site contract">
         <span>${lang === "zh" ? "全量 wiki 搬迁" : "Full wiki migration"}</span>
         <span>${lang === "zh" ? "中英双语切换" : "Manifest bilingual switch"}</span>
         <span>${lang === "zh" ? "只用既有漫画" : "Existing comics only"}</span>
       </section>
+      <section class="front-grid" aria-label="${isZh ? "首页介绍" : "Homepage overview"}">
+        <article class="front-panel">
+          <p class="section-kicker">01</p>
+          <h2>${front.overviewTitle}</h2>
+          <p>${front.overviewBody}</p>
+        </article>
+        <article class="front-panel">
+          <p class="section-kicker">02</p>
+          <h2>${front.interfaceTitle}</h2>
+          <p>${front.interfaceBody}</p>
+          <ol class="stage-map">
+            <li>${isZh ? "入口页" : "Entry"}</li>
+            <li>${isZh ? "最小闭环" : "Minimal loop"}</li>
+            <li>${isZh ? "审计与证据" : "Audit and evidence"}</li>
+          </ol>
+        </article>
+        <article class="front-panel command-panel">
+          <p class="section-kicker">03</p>
+          <h2>${front.installTitle}</h2>
+          <p>${front.installBody}</p>
+          <pre><code>npm install -g @blackzhanzhan/cyber-ming
+cyber-ming doctor</code></pre>
+        </article>
+        <article class="front-panel entry-panel">
+          <p class="section-kicker">04</p>
+          <h2>${front.wikiTitle}</h2>
+          <p>${front.wikiBody}</p>
+          <a class="gate-link" href="${siteUrl(output, `${slugPathForDoc(lang, featured)}index.html`)}">${front.enter}</a>
+        </article>
+      </section>
+      ${comic ? `<figure class="hero-comic homepage-comic"><img src="${comic}" alt="${escapeHtml(titleFor(featured, lang))}"></figure>` : ""}
+      <header class="section-intro">
+        <p class="eyebrow">${front.sectionKicker}</p>
+        <h2>${front.sectionTitle}</h2>
+      </header>
       <div class="section-stack">
         ${sectionList}
       </div>
