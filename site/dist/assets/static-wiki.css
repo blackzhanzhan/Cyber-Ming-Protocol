@@ -617,17 +617,26 @@ img {
 }
 
 .markdown-body pre {
-  overflow: auto;
-  padding: 16px;
-  border: 2px solid var(--line);
-  background: #1f1d1a;
-  color: #fff4df;
+  overflow-x: auto;
+  margin: 18px 0 28px;
+  padding: 18px 20px 18px 22px;
+  border: 1px solid var(--soft-line);
+  border-left: 6px solid var(--seal);
+  background: #fff8ec;
+  color: #2d2923;
+  box-shadow: inset 0 0 0 1px rgba(143, 46, 36, 0.05);
+  font-size: 0.96rem;
+  line-height: 1.72;
 }
 
 .markdown-body pre code {
+  display: block;
   padding: 0;
   border: 0;
   background: transparent;
+  color: inherit;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 
 .markdown-body blockquote {
