@@ -570,6 +570,15 @@ function markdownToHtml(markdown, context) {
       continue;
     }
 
+    const anchorId = standaloneAnchorId(line);
+    if (anchorId) {
+      flushParagraph();
+      flushList();
+      blocks.push(`<span id="${escapeHtml(anchorId)}" class="anchor-target" aria-hidden="true"></span>`);
+      i += 1;
+      continue;
+    }
+
     if (!line.trim()) {
       flushParagraph();
       flushList();
@@ -650,6 +659,11 @@ function markdownToHtml(markdown, context) {
   flushParagraph();
   flushList();
   return blocks.join("\n");
+}
+
+function standaloneAnchorId(line) {
+  const match = /^<a\s+id=["']([A-Za-z][A-Za-z0-9_-]*)["']\s*><\/a>$/.exec(line.trim());
+  return match?.[1] ?? "";
 }
 
 function isTableStart(lines, index) {

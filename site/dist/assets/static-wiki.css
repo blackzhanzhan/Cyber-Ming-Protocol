@@ -575,6 +575,13 @@ img {
   line-height: 1.78;
 }
 
+.anchor-target {
+  display: block;
+  height: 0;
+  overflow: hidden;
+  scroll-margin-top: 88px;
+}
+
 .markdown-body h1,
 .markdown-body h2,
 .markdown-body h3 {
