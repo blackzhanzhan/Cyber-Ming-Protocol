@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>父合同为什么不能被子合同静默替代</title>
+  <link rel="stylesheet" href="../../../assets/static-wiki.css">
+</head>
+<body>
+
+      <header class="topbar">
+        <a class="top-brand" href="../../index.html">Cyber-Ming</a>
+        <nav class="top-nav"><a class="" href="../../00-entry/index.html">开始这里与落地形态</a><a class="" href="../../01-why/index.html">哲学与坐标</a><a class="" href="../../02-how/index.html">最小闭环与核心礼法</a><a class="active" href="../index.html">治理扩展、吞吐补偿与边界</a><a class="" href="../../04-evidence/index.html">战报与样本</a><a class="" href="../../reference/index.html">参考</a></nav>
+        <a class="lang-switch" href="../../../en/03-deep-water/parent-contracts/index.html">English</a>
+      </header>
+      
+    <main class="wiki-shell">
+      
+    <aside class="sidebar" aria-label="目录">
+      <a class="brand-mark" href="../../index.html">Cyber-Ming</a>
+      <nav>
+        
+          <a class="" href="../../00-entry/index.html">
+            <span>00</span>
+            开始这里与落地形态
+          </a>
+        
+          <a class="" href="../../01-why/index.html">
+            <span>01</span>
+            哲学与坐标
+          </a>
+        
+          <a class="" href="../../02-how/index.html">
+            <span>02</span>
+            最小闭环与核心礼法
+          </a>
+        
+          <a class="active" href="../index.html">
+            <span>03</span>
+            治理扩展、吞吐补偿与边界
+          </a>
+        
+          <a class="" href="../../04-evidence/index.html">
+            <span>04</span>
+            战报与样本
+          </a>
+        
+          <a class="" href="../../reference/index.html">
+            <span>05</span>
+            参考
+          </a>
+        
+      </nav>
+    </aside>
+  
+      <article class="article">
+        <nav class="crumbs">
+          <a href="../../index.html">中文</a>
+          <a href="../index.html">治理扩展、吞吐补偿与边界</a>
+        </nav>
+        <header class="article-head">
+          <p class="eyebrow">治理扩展、吞吐补偿与边界</p>
+          <h1>父合同为什么不能被子合同静默替代</h1>
+          <div class="article-tools">
+            <a href="../../../en/03-deep-water/parent-contracts/index.html">English</a><a aria-current="true" href="./index.html">中文</a>
+          </div>
+        </header>
+        <figure class="article-comic"><img src="../../../assets/visual-protocol/comics/parent-child-contract.png" alt="父合同为什么不能被子合同静默替代"></figure>
+        <div class="markdown-body">
+          <h1>父合同为什么不能被子合同静默替代</h1>
+<h2>目录</h2>
+<ul><li><a href="#这页解决什么问题">这页解决什么问题</a></li><li><a href="#最短定义">最短定义</a></li><li><a href="#为什么这是硬边界">为什么这是硬边界</a></li><li><a href="#嵌套合同到底在保护什么">嵌套合同到底在保护什么</a></li><li><a href="#最小落地规则">最小落地规则</a></li><li><a href="#最常见的四种跑偏">最常见的四种跑偏</a></li><li><a href="#一句话压轴">一句话压轴</a></li><li><a href="#相关页面">相关页面</a></li></ul>
+<h2>这页解决什么问题</h2>
+<p>这页只回答一个问题：</p>
+<p><strong>为什么子合同可以暂停父合同，却不能悄悄把父合同替掉。</strong></p>
+<p>很多执行漂移，不是因为系统完全没有计划，而是因为：</p>
+<ul><li>主合同还没正式结束</li><li>中间为了排雷、补洞、查链路，临时开了一个子合同</li><li>做着做着，大家开始只谈这个子合同</li><li>再过一会儿，已经没人说得清原来的主线还在不在</li></ul>
+<p>一旦走到这一步，项目进展、认知债务、续命和审计都会一起变糊。</p>
+<p><img src="../../../assets/visual-protocol/comics/parent-child-contract.png" alt="子合同不能静默篡位"></p>
+<h2>最短定义</h2>
+<p>父合同和子合同的关系，最短可以压成一句话：</p>
+<blockquote><p>子合同可以暂停父合同，但不能静默篡位。</p></blockquote>
+<p>也就是说：</p>
+<ul><li>子合同是临时展开的局部战役</li><li>父合同仍然保留主线地位</li><li>子合同关闭后，执行必须明确回到父合同，除非父合同被诚实地宣布 <code>abandoned</code></li></ul>
+<h2>为什么这是硬边界</h2>
+<p>如果没有这条边界，最容易发生三种坏事。</p>
+<p><img src="../../../assets/visual-protocol/comics/return-to-or-mainline-lost.png" alt="不写 return_to，就等于偷主线"></p>
+<h3>第一，主线蒸发</h3>
+<p>人会越来越习惯只讨论眼前最热的火点。</p>
+<p>于是系统表面上一直在“推进”，实际上却越来越难回答：</p>
+<ul><li>当前根战役是什么</li><li>这刀是主线，还是局部 firefight</li><li>这刀做完后回哪里</li></ul>
+<p>这时所谓“项目进展”就会开始退化成一种印象。</p>
+<h3>第二，认知债务突然变陡</h3>
+<p>父合同如果被子合同静默替代，后来的人就很难分清：</p>
+<ul><li>当前激活合同为什么开</li><li>它是解决主问题，还是只是在修一条阻塞链</li><li>为什么这个局部修复最后变成了新的主叙事</li></ul>
+<p>这样认知债务就不再只是“细节看不懂”，而会升级成“项目现状判断失真”。</p>
+<h3>第三，续命和接手会一起失血</h3>
+<p>一旦需要续命，新窗口最需要知道的是：</p>
+<ul><li>当前打哪场仗</li><li>父合同有没有被暂停</li><li>当前子合同解决后回哪里</li></ul>
+<p>如果这些信息没有被显式外置，新窗口就会重新掉回旧对话的叙事惯性里。</p>
+<h2>嵌套合同到底在保护什么</h2>
+<p>嵌套合同机制真正保护的，不是文书整齐，而是三样更硬的东西：</p>
+<h3>第一，项目进展可见性</h3>
+<p>只要父子合同关系还在，<code>dev_repo/state.json</code> 和 <code>dev_repo/tree.md</code> 就能继续回答：</p>
+<ul><li>当前主线</li><li>当前子线</li><li>暂停关系</li><li><code>return_to</code></li></ul>
+<p>这样项目进展就不再只能靠人脑回忆。</p>
+<h3>第二，认知债务偿还抓手</h3>
+<p>认知债务最怕的，不只是系统太复杂，而是现状判断失真。</p>
+<p>嵌套合同把“现在到底在哪个层次上卡住”这件事外置出来之后，后续还债就能先从 runtime truth 开始，而不是先从体面总结开始。</p>
+<h3>第三，续命时的主权回收</h3>
+<p>旧窗口可以退回史料位，但父子合同树不能一起蒸发。</p>
+<p><img src="../../../assets/visual-protocol/comics/renewal-read-runtime-first.png" alt="续命先读 runtime 快照"></p>
+<p>只要合同树仍在，续命就不是“换个窗口碰碰运气”，而是：</p>
+<ul><li>先读当前树</li><li>再看史料和证据</li><li>再决定回父合同、继续子合同，还是诚实开新根战役</li></ul>
+<h2>最小落地规则</h2>
+<p>只要系统开始出现父子嵌套，就至少要把这些信息落到 <code>dev_repo/</code>：</p>
+<ul><li><code>contract_id</code></li><li><code>parent_contract_id</code></li><li><code>root_campaign</code></li><li><code>summary</code></li><li><code>status</code></li><li><code>goal</code></li><li><code>return_to</code></li><li><code>why_opened</code></li><li><code>red_line_crossed</code></li></ul>
+<p>同时遵守三条硬规则：</p>
+<ol><li>开子合同后，父合同状态必须能被读成类似 <code>paused_for_child</code></li><li>子合同关闭后，必须显式写明：</li></ol>
+<p>- 返回父合同 - 仍被阻塞 - 还是需要更窄的新子合同</p>
+<ol><li>如果无法诚实回答 <code>return_to</code>，就说明合同树已经变形</li></ol>
+<p><img src="../../../assets/visual-protocol/comics/child-contract-must-exit.png" alt="子合同做完后，必须退场"></p>
+<h2>最常见的四种跑偏</h2>
+<h3>第一种：把普通 replanning 误写成新子合同</h3>
+<p>不是每次重排计划都要开新合同。只有当局部战役已经足够独立，且不记下来就会让父合同失真时，才值得开子合同。</p>
+<h3>第二种：开了子合同，却不写 <code>return_to</code></h3>
+<p>这是最危险的一种。因为它表面上像是“先把这刀做好”，本质上却是在把父合同偷偷做掉。</p>
+<h3>第三种：子合同已经做完，却继续霸着主叙事不退场</h3>
+<p>局部 firefight 成功后，如果不退回父合同，系统就会把“暂时修洞”误写成“真正主线”。</p>
+<h3>第四种：把编号当合同树，把摘要留空</h3>
+<p>只有编号没有 <code>summary</code> 的合同树，最后一定会重新退化成“看不懂但好像很正式”的名单。</p>
+<h2>一句话压轴</h2>
+<p>父合同为什么不能被子合同静默替代，真正要钉死的不是“计划必须更整齐”，而是：</p>
+<p><strong>局部战役可以插入主线，但不能偷走主线。</strong></p>
+<p>只有把父子关系、暂停关系与 <code>return_to</code> 明确外置，项目进展、认知债务偿还与续命接手才有真正可抓的骨头。</p>
+<h2>相关页面</h2>
+<ul><li><a href="https://github.com/blackzhanzhan/Cyber-Ming-Protocol/blob/main/dev_repo/README.md">Campaign Runtime 说明</a></li><li><a href="../cognitive-debt/index.html">赛博认知债务：剪刀差、察觉信号与可信偿还</a></li><li><a href="../seven-stars-renewal/index.html">七星灯续命法</a></li><li><a href="../free-development-mode/index.html">自由开发模式：在不确定业务中继续可控推进</a></li></ul>
+        </div>
+        
+    <footer class="article-nav">
+      <a href="../worktree-enfeoffment/index.html"><small>上一章</small><span>Worktree-分封制：封地、入京与主干纯度</span></a>
+      <a href="../free-development-mode/index.html"><small>下一章</small><span>自由开发模式：在不确定业务中继续可控推进</span></a>
+    </footer>
+  
+      </article>
+    </main>
+  
+    
+</body>
+</html>

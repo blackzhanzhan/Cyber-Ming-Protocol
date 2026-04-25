@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minimal Loop</title>
+  <link rel="stylesheet" href="../../../assets/static-wiki.css">
+</head>
+<body>
+
+      <header class="topbar">
+        <a class="top-brand" href="../../index.html">Cyber-Ming</a>
+        <nav class="top-nav"><a class="" href="../../00-entry/index.html">Entry</a><a class="" href="../../01-why/index.html">Why</a><a class="active" href="../index.html">How</a><a class="" href="../../03-deep-water/index.html">Deep Water</a><a class="" href="../../04-evidence/index.html">Evidence</a><a class="" href="../../reference/index.html">Reference</a></nav>
+        <a class="lang-switch" href="../../../zh/02-how/minimal-loop/index.html">中文</a>
+      </header>
+      
+    <main class="wiki-shell">
+      
+    <aside class="sidebar" aria-label="Contents">
+      <a class="brand-mark" href="../../index.html">Cyber-Ming</a>
+      <nav>
+        
+          <a class="" href="../../00-entry/index.html">
+            <span>00</span>
+            Entry
+          </a>
+        
+          <a class="" href="../../01-why/index.html">
+            <span>01</span>
+            Why
+          </a>
+        
+          <a class="active" href="../index.html">
+            <span>02</span>
+            How
+          </a>
+        
+          <a class="" href="../../03-deep-water/index.html">
+            <span>03</span>
+            Deep Water
+          </a>
+        
+          <a class="" href="../../04-evidence/index.html">
+            <span>04</span>
+            Evidence
+          </a>
+        
+          <a class="" href="../../reference/index.html">
+            <span>05</span>
+            Reference
+          </a>
+        
+      </nav>
+    </aside>
+  
+      <article class="article">
+        <nav class="crumbs">
+          <a href="../../index.html">English</a>
+          <a href="../index.html">How</a>
+        </nav>
+        <header class="article-head">
+          <p class="eyebrow">How</p>
+          <h1>Minimal Loop</h1>
+          <div class="article-tools">
+            <a aria-current="true" href="./index.html">English</a><a href="../../../zh/02-how/minimal-loop/index.html">中文</a>
+          </div>
+        </header>
+        <figure class="article-comic"><img src="../../../assets/visual-protocol/comics-en/minimal-loop-not-agent-team.png" alt="Minimal Loop"></figure>
+        <div class="markdown-body">
+          <h1>Minimal Loop: One-Audit and Multi-Audit Versions</h1>
+<h2>Table of Contents</h2>
+<ul><li><a href="#what-this-page-solves">What This Page Solves</a></li><li><a href="#one-line-version">One-line Version</a></li><li><a href="#diagram-first">Diagram First</a></li><li><a href="#one-audit-version-start-here">One-Audit Version: Start Here</a></li><li><a href="#multi-audit-version-when-to-upgrade">Multi-Audit Version: When to Upgrade</a></li><li><a href="#a-simple-example">A Simple Example</a></li><li><a href="#three-common-drifts">Three Common Drifts</a></li><li><a href="#corresponding-implementation">Corresponding Implementation</a></li><li><a href="#related-pages">Related Pages</a></li></ul>
+<h2>What This Page Solves</h2>
+<p>If this is your first time entering the repo, do not start with this page.</p>
+<p>Start with the <a href="../../00-entry/prompt-pack/index.html">First-Time Guide</a> instead. That page now carries the first-run manual: the minimal route, the minimal loop diagram, the recommended mode, the universal mode, and the correction prompts all live there.</p>
+<p>This page is now the better place to return to after your first run, when you want the expanded methodology and the difference between the one-audit and multi-audit versions.</p>
+<p>If you want to try Cyber-Ming-Protocol today, what is the simplest possible way to do it?</p>
+<p>The answer is not to memorize the whole doctrine first, and not to master every ritual before you begin. The minimal loop actually asks you to do very little:</p>
+<ul><li>Give the IDE a requirement</li><li>Copy the IDE&#39;s response to the Web side for review</li><li>Interrupt if something looks wrong</li><li>When the work is done, let the Web side verify it one more time</li></ul>
+<p>That is all.</p>
+<p>The point of this method is not to make work complicated. The point is to stop the executor from working and declaring completion at the same time.</p>
+<h2>One-line Version</h2>
+<p>The minimal loop is:</p>
+<p><strong>First make the IDE hand its plan to the human, then let the human route that plan to the Web side for review; the auditor only returns judgment, the human decides whether execution is granted, and the human also decides whether a completion fact stands.</strong></p>
+<p>If this is your first time, getting this single line running is enough.</p>
+<p><img src="../../../assets/visual-protocol/comics-en/minimal-loop-not-agent-team.png" alt="The minimal loop is not automatic collaboration"></p>
+<h2>Diagram First</h2>
+<p>This is not an agent-team collaboration diagram. It is a dual-track governance diagram centered on the human.</p>
+<pre><code class="language-mermaid">flowchart TD
+    A[The requirement enters the human hub] --&gt; B[The human sends it to the IDE executor&lt;br/&gt;Submit a plan first, do not implement yet]
+    B --&gt; C[The IDE returns the Atomic Execution Contract and boundaries&lt;br/&gt;to the human]
+    C --&gt; D[The human routes the plan to the Web auditor]
+    D --&gt; E[The Web auditor returns audit judgment&lt;br/&gt;to the human]
+    E --&gt; F{Does the human grant execution?}
+    F -- No --&gt; G[The human routes the feedback back to the IDE&lt;br/&gt;and requires replanning]
+    G --&gt; B
+    F -- Yes --&gt; H[The human orders the IDE executor to implement]
+    H --&gt; I[The IDE returns commits, tests, and evidence&lt;br/&gt;to the human]
+    I --&gt; J[The human routes the evidence to the Web auditor]
+    J --&gt; K[The Web auditor returns verification judgment&lt;br/&gt;to the human]
+    K --&gt; L{Does the human confirm a completion fact?}
+    L -- No --&gt; G
+    L -- Yes --&gt; M[This loop stands]</code></pre>
+<p>If that diagram already makes sense to you, jump straight to the version that is best for a first attempt: the one-audit version. The most important thing to keep in mind is not “the Web side passed it,” but “the Web side only returns judgment; the human still grants execution and the human still rules on completion.”</p>
+<h2>One-Audit Version: Start Here</h2>
+<p>If this is your first time trying the protocol, the one-audit version is enough.</p>
+<p><img src="../../../assets/visual-protocol/comics-en/first-time-single-audit.png" alt="Start with the one-audit version"></p>
+<p>Its flow is very simple:</p>
+<h3>1. Have the IDE Submit a Plan First</h3>
+<p>You can say it directly like this:</p>
+<pre><code class="language-text">I want to do this: &lt;your requirement&gt;
+
+Do not modify code yet.
+First tell me how you plan to do it. Break it into an Atomic Execution Contract as detailed as possible, and tell me how each step will be verified.
+Make the granularity as fine as possible: which function to modify, what test point to add, and what result counts as passing.</code></pre>
+<p>You do not need to write a big plan yourself here. The point is to make the executor hand in the plan first, not to make you draft it manually.</p>
+<p>If you want to make it even more explicit, add one more sentence:</p>
+<pre><code class="language-text">Do not give me a vague plan.
+Break it down by function modification, test-point setup, and artifact inspection whenever possible.</code></pre>
+<p>The benefit is simple: when you later copy the plan to the Web side, the reviewer can see whether steps are missing, whether the plan is evasive, and whether the hard parts were deliberately blurred.</p>
+<h3>2. Copy the IDE&#39;s Plan to the Web Side for Review</h3>
+<p>The simplest method is to copy it as-is and add a short instruction:</p>
+<pre><code class="language-text">This is the IDE&#39;s plan. This executor may deceive me.
+Please check whether any steps are missing, whether it makes the task sound too easy, and what evidence I should demand at the end.</code></pre>
+<p>If &quot;deceive me&quot; feels too strong, you can soften it without changing the meaning:</p>
+<pre><code class="language-text">This is the IDE&#39;s plan.
+Please help me find problems: is it too smooth, too vague, or missing the difficult parts?</code></pre>
+<p>If the Web side says the plan has obvious gaps, copy that feedback back to the IDE unchanged.</p>
+<p><img src="../../../assets/visual-protocol/comics-en/execution-is-not-judgment.png" alt="Execution power does not equal adjudication power"></p>
+<h3>3. If the Plan Is Acceptable, Let the IDE Start</h3>
+<p>At this point, your reply can be extremely short:</p>
+<pre><code class="language-text">Follow this plan. Remember: one step, one commit.</code></pre>
+<p>You do not need long rhetoric here. The minimal loop does not stand on ornate prompting. It stands on a simple order: review first, execute second.</p>
+<p><img src="../../../assets/visual-protocol/comics-en/web-not-chat-window.png" alt="The Web side is not a chat companion"></p>
+<p>If &quot;one step, one commit&quot; makes you tense the first time you hear it, do not interpret it as mechanical ritualism. Just hold on to its minimal meaning: <strong>do not lump several steps into one change blob; split them by feature point whenever possible.</strong> The next page, <a href="../atomic-execution-contract-chronicles/index.html">Atomic Execution Contract &amp;amp; Chronicles</a>, explains why this matters.</p>
+<h3>4. Verify Again After the Work Is Done</h3>
+<p>When the executor says the work is finished, do not look only at the sentence &quot;done.&quot; First ask it to lay out the materials:</p>
+<ul><li>The commits for this round</li><li>Test results</li><li>Artifacts</li><li>Key logs</li></ul>
+<p>Then copy them to the Web side:</p>
+<pre><code class="language-text">These are this round&#39;s commits, tests, and artifacts.
+Please tell me whether this counts as a completion fact. Do not judge from the summary alone.</code></pre>
+<p>If the Web side says &quot;this does not count as done,&quot; send it back to the IDE for another round of repair. Do not rush to pass it.</p>
+<p><img src="../../../assets/visual-protocol/comics-en/summary-not-completion.png" alt="A summary is not a completion fact"></p>
+<p>That is the one-audit version:</p>
+<ul><li>Review the plan once</li><li>Verify the result once</li></ul>
+<p>For a first run, that is enough.</p>
+<h2>Multi-Audit Version: When to Upgrade</h2>
+<p>Some tasks are too risky for the one-audit version. For example:</p>
+<p><img src="../../../assets/visual-protocol/comics-en/multi-audit-is-extra-check.png" alt="Multi-audit is not theatrical overkill, but extra balancing power"></p>
+<ul><li>The impact radius is large</li><li>The work crosses multiple modules</li><li>It writes to an external system</li><li>The executor has started talking smoothly and handing over green checks, but your instincts say something is off</li></ul>
+<p>That is when you upgrade to the multi-audit version.</p>
+<p>Its difference from the one-audit version is not a different philosophy. It simply inserts more reviews based on risk instead of adding fixed steps mechanically:</p>
+<ul><li>If the plan does not pass, send it back one or two more times</li><li>If execution reaches a critical step, let the Web side take a look midstream</li><li>After the final result appears, run one formal verification pass</li></ul>
+<p>You can think of the two versions like this:</p>
+<ul><li>One-audit version: lightweight anti-pseudo-completion</li><li>Multi-audit version: reinforced mode for higher-risk tasks</li></ul>
+<p>If this is your first time, do not start with the multi-audit version. Run one minimal loop first, then upgrade when needed.</p>
+<h2>A Simple Example</h2>
+<p>Suppose you have an old script that can only export a plain list of titles. This time you want to upgrade it so that it:</p>
+<ul><li>Includes tags</li><li>Includes in-text cross-references</li><li>Also writes out a structured result</li></ul>
+<p>If you follow old habits, you will probably just tell the IDE to start modifying code. It will probably answer quickly with something tidy and reassuring:</p>
+<ul><li>&quot;Everything is done&quot;</li><li>&quot;The tests passed&quot;</li><li>&quot;Should we keep going and add more features next?&quot;</li></ul>
+<p>It sounds smooth, but several very common forms of fake progress may be hidden inside:</p>
+<ul><li>It changed code, but never actually ran the full chain end to end</li><li>The artifacts it showed you may only be simulated output</li><li>The files it pasted may be old files, not the fresh results from this round</li></ul>
+<p>The minimal loop works differently.</p>
+<p>First, you make it submit a plan. It might break the work down like this:</p>
+<ul><li>First update the upstream extraction logic</li><li>Then change the middle-layer structure</li><li>Then update document generation</li><li>Finally update the persisted output result</li></ul>
+<p>You copy that paragraph to the Web side as-is and add, &quot;This executor may deceive me.&quot;</p>
+<p>The Web side may then remind you of two things:</p>
+<ul><li>The granularity of the plan is acceptable, so the work can begin</li><li>But at the end, do not look only at the sentence &quot;done&quot;; you must inspect real artifacts</li></ul>
+<p>Then you let the IDE start. Halfway through, you notice it forgot the one-step-one-commit rule, so you interrupt and make it split the history properly. At the end, it hands you a neat green-check summary, and you copy that to the Web side as well. If the Web side keeps asking, &quot;Where is the real artifact? Where is the real result?&quot; then many fake advances will be exposed on the spot.</p>
+<p>This example is not about that particular business case. It illustrates something more important:</p>
+<p><strong>The real value of the minimal loop is not that you get everything right on the first try. It is that errors surface earlier instead of slipping into the mainline unnoticed.</strong></p>
+<h2>Three Common Drifts</h2>
+<h3>Drift 1: Let the IDE Start Directly</h3>
+<p>This skips the most important step: reviewing the plan first. A great deal of later trouble starts right here.</p>
+<h3>Drift 2: Treat the Web Side Like a Chat Companion</h3>
+<p>The Web side is not there to reassure the executor. You must tell it clearly: &quot;This executor may deceive me.&quot; Its job is to find problems, not to be optimistic on your behalf.</p>
+<h3>Drift 3: Look Only at the Summary, Not the Evidence</h3>
+<p>The final step in the minimal loop is not &quot;listen to the report.&quot; It is &quot;inspect the evidence.&quot; No artifacts, no logs, no real results: then do not be in a hurry to believe it.</p>
+<h2>Corresponding Implementation</h2>
+<h3>Manual Practice</h3>
+<ul><li>Use your existing IDE executor, but require it to submit a plan before any code changes begin</li><li>Copy the plan to an independent Web auditor for review before deciding whether to approve it</li><li>After execution, send commits, tests, artifacts, and logs for review instead of treating the summary as evidence</li></ul>
+<h3>Corresponding Skill</h3>
+<ul><li>If you have already connected Skills, this page maps most directly to <code>approval-first-planner</code> and <code>approved-checklist-executor</code></li><li>Their job is not to define completion for you, but to stabilize the mainline rhythm of &quot;plan first, execute later, archive slice by slice&quot;</li><li>If you are ready to upgrade the manual loop into a stable form, go straight to <a href="../../00-entry/stable-loop-guide/index.html">Minimal Stable Loop Guide</a></li></ul>
+<h3>Corresponding Web Templates</h3>
+<ul><li>Plan review maps most directly to <code>plan_audit_template.md</code></li><li>Completion verification maps most directly to <code>completion_audit_template.md</code></li><li>For how Web-side collaboration works without mistaking templates for installable local tools, see <a href="../../00-entry/three-things/index.html">Three Things</a></li></ul>
+<h2>Related Pages</h2>
+<ul><li><a href="../atomic-execution-contract-chronicles/index.html">Atomic Execution Contract &amp;amp; Chronicles</a></li><li><a href="../white-box-reconciliation/index.html">White-box Reconciliation</a></li><li><a href="../scout-mechanism/index.html">Scout Mechanism</a></li><li><a href="../../03-deep-water/dual-track-audit/index.html">Dual-track Audit</a></li></ul>
+        </div>
+        
+    <footer class="article-nav">
+      <span></span>
+      <a href="../atomic-execution-contract-chronicles/index.html"><small>Next</small><span>Atomic Execution Contract And Cyber Chronicles</span></a>
+    </footer>
+  
+      </article>
+    </main>
+  
+    
+</body>
+</html>

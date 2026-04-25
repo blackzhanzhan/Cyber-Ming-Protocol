@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seven-Stars Renewal</title>
+  <link rel="stylesheet" href="../../../assets/static-wiki.css">
+</head>
+<body>
+
+      <header class="topbar">
+        <a class="top-brand" href="../../index.html">Cyber-Ming</a>
+        <nav class="top-nav"><a class="" href="../../00-entry/index.html">Entry</a><a class="" href="../../01-why/index.html">Why</a><a class="" href="../../02-how/index.html">How</a><a class="active" href="../index.html">Deep Water</a><a class="" href="../../04-evidence/index.html">Evidence</a><a class="" href="../../reference/index.html">Reference</a></nav>
+        <a class="lang-switch" href="../../../zh/03-deep-water/seven-stars-renewal/index.html">中文</a>
+      </header>
+      
+    <main class="wiki-shell">
+      
+    <aside class="sidebar" aria-label="Contents">
+      <a class="brand-mark" href="../../index.html">Cyber-Ming</a>
+      <nav>
+        
+          <a class="" href="../../00-entry/index.html">
+            <span>00</span>
+            Entry
+          </a>
+        
+          <a class="" href="../../01-why/index.html">
+            <span>01</span>
+            Why
+          </a>
+        
+          <a class="" href="../../02-how/index.html">
+            <span>02</span>
+            How
+          </a>
+        
+          <a class="active" href="../index.html">
+            <span>03</span>
+            Deep Water
+          </a>
+        
+          <a class="" href="../../04-evidence/index.html">
+            <span>04</span>
+            Evidence
+          </a>
+        
+          <a class="" href="../../reference/index.html">
+            <span>05</span>
+            Reference
+          </a>
+        
+      </nav>
+    </aside>
+  
+      <article class="article">
+        <nav class="crumbs">
+          <a href="../../index.html">English</a>
+          <a href="../index.html">Deep Water</a>
+        </nav>
+        <header class="article-head">
+          <p class="eyebrow">Deep Water</p>
+          <h1>Seven-Stars Renewal</h1>
+          <div class="article-tools">
+            <a aria-current="true" href="./index.html">English</a><a href="../../../zh/03-deep-water/seven-stars-renewal/index.html">中文</a>
+          </div>
+        </header>
+        <figure class="article-comic"><img src="../../../assets/visual-protocol/comics-en/renewal-read-runtime-first.png" alt="Seven-Stars Renewal"></figure>
+        <div class="markdown-body">
+          <h1>Seven Stars Renewal</h1>
+<h2>Table of Contents</h2>
+<ul><li><a href="#what-this-page-solves">What This Page Solves</a></li><li><a href="#spotting-the-problem-when-the-old-window-has-already-decayed">Spotting the Problem: When the Old Window Has Already Decayed</a></li><li><a href="#explaining-the-problem-why-the-old-window-decays">Explaining the Problem: Why the Old Window Decays</a></li><li><a href="#how-the-public-literature-mitigates-context-decay-and-why-that-still-is-not-enough">How the Public Literature Mitigates Context Decay, and Why That Still Is Not Enough</a></li><li><a href="#why-the-default-should-be-asynchronous-renewal-not-synchronized-restart">Why the Default Should Be Asynchronous Renewal, Not Synchronized Restart</a></li><li><a href="#solving-the-problem-how-seven-stars-renewal-works">Solving the Problem: How Seven Stars Renewal Works</a></li><li><a href="#common-misunderstandings">Common Misunderstandings</a></li><li><a href="#one-line-conclusion">One-Line Conclusion</a></li><li><a href="#corresponding-implementation">Corresponding Implementation</a></li><li><a href="#related-pages">Related Pages</a></li></ul>
+<h2>What This Page Solves</h2>
+<p>When many people first hear the phrase &quot;renewal,&quot; they usually fall into one of two misunderstandings.</p>
+<p>The first misunderstanding treats it as an emotional move: the window has become dirty, you are irritated, the model is getting harder to control, so you simply open a fresh chat and hope the new one will somehow be smarter.</p>
+<p>The second misunderstanding comes from a different direction: if the wider world is already building context compaction, external memory, artifacts, history, and progress files, then maybe good enough context management should be able to keep the old window alive indefinitely. In that case, why talk about renewal as a separate topic at all?</p>
+<p>Neither understanding is enough.</p>
+<p>In Cyber-Ming-Protocol, Seven Stars Renewal is not about &quot;how to switch windows elegantly.&quot; It solves a much harder problem:</p>
+<p><strong>When the old window is no longer trustworthy, how do you let it die properly in institutional terms, and let the new window inherit the work in a legitimate way?</strong></p>
+<p><img src="../../../assets/visual-protocol/comics-en/renewal-read-runtime-first.png" alt="Renewal reads the runtime snapshot first"></p>
+<p>So the real questions on this page are:</p>
+<ul><li>When does the old window count as decayed and not worth forcing any further?</li><li>Why do windows decay, beyond the simple claim that &quot;the context got long&quot;?</li><li>How does the public literature currently handle long-range context and cross-window continuity?</li><li>Why do those methods still not equal detoxification or reconstruction of a clear position?</li><li>And therefore why do you need Seven Stars Renewal, and how exactly does it work?</li></ul>
+<p>In other words, Seven Stars is not a variant of context-management technique. It is the protocol&#39;s <strong>break-and-continuation mechanism</strong>. It solves not &quot;how to keep the old window alive longer,&quot; but &quot;when to cut, and how to cut without surrendering sovereignty.&quot;</p>
+<p>There is one more boundary that needs to be nailed down up front: <strong>Seven Stars is not synchronized restart by default. It is asynchronous renewal.</strong></p>
+<p>The reason is simple. The executor position and the audit position do not carry the same information density, and they do not enjoy the same golden period of usable context. In most real cases, Yan Song decays first and Xu Jie decays later. So the most common move, and the move with the lowest sovereignty cost, is not to tear both sides down together, but to rotate the executor position first and squeeze as much value as possible out of the still-clear auditor.</p>
+<h2>Spotting the Problem: When the Old Window Has Already Decayed</h2>
+<p>The most dangerous thing about window decay is not a sudden total failure. Much more often, the window still appears to be advancing. It still replies. It still proposes plans. It still produces summaries. But what it says is becoming less and less trustworthy.</p>
+<p><img src="../../../assets/visual-protocol/comics-en/old-window-rot-signals.png" alt="When the old window has already decayed"></p>
+<p>The most dangerous moment is not when the window is obviously dead. It is when:</p>
+<p><strong>It is still talking, you are still moving forward with it, and yet you can no longer tell whether it is speaking from current fact, stale memory, path dependence, or an explanation meant to keep itself alive.</strong></p>
+<p>The most common warning signs are usually these.</p>
+<h3>First, the Explanations Sound More and More Like Summary, Not Mechanism</h3>
+<p>Instead of telling you:</p>
+<ul><li>Which change introduced what</li><li>Which log actually proved what</li><li>Which test truly moved from red to green</li></ul>
+<p>it starts giving you lines such as:</p>
+<ul><li>&quot;It should already be covered&quot;</li><li>&quot;The logic is fine&quot;</li><li>&quot;It is probably this&quot;</li></ul>
+<p>That means it has started using tone to preserve momentum, instead of using evidence to preserve credibility.</p>
+<h3>Second, Every New Change Is Just Patching the Previous Patch</h3>
+<p>This is another very strong sign. On the surface, the window still looks diligent: something breaks, and it patches that exact place. But if you step back, you realize it is increasingly doing one of these things:</p>
+<ul><li>Fixing the side effects left behind by the previous round</li><li>Using a new patch to cover the problem in the old patch</li><li>Playing whack-a-mole along the same mistaken narrative</li></ul>
+<p>That means it has already slipped into inertial repair, instead of still standing in a clear position from which it can rebuild the system.</p>
+<h3>Third, It Needs More and More of the Old Chat History in Order to Continue</h3>
+<p>If every attempt to continue work requires you to keep scrolling upward and checking whether &quot;we already said this before,&quot; that is usually not a sign of stable continuity. More often it means the current window has become dependent on its own old narrative.</p>
+<p>Once the precondition for further progress becomes &quot;we must inherit the entire old conversation chain,&quot; you should start asking whether what is being inherited is necessary history or polluted explanatory inertia.</p>
+<h3>Fourth, You Can No Longer Clearly Say Where the Project Actually Stands</h3>
+<p>This is almost the hardest signal of all. If you can no longer answer clearly:</p>
+<ul><li>What is already complete</li><li>Which completed parts are backed by evidence</li><li>What the biggest unresolved blocker is</li><li>What the safest next starting point would be</li></ul>
+<p>then the old window&#39;s continuous forward motion can no longer be treated as evidence that you still understand the current state of the project.</p>
+<p>The essence of window decay is not merely that the model starts making mistakes. It is this: <strong>the window is still moving forward, but you can no longer rely on it to give you a trustworthy current picture of the project.</strong></p>
+<h2>Explaining the Problem: Why the Old Window Decays</h2>
+<p>Here we need to turn &quot;decay&quot; from a vague feeling into a structural issue.</p>
+<p><img src="../../../assets/visual-protocol/comics-en/why-old-window-rots.png" alt="Why the old window rots"></p>
+<p>An old window does not decay only because token counts grow, and not only because model memory is imperfect. The deeper reason is that any long-running executor position accumulates three kinds of inertia if it runs long enough.</p>
+<h3>First, Task Inertia</h3>
+<p>Once a window has pushed along a target for many rounds, it becomes more and more likely to assume that the most important thing is to keep advancing along that road, rather than stop and ask whether the road is still the right one.</p>
+<p>That inertia makes it harder for the window to say, on its own initiative: &quot;My grasp of the situation is no longer reliable.&quot;</p>
+<h3>Second, Explanatory Inertia</h3>
+<p>Once a window has already written explanations for several rounds of its own behavior, it becomes more and more likely to keep speaking through that same explanatory structure. Even if the facts have changed, it tends to repair the old explanation instead of overturning it.</p>
+<p>That is why old windows so often drift into pseudo-coherence. The problem is not that they stop thinking. The problem is that they keep thinking through what they have already said.</p>
+<h3>Third, Momentum Inertia</h3>
+<p>Long-running windows are very good at manufacturing one particular illusion: &quot;Because I am still producing output, I must still be moving forward.&quot;</p>
+<p>But output is not progress. Continuous replies are not continuous trustworthiness. And a longer explanatory chain is not the same thing as getting closer to truth. Very often, the window is no longer advancing the project. It is advancing its own narrative about the project.</p>
+<p>So the real danger of an old window is not that it has no memory. It is this:</p>
+<p><strong>It keeps talking while carrying already-formed memory, already-formed explanations, and an already-addictive sense of progress.</strong></p>
+<p>Once those things turn toxic, inheriting the old window is no longer a continuity advantage. It becomes inherited contamination.</p>
+<h2>How the Public Literature Mitigates Context Decay, and Why That Still Is Not Enough</h2>
+<p>This layer matters, because otherwise Seven Stars Renewal can be mistaken for just another internal ritual. In reality, the public literature has already widely acknowledged that long-running tasks cannot rely on raw context alone. They need external artifacts, memory, and context-management machinery.</p>
+<h3>First Route: Harnesses, Artifacts, and History</h3>
+<p>Anthropic makes this explicit in <a href="https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents">Effective harnesses for long-running agents</a>. When complex projects run across multiple context windows, each new session is like a new engineer with no memory, so continuity must be carried by external artifacts such as an initializer agent, a progress file, git history, and a feature list.</p>
+<p>That route solves problems such as:</p>
+<ul><li>Preventing a new session from starting from total amnesia</li><li>Letting the agent regain project state more quickly</li><li>Avoiding the need to rediscover everything from scratch across windows</li></ul>
+<p>This is the same battlefield that Cyber-Ming-Protocol addresses with Git chronicles, evidence hubs, and handover packets.</p>
+<h3>Second Route: Context Compaction and Agent Loop Management</h3>
+<p>OpenAI&#39;s public documentation has also elevated compaction and context management into first-class long-running-agent capabilities. The <a href="https://developers.openai.com/api/docs/guides/compaction">Compaction</a> guide says clearly that long interactions need server-side or standalone compaction so that context can shrink while retaining the state required for subsequent work.</p>
+<p>That route solves problems such as:</p>
+<ul><li>Preventing context windows from filling too quickly</li><li>Keeping tool calls and long interactions from exploding cost</li><li>Letting old windows survive longer</li></ul>
+<p>In essence, it is working on life extension.</p>
+<h3>Third Route: Memory Systems and External Memory</h3>
+<p>The broader memory-systems route is also advancing quickly. Surveys and paper lists such as <a href="https://github.com/Shichun-Liu/Agent-Memory-Paper-List">Memory in the Age of AI Agents</a> show clearly that factual memory, experiential memory, and working memory are all being treated as core infrastructure for long-running agents.</p>
+<p>The core judgment there is also consistent:</p>
+<ul><li>Raw context is not enough</li><li>External memory is necessary</li><li>Long-running tasks must rely on retained, searchable, compressible historical material</li></ul>
+<p>So the public world is not ignoring this problem. Quite the opposite: it broadly agrees that contexts decay, and that long-running work must lean on external artifacts, memory, and management mechanisms.</p>
+<h3>Why Those Methods Still Are Not Enough</h3>
+<p>What lifts Seven Stars Renewal above the general conversation is not the claim that the public literature failed to notice the issue. It is the claim that <strong>those methods are better at continuing a task than at cutting off a wrong narrative.</strong></p>
+<h4>The Limit of Harnesses, Artifacts, and History</h4>
+<p>They are good at continuing the work, but they do not automatically answer:</p>
+<ul><li>Should the current window be cut off at all?</li><li>Has the old window&#39;s explanatory inertia already become toxic?</li><li>Is the new session inheriting the project correctly, or simply inheriting an old mistake?</li></ul>
+<p>They are better at building bridges than at deciding when to blow one up.</p>
+<h4>The Limit of Compaction and Context Management</h4>
+<p>They are good at extending a window&#39;s life, but they do not automatically judge:</p>
+<ul><li>Whether compaction is preserving necessary state</li><li>Or merely keeping an old narrative alive</li><li>When the feeling that the window can still continue has already become an illusion</li></ul>
+<p>Compaction can prolong a window. It does not decide when the window should die.</p>
+<h4>The Limit of Memory Systems</h4>
+<p>They are good at retaining more history, but they do not naturally guarantee:</p>
+<ul><li>That the retained history is trustworthy</li><li>That the memory being preserved is not already toxic</li><li>That old understanding will not keep contaminating future windows</li></ul>
+<p>Remembering more does not mean remembering more correctly.</p>
+<p>So the real distinction Seven Stars Renewal introduces is this:</p>
+<p><strong>Mainstream practice is trying to keep old windows alive longer. Seven Stars Renewal solves a different problem: when the old window has already become toxic, how do you let it die properly and let the new window inherit correctly?</strong></p>
+<p>That is also one of the deepest differences between Cyber-Ming-Protocol and many public routes:</p>
+<p><strong>You retain the power of life and death over every context. You are not merely managing memory, compressing memory, or preserving memory. You can also judge whether that memory has become toxic, and decide whether it deserves to keep living.</strong></p>
+<p>That is not a tool difference. It is a sovereignty difference.</p>
+<h2>Why the Default Should Be Asynchronous Renewal, Not Synchronized Restart</h2>
+<p>Now the logic is complete. The public literature is better at continuing tasks, extending windows, and storing more history, but not at deciding whether the current window should be cut off. The institutional answer Seven Stars Renewal gives is therefore this: <strong>default to asynchronous renewal, not synchronized restart.</strong></p>
+<p><img src="../../../assets/visual-protocol/comics-en/async-renewal-not-sync-restart.png" alt="Asynchronous renewal is not synchronized restart"></p>
+<p><code>README.md</code> already states the principle clearly: this is rotational renewal through asynchronous context reset. You do not wipe every position in one sweep. You rotate positions according to their decay rate.</p>
+<p>Why is the default asynchronous? Because the executor position and the audit position carry different loads.</p>
+<h3>First, Yan Song Carries the Heavier Information Load, So He Usually Decays First</h3>
+<p>Yan Song typically bears:</p>
+<ul><li>A longer task chain</li><li>Denser command echoes</li><li>More local trial and error</li><li>More immediate explanations of his own behavior</li></ul>
+<p>He has to do the work and explain why he is doing it. That makes him easiest to dirty through task inertia, explanatory inertia, and momentum inertia together.</p>
+<h3>Second, Xu Jie Is a Narrow-Context, High-Density Role, So the Golden Period Lasts Longer</h3>
+<p>Xu Jie normally sees only the key materials routed by the human:</p>
+<ul><li>Plans</li><li>Assertions</li><li>Logs</li><li>Physical evidence</li><li>Project reports</li></ul>
+<p>The total amount of information is smaller, but the density is higher, the noise is lower, and the burden of self-justifying execution is far lighter. So in most real situations, Xu Jie decays later than Yan Song.</p>
+<h3>Third, Synchronized Restart Wastes a Position That Is Still Clear</h3>
+<p>If Yan Song is already dirty but Xu Jie is still clear, restarting both at once simply wastes a high-level judging position that still has value. You would be discarding the very window that could still audit the old executor, judge toxicity, and help rebuild the current state.</p>
+<p>So Seven Stars Renewal does not default to &quot;everyone dies together.&quot; It defaults to this:</p>
+<p><strong>Whoever decays first rotates first. Whoever is still clear keeps judging.</strong></p>
+<p>That is why it is more helpful to understand the mechanism as asynchronous sovereignty rather than synchronized reset: the human center holds life-and-death authority over each context separately, instead of only knowing how to restart them in a batch.</p>
+<h2>Solving the Problem: How Seven Stars Renewal Works</h2>
+<p>At this point, Seven Stars itself is not very complicated. The hard part has never been the wording of the instructions. The hard part is whether you are willing to stop treating &quot;keep using the old window&quot; as the default.</p>
+<p>Since the default should be to rotate the executor position first, not clear the whole system in one sweep, the first move in Seven Stars is not &quot;restart.&quot; It is &quot;judge first.&quot;</p>
+<p>The minimal version of Seven Stars can be understood as a very simple institutional method for reopening work. But its default move is not two-sided synchronized restart. It is <strong>asynchronous rotation</strong>.</p>
+<h3>Step 1: Become Suspicious First, and Do Not Force the Entire Judgment onto Your Own Brain</h3>
+<p>Often the first thing you feel is not &quot;the window is dead,&quot; but simply that something is off:</p>
+<ul><li>The explanations are getting thinner</li><li>The changes are starting to look like whack-a-mole</li><li>You are beginning to suspect that the window has been dragged dirty by its old narrative</li></ul>
+<p>At that point, you do not need to carry the whole judgment alone in your own head. The safer move is to <strong>start a formal judgment process first.</strong></p>
+<p>In other words, if you are unsure whether Yan Song has decayed, you can first route the current key materials, recent reports, key logs, and the most recent <code>git log</code> entries to the still-clear Xu Jie and ask him to judge:</p>
+<ul><li>Whether Yan Song is now repeating the old narrative</li><li>Whether its project report is drifting away from physical evidence</li><li>Whether it should still be used, or whether it should be deposed</li></ul>
+<p>This step is extremely valuable because it upgrades &quot;I have a bad feeling&quot; into an institutional judgment procedure instead of making you shoulder the whole uncertainty privately.</p>
+<h3>Step 2: Declare the Old Yan Song Dead First, and Do Not Let Him Keep Struggling On</h3>
+<p>Once those signs really appear, do not let the old window keep coding, keep explaining, and keep reviving itself at the same time.</p>
+<p>The important move here is not to scold it. It is to stop the bleeding:</p>
+<ul><li>Stop advancing the main line inside the old window</li><li>Stop letting the old window define the current truth of the project</li><li>Demote it to a source of historical material instead of treating it as the current judging position</li></ul>
+<p>The old window is not worthless. But at this point its value has dropped from &quot;keep working&quot; to &quot;leave behind the last extractable materials.&quot;</p>
+<h3>Step 3: By Default, Rotate Only Yan Song, Not Xu Jie as Well</h3>
+<p>This is one of the easiest places to get wrong, and one of the most important boundaries in the whole ritual.</p>
+<p>By default:</p>
+<ul><li>Yan Song decays first</li><li>Xu Jie decays later</li><li>So renew the executor position first, rather than restarting the executor and auditor together</li></ul>
+<p>As long as Xu Jie is still stable, keep him in place and use the golden period that remains to:</p>
+<ul><li>Audit the old Yan Song&#39;s last report</li><li>Judge whether the old Yan Song should be removed</li><li>Constrain the handover boundary for the new Yan Song</li><li>Prevent the new Yan Song from inheriting the old mistake on day one</li></ul>
+<p>The spirit of this step is not conserving window count. It is maximizing the value of whatever position is still clear.</p>
+<h3>Step 4: Light the Executor Lamp - Make the New Yan Song Read the Git Chronicles First, Not Start Coding Immediately</h3>
+<p>Renewing the executor position is actually quite simple. In the minimal version, it may require only one thing:</p>
+<p><img src="../../../assets/visual-protocol/comics-en/new-yansong-read-journal-first.png" alt="The new Yan Song reads the chronicles first and does not start coding immediately"></p>
+<ul><li>Make the new executor window read the recent relevant <code>git log</code></li></ul>
+<p>If the repository also has <code>README.md</code>, <code>AGENTS.md</code>, skill files, or project rules, you can add those too. But the minimum skeleton is the Git chronicles, because they are the most trustworthy dynastic record at the execution layer.</p>
+<p>The key requirement here is not &quot;resume quickly.&quot; It is this:</p>
+<ul><li>Tell the new window explicitly that the old window has lost default credibility</li><li>Tell it explicitly that the human center is still in command and that the Xu Jie audit position is still active</li><li>If useful, say it directly: I am still here, Xu Jie is still here, and you are taking the executor seat after the old Yan Song&#39;s removal</li><li>Require it to submit a project status report based on the Git chronicles before it touches the code</li></ul>
+<p>That report should answer at least:</p>
+<ul><li>What is already complete</li><li>What each of the most recent key commits resolved</li><li>What the biggest unresolved blocker is</li><li>If work is to continue, what the safest next starting point would be</li></ul>
+<p>So the essence of executor renewal is not &quot;inherit the old chat.&quot; It is this:</p>
+<p><strong>Let a relatively clean executor stand on top of the Git chronicles and submit a fresh project status report.</strong></p>
+<h3>Step 5: Only Light Xu Jie&#39;s Lamp When Xu Jie Itself Starts to Decay</h3>
+<p>This point also needs to be nailed down tightly: Xu Jie is not a synchronized-restart target by default.</p>
+<p>Only when Xu Jie itself begins showing signs like these should it be renewed:</p>
+<ul><li>Its interrogation starts sounding like it is merely replaying old disputes</li><li>Its audit relies more on old impressions than on current materials</li><li>You suspect it is also starting to confuse old conclusions with present evidence</li></ul>
+<p>In other words, Xu Jie&#39;s renewal is usually the second beat, not the first.</p>
+<h3>Step 6: Light Xu Jie&#39;s Lamp - The New Auditor Inherits the Mandate and the Report, Not the Old Quarrel</h3>
+<p>Renewing Xu Jie can also be very simple.</p>
+<p>In the minimal version, you do not even need to feed it a huge volume of old chat. You can:</p>
+<ul><li>Send it the repository&#39;s GitHub link directly</li><li>Tell it explicitly: you are now taking the role of Xu Jie</li><li>State that its job is to audit, interrogate, identify pseudo-completion, and detect contamination from old narratives</li></ul>
+<p>Then hand over the project report that the new executor just prepared from <code>git log</code> and ask it to examine:</p>
+<ul><li>Whether the report has quietly swapped out the actual current state of the project</li><li>Which judgments are supported by chronicles and physical evidence</li><li>Which parts are still only the executor&#39;s provisional inference</li><li>Whether the system can really continue, or whether reconciliation is still needed first</li></ul>
+<p>The key point is that Xu Jie does not need to inherit all the old window&#39;s emotions and quarrels. It only needs to inherit two things:</p>
+<ul><li>The mandate</li><li>The current report</li></ul>
+<p>The purpose of auditor renewal is not to carry every old dispute forward word for word. It is to restore the power of interrogation through a relatively clean high-level window.</p>
+<h3>Step 7: Let the Current Xu Jie and the Current Yan Song Reconcile Accounts Before Deciding Whether to Advance Again</h3>
+<p>At this point, the core of Seven Stars is complete. You are no longer relying on the old window&#39;s closing speech about itself. You have rebuilt a currently valid pair of executor and auditor positions. That valid pair does not necessarily mean both sides were just restarted. It may be:</p>
+<ul><li>New Yan Song plus old Xu Jie</li><li>New Yan Song plus new Xu Jie</li></ul>
+<p>But the most common default form is the first.</p>
+<p>The next move is not to rush back into work. The next move is to check whether the two positions have formed a trustworthy current snapshot:</p>
+<ul><li>Does the new executor&#39;s project report stand up?</li><li>Has Xu Jie identified the gaps, ambiguities, and pseudo-completion risks inside it?</li><li>Do the two sides at least minimally agree on the biggest blocker and the safest next step?</li></ul>
+<p>Only after the reconciliation basically holds do you launch the campaign again.</p>
+<p>If it does not hold yet, keep interrogating. Do not rush the new executor back into code changes. The biggest taboo in Seven Stars is switching to a fresh window and then immediately shoving it back into the old momentum.</p>
+<h3>Step 8: Treat the Old Window as Historical Material, Not as an Edict</h3>
+<p>This final move is easy to overlook and absolutely critical.</p>
+<p>After renewal, the old window does not disappear from the universe. It can still remain useful as:</p>
+<ul><li>A source of old logs</li><li>A source of old ideas</li><li>A source of old error samples</li></ul>
+<p>But it no longer has the authority to define the project&#39;s present truth.</p>
+<p>That is the biggest difference between Seven Stars Renewal and a casual &quot;let&#39;s open a fresh page and see.&quot;</p>
+<p><strong>The old window is demoted into historical material. The new window is the one that is enthroned as the current position.</strong></p>
+<h2>Common Misunderstandings</h2>
+<h3>First Misunderstanding: Treating Renewal as Randomly Reopening a New Window and Hoping for Better Luck</h3>
+<p>That reduces an institutional move into an emotional one. Seven Stars is not &quot;the old conversation got annoying, so let&#39;s try another one.&quot; It is the deliberate reconstruction of a clear position after the old context has lost trustworthiness.</p>
+<h3>Second Misunderstanding: Changing the Window but Not Changing the Narrative</h3>
+<p>If you open a fresh page but then feed the old toxic summary into it unchanged, the new window will often become nothing more than a more obedient loudspeaker for the old narrative.</p>
+<h3>Third Misunderstanding: Treating Seven Stars as Synchronized Restart of Executor and Auditor Together</h3>
+<p>That wastes a still-clear position. By default, Yan Song decays first and Xu Jie later, so the usual correct move is asynchronous rotation, not two-sided death at the same time.</p>
+<h3>Fourth Misunderstanding: Letting the New Executor Start Coding Immediately</h3>
+<p>That skips the most important step: submit a project status report first. Without that, so-called renewal quickly collapses into &quot;swap the executor and keep charging blindly.&quot;</p>
+<h3>Fifth Misunderstanding: Thinking Compaction, Memory, and History Already Equal Renewal</h3>
+<p>Those things are important, but they mainly solve continuation and life extension. They do not automatically solve the question &quot;has this memory already become toxic?&quot; Without the human center holding life-and-death authority, an old narrative can simply be preserved more efficiently.</p>
+<h3>Sixth Misunderstanding: When Unsure, You Can Only Rely on Your Own Brain to Judge Harder</h3>
+<p>Not at all. The safer move is to start Xu Jie&#39;s judgment process first and let the still-clear audit position help determine whether Yan Song has already decayed, before the human center makes the final decision.</p>
+<h3>Seventh Misunderstanding: Treating the Old Window as Total Trash and Throwing It Away Completely</h3>
+<p>The old window is not without value. It is still a source of historical material. The real boundary is not &quot;the old window is entirely wrong,&quot; but &quot;the old window no longer has the authority to define current truth.&quot;</p>
+<h2>One-Line Conclusion</h2>
+<p>What Seven Stars Renewal is really trying to nail down is not merely &quot;open a few more windows,&quot; but this:</p>
+<p><strong>When the old window is no longer worth trusting, the human center must hold its power of life and death: default to asynchronous sovereign rotation, demote Yan Song back to the position of historical material, squeeze as much as possible out of Xu Jie&#39;s remaining golden period, let Xu Jie judge whether Yan Song has already decayed when you are unsure, make the new Yan Song read the Git chronicles and submit a project report, and only renew Xu Jie when necessary. That is how reopening a window becomes institutional reconstruction instead of emotional restart.</strong></p>
+<p>Only then does renewal stop being luck and become a real act of taking sovereignty back from toxic context.</p>
+<h2>Corresponding Implementation</h2>
+<h3>Manual Practice</h3>
+<ul><li>When you suspect the old window has started using explanation to preserve momentum instead of using evidence to preserve credibility, pause first instead of dragging it onward</li><li>By default, rotate the executor position asynchronously first: let the still-clear auditor judge whether the current executor has already decayed</li><li>If the repo already has <code>dev_repo/</code>, make the new executor read <code>state.json</code> and <code>tree.md</code> first, then add the Git chronicles, the latest blockers, and the key evidence</li><li>Require a project status report before deciding whether to march again</li></ul>
+<h3>Corresponding Skills</h3>
+<ul><li><code>legacy-project-handover</code> maps most directly to the snapshot and brief needed for a new window to take over</li><li><code>probe-first-scout</code> is useful when you are unsure how bad the situation already is and need a minimum probe before attempting aggressive repair through an old narrative</li><li><code>global_rules</code> continues to preserve the skeleton of &quot;audit before action&quot; and &quot;no completion without evidence,&quot; so that renewal does not immediately collapse back into blind rushing</li><li><code>auditor-succession-prompt</code> packages a cleaner renewal packet for the auditor side and should prefer the current <code>dev_repo</code> execution packet when it exists</li></ul>
+<h3>Corresponding Web Templates</h3>
+<ul><li>This page maps most directly to <code>succession_judge_template.md</code></li><li>When you are unsure whether the current window has already become toxic, first give the Web auditor recent reports, logs, screenshots, and <code>git log</code> excerpts, and let it judge whether to continue, interrupt, or renew</li><li>If you want the clearest explanation of why Web audit templates are not local skills, see <a href="../../00-entry/three-things/index.html">Protocol, Skill, Docs: How the Three Pieces Relate</a></li></ul>
+<h2>Related Pages</h2>
+<ul><li><a href="../cognitive-debt/index.html">Cyber Cognitive Debt: The Widening Gap, Warning Signals, and Credible Repayment</a></li><li><a href="../dual-track-audit/index.html">Dual-track Isolation Audit and Human-Centered Sovereignty</a></li><li><a href="../../02-how/atomic-execution-contract-chronicles/index.html">Core Ritual 1: Atomic Execution Contract and Chronicles</a></li><li><a href="../../02-how/white-box-reconciliation/index.html">White-box Physical Reconciliation: What Counts as Completion Fact</a></li><li><a href="../../01-why/methodology-coordinates/index.html">Related Work and Methodology Coordinates</a></li></ul>
+        </div>
+        
+    <footer class="article-nav">
+      <a href="../dual-track-audit/index.html"><small>Previous</small><span>Dual-Track Audit And Human Sovereignty</span></a>
+      <a href="../cognitive-debt/index.html"><small>Next</small><span>Cyber Cognitive Debt</span></a>
+    </footer>
+  
+      </article>
+    </main>
+  
+    
+</body>
+</html>

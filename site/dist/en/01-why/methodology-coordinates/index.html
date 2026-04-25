@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Related Work And Methodology Coordinates</title>
+  <link rel="stylesheet" href="../../../assets/static-wiki.css">
+</head>
+<body>
+
+      <header class="topbar">
+        <a class="top-brand" href="../../index.html">Cyber-Ming</a>
+        <nav class="top-nav"><a class="" href="../../00-entry/index.html">Entry</a><a class="active" href="../index.html">Why</a><a class="" href="../../02-how/index.html">How</a><a class="" href="../../03-deep-water/index.html">Deep Water</a><a class="" href="../../04-evidence/index.html">Evidence</a><a class="" href="../../reference/index.html">Reference</a></nav>
+        <a class="lang-switch" href="../../../zh/01-why/methodology-coordinates/index.html">中文</a>
+      </header>
+      
+    <main class="wiki-shell">
+      
+    <aside class="sidebar" aria-label="Contents">
+      <a class="brand-mark" href="../../index.html">Cyber-Ming</a>
+      <nav>
+        
+          <a class="" href="../../00-entry/index.html">
+            <span>00</span>
+            Entry
+          </a>
+        
+          <a class="active" href="../index.html">
+            <span>01</span>
+            Why
+          </a>
+        
+          <a class="" href="../../02-how/index.html">
+            <span>02</span>
+            How
+          </a>
+        
+          <a class="" href="../../03-deep-water/index.html">
+            <span>03</span>
+            Deep Water
+          </a>
+        
+          <a class="" href="../../04-evidence/index.html">
+            <span>04</span>
+            Evidence
+          </a>
+        
+          <a class="" href="../../reference/index.html">
+            <span>05</span>
+            Reference
+          </a>
+        
+      </nav>
+    </aside>
+  
+      <article class="article">
+        <nav class="crumbs">
+          <a href="../../index.html">English</a>
+          <a href="../index.html">Why</a>
+        </nav>
+        <header class="article-head">
+          <p class="eyebrow">Why</p>
+          <h1>Related Work And Methodology Coordinates</h1>
+          <div class="article-tools">
+            <a aria-current="true" href="./index.html">English</a><a href="../../../zh/01-why/methodology-coordinates/index.html">中文</a>
+          </div>
+        </header>
+        <figure class="article-comic"><img src="../../../assets/visual-protocol/comics-en/governance-layer-not-replacement.png" alt="Related Work And Methodology Coordinates"></figure>
+        <div class="markdown-body">
+          <h1>Related Work and Methodology Coordinates</h1>
+<h2>Table of Contents</h2>
+<ul><li><a href="#what-this-page-solves">What This Page Solves</a></li><li><a href="#what-foundations-cyber-ming-protocol-shares-with-the-public-landscape">What Foundations Cyber-Ming-Protocol Shares with the Public Landscape</a></li><li><a href="#70-to-90-similar-the-long-running-agent-harness-line">70% to 90% Similar: The Long-Running Agent Harness Line</a></li><li><a href="#50-to-70-similar-the-spec-driven--workflow-driven-line">50% to 70% Similar: The Spec-Driven / Workflow-Driven Line</a></li><li><a href="#lower-level-shared-concepts-hitl-context-engineering-and-artifact-thinking">Lower-Level Shared Concepts: HITL, Context Engineering, and Artifact Thinking</a></li><li><a href="#what-this-protocol-actually-adds">What This Protocol Actually Adds</a></li><li><a href="#our-coordinates-not-a-replacement-but-a-governance-layer">Our Coordinates: Not a Replacement, but a Governance Layer</a></li><li><a href="#related-pages">Related Pages</a></li></ul>
+<h2>What This Page Solves</h2>
+<p>Cyber-Ming-Protocol did not appear out of nowhere. In the public landscape, people have already tried to constrain AI coding through spec-driven, workflow-driven, harness-driven, human-in-the-loop, and context-engineering approaches. This page is not trying to argue that everyone else failed. It is answering three more important questions:</p>
+<ul><li>What foundations this protocol shares with existing approaches</li><li>Where it truly diverges</li><li>Why it is not a replacement for Codex or Claude Code, but a governance layer on top of them</li></ul>
+<p>To avoid sounding baseless, this page links to official public docs and engineering articles wherever possible. The main verified anchors at the moment are Anthropic&#39;s <a href="https://www.anthropic.com/engineering/building-effective-agents">Building effective agents</a>, <a href="https://docs.anthropic.com/en/docs/claude-code/overview">Claude Code overview</a>, and <a href="https://docs.anthropic.com/en/docs/claude-code/sub-agents">Create custom subagents</a>, along with OpenAI&#39;s <a href="https://developers.openai.com/api/docs/guides/agents">Agents overview</a>, <a href="https://developers.openai.com/codex/overview">Codex overview</a>, and <a href="https://developers.openai.com/codex/subagents">Codex subagents</a>.</p>
+<p>For third-party frameworks such as GSD, OpenSpec, and Spec Kit, if repo links are added to the public edition later, they should be verified one by one before being hardcoded into the public edition.</p>
+<h2>What Foundations Cyber-Ming-Protocol Shares with the Public Landscape</h2>
+<p>You only get a meaningful coordinate system if you admit the overlaps first. Cyber-Ming-Protocol shares at least these judgments with many public approaches:</p>
+<ul><li>Context decays; long-chain work cannot be held together by a single chat window alone</li><li>Requirements, progress, artifacts, and Git history cannot live only inside conversation logs</li><li>Humans should not fully withdraw from complex software development</li><li>Long-running tasks need stronger engineering scaffolding than direct chat plus immediate generation</li></ul>
+<p>Those insights are not unique to this protocol. What makes Cyber-Ming-Protocol diverge is not that it notices these problems, but that it moves the problem center from &quot;how to make agents work more reliably&quot; to &quot;how to preserve human sovereignty in deep water while suppressing pseudo-completion, mainline pollution, and refactoring loss.&quot;</p>
+<p><img src="../../../assets/visual-protocol/comics-en/related-not-identical.png" alt="Not completely unrelated, but not the same thing either"></p>
+<h2>70% to 90% Similar: The Long-Running Agent Harness Line</h2>
+<p>Based on the public material available now, the closest line of thinking is the engineering approach around long-running agent harnesses. Anthropic&#39;s <a href="https://www.anthropic.com/engineering/building-effective-agents">Building effective agents</a> and <a href="https://docs.anthropic.com/en/docs/claude-code/overview">Claude Code overview</a> already make many of these realities explicit. They clearly recognize that:</p>
+<ul><li>Long-running agents forget, distort, and drift</li><li>They often try to do too much in one shot and muddy the chain</li><li>Feature lists, artifacts, progress files, and Git history are needed to preserve continuity</li><li>External scaffolding is more reliable than a single conversation window</li></ul>
+<p>That is genuinely close to Cyber-Ming-Protocol&#39;s chronicles, artifact hub, and rotating renewal.</p>
+<p>But the divergence is also clear:</p>
+<ul><li>Those approaches are mainly asking how to make long-running agents more reliable</li><li>This protocol asks a further question: in deep water, who keeps execution rights, who keeps judgment rights, and who defines what counts as completion</li><li>They usually do not develop an explicit dual-track institution for the executor and auditor</li><li>They also do not elevate role narrative into the execution psychology layer of a high-friction protocol</li></ul>
+<p>So the similarity in problem awareness is high, but there is still a visible difference in institutional completeness and governance center.</p>
+<h2>50% to 70% Similar: The Spec-Driven / Workflow-Driven Line</h2>
+<p>This layer includes GSD, OpenSpec, Spec Kit, and the broader plan-first or workflow-first line. OpenAI&#39;s <a href="https://developers.openai.com/api/docs/guides/agents">Agents overview</a>, <a href="https://developers.openai.com/codex/overview">Codex overview</a>, and <a href="https://developers.openai.com/codex/subagents">Codex subagents</a> also provide a public reference point that leans more toward workflow and orchestration. Their common features are:</p>
+<p><img src="../../../assets/visual-protocol/comics-en/blueprint-vs-court-law.png" alt="Blueprint law and court law are not the same thing"></p>
+<ul><li>They emphasize the importance of specs, task breakdown, and context structure</li><li>They reject the idea that requirements should live only in chat history</li><li>They try to make AI coding more orderly through specs, tasks, and plans</li></ul>
+<p>That aligns with Cyber-Ming-Protocol on one important point: AI coding cannot rely only on direct chat and immediate generation.</p>
+<p>But the deeper difference is this:</p>
+<ul><li>They mostly solve how to write things clearly before generation</li><li>This protocol mostly solves how not to lose control after the work enters deep water</li><li>They are closer to blueprint methods</li><li>This protocol is closer to court governance</li></ul>
+<p>In other words, the spec-driven line mainly governs clarity before generation. Cyber-Ming-Protocol mainly governs sovereignty, distortion, refactoring handles, and completion facts during and after generation.</p>
+<h2>Lower-Level Shared Concepts: HITL, Context Engineering, and Artifact Thinking</h2>
+<p>Below the framework level, there are also several concepts that are clearly related to this protocol without fully amounting to a comparable system:</p>
+<ul><li>Human-in-the-loop software development agents</li><li>Context engineering</li><li>Artifacts, Git history, and progress files</li><li>Approval and review gates</li></ul>
+<p>These directions share some basic judgments with the protocol:</p>
+<ul><li>Humans cannot fully withdraw from complex development</li><li>Chat history cannot serve as the only source of truth</li><li>Long-chain tasks need artifacts and chronological handles</li></ul>
+<p>But they usually remain at the concept level, the paper level, or the local workflow level. They have not yet been integrated into a full institution centered on deep-water sovereignty that simultaneously covers the executor, the auditor, physical routing, human judgment, chronicles, renewal, and execution fuel.</p>
+<h2>What This Protocol Actually Adds</h2>
+<p>Strictly speaking, not every component of Cyber-Ming-Protocol is unprecedented. What is actually new is the way those components are assembled and where the institutional center sits:</p>
+<ul><li>It takes deep-water governance, not shallow-water efficiency, as the core problem</li><li>It takes retained sovereignty, not stronger generation, as the institutional center</li><li>It explicitly separates the executor and auditor and requires physical isolation between them</li><li>It insists that humans retain the cross-system physical routing right</li><li>It integrates Git chronicles, Worktree enfeoffment, dual-end renewal, and pulse enfeoffment into one coherent system</li><li>It elevates role narrative into an execution psychology device and a durable fuel source for a high-friction protocol</li></ul>
+<p>That is also why the easiest part of this protocol to misread is not the technical skeleton but the theatrical outer layer. The imperial narrative is not the whole protocol, but neither is it disposable packaging. Here it functions as an execution psychology device: the protocol protects truth and falsity, while the narrative helps people stay willing to keep executing a high-friction governance method instead of sliding back into one-click generation out of fatigue.</p>
+<h2>Our Coordinates: Not a Replacement, but a Governance Layer</h2>
+<p>Public tools such as Codex, Claude Code, and other agent frameworks have already done substantial work on parallel delegation, log evidence, sandbox execution, hooks, subagents, and checkpoints. Relevant public entry points include <a href="https://docs.anthropic.com/en/docs/claude-code/overview">Claude Code overview</a>, <a href="https://docs.anthropic.com/en/docs/claude-code/sub-agents">Create custom subagents</a>, <a href="https://developers.openai.com/api/docs/guides/agents">Agents overview</a>, and <a href="https://developers.openai.com/codex/overview">Codex overview</a>. Cyber-Ming-Protocol is not trying to throw all of that away, and it is not claiming to be better at automatically writing code.</p>
+<p>It is answering a different layer of question:</p>
+<p><img src="../../../assets/visual-protocol/comics-en/governance-layer-not-replacement.png" alt="Not a replacement, but a governance layer"></p>
+<p>If mainstream frameworks are mostly answering &quot;how do we make agents write more,&quot; then this protocol is answering:</p>
+<p><strong>Once a project enters deep water, how do we keep the human as the sovereign instead of gradually turning them into a clerk who cleans up after agents?</strong></p>
+<p>That is why it is best understood as a governance-layer protocol. It does not replace Codex or Claude Code. It makes those executors less likely to lie, less likely to pollute mainline, easier to interrupt, and easier to take over and refactor in deep water.</p>
+<h2>Related Pages</h2>
+<ul><li><a href="../cs-vs-management/index.html">Why AI Coding Has Already Blurred the Boundary Between CS and Management</a></li><li><a href="../dual-distortion/index.html">The Dual Distortion of Black-Box Multi-Agent: Technical Distortion and Governance Distortion</a></li><li><a href="../../03-deep-water/dual-track-audit/index.html">Dual-track Isolation Audit and Sovereign Routing</a></li><li><a href="../../02-how/atomic-execution-contract-chronicles/index.html">Atomic Execution Contract and Chronicles</a></li></ul>
+        </div>
+        
+    <footer class="article-nav">
+      <a href="../dual-distortion/index.html"><small>Previous</small><span>Dual Distortion In Black-Box Multi-Agent Work</span></a>
+      <span></span>
+    </footer>
+  
+      </article>
+    </main>
+  
+    
+</body>
+</html>

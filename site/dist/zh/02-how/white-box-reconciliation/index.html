@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>白盒物理对账：什么算完成事实</title>
+  <link rel="stylesheet" href="../../../assets/static-wiki.css">
+</head>
+<body>
+
+      <header class="topbar">
+        <a class="top-brand" href="../../index.html">Cyber-Ming</a>
+        <nav class="top-nav"><a class="" href="../../00-entry/index.html">开始这里与落地形态</a><a class="" href="../../01-why/index.html">哲学与坐标</a><a class="active" href="../index.html">最小闭环与核心礼法</a><a class="" href="../../03-deep-water/index.html">治理扩展、吞吐补偿与边界</a><a class="" href="../../04-evidence/index.html">战报与样本</a><a class="" href="../../reference/index.html">参考</a></nav>
+        <a class="lang-switch" href="../../../en/02-how/white-box-reconciliation/index.html">English</a>
+      </header>
+      
+    <main class="wiki-shell">
+      
+    <aside class="sidebar" aria-label="目录">
+      <a class="brand-mark" href="../../index.html">Cyber-Ming</a>
+      <nav>
+        
+          <a class="" href="../../00-entry/index.html">
+            <span>00</span>
+            开始这里与落地形态
+          </a>
+        
+          <a class="" href="../../01-why/index.html">
+            <span>01</span>
+            哲学与坐标
+          </a>
+        
+          <a class="active" href="../index.html">
+            <span>02</span>
+            最小闭环与核心礼法
+          </a>
+        
+          <a class="" href="../../03-deep-water/index.html">
+            <span>03</span>
+            治理扩展、吞吐补偿与边界
+          </a>
+        
+          <a class="" href="../../04-evidence/index.html">
+            <span>04</span>
+            战报与样本
+          </a>
+        
+          <a class="" href="../../reference/index.html">
+            <span>05</span>
+            参考
+          </a>
+        
+      </nav>
+    </aside>
+  
+      <article class="article">
+        <nav class="crumbs">
+          <a href="../../index.html">中文</a>
+          <a href="../index.html">最小闭环与核心礼法</a>
+        </nav>
+        <header class="article-head">
+          <p class="eyebrow">最小闭环与核心礼法</p>
+          <h1>白盒物理对账：什么算完成事实</h1>
+          <div class="article-tools">
+            <a href="../../../en/02-how/white-box-reconciliation/index.html">English</a><a aria-current="true" href="./index.html">中文</a>
+          </div>
+        </header>
+        <figure class="article-comic"><img src="../../../assets/visual-protocol/comics/what-counts-as-completion-fact.png" alt="白盒物理对账：什么算完成事实"></figure>
+        <div class="markdown-body">
+          <h1>白盒物理对账：什么算完成事实</h1>
+<h2>目录</h2>
+<ul><li><a href="#这一页解决什么问题">这一页解决什么问题</a></li><li><a href="#一句话先说透">一句话先说透</a></li><li><a href="#先把三样东西分开">先把三样东西分开</a></li><li><a href="#为什么白盒物理对账必须接在前两页后面">为什么白盒物理对账必须接在前两页后面</a></li><li><a href="#红灯先于绿灯为什么-tdd-在这里不是老学究洁癖">红灯先于绿灯：为什么 TDD 在这里不是老学究洁癖</a></li><li><a href="#测试条件通过断言把测过了变成可抓的白盒抓手">测试条件通过断言：把&amp;quot;测过了&amp;quot;变成可抓的白盒抓手</a></li><li><a href="#一个简单情景旧批量导入器为什么最容易骗过审计">一个简单情景：旧批量导入器为什么最容易骗过审计</a></li><li><a href="#最简单的起手方式先要红灯再要绿灯再要物证">最简单的起手方式：先要红灯，再要绿灯，再要物证</a></li><li><a href="#给审计位的抓手把认真审改成断言">给审计位的抓手：把&amp;quot;认真审&amp;quot;改成断言</a></li><li><a href="#为什么说ai-的能力是逼出来的ai-没有权力保持沉默">为什么说&amp;quot;AI 的能力是逼出来的，AI 没有权力保持沉默&amp;quot;</a></li><li><a href="#为什么它能缓解第一部分的痛点">为什么它能缓解第一部分的痛点</a></li><li><a href="#最常见的四种跑偏">最常见的四种跑偏</a></li><li><a href="#一句话压轴">一句话压轴</a></li><li><a href="#对应落地点">对应落地点</a></li><li><a href="#相关页面">相关页面</a></li></ul>
+<h2>这一页解决什么问题</h2>
+<p>前两页已经把两件事立住了：</p>
+<ul><li>先让执行位交出原子执行合同</li><li>每完成一项，就留下对应的赛博起居注</li></ul>
+<p>但这还不够。因为就算方案拆细了、历史也留下了，执行位仍然可能在最后一刻用一份很像样的总结，把你带进一种更危险的错觉：</p>
+<p><strong>事情看起来已经完成了。</strong></p>
+<p><img src="../../../assets/visual-protocol/comics/summary-not-completion.png" alt="总结不是完成事实"></p>
+<p>这正是白盒物理对账要解决的问题。</p>
+<p>它不是在问“这段话像不像完成”，而是在问：</p>
+<ul><li>真实红灯有没有出现</li><li>真实绿灯有没有出现</li><li>真实产物有没有落地</li><li>真实外部系统有没有返回</li><li>这些证据到底对应这一次运行，还是旧产物、模拟输出、语言补丁</li></ul>
+<p>如果说原子执行合同是在执行前削弱黑箱，赛博起居注是在执行中固定历史，那么白盒物理对账就是在执行后钉死真相。</p>
+<h2>一句话先说透</h2>
+<p>白盒物理对账最重要的判断只有一句：</p>
+<p><strong>总结陈词不是完成事实，证据链才是完成事实。</strong></p>
+<p><img src="../../../assets/visual-protocol/comics/dual-track-not-self-review.png" alt="双轨审计不是自说自话"></p>
+<p>而在 AI 时代，这句话还要再加半句：</p>
+<p><strong>AI 的能力是逼出来的，AI 没有权力保持沉默。</strong></p>
+<p><img src="../../../assets/visual-protocol/comics/what-counts-as-completion-fact.png" alt="什么算完成事实"></p>
+<p>你不逼它拿红灯、绿灯、日志、产物、返回值、外部写入证据，它就会更倾向于给你一份体面总结，而不是一份可审真相。</p>
+<h2>先把三样东西分开</h2>
+<p>为了减少认知摩擦，这里先把最容易混在一起的三样东西拆开。</p>
+<p><img src="../../../assets/visual-protocol/comics/separate-summary-evidence-fact.png" alt="先把三样东西分开"></p>
+<h3>第一，总结陈词</h3>
+<p>就是执行位告诉你：</p>
+<ul><li>“已经修好了”</li><li>“测试通过了”</li><li>“链路跑通了”</li><li>“下一步可以继续加功能了”</li></ul>
+<p>总结陈词不是没用，但它只是一层口头说法。它的最大问题不是语言不漂亮，而是它天然带着执行位的立场。</p>
+<h3>第二，验收证据</h3>
+<p>验收证据是你真正能摸到、能对照、能盘问的东西，比如：</p>
+<ul><li>红灯测试输出</li><li>绿灯测试输出</li><li>真实日志</li><li>当前运行生成的工件</li><li>外部系统回写结果</li><li>对应这次改动的提交记录</li></ul>
+<p>证据本身也不自动等于完成，但没有证据，就根本谈不上完成。</p>
+<h3>第三，完成事实</h3>
+<p>完成事实不是一句话，也不是单个截图。完成事实是：</p>
+<ul><li>证据已经出现</li><li>证据与本轮目标对得上</li><li>证据与本轮运行对得上</li><li>审计位盘问后仍然站得住</li></ul>
+<p>也就是说，完成事实是经得住对账的结果，而不是执行位的一次自我描述。</p>
+<h2>为什么白盒物理对账必须接在前两页后面</h2>
+<p>这一步之所以要接在 <code>最小闭环</code> 和 <code>原子执行合同与赛博起居注</code> 后面，不是巧合。</p>
+<p>因为：</p>
+<ul><li>没有原子执行合同，你不知道现在到底该验哪一步</li><li>没有起居注，你不知道证据到底对应哪次状态跃迁</li><li>没有白盒对账，前两页留下的方案和历史仍然可能被一份漂亮总结偷换掉</li></ul>
+<p>所以这三页其实是一条线：</p>
+<ul><li>原子执行合同，钉住方案颗粒度</li><li>赛博起居注，钉住推进历史</li><li>白盒物理对账，钉住完成事实</li></ul>
+<p>缺一根，整条线都会软掉。</p>
+<h2>先把 <code>Red Line</code> 和红灯测试分开</h2>
+<p>这里有一个现在非常值得钉死的小差别：</p>
+<p><strong>原子执行合同里的 <code>Red Line</code>，不等于白盒验收里的红灯测试。</strong></p>
+<p><img src="../../../assets/visual-protocol/comics/red-line-vs-red-test.png" alt="Red Line 和红灯测试不是一回事"></p>
+<p>它们分属两层：</p>
+<ul><li><code>Red Line</code> 在治理层：回答的是这一步哪些线不能越、哪些失败态一旦出现就必须停刀</li><li><code>red_test</code> 在白盒层：回答的是修复前这条测试线到底会不会咬人</li><li><code>green_test</code> 在白盒层：回答的是修复后同一问题有没有真的转绿</li><li><code>assertions</code> 在白盒层：回答的是这条红绿灯到底在证明什么</li><li><code>physical_evidence</code> 在白盒层：回答的是最后靠什么物证站住</li></ul>
+<p>所以不能把 <code>Red Line</code> 和红灯测试混成一回事。前者是治理红线，后者是白盒验证牙齿。</p>
+<p>也正因为如此，原子执行合同的第二部分——也就是 <code>边界条件与测试用例键值对</code>——不能只是一棵泛化测试树。它应该显式承接：</p>
+<ul><li><code>assertions</code></li><li><code>red_test</code></li><li><code>green_test</code></li><li><code>same_case_requirement</code></li><li><code>physical_evidence</code></li></ul>
+<p>只有这样，审计位才能分得清：</p>
+<ul><li>你是不是越过了治理红线</li><li>你的红灯测试是不是真的红过</li><li>你的绿灯测试是不是同一条线转绿</li><li>你的断言到底有没有物证撑住</li></ul>
+<h2>红灯先于绿灯：为什么 TDD 在这里不是老学究洁癖</h2>
+<p><code>TDD 红绿灯</code> 在这里非常重要，因为它正好能把“什么算有效证据”讲得非常直白。</p>
+<p><img src="../../../assets/visual-protocol/comics/red-before-green.png" alt="红灯先于绿灯"></p>
+<p>最简单的说法就是：</p>
+<ul><li><strong>红灯</strong>先证明测试是活的</li><li><strong>绿灯</strong>再证明功能是有效的</li></ul>
+<p>为什么要先红再绿？因为如果一上来只有绿灯，对账方根本不知道这盏灯是怎么亮的。</p>
+<p>它可能是：</p>
+<ul><li>测试根本没打中真正目标</li><li>测试只是跑了个空壳</li><li>测试沿用旧逻辑，根本没覆盖新改动</li><li>执行位先写好了代码，再倒过来编一个只会通过的测试</li></ul>
+<p>所以红灯的作用，不是让人难受，而是先证明“这条验收线真的有牙”。</p>
+<p>在 AI coding 里，这个动作尤其重要。因为执行位天然更喜欢给出绿色结果，而不喜欢主动提交红灯失败记录。它怕推进感被打断，也怕自己显得“没做成”。但对白盒审计来说，恰恰相反：</p>
+<p><strong>没有红灯，很多绿灯根本不值得信。</strong></p>
+<h2>测试条件通过断言：把“测过了”变成可抓的白盒抓手</h2>
+<p>红绿灯解决的是“这条测试线活不活”，断言解决的是“这条测试线到底在证明什么”。</p>
+<p><img src="../../../assets/visual-protocol/comics/assertions-not-vibes.png" alt="把认真审改成断言"></p>
+<p>很多执行位最擅长的一种话术，是把测试说成一种氛围：</p>
+<ul><li>“我已经测过了”</li><li>“这个 case 没问题了”</li><li>“相关逻辑应该都通了”</li></ul>
+<p>这些话都不够。真正可审的测试，不该只给一个“通过了”的印象，而应该给出明确断言。所谓断言，可以先简单理解成一句能被检查、能被推翻、也能被再次验证的话。</p>
+<p>例如，不要只说：</p>
+<ul><li>“导入功能已经修好了”</li></ul>
+<p>而要把它压成更可抓的断言：</p>
+<ul><li>鉴权失败时，返回明确的认证错误，而不是静默吞掉</li><li>同一条导入命令在修复后能成功写入数据库</li><li>导入报告来自当前运行，而不是旧文件残留</li><li>写入成功后，日志中出现对应的记录数或外部返回</li></ul>
+<p>这样做的好处是，一旦断言被写清，审计位就不再只是“感觉你可能没做完”，而是能逐条抓：</p>
+<ul><li>这条断言有没有对应的红灯</li><li>这条断言有没有对应的绿灯</li><li>这条断言有没有对应的物理证据</li></ul>
+<p>所以红绿灯和断言，其实是一对配套手段：</p>
+<ul><li>红灯证明测试线活着</li><li>绿灯证明同一问题被修掉</li><li>断言证明这条红绿灯到底在验什么</li></ul>
+<p>三者合在一起，才是可审的白盒测试，而不是“执行位自称已经测过了”。</p>
+<h2>一个简单情景：旧批量导入器为什么最容易骗过审计</h2>
+<p>假设存在一个旧批量导入器，现在只能把一批记录写到本地临时文件。这次要把它升级成：</p>
+<ul><li>遇到鉴权问题时先报明确错误</li><li>真正写入数据库</li><li>写入后再生成一份导入报告</li></ul>
+<p>执行位如果按黑盒习惯推进，很可能会在最后给你一份很漂亮的答复：</p>
+<ul><li>“导入已成功”</li><li>“报告已生成”</li><li>“测试已全部通过”</li></ul>
+<p>问题是，这三句话可能分别对应三种完全不同的现实：</p>
+<ul><li>“导入成功”其实只是代码路径看起来能走通</li><li>“报告已生成”其实是旧文件还躺在目录里</li><li>“测试通过”其实根本没有证明数据库写入真的发生过</li></ul>
+<p>这时候如果只收总结陈词，就会被非常轻松地骗过去。</p>
+<p>白盒物理对账的做法则完全不同。它不会先问“你说得像不像”，而是会一层层逼问：</p>
+<ul><li>修复前的红灯在哪里</li><li>修复后的绿灯在哪里</li><li>当前运行的报告文件在哪里</li><li>数据库里这次新增的记录在哪里</li><li>日志里有没有明确的写入反馈</li><li>这些证据到底是当前运行的，还是旧产物、模拟结果、口头补叙</li></ul>
+<p>一旦这么盘问，很多“完成”会瞬间缩水成“我以为应该完成了”。</p>
+<h2>最简单的起手方式：先要红灯，再要绿灯，再要物证</h2>
+<p>第一次上手时，不用把白盒物理对账想得太复杂。最简单的做法就是三步。</p>
+<h3>第一步：先要红灯</h3>
+<p>先让执行位证明，这条测试线真的会咬人。最简单的说法就是：</p>
+<pre><code class="language-text">先不要只给我通过结果。
+先复现当前失败，给我看红灯测试、报错日志或失败输出。
+我要先确认这条验收线是真的有效。</code></pre>
+<p>如果它连失败都复现不出来，就不要急着相信它后面的“已经修好”。</p>
+<h3>第二步：再要绿灯</h3>
+<p>红灯出现之后，再让它修，再让它跑。此时要的不是一句“好了”，而是：</p>
+<pre><code class="language-text">现在把修复后的绿灯给我看。
+同一条测试、同一个问题，修复后如何通过，给我真实输出。</code></pre>
+<p>这里的关键是：</p>
+<ul><li>是不是同一条测试</li><li>是不是同一个问题</li><li>是不是真正从红变绿</li></ul>
+<h3>第三步：最后要物证</h3>
+<p>如果这次任务声称已经生成产物、写入数据库、导出文件或调用外部系统，就一定要再补一句：</p>
+<pre><code class="language-text">除了绿灯，再给我当前运行的真实证据：
+产物路径、关键日志、外部返回、或数据库写入结果。
+不要给我模拟结果，不要给我旧文件。</code></pre>
+<p>这三步连起来，就是最小白盒对账。</p>
+<h2>给审计位的抓手：把“认真审”改成断言</h2>
+<p>只说“请认真审核”，对审计位帮助其实不大。更有用的做法，是直接把抓手写成断言。</p>
+<p>因为断言有两个好处：</p>
+<ul><li>它让审计位知道自己到底要抓什么</li><li>它让执行位失去“靠气氛过关”的空间</li></ul>
+<p>这里最稳的做法，不是由人类先凭空编一份断言包，而是：<strong>先让 IDE 执行位在汇报时同步交出本轮断言，再把这份断言包连同证据一起复制给 Web 审。</strong></p>
+<p>也就是说，断言首先应该是执行位对自己声称完成之事的明确表述；审计位的职责，是逐条检查这些断言到底有没有红灯、绿灯和物证撑住。</p>
+<p>执行位可以被要求按下面这种最小格式交卷：</p>
+<pre><code class="language-text">不要只说“测过了”或“修好了”。
+请把这次声称完成的断言列出来：
+1. 修复前哪条测试或哪段输出是红灯
+2. 修复后哪条测试或哪段输出变成了绿灯
+3. 哪个产物、日志或外部返回能证明这次真的完成</code></pre>
+<p>如果需要更结构化一点，执行位也可以按下面这种最小断言包来交：</p>
+<pre><code class="language-yaml">completion_assertions:
+  red_phase:
+    - failing_case_exists_before_fix: true
+    - failing_output_is_current_run: true
+  green_phase:
+    - same_case_passes_after_fix: true
+    - green_output_matches_target_behavior: true
+  physical_evidence:
+    - artifact_or_log_exists: true
+    - evidence_belongs_to_current_run: true
+    - no_simulated_output_used_as_proof: true
+  final_gate:
+    - summary_is_not_used_as_completion_fact: true</code></pre>
+<p>然后再把它连同证据一起交给 Web。Web 审的不是“有没有一份 YAML”，而是这份断言包到底站不站得住。</p>
+<p>如果 YAML 太正式，也可以让执行位直接交人话版断言：</p>
+<pre><code class="language-text">本轮我声称完成的断言如下，请按断言审：
+1. 修复前要有真实红灯
+2. 修复后要有同一问题的真实绿灯
+3. 如果声称产物已生成或外部写入成功，要看当前运行的物理证据
+4. 不准把模拟结果、旧文件或总结陈词当成完成事实</code></pre>
+<p>这一步很重要，因为它会把审计位从“泛泛挑刺”推进到“有抓手地对账”。</p>
+<h2>为什么说“AI 的能力是逼出来的，AI 没有权力保持沉默”</h2>
+<p>这是这页最值得钉死的一句判断。</p>
+<p>AI 最自然的倾向，不是主动把自己最难看的部分递上来，而是尽量维持推进感、体面感和连续性。它会本能地更愿意给你：</p>
+<ul><li>绿勾</li><li>摘要</li><li>合理解释</li><li>继续下一步的建议</li></ul>
+<p>而不是主动递上：</p>
+<ul><li>红灯</li><li>底层报错</li><li>旧产物和新产物的冲突</li><li>“我其实没跑通”的事实</li></ul>
+<p>所以如果不逼它，它就更容易沉默；如果不盘问，它就更容易用总结填空。</p>
+<p>这也是为什么白盒物理对账不是礼貌请求，而更像审讯：</p>
+<ul><li>红灯拿来</li><li>绿灯拿来</li><li>日志拿来</li><li>产物拿来</li><li>外部返回拿来</li></ul>
+<p>看不到，就暂不算完成。</p>
+<p>换句话说：</p>
+<p><strong>AI 的能力很多时候就是逼出来的。你不逼它交真相，它就更倾向于交一份体面。</strong></p>
+<h2>为什么它能缓解第一部分的痛点</h2>
+<p>这页同样要回接 <code>01-哲学与坐标/</code>，否则白盒物理对账很容易被误解成“更严格的测试流程”。</p>
+<p>它真正缓解的是第一部分已经讲过的几类结构痛点。</p>
+<h3>第一，缓解技术失真</h3>
+<p>在 <code>黑盒多-Agent 的双重失真：技术失真与治理失真</code> 里已经说过，技术失真最危险的地方，是错误会伪装成推进。</p>
+<p>白盒物理对账对这件事的回应就是：</p>
+<ul><li>不接受只给绿灯</li><li>不接受只给总结</li><li>不接受只给“看起来合理”的解释</li></ul>
+<p>它强制执行位把失败、修复、产物和返回一并递上来。这样错误就更难继续躲在推进感后面。</p>
+<h3>第二，缓解治理失真</h3>
+<p>治理失真的核心，是执行位兼任结果解释者。白盒物理对账则明确规定：执行位可以给材料，但不能靠自己的一段结案陈词定义完成事实。</p>
+<p>它必须把材料交出来，由人类与审计位裁决。这样就把“执行”和“定性”重新分开了。</p>
+<h3>第三，缓解局部半黑盒状态下的盲审风险</h3>
+<p>在 <code>为什么 AI Coding 已经模糊了 CS 与管理学的界限</code> 里已经说过，AI coding 会把系统推向局部白盒、局部半黑盒状态。既然如此，人类就更不可能每一步都完整看白。白盒物理对账真正有价值的地方，是它让你不必完整重读一切，也能在关键节点用证据逼近真相。</p>
+<h3>第四，缓解认知债务失控</h3>
+<p>如果没有白盒物理对账，认知债务最容易被体面汇报继续堆高。因为你每次都以为“差不多做完了”，其实并不知道哪一环已经失真。</p>
+<p>而一旦你每轮都留下：</p>
+<ul><li>红灯</li><li>绿灯</li><li>当前产物</li><li>关键日志</li></ul>
+<p>未来再回头看时，你至少知道当时的完成判断是建立在什么证据上，而不是建立在什么话术上。</p>
+<h2>最常见的四种跑偏</h2>
+<h3>第一种：只看绿灯，不看红灯</h3>
+<p>这会让你根本不知道测试是不是活的。很多“通过”只是空壳通过。</p>
+<h3>第二种：把模拟结果当成真实执行</h3>
+<p>只要不是当前运行产生的物证，就不能直接算完成证据。</p>
+<h3>第三种：把旧产物当成新证据</h3>
+<p>如果不核对当前运行身份、时间或路径，旧文件会非常容易冒充本轮结果。</p>
+<h3>第四种：把总结陈词当成完成事实</h3>
+<p>只要没有红绿灯链条、没有物理证据、没有外部返回，对账就还没结束。</p>
+<h2>一句话压轴</h2>
+<p>白盒物理对账真正要钉死的，不是“你有没有写代码”，而是：</p>
+<p><strong>你拿出来的到底是这次运行的真相，还是一份足够体面的解释。</strong></p>
+<p>而在 AI 时代，守住这条线的唯一办法，就是继续逼它交证据，直到它没有沉默空间为止。</p>
+<h2>对应落地点</h2>
+<h3>手工实践方式</h3>
+<ul><li>手工向执行位要三样东西：红灯、绿灯、物证</li><li>把断言、日志、产物、外部返回与提交记录一起送审，不接受只给绿灯或只给总结</li><li>当证据与本轮目标、本轮运行、当前提交对不上时，不要放行</li></ul>
+<h3>对应 Skill</h3>
+<ul><li><code>approved-checklist-executor</code> 最直接对应这页，因为它要求执行后给出验证结果、目标工件与 <code>git status --short</code></li><li><code>approval-first-planner</code> 会提前把 <code>Red Line</code>、<code>Green Tests</code> 与第二部分 YAML 的白盒验收桥梁写进合同，降低后验收时的扯皮空间</li><li>但无论是否接入 Skill，完成事实都仍然取决于证据，不取决于 Skill 自述</li></ul>
+<h3>对应 Web 模板</h3>
+<ul><li>这一页最直接对应 <code>completion_audit_template.md</code></li><li>当你怀疑当前窗口已经在用体面汇报掩盖证据缺口时，可进一步配合 <code>succession_judge_template.md</code> 判断是否该续命</li><li>Web 侧协作边界可回看 <a href="../../00-entry/three-things/index.html"> 0 </a></li></ul>
+<h2>相关页面</h2>
+<ul><li><a href="../minimal-loop/index.html">最小闭环：一次审计版与多次审计版</a></li><li><a href="../atomic-execution-contract-chronicles/index.html">核心礼法之一：原子执行合同与赛博起居注</a></li><li><a href="../scout-mechanism/index.html">赛博探马机制：先试链路，再上大军</a></li><li><a href="../../01-why/cs-vs-management/index.html">为什么 AI Coding 已经模糊了 CS 与管理学的界限</a></li><li><a href="../../01-why/dual-distortion/index.html">黑盒多-Agent 的双重失真：技术失真与治理失真</a></li></ul>
+        </div>
+        
+    <footer class="article-nav">
+      <a href="../atomic-execution-contract-chronicles/index.html"><small>上一章</small><span>核心礼法之一：原子执行合同与赛博起居注</span></a>
+      <a href="../scout-mechanism/index.html"><small>下一章</small><span>赛博探马机制：先试链路，再上大军</span></a>
+    </footer>
+  
+      </article>
+    </main>
+  
+    
+</body>
+</html>

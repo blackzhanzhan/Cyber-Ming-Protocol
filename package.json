@@ -21,7 +21,10 @@
   ],
   "scripts": {
     "cyber-ming": "node bin/cyber-ming.js",
-    "doctor": "node bin/cyber-ming.js doctor"
+    "doctor": "node bin/cyber-ming.js doctor",
+    "site:validate": "node site/scripts/validate-content-manifest.mjs",
+    "site:build": "node site/scripts/build-static-wiki.mjs",
+    "site:check": "node site/scripts/validate-content-manifest.mjs && node site/scripts/build-static-wiki.mjs && node site/scripts/validate-dist.mjs"
   },
   "keywords": [
     "ai-coding",

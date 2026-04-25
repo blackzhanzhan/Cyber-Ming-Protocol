@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Worktree Enfeoffment</title>
+  <link rel="stylesheet" href="../../../assets/static-wiki.css">
+</head>
+<body>
+
+      <header class="topbar">
+        <a class="top-brand" href="../../index.html">Cyber-Ming</a>
+        <nav class="top-nav"><a class="" href="../../00-entry/index.html">Entry</a><a class="" href="../../01-why/index.html">Why</a><a class="" href="../../02-how/index.html">How</a><a class="active" href="../index.html">Deep Water</a><a class="" href="../../04-evidence/index.html">Evidence</a><a class="" href="../../reference/index.html">Reference</a></nav>
+        <a class="lang-switch" href="../../../zh/03-deep-water/worktree-enfeoffment/index.html">中文</a>
+      </header>
+      
+    <main class="wiki-shell">
+      
+    <aside class="sidebar" aria-label="Contents">
+      <a class="brand-mark" href="../../index.html">Cyber-Ming</a>
+      <nav>
+        
+          <a class="" href="../../00-entry/index.html">
+            <span>00</span>
+            Entry
+          </a>
+        
+          <a class="" href="../../01-why/index.html">
+            <span>01</span>
+            Why
+          </a>
+        
+          <a class="" href="../../02-how/index.html">
+            <span>02</span>
+            How
+          </a>
+        
+          <a class="active" href="../index.html">
+            <span>03</span>
+            Deep Water
+          </a>
+        
+          <a class="" href="../../04-evidence/index.html">
+            <span>04</span>
+            Evidence
+          </a>
+        
+          <a class="" href="../../reference/index.html">
+            <span>05</span>
+            Reference
+          </a>
+        
+      </nav>
+    </aside>
+  
+      <article class="article">
+        <nav class="crumbs">
+          <a href="../../index.html">English</a>
+          <a href="../index.html">Deep Water</a>
+        </nav>
+        <header class="article-head">
+          <p class="eyebrow">Deep Water</p>
+          <h1>Worktree Enfeoffment</h1>
+          <div class="article-tools">
+            <a aria-current="true" href="./index.html">English</a><a href="../../../zh/03-deep-water/worktree-enfeoffment/index.html">中文</a>
+          </div>
+        </header>
+        <figure class="article-comic"><img src="../../../assets/visual-protocol/comics-en/worktree-feudal-not-git-trick.png" alt="Worktree Enfeoffment"></figure>
+        <div class="markdown-body">
+          <h1>Worktree Enfeoffment: Fiefs, Entering the Capital, and Mainline Purity</h1>
+<h2>Table of Contents</h2>
+<ul><li><a href="#what-this-page-solves">What This Page Solves</a></li><li><a href="#spotting-the-problem-why-the-mainline-gets-dirty-so-quickly-in-team-collaboration">Spotting the Problem: Why the Mainline Gets Dirty So Quickly in Team Collaboration</a></li><li><a href="#explaining-the-problem-why-what-really-needs-enfeoffment-is-not-directories-but-context-sovereignty">Explaining the Problem: Why What Really Needs Enfeoffment Is Not Directories but Context Sovereignty</a></li><li><a href="#solving-the-problem-how-worktree-enfeoffment-supports-team-collaboration-and-mainline-purity">Solving the Problem: How Worktree Enfeoffment Supports Team Collaboration and Mainline Purity</a></li><li><a href="#common-misunderstandings">Common Misunderstandings</a></li><li><a href="#one-line-conclusion">One-Line Conclusion</a></li><li><a href="#related-pages">Related Pages</a></li></ul>
+<h2>What This Page Solves</h2>
+<p>When many people first hear <code>git worktree</code>, they picture only a small technical convenience: opening several working directories so that switching branches requires fewer checkouts.</p>
+<p>If that were all it meant, this page would not need to exist.</p>
+<p>Inside Cyber-Ming-Protocol, worktree enfeoffment is not &quot;a more convenient Git posture.&quot; It is a governance system aimed directly at deep-water team collaboration. It solves not &quot;how can many people change code at the same time,&quot; but a much harder problem:</p>
+<p><strong>Why the mainline should not become the battlefield of shared dirty context, and why real collaboration is not many people stirring the same pot of context but one person per fief, one cabinet per fief, and then selective entry into the capital.</strong></p>
+<p>So the real questions here are:</p>
+<ul><li>Why, in high-risk collaboration, the mainline fears dirty context more than it fears lots of changes</li><li>Why worktree enfeoffment is first a model of human collaboration, not an AI trick</li><li>Why one person per fief and one cabinet per fief preserve mainline purity better than many people sharing one battlefield</li><li>What it means to enter the capital, and why the mainline should be treated like a capital city rather than a front-line construction site</li></ul>
+<p>The central judgment is this:</p>
+<p><strong>The essence of collaboration is not sharing context. It is partitioning context.</strong></p>
+<p><img src="../../../assets/visual-protocol/comics-en/worktree-feudal-not-git-trick.png" alt="Worktree enfeoffment is not a Git trick"></p>
+<p>One more boundary should also be stated honestly. What this page offers first is a governance model for deep-water team collaboration, not a fully battle-tested field manual that has already settled every institutional detail for very large teams. It is already strong enough to answer questions about mainline purity, units of collaboration, responsibility boundaries, and the rhythm of entering the capital. But role allocation, cross-fief conflict arbitration, organizational cost, and merge rhythm in larger teams still need more real samples before they can be treated as settled.</p>
+<h2>Spotting the Problem: Why the Mainline Gets Dirty So Quickly in Team Collaboration</h2>
+<p>Many teams imagine collaboration in roughly the same way:</p>
+<ul><li>Everyone circles around the same repository mainline</li><li>Everyone keeps pulling fresh changes onto that same line</li><li>AI gets mixed into each person&#39;s local context, frequent trial-and-error, and temporary patches</li><li>Review, rollback, and overtime are then used to drag the mainline back into a barely acceptable state</li></ul>
+<p>That model can limp along in shallow water. In deep water, it easily pushes the mainline into a more dangerous state: <strong>the mainline code may not be fully broken yet, but the mainline context has already become dirty.</strong></p>
+<p>That dirtiness is not just ugly code style. It means several things begin happening at once.</p>
+<h3>First, Temporary Exploration and Formal Advance Get Mixed Together</h3>
+<p>You meant only to try a probe, verify one chain, or perform one risky demolition. Instead, all the trial traces, temporary patches, and half-finished structures fall directly into the same mainline work area.</p>
+<p>At that point the system may still look collaborative, but in reality it is continuously pushing experimental debris toward the mainline.</p>
+<h3>Second, Responsibility Boundaries Start Evaporating</h3>
+<p>As soon as many people stir the same mainline pot, you quickly get situations like these:</p>
+<ul><li>Nobody can clearly say who broke this part first</li><li>Nobody can clearly say who stacked this rescue patch on top</li><li>Nobody can clearly say which window brought this context contamination in</li></ul>
+<p>Once responsibility boundaries evaporate, the team becomes much less able to judge whom to interrupt, where to roll back, and who should take over.</p>
+<h3>Third, Cleaning Up Failed Experiments Becomes Absurdly Expensive</h3>
+<p>If failed exploration happens inside an isolated fief, the worst case is usually just deleting that failed territory. But if failed exploration happens right next to the mainline, then you are no longer &quot;deleting one experiment.&quot; You are cleaning up a pile of mutually entangled damage.</p>
+<p>What is truly expensive in deep water is almost never a few extra working directories. What is expensive is:</p>
+<ul><li>Mainline contamination</li><li>Lost rollback handles</li><li>Semantic cross-contamination after multi-person collaboration</li><li>Failed exploration entangled with genuine results</li></ul>
+<h3>Fourth, Team Collaboration Degrades into Shared Dirty Context</h3>
+<p>This is the easiest point to miss. Many teams think they are sharing project knowledge. In reality, what they often share is a mixed context that has never been judged, isolated, or detoxified.</p>
+<p>And once the context itself gets dirty, AI acceleration no longer amplifies collaboration. It amplifies contamination speed.</p>
+<p>So the first judgment this page needs to nail down is:</p>
+<p><strong>What the mainline fears most is not frequent change. It is being dragged into a battlefield of shared dirty context by many people and many windows at once.</strong></p>
+<h2>Explaining the Problem: Why What Really Needs Enfeoffment Is Not Directories but Context Sovereignty</h2>
+<p>What is genuinely new about worktree enfeoffment is not that it opens more directories. It rewrites the collaboration problem from &quot;how do we share one workspace&quot; into &quot;how do we cut several sovereignty boundaries apart.&quot;</p>
+<p><img src="../../../assets/visual-protocol/comics-en/feudalize-context-sovereignty.png" alt="What really needs enfeoffment is not directories but context sovereignty"></p>
+<h3>First, the Object of Enfeoffment Is Not AI but Human Developers</h3>
+<p>This boundary needs to be made explicit first.</p>
+<p>Worktrees are not corridors for AI to roam everywhere. They are physically isolated fiefs prepared for human developers. Each fief corresponds to a clearly identified human principal, and that person governs the territory together with their own AI cabinet.</p>
+<p>In other words:</p>
+<ul><li>The lord of the fief is a human, not an agent</li><li>AI is the cabinet inside the fief, not a roaming vassal</li><li>What is truly being split apart is human governance boundary, not just folder paths</li></ul>
+<h3>Second, One Person per Fief, One Cabinet per Fief</h3>
+<p>This is the most important institutional expression of worktree enfeoffment.</p>
+<p>&quot;One person per fief&quot; does not simply mean that each person gets a directory. It means:</p>
+<ul><li>Each developer governs their own executor and auditor positions inside their own worktree</li><li>Trial-and-error, refactoring, probing, and verification are completed locally within the territory</li><li>Fiefs remain isolated from one another, do not share dirty context, and do not take over one another&#39;s half-finished narratives</li></ul>
+<p>&quot;One cabinet per fief&quot; then pushes the point further: every territory should contain its own local governance loop, rather than several people sharing one agent conversation chain, one dirty context, and one tangled experimental history.</p>
+<p>Only then does collaboration finally stop being many people stirring the same pot and start becoming many people governing separate territories.</p>
+<h3>Third, Vassals May Govern, but They Have No Right of Self-Coronation</h3>
+<p>This sentence matters a great deal.</p>
+<p>The fief is not a miniature copy of the mainline, and success inside a fief does not automatically qualify for entry into the mainline. A fief can certainly enjoy a high degree of autonomy:</p>
+<ul><li>It can explore</li><li>It can refactor</li><li>It can try and fail</li><li>It can iterate repeatedly</li></ul>
+<p>But the fief does not have the right of self-coronation. That means a result from the fief does not enter the mainline simply because &quot;it looks good over here.&quot; It still has to arrive with:</p>
+<ul><li>Chronicle handles</li><li>A white-box evidence chain</li><li>A rollback boundary</li><li>Final audit before it enters the capital</li></ul>
+<p>Only then does local autonomy avoid collapsing back into &quot;everyone polishing their own hallucination in private until it looks impressive enough.&quot;</p>
+<h3>Fourth, the Mainline Should Be the Capital, Not a Front-Line Construction Site</h3>
+<p>This is what mainline purity is really protecting.</p>
+<p>The meaning of the mainline is not that it must absorb every local exploration. It is that it should absorb only results that have already passed white-box verification and can still be inherited by the mainline safely.</p>
+<p>It should be like a capital city:</p>
+<ul><li>It does not bear every local trial and error itself</li><li>It does not store every half-finished context</li><li>It does not clean up after every failed experiment</li></ul>
+<p>Its job is final aggregation, judgment, and long-term maintainability.</p>
+<p>So &quot;entering the capital&quot; is not a romantic metaphor. It is an institutional boundary:</p>
+<p><strong>The frontier may experiment messily. The capital may not absorb results messily.</strong></p>
+<h2>Solving the Problem: How Worktree Enfeoffment Supports Team Collaboration and Mainline Purity</h2>
+<p>Once the earlier judgments are brought down to the operational level, worktree enfeoffment can be compressed into five very clear moves.</p>
+<h3>Step 1: Split the Land First, Then Start Work</h3>
+<p>As soon as the task enters high-risk demolition, architectural rewrite, parallel exploration, or multi-person collaboration, the default should no longer be &quot;start working around the mainline.&quot; The default should be to split the land first:</p>
+<ul><li>Enfeoff by person, not by letting agents roam around at will</li><li>Draw fiefs around clear objectives, not around territory that keeps expanding without limit</li><li>Split along risk surfaces, not by mixing several big problems inside one territory</li></ul>
+<p>The most important thing here is not the Git command itself. It is the shift in mindset:</p>
+<p><strong>Establish the boundary first. Only then allow progress.</strong></p>
+<h3>Step 2: The Fief Governs Itself, but Local Autonomy Must Still Carry Governance</h3>
+<p>Once the fief exists, its owner must run a full governance loop inside it rather than treating the worktree as a mere isolated directory.</p>
+<p>That means the territory still needs:</p>
+<ul><li>Atomic checklists</li><li>Dense Git chronicles</li><li>Separation between executor and auditor</li><li>White-box physical reconciliation</li><li>Interruption and renewal when necessary</li></ul>
+<p>So worktree enfeoffment does not replace the earlier rituals. It provides them with a more stable physical carrier.</p>
+<p>Without those rituals, a fief becomes just another dirty battlefield outside the mainline. With them, it becomes worthy of the name &quot;fief.&quot;</p>
+<h3>Step 3: Enter the Capital with Mature Artifacts, Not with Dirty Context</h3>
+<p>The moment when a fief truly relates to the mainline is not when someone says &quot;this is probably good enough now.&quot; It is when the result enters the capital.</p>
+<p>Entering the capital is not the same thing as just opening a PR. It means returning to the mainline with a package that can actually be judged:</p>
+<ul><li>What exactly this fief solved</li><li>What the key chronicles and state transitions were</li><li>What evidence proves the result actually stands up</li><li>Where the rollback handles are if the result must be reversed</li></ul>
+<p>Only if that package stands up does the mainline deserve to accept it.</p>
+<p>So the core of entering the capital is not &quot;submit the code.&quot; It is this:</p>
+<p><strong>Deliver a result that has already been refined inside the fief until it is pure enough to audit, pure enough to inherit, and pure enough to present to the capital for judgment.</strong></p>
+<h3>Step 4: Failed Fiefs May Be Discarded; Mainline Purity May Not Be</h3>
+<p>This sounds like the coldest part of the model, but it is actually the most practical.</p>
+<p><img src="../../../assets/visual-protocol/comics-en/fief-failures-discardable-mainline-purity-not.png" alt="Failed fiefs may be discarded; mainline purity may not be"></p>
+<p>The most valuable thing about worktree enfeoffment is not that every fief succeeds. It is that even failure no longer has to contaminate the mainline.</p>
+<p>That gives the team a genuinely cheaper way to fail:</p>
+<ul><li>If one fief fails, discard the territory and start again</li><li>If one exploration goes off course, sacrifice the local line only</li><li>If one set of AI contexts turns dirty, stop the damage inside that fief</li></ul>
+<p>instead of running disaster cleanup on the mainline every time.</p>
+<p>So what mainline purity truly preserves is not just clean code. It preserves a long-term collaborative order in which the team still retains:</p>
+<ul><li>Clear responsibility boundaries</li><li>Explicit rollback handles</li><li>Auditable merge gates</li><li>A mainline order that failed exploration cannot easily drag down</li></ul>
+<h3>Step 5: Team Scale Does Not Mean One Person Audits Everyone&#39;s AI - It Means Each Person Bears Responsibility Inside Their Own Fief</h3>
+<p>This point matters especially in team settings.</p>
+<p>Worktree enfeoffment naturally supports teams not because a single chief architect can suddenly white-box audit everyone, but because it redefines the unit of collaboration:</p>
+<ul><li>No longer one big repository full of one shared stew of context</li><li>But many territories, each carrying its own governance loop</li></ul>
+<p>That changes the scaling model of collaboration as well:</p>
+<ul><li>Each developer governs their own AI cabinet inside their own fief</li><li>Each fief is responsible for its own evidence chain and its own purity</li><li>The mainline sees only the mature results that have entered the capital, not the mud of the frontier</li></ul>
+<p>That is why worktree enfeoffment is not just a solo technique. It is a model of human collaboration.</p>
+<p>At this point the page already provides a strong institutional blueprint for team collaboration: how to defend the mainline, how to draw fiefs, how to establish responsibility boundaries, and how to set the rhythm of entering the capital. But if you keep pushing into questions like interface disputes between fiefs in larger teams, how final arbitration load should be distributed, how unified standards should be enforced, and what the long-term organizational cost looks like, those questions still need future battle reports and real samples. It would be dishonest to pretend they are all already solved here.</p>
+<h2>Common Misunderstandings</h2>
+<h3>First Misunderstanding: Worktree Enfeoffment Is Just a More Convenient Git Technique</h3>
+<p>No. The real core here is not that the directories are cut more neatly. It is that context sovereignty is cut more clearly. Without a human principal, local autonomy, and judgment on entering the capital, extra directories do not automatically create mainline purity.</p>
+<h3>Second Misunderstanding: Branches Are Enough, So There Is No Need to Talk About Worktrees</h3>
+<p>Branches solve version lineage. Worktrees emphasize physical isolation and context isolation. The former gives you different historical lines. The latter means you really do not have to stir the same dirty working scene over and over again.</p>
+<h3>Third Misunderstanding: Enfeoffment Means People No Longer Collaborate</h3>
+<p>Exactly the opposite. Enfeoffment does not cancel collaboration. It gives collaboration boundaries. Collaboration without boundaries easily degrades into mutual contamination. Collaboration with boundaries is what makes high-quality convergence on the mainline possible.</p>
+<h3>Fourth Misunderstanding: If Something Works Inside the Fief, It Should Merge into the Mainline Directly</h3>
+<p>No. Vassals may govern, but they have no right of self-coronation. Success inside the fief must still pass through entry into the capital and mainline judgment before it deserves to live in the capital.</p>
+<h3>Fifth Misunderstanding: This System Fits Only Solo Work, Not Teams</h3>
+<p>That is exactly backwards. One of its greatest strengths is that it lets teams stop relying on shared dirty context and instead rely on many independent fiefs, each carrying its own governance loop. The larger the team becomes, the more important that boundary often becomes.</p>
+<h3>Sixth Misunderstanding: This Page Already Solves Every Practical Detail of Large-Team Collaboration</h3>
+<p>It does not. This page already offers a powerful governance model for team collaboration, but its strongest part is still its structural judgment, its institutional boundaries, and its logic of mainline purity - not a claim that every role allocation, every conflict-arbitration rule, and every organizational cost has already been fully proven in large teams. That is not retreat. It is honest boundary-setting.</p>
+<h2>One-Line Conclusion</h2>
+<p>What worktree enfeoffment is really trying to nail down is not merely &quot;many people can develop in parallel,&quot; but this:</p>
+<p><strong>In deep-water team collaboration, what truly needs isolation is not several copies of code. It is several bundles of context sovereignty, each responsible for its own progress, its own audit, and its own traces, and only later allowed to enter the capital. Only then does the mainline avoid becoming a battlefield of shared dirty context.</strong></p>
+<p>Once mainline purity holds, team collaboration stops being a machine for manufacturing messes for one another and becomes local self-government across many fiefs, followed by convergence in the capital.</p>
+<h2>Related Pages</h2>
+<ul><li><a href="../dual-track-audit/index.html">Dual-track Isolation Audit and Human-Centered Sovereignty</a></li><li><a href="../coder-to-governor/index.html">From Coder to Governor: What This Protocol Requires of Developers</a></li><li><a href="../seven-stars-renewal/index.html">Seven Stars Renewal</a></li><li><a href="../pulse-enfeoffment/index.html">Pulse Enfeoffment: Throughput Compensation Under High Governance</a></li><li><a href="../../01-why/methodology-coordinates/index.html">Related Work and Methodology Coordinates</a></li></ul>
+        </div>
+        
+    <footer class="article-nav">
+      <a href="../pulse-enfeoffment/index.html"><small>Previous</small><span>Pulse Enfeoffment</span></a>
+      <a href="../parent-contracts/index.html"><small>Next</small><span>Parent Contracts</span></a>
+    </footer>
+  
+      </article>
+    </main>
+  
+    
+</body>
+</html>

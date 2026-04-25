@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>协议、Skill-与-Web-审计模板：三者关系</title>
+  <link rel="stylesheet" href="../../../assets/static-wiki.css">
+</head>
+<body>
+
+      <header class="topbar">
+        <a class="top-brand" href="../../index.html">Cyber-Ming</a>
+        <nav class="top-nav"><a class="active" href="../index.html">开始这里与落地形态</a><a class="" href="../../01-why/index.html">哲学与坐标</a><a class="" href="../../02-how/index.html">最小闭环与核心礼法</a><a class="" href="../../03-deep-water/index.html">治理扩展、吞吐补偿与边界</a><a class="" href="../../04-evidence/index.html">战报与样本</a><a class="" href="../../reference/index.html">参考</a></nav>
+        <a class="lang-switch" href="../../../en/00-entry/three-things/index.html">English</a>
+      </header>
+      
+    <main class="wiki-shell">
+      
+    <aside class="sidebar" aria-label="目录">
+      <a class="brand-mark" href="../../index.html">Cyber-Ming</a>
+      <nav>
+        
+          <a class="active" href="../index.html">
+            <span>00</span>
+            开始这里与落地形态
+          </a>
+        
+          <a class="" href="../../01-why/index.html">
+            <span>01</span>
+            哲学与坐标
+          </a>
+        
+          <a class="" href="../../02-how/index.html">
+            <span>02</span>
+            最小闭环与核心礼法
+          </a>
+        
+          <a class="" href="../../03-deep-water/index.html">
+            <span>03</span>
+            治理扩展、吞吐补偿与边界
+          </a>
+        
+          <a class="" href="../../04-evidence/index.html">
+            <span>04</span>
+            战报与样本
+          </a>
+        
+          <a class="" href="../../reference/index.html">
+            <span>05</span>
+            参考
+          </a>
+        
+      </nav>
+    </aside>
+  
+      <article class="article">
+        <nav class="crumbs">
+          <a href="../../index.html">中文</a>
+          <a href="../index.html">开始这里与落地形态</a>
+        </nav>
+        <header class="article-head">
+          <p class="eyebrow">开始这里与落地形态</p>
+          <h1>协议、Skill-与-Web-审计模板：三者关系</h1>
+          <div class="article-tools">
+            <a href="../../../en/00-entry/three-things/index.html">English</a><a aria-current="true" href="./index.html">中文</a>
+          </div>
+        </header>
+        <figure class="article-comic"><img src="../../../assets/visual-protocol/comics/dont-mix-protocol-skill-template.png" alt="协议、Skill-与-Web-审计模板：三者关系"></figure>
+        <div class="markdown-body">
+          <h1>协议、Skill 与 Web 审计模板：三者关系</h1>
+<h2>目录</h2>
+<ul><li><a href="#这一页解决什么问题">这一页解决什么问题</a></li><li><a href="#先给一句最短定义">先给一句最短定义</a></li><li><a href="#几种资产总表">几种资产总表</a></li><li><a href="#第一部分协议是什么">第一部分：协议是什么</a></li><li><a href="#第二部分skill-是什么">第二部分：Skill 是什么</a></li><li><a href="#第三部分web-审计模板是什么">第三部分：Web 审计模板是什么</a></li><li><a href="#为什么-web-模板要和-skill-分开">为什么 Web 模板要和 Skill 分开</a></li><li><a href="#最容易出现的三种误读">最容易出现的三种误读</a></li><li><a href="#读完这一页后的推荐下一步">读完这一页后的推荐下一步</a></li></ul>
+<h2>这一页解决什么问题</h2>
+<p>这页属于第三层：<strong>关系与选型</strong>。</p>
+<p>它不回答“我现在怎么跑”，而回答另一个更容易把人搞混的问题：</p>
+<ul><li>这个仓库到底交付了什么</li><li><code>Protocol / Skill / Web 审计资产</code> 分别是什么</li><li>当你把它和主流方案比较时，哪些是方法论，哪些只是载体或强化器</li></ul>
+<p>很多人第一次看到这个项目时会把三件东西混成一件：</p>
+<ul><li>把协议当成一包可安装的 prompt</li><li>把 Skill 当成协议本身</li><li>把 Web 审计模板也当成需要安装的本地能力</li></ul>
+<p>这三种理解都会把入口逻辑带偏。</p>
+<h2>先给一句最短定义</h2>
+<p>Cyber-Ming-Protocol 是<strong>协议优先</strong>的项目。</p>
+<ul><li><strong>协议</strong>定义治理骨架</li><li><strong>Skill</strong>强化 IDE 侧高频动作</li><li><strong>Web 审计模板</strong>强化 Web 侧审计问法</li></ul>
+<p>三者服务的是同一套协议，但不是同一类对象。</p>
+<p>对外叙事最稳妥的总句式是：<code>Protocol / Skill / Docs</code> 是三种主落地形态，<code>web-audit-templates/</code> 是分离的 Web 审计协作资产。</p>
+<p>这一页之所以重点讲“协议、Skill、模板”，就是因为很多比较一开始就比错了对象：把交付形态和方法论混成一层，后面再谈和 workflow / spec-driven / agent-team 的关系就会全乱掉。</p>
+<p><img src="../../../assets/visual-protocol/comics/dont-mix-protocol-skill-template.png" alt="别把协议、Skill、模板混成一件东西"></p>
+<h2>几种资产总表</h2>
+
+        <table>
+          <thead><tr><th>对象</th><th>它是什么</th><th>放在哪</th><th>主要作用</th><th>是否必须</th><th>容易被误解成什么</th></tr></thead>
+          <tbody>
+            <tr><td>协议</td><td>一套人机协作治理规则</td><td><code>README.md</code>、<code>wiki/</code></td><td>规定什么该先做、什么算完成、谁负责什么</td><td>是，必须理解</td><td>一包 prompt 或一种审美叙事</td></tr><tr><td>Skill</td><td>IDE-side 的稳定触发骨架</td><td><code>skill/</code></td><td>帮你更稳定地触发规划、执行、探测、续命等动作，并在 serious work 时自动 bootstrap <code>dev_repo/</code> 运行时真相层</td><td>否，可后装</td><td>协议本体、自动裁决器</td></tr><tr><td>Docs / Teaching</td><td>项目解释面与教学面</td><td><code>README.md</code>、<code>wiki/</code></td><td>帮你理解协议、案例、边界与上手方式</td><td>是，必须阅读到足够理解</td><td>只是附属宣传页</td></tr><tr><td>Web 审计模板</td><td>Web-side 的审计协作模板</td><td><code>web-audit-templates/</code></td><td>帮你更稳定地做方案审、验收审、续命判</td><td>否，可选</td><td>本地 Skill、自动执行器</td></tr>
+          </tbody>
+        </table>
+      
+<h2>第一部分：协议是什么</h2>
+<p>协议才是这个项目真正不可替代的部分。</p>
+<p>它规定的是一套治理结构，例如：</p>
+<ul><li>先审批，再执行</li><li>先交原子执行合同，再允许动手</li><li>执行位不自证完成</li><li>完成要靠日志、工件、运行结果、提交记录等证据来成立</li><li>窗口腐烂时要续命，而不是在旧上下文里硬拖</li></ul>
+<p>这些东西即使没有 Skill，也依然成立。</p>
+<h2>第二部分：Skill 是什么</h2>
+<p>Skill 的作用，不是替你发明协议，而是帮你在 IDE 侧更稳定地守住协议。</p>
+<p><img src="../../../assets/visual-protocol/comics/skill-stabilizes-not-truth.png" alt="Skill 稳定节奏，不替代真相"></p>
+<p>例如当前 repo 里的 skill 会把一些高频动作固化下来：</p>
+<ul><li><code>approval-first-planner</code>：先产出可审批的原子执行合同与边界</li><li><code>approved-checklist-executor</code>：按已批准的片严格执行、验证、归档</li><li><code>probe-first-scout</code>：不假装理解全局，先跑最小探测</li><li><code>legacy-project-handover</code>：在接手或续命时给出只读快照</li><li><code>auditor-succession-prompt</code>：在审计位也需要续命时，由 IDE 侧打包一份可复制给新审计位的续命提示词与输入包骨架</li><li><code>free-development-mode</code>：在用户显式开启后，用红线、主线与反毒方法继续可控推进长时开发</li></ul>
+<p>但它们都不改变一件事：</p>
+<p><strong>Skill 不能替你裁定真相。</strong></p>
+<p>但它现在可以帮你做另一件很关键的事：</p>
+<p><strong>自动建立并维护真相应该落脚的地方。</strong></p>
+<p>当 serious work 开始时，对应 skill 会在需要时自动 bootstrap <code>dev_repo/</code>，把 <code>state.json / journal.jsonl / evidence_index.json / tree.md</code> 这套运行时骨架立起来。这样做不是让 Skill 代替证据，而是把“当前到底在哪个合同、父子关系是什么、回哪里、有哪些工件”从口头上下文里搬到可审工件里。</p>
+<p>所以更准确地说：</p>
+<ul><li>Skill 不能替你宣布“已完成”</li><li>但 Skill 可以替你把“当前真相容器”先立起来</li><li>真正的完成事实，仍然要靠日志、工件、运行结果和审计来成立</li></ul>
+<h2>第三部分：Web 审计模板是什么</h2>
+<p>Web 审计模板不是本地 Skill，也不是在 IDE 里触发的执行器。</p>
+<p>它们只是帮助你在 Web 侧更稳定地扮演审计位：</p>
+<ul><li>审方案是否够原子</li><li>审完成是否真的成立</li><li>审当前窗口是否已经腐烂，需要续命</li></ul>
+<p>它们做的是“如何问、如何查、如何判”的骨架，而不是“如何施工”的骨架。</p>
+<h2>为什么 Web 模板要和 Skill 分开</h2>
+<p>因为这两边承担的是不同角色：</p>
+<p><img src="../../../assets/visual-protocol/comics/web-template-not-local-skill.png" alt="Web 模板不是本地 Skill"></p>
+<ul><li>IDE-side skill 对应执行、规划、探测、接手</li><li>Web-side template 对应方案审计、完成审计、续命判断</li></ul>
+<p>如果把它们都装进 <code>skill/</code>，读者很容易误以为：</p>
+<ul><li>Web 审计也是一种本地安装物</li><li>执行位与审计位只是同类工具的不同 prompt</li><li>审计可以在同一窗口里顺手完成</li></ul>
+<p>这会削弱协议最重要的一层：<strong>角色分离与主权居中。</strong></p>
+<h2>最容易出现的三种误读</h2>
+<h3>误读一：装了 Skill，协议就自动生效</h3>
+<p>不对。 装了 Skill 只是更容易触发对的动作，不等于已经满足对的证据标准。</p>
+<h3>误读二：不装 Skill，就不能用 Cyber-Ming</h3>
+<p>不对。 这套协议首先是可手工执行的治理方法。你完全可以先手工跑闭环，再决定是否安装。</p>
+<h3>误读三：Web 审计模板也属于要安装的技能包</h3>
+<p>不对。 Web 模板的作用是协助审计位盘问、核验、裁断，它们不是 IDE-side 的本地技能。</p>
+<h2>读完这一页后的推荐下一步</h2>
+<ul><li>如果你想继续留在第三层，直接看 <a href="../comparison/index.html"> 0 </a>，再对位主流方案</li><li>如果你还没跑通过第一层，回到 <a href="../prompt-pack/index.html"> 0 </a></li><li>如果你已经跑通第一层，准备稳定下来，回到 <a href="../stable-loop-guide/index.html"> 0 </a></li></ul>
+        </div>
+        
+    <footer class="article-nav">
+      <a href="../stable-loop-guide/index.html"><small>上一章</small><span>最小稳定闭环指南</span></a>
+      <a href="../comparison/index.html"><small>下一章</small><span>它和workflow、spec-driven、agent-team有什么异同</span></a>
+    </footer>
+  
+      </article>
+    </main>
+  
+    
+</body>
+</html>

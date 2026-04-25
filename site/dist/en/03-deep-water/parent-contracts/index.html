@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Parent Contracts</title>
+  <link rel="stylesheet" href="../../../assets/static-wiki.css">
+</head>
+<body>
+
+      <header class="topbar">
+        <a class="top-brand" href="../../index.html">Cyber-Ming</a>
+        <nav class="top-nav"><a class="" href="../../00-entry/index.html">Entry</a><a class="" href="../../01-why/index.html">Why</a><a class="" href="../../02-how/index.html">How</a><a class="active" href="../index.html">Deep Water</a><a class="" href="../../04-evidence/index.html">Evidence</a><a class="" href="../../reference/index.html">Reference</a></nav>
+        <a class="lang-switch" href="../../../zh/03-deep-water/parent-contracts/index.html">中文</a>
+      </header>
+      
+    <main class="wiki-shell">
+      
+    <aside class="sidebar" aria-label="Contents">
+      <a class="brand-mark" href="../../index.html">Cyber-Ming</a>
+      <nav>
+        
+          <a class="" href="../../00-entry/index.html">
+            <span>00</span>
+            Entry
+          </a>
+        
+          <a class="" href="../../01-why/index.html">
+            <span>01</span>
+            Why
+          </a>
+        
+          <a class="" href="../../02-how/index.html">
+            <span>02</span>
+            How
+          </a>
+        
+          <a class="active" href="../index.html">
+            <span>03</span>
+            Deep Water
+          </a>
+        
+          <a class="" href="../../04-evidence/index.html">
+            <span>04</span>
+            Evidence
+          </a>
+        
+          <a class="" href="../../reference/index.html">
+            <span>05</span>
+            Reference
+          </a>
+        
+      </nav>
+    </aside>
+  
+      <article class="article">
+        <nav class="crumbs">
+          <a href="../../index.html">English</a>
+          <a href="../index.html">Deep Water</a>
+        </nav>
+        <header class="article-head">
+          <p class="eyebrow">Deep Water</p>
+          <h1>Parent Contracts</h1>
+          <div class="article-tools">
+            <a aria-current="true" href="./index.html">English</a><a href="../../../zh/03-deep-water/parent-contracts/index.html">中文</a>
+          </div>
+        </header>
+        <figure class="article-comic"><img src="../../../assets/visual-protocol/comics-en/parent-child-contract.png" alt="Parent Contracts"></figure>
+        <div class="markdown-body">
+          <h1>Why a Child Contract Must Not Silently Replace the Parent Contract</h1>
+<h2>Table of Contents</h2>
+<ul><li><a href="#what-this-page-solves">What This Page Solves</a></li><li><a href="#shortest-definition">Shortest Definition</a></li><li><a href="#why-this-is-a-hard-boundary">Why This Is a Hard Boundary</a></li><li><a href="#what-nested-contracts-actually-protect">What Nested Contracts Actually Protect</a></li><li><a href="#minimum-runtime-rules">Minimum Runtime Rules</a></li><li><a href="#four-common-drifts">Four Common Drifts</a></li><li><a href="#one-line-conclusion">One-Line Conclusion</a></li><li><a href="#related-pages">Related Pages</a></li></ul>
+<h2>What This Page Solves</h2>
+<p>This page answers one question:</p>
+<p><strong>Why a child contract may pause the parent contract, but must never silently replace it.</strong></p>
+<p>Many forms of execution drift do not come from a total absence of planning. They come from a subtler slide:</p>
+<ul><li>the parent contract has not actually ended</li><li>a child contract gets opened to clear a mine, patch a hole, or inspect one chain</li><li>after a while, everyone starts talking only about the child contract</li><li>soon after that, nobody can still say whether the original main line is alive at all</li></ul>
+<p>Once that happens, project progress, cognitive debt, renewal, and audit all start blurring together.</p>
+<p><img src="../../../assets/visual-protocol/comics-en/parent-child-contract.png" alt="A child contract must not silently usurp the parent"></p>
+<h2>Shortest Definition</h2>
+<p>The parent/child relation can be compressed into one sentence:</p>
+<blockquote><p>A child contract may pause the parent contract, but it may not silently usurp it.</p></blockquote>
+<p>That means:</p>
+<ul><li>a child contract is a temporary local campaign</li><li>the parent contract still holds mainline status</li><li>once the child contract closes, execution must explicitly return to the parent, unless the parent has been honestly declared <code>abandoned</code></li></ul>
+<h2>Why This Is a Hard Boundary</h2>
+<p>Without this boundary, three kinds of damage appear very quickly.</p>
+<p><img src="../../../assets/visual-protocol/comics-en/return-to-or-mainline-lost.png" alt="If you do not write return_to, you are stealing the mainline"></p>
+<h3>First, the Mainline Evaporates</h3>
+<p>People naturally drift toward discussing the hottest fire in front of them.</p>
+<p>So the system may still look as if it is &quot;advancing,&quot; while becoming worse and worse at answering:</p>
+<ul><li>What is the root campaign right now?</li><li>Is this current step part of the mainline, or only a local firefight?</li><li>When this slice ends, where does execution return?</li></ul>
+<p>At that point, &quot;project progress&quot; starts degrading into an impression.</p>
+<h3>Second, Cognitive Debt Suddenly Steepens</h3>
+<p>If the child contract silently replaces the parent contract, later readers can no longer tell:</p>
+<ul><li>why the current active contract was opened</li><li>whether it is solving the root problem or only one blocking chain</li><li>why a local repair suddenly became the new main narrative</li></ul>
+<p>Then cognitive debt is no longer only about missing details. It becomes state-judgment distortion.</p>
+<h3>Third, Renewal and Takeover Both Lose Blood</h3>
+<p>When renewal becomes necessary, a fresh window most urgently needs to know:</p>
+<ul><li>what war is being fought right now</li><li>whether the parent contract has been paused</li><li>where execution returns after the current child contract is done</li></ul>
+<p>If that information has not been externalized, the new window falls straight back into the narrative inertia of old conversation.</p>
+<h2>What Nested Contracts Actually Protect</h2>
+<p>Nested contracts do not mainly protect document neatness. They protect three harder things.</p>
+<h3>First, Project-Progress Visibility</h3>
+<p>As long as the parent/child relation still exists, <code>dev_repo/state.json</code> and <code>dev_repo/tree.md</code> can keep answering:</p>
+<ul><li>the current mainline</li><li>the current subline</li><li>the pause relation</li><li><code>return_to</code></li></ul>
+<p>That means project progress no longer depends only on human memory.</p>
+<h3>Second, Handles for Cognitive-Debt Repayment</h3>
+<p>Cognitive debt fears not only complexity, but state misjudgment.</p>
+<p>Once nested contracts externalize &quot;which layer the system is actually stuck in right now,&quot; later debt repayment can begin from runtime truth instead of from polished summaries.</p>
+<h3>Third, Sovereignty Recovery During Renewal</h3>
+<p>An old window may be demoted into historical material, but the parent/child contract tree must not evaporate with it.</p>
+<p><img src="../../../assets/visual-protocol/comics-en/renewal-read-runtime-first.png" alt="Renewal reads the runtime snapshot first"></p>
+<p>As long as the contract tree still stands, renewal is no longer &quot;open another window and hope.&quot; It becomes:</p>
+<ul><li>read the current tree first</li><li>read the historical material and evidence second</li><li>then decide whether to return to the parent, continue the child, or honestly open a new root campaign</li></ul>
+<h2>Minimum Runtime Rules</h2>
+<p>Once the system truly enters parent/child nesting, at least the following fields should be externalized into <code>dev_repo/</code>:</p>
+<ul><li><code>contract_id</code></li><li><code>parent_contract_id</code></li><li><code>root_campaign</code></li><li><code>summary</code></li><li><code>status</code></li><li><code>goal</code></li><li><code>return_to</code></li><li><code>why_opened</code></li><li><code>red_line_crossed</code></li></ul>
+<p>And three hard rules should remain in force:</p>
+<ol><li>After opening a child contract, the parent contract must be readable as something like <code>paused_for_child</code></li><li>When the child contract closes, the runtime must explicitly say whether execution:</li></ol>
+<p>- returns to the parent - remains blocked - or requires a narrower child delta</p>
+<ol><li>If <code>return_to</code> cannot be answered honestly, the contract tree has already deformed</li></ol>
+<p><img src="../../../assets/visual-protocol/comics-en/child-contract-must-exit.png" alt="When the child contract is done, it must leave the stage"></p>
+<h2>Four Common Drifts</h2>
+<h3>Drift 1: Writing an Ordinary Replan as a New Child Contract</h3>
+<p>Not every replan deserves a new child contract. Open one only when the local campaign is now independent enough that failing to record it would distort the parent.</p>
+<h3>Drift 2: Opening a Child Contract but Never Writing <code>return_to</code></h3>
+<p>This is one of the most dangerous drifts. On the surface it sounds like &quot;let me finish this slice first.&quot; In reality it often means the parent is being quietly erased.</p>
+<h3>Drift 3: The Child Contract Is Finished, but It Keeps Occupying the Main Narrative</h3>
+<p>When a local firefight is already done, refusing to return to the parent contract turns &quot;temporary repair&quot; into &quot;the new mainline.&quot;</p>
+<h3>Drift 4: Treating Numbering as a Contract Tree While Leaving the Summaries Empty</h3>
+<p>A contract tree that has identifiers but no readable summaries will eventually collapse back into a list that looks formal but says nothing useful.</p>
+<h2>One-Line Conclusion</h2>
+<p>The key thing to nail down is not &quot;plans should look tidier.&quot; It is this:</p>
+<p><strong>Local campaigns may insert themselves into the mainline, but they may not steal the mainline.</strong></p>
+<p>Only when parent/child relations, pause relations, and <code>return_to</code> are explicitly externalized do project progress, debt repayment, renewal, and takeover regain real handles.</p>
+<h2>Related Pages</h2>
+<ul><li><a href="https://github.com/blackzhanzhan/Cyber-Ming-Protocol/blob/main/dev_repo/README.md">Campaign Runtime Guide</a></li><li><a href="../cognitive-debt/index.html">Cyber Cognitive Debt: The Widening Gap, Warning Signals, and Credible Repayment</a></li><li><a href="../seven-stars-renewal/index.html">Seven Stars Renewal</a></li><li><a href="../free-development-mode/index.html">Free Development Mode: Continue Under Uncertain Business Without Losing Control</a></li></ul>
+        </div>
+        
+    <footer class="article-nav">
+      <a href="../worktree-enfeoffment/index.html"><small>Previous</small><span>Worktree Enfeoffment</span></a>
+      <a href="../free-development-mode/index.html"><small>Next</small><span>Free Development Mode</span></a>
+    </footer>
+  
+      </article>
+    </main>
+  
+    
+</body>
+</html>
