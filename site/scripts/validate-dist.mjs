@@ -7,6 +7,11 @@ const distDir = path.join(rootDir, "site", "dist");
 const errors = [];
 const warnings = [];
 const htmlFiles = [];
+const approvedGeneratedImages = new Set([
+  "assets/site/generated/governance-loop-hero.png",
+  "assets/site/generated/learning-path-banner.png",
+  "assets/site/generated/protocol-divider-strip.png",
+]);
 
 walk(distDir, (file) => {
   if (file.endsWith(".html")) htmlFiles.push(file);
@@ -41,7 +46,7 @@ for (const file of htmlFiles) {
     const [withoutHash] = raw.split("#");
     const target = path.resolve(path.dirname(file), withoutHash);
     const rel = normalize(path.relative(distDir, target));
-    if (!rel.startsWith("assets/visual-protocol/comics")) {
+    if (!rel.startsWith("assets/visual-protocol/comics") && !approvedGeneratedImages.has(rel)) {
       errors.push(`${relative(file)} uses non-approved image asset: ${raw}`);
     }
   }

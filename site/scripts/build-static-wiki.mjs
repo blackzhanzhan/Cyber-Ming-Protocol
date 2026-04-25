@@ -33,6 +33,7 @@ for (const doc of docs) {
 
 fs.mkdirSync(distDir, { recursive: true });
 copyFile(stylesSource, stylesDist);
+copyGeneratedSiteAssetToDist("assets/site/generated/manifest.json");
 
 emitRootIndex();
 
@@ -121,6 +122,21 @@ function copyAssetToDist(repoRelativePath) {
   return normalized;
 }
 
+function copyGeneratedSiteAssetToDist(repoRelativePath) {
+  const normalized = norm(repoRelativePath);
+  if (!normalized.startsWith("assets/site/generated/")) {
+    throw new Error(`Refusing non-generated site asset: ${repoRelativePath}`);
+  }
+  const source = path.join(rootDir, normalized);
+  if (!fs.existsSync(source)) {
+    throw new Error(`Missing generated site asset: ${repoRelativePath}`);
+  }
+  const target = path.join(distDir, normalized);
+  copyFile(source, target);
+  copiedAssets.add(normalized);
+  return normalized;
+}
+
 function emitRootIndex() {
   const output = path.join(distDir, "index.html");
   const body = `
@@ -145,10 +161,13 @@ function emitLanguageIndex(lang) {
   const output = path.join(distDir, lang, "index.html");
   const featured = docs.find((doc) => doc.id === "prompt-pack") ?? docs[0];
   const comic = comicFor(output, featured, lang);
+  const heroArt = generatedSiteAssetFor(output, "assets/site/generated/governance-loop-hero.png");
+  const learningArt = generatedSiteAssetFor(output, "assets/site/generated/learning-path-banner.png");
+  const dividerArt = generatedSiteAssetFor(output, "assets/site/generated/protocol-divider-strip.png");
   const isZh = lang === "zh";
   const front = {
     eyebrow: isZh ? "AI Coding 治理体系" : "AI Coding Governance System",
-    headline: isZh ? "把 AI Coding 带回可裁断、可审计、可继承的工程秩序" : "Bring AI Coding Back Into Governable Engineering Order",
+    headline: isZh ? "把 AI Coding 带回可裁断、可审计、可继承的工程秩序" : "A Governance Protocol for AI Coding",
     lead: isZh
       ? "Cyber-Ming Protocol 不是工具清单，而是一套面向真实项目的治理法。它把人的裁断权置于中央，以原子合同约束执行，以独立审计校验事实，以证据链和起居注保存可继承的项目记忆。"
       : "Cyber-Ming Protocol is not a tool list. It is a governance method for real projects: human judgment at the center, atomic contracts for execution, independent audit for facts, and evidence plus chronicles for inheritable project memory.",
@@ -182,6 +201,20 @@ function emitLanguageIndex(lang) {
     stageA: isZh ? "入口页" : "Entry",
     stageB: isZh ? "最小闭环" : "Minimal loop",
     stageC: isZh ? "审计与证据" : "Audit and evidence",
+    heroAlt: isZh
+      ? "小黄龙居中主持，徐阶与严嵩分列两侧，治理证据在闭环中流转。"
+      : "Xiao Huanglong presides at the center while Xu Jie and Yan Song stand on both sides, with governance evidence flowing through the loop.",
+    routeLabel: isZh ? "学习路径" : "Learning path",
+    routeKicker: isZh ? "学习路径" : "Learning Path",
+    routeBody: isZh
+      ? "先理解为什么必须有人居中裁断，再进入最小闭环、合同、审计、证据和接手流程。读者不是被导向一个功能面板，而是被训练进入一套可复用的工程治理秩序。"
+      : "Readers first learn why judgment must stay centered, then move through the minimal loop, contract, audit, evidence, and takeover flow. This is training for a reusable engineering governance order, not a feature panel.",
+    learningAlt: isZh
+      ? "小黄龙、徐阶和严嵩在案牍前展开学习路线长卷。"
+      : "Xiao Huanglong, Xu Jie, and Yan Song stand before a long learning route scroll.",
+    dividerAlt: isZh
+      ? "案牍、印章、放大镜和卷轴组成的治理器物长卷。"
+      : "A long scroll of governance objects: documents, seals, magnifier, and scrolls.",
   };
   const sectionList = sections.map((section) => {
     const sectionDocs = docsForSection(section.id, lang).filter((doc) => doc.type !== "auxiliary");
@@ -219,6 +252,9 @@ function emitLanguageIndex(lang) {
             <div><dt>${isZh ? "记忆" : "Memory"}</dt><dd>${isZh ? "证据与起居注" : "Evidence and chronicles"}</dd></div>
           </dl>
         </aside>
+        <figure class="hero-art">
+          <img src="${heroArt}" alt="${front.heroAlt}">
+        </figure>
       </section>
       <section class="contract-strip" aria-label="Site contract">
         <span>${front.stripA}</span>
@@ -228,6 +264,15 @@ function emitLanguageIndex(lang) {
       <section class="proof-banner" aria-label="${front.proofTitle}">
         <p class="eyebrow">${front.proofTitle}</p>
         <p>${front.proofBody}</p>
+      </section>
+      <section class="visual-route" aria-label="${front.routeLabel}">
+        <figure>
+          <img src="${learningArt}" alt="${front.learningAlt}">
+        </figure>
+        <div class="route-copy">
+          <p class="eyebrow">${front.routeKicker}</p>
+          <p>${front.routeBody}</p>
+        </div>
       </section>
       <section class="front-grid" aria-label="${isZh ? "首页介绍" : "Homepage overview"}">
         <article class="front-panel">
@@ -260,6 +305,9 @@ cyber-ming doctor</code></pre>
         </article>
       </section>
       ${comic ? `<figure class="hero-comic homepage-comic"><img src="${comic}" alt="${escapeHtml(titleFor(featured, lang))}"></figure>` : ""}
+      <figure class="divider-strip" aria-hidden="true">
+        <img src="${dividerArt}" alt="">
+      </figure>
       <header class="section-intro">
         <p class="eyebrow">${front.sectionKicker}</p>
         <h2>${front.sectionTitle}</h2>
@@ -398,6 +446,11 @@ function comicFor(output, doc, lang) {
   const comic = doc.comics?.[lang];
   if (!comic) return "";
   const copied = copyAssetToDist(comic);
+  return siteUrl(output, copied);
+}
+
+function generatedSiteAssetFor(output, repoRelativePath) {
+  const copied = copyGeneratedSiteAssetToDist(repoRelativePath);
   return siteUrl(output, copied);
 }
 

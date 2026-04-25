@@ -1,0 +1,30 @@
+{
+  "sourceReferences": [
+    "article/visual-protocol/characters/小黄龙.png",
+    "article/visual-protocol/characters/徐阶.png",
+    "article/visual-protocol/characters/严嵩.png",
+    "article/visual-protocol/characters/xiao-huanglong-jimeng-prompt.md",
+    "article/visual-protocol/characters/xu-jie-jimeng-prompt.md",
+    "article/visual-protocol/characters/yan-song-jimeng-prompt.md"
+  ],
+  "doNotUse": [
+    "assets/visual-protocol/pixel/**"
+  ],
+  "assets": [
+    {
+      "path": "assets/site/generated/governance-loop-hero.png",
+      "role": "homepage hero",
+      "source": "C:/Users/zzy/.codex/generated_images/019dc29b-e6ef-7713-9f48-8c4e36dea117/ig_0a81a7269ac41ccc0169ec61d61d5881938a323b76a28adaff.png"
+    },
+    {
+      "path": "assets/site/generated/learning-path-banner.png",
+      "role": "homepage learning path",
+      "source": "C:/Users/zzy/.codex/generated_images/019dc29b-e6ef-7713-9f48-8c4e36dea117/ig_0a81a7269ac41ccc0169ec63f8471881938f21c25f511bfbc7.png"
+    },
+    {
+      "path": "assets/site/generated/protocol-divider-strip.png",
+      "role": "homepage and wiki divider",
+      "source": "C:/Users/zzy/.codex/generated_images/019dc29b-e6ef-7713-9f48-8c4e36dea117/ig_0a81a7269ac41ccc0169ec64aef0008193b419ac13ad456c83.png"
+    }
+  ]
+}
