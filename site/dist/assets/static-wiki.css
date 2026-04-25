@@ -143,7 +143,17 @@ img {
   box-shadow: var(--shadow);
 }
 
+.root-gate {
+  width: min(980px, calc(100% - 32px));
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: clamp(56px, 12vh, 132px) 0;
+  display: grid;
+  align-content: center;
+}
+
 .gate h1,
+.root-gate h1,
 .hero h1,
 .article-head h1 {
   margin: 0;
@@ -153,6 +163,25 @@ img {
 
 .gate h1 {
   font-size: clamp(3rem, 8vw, 7rem);
+}
+
+.root-gate h1 {
+  max-width: 840px;
+  font-size: clamp(3rem, 8vw, 7rem);
+}
+
+.root-gate .lead {
+  max-width: 740px;
+}
+
+.root-actions {
+  margin-top: 8px;
+}
+
+.root-note {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
 }
 
 .eyebrow,

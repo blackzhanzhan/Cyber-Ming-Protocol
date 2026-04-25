@@ -143,13 +143,22 @@ function copyGeneratedSiteAssetToDist(repoRelativePath) {
 function emitRootIndex() {
   const output = path.join(distDir, "index.html");
   const body = `
-    <main class="gate">
+    <script>
+      (function () {
+        var languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""];
+        var prefersZh = languages.some(function (lang) { return /^zh\\b|^zh-/i.test(lang); });
+        window.location.replace(prefersZh ? "zh/index.html" : "en/index.html");
+      }());
+    </script>
+    <main class="root-gate">
       <p class="eyebrow">Cyber-Ming Protocol</p>
-      <h1>Teaching Wiki</h1>
-      <p class="lead">A bilingual illustrated wiki for the minimal closed loop, audit judgment, and contract-governed AI coding.</p>
-      <div class="language-gate" aria-label="Choose language">
-        ${languages.map((lang) => `<a class="gate-link" href="${lang}/">${langLabel(lang)}</a>`).join("")}
+      <h1>Enter The Teaching Wiki</h1>
+      <p class="lead">A bilingual governance protocol for deep-water AI coding. 面向 AI coding 深水区的人机协作治理协议。</p>
+      <div class="language-gate root-actions" aria-label="Choose language">
+        <a class="gate-link" href="en/index.html">English</a>
+        <a class="gate-link" href="zh/index.html">中文</a>
       </div>
+      <p class="root-note">Routing by browser language. If nothing happens, choose an entrance above.</p>
     </main>
   `;
   writeFile(output, baseDocument({
