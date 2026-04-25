@@ -1,6 +1,10 @@
 (function () {
+  const root = document.documentElement;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const ready = () => document.body.classList.add("page-ready");
+  const ready = () => {
+    root.classList.remove("page-entering", "page-leaving");
+    document.body.classList.add("page-ready");
+  };
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", () => requestAnimationFrame(ready), { once: true });
@@ -9,7 +13,7 @@
   }
 
   window.addEventListener("pageshow", () => {
-    document.body.classList.remove("page-leaving");
+    root.classList.remove("page-leaving");
     requestAnimationFrame(ready);
   });
 
@@ -19,6 +23,8 @@
     if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
       return;
     }
+
+    if (!(event.target instanceof Element)) return;
 
     const link = event.target.closest("a[href]");
     if (!link || link.target && link.target !== "_self" || link.hasAttribute("download")) return;
@@ -30,11 +36,11 @@
     if (!isSameSite(destination) || isSameDocumentHash(destination)) return;
 
     event.preventDefault();
-    document.body.classList.remove("page-ready");
-    document.body.classList.add("page-leaving");
+    root.classList.remove("page-entering");
+    root.classList.add("page-leaving");
     window.setTimeout(() => {
       window.location.href = destination.href;
-    }, 170);
+    }, 280);
   });
 
   function isSameSite(url) {

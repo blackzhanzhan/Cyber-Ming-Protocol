@@ -431,8 +431,10 @@ function langLabel(lang) {
   return lang === "zh" ? "中文" : "English";
 }
 
-function switchLanguageUrl(output, lang) {
+function switchLanguageUrl(output, lang, sectionId = null) {
   const other = lang === "en" ? "zh" : "en";
+  const section = sectionId ? sections.find((item) => item.id === sectionId) : null;
+  if (section) return siteUrl(output, `${other}/${section.slug}/index.html`);
   return siteUrl(output, `${other}/index.html`);
 }
 
@@ -504,7 +506,7 @@ function layout({ lang, title, output, body, currentSection, currentDoc }) {
   }).join("");
   const switchLink = currentDoc
     ? siteUrl(output, `${slugPathForDoc(lang === "en" ? "zh" : "en", docs.find((doc) => doc.id === currentDoc))}index.html`)
-    : switchLanguageUrl(output, lang);
+    : switchLanguageUrl(output, lang, currentSection);
   return baseDocument({
     lang,
     title,
@@ -527,7 +529,7 @@ function baseDocument({ lang, title, output, body }) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${escapeHtml(title)}</title>
-  <script>document.documentElement.classList.add("js");</script>
+  <script>document.documentElement.classList.add("js", "page-entering");</script>
   <link rel="stylesheet" href="${siteUrl(output, "assets/static-wiki.css")}">
 </head>
 <body>
