@@ -39,7 +39,7 @@ for (const file of htmlFiles) {
     }
   }
 
-  for (const match of html.matchAll(/\ssrc="([^"]+)"/g)) {
+  for (const match of html.matchAll(/<img\b[^>]*\ssrc="([^"]+)"/g)) {
     const raw = match[1];
     if (isExternal(raw)) continue;
     images += 1;

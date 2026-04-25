@@ -34,6 +34,43 @@ body {
   min-height: 100vh;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .js body {
+    opacity: 0;
+    transform: translateY(8px);
+    filter: blur(1px);
+    transition:
+      opacity 220ms ease,
+      transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1),
+      filter 220ms ease;
+  }
+
+  .js body.page-ready {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+
+  .js body.page-leaving {
+    opacity: 0;
+    transform: translateY(-7px);
+    filter: blur(1px);
+  }
+
+  .js .topbar,
+  .js .sidebar {
+    transition: transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .js body.page-leaving .topbar {
+    transform: translateY(-8px);
+  }
+
+  .js body.page-leaving .sidebar {
+    transform: translateX(-6px);
+  }
+}
+
 a {
   color: inherit;
   text-decoration-thickness: 0.08em;

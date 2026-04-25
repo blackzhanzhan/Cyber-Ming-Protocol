@@ -8,6 +8,8 @@ const distDir = path.join(siteDir, "dist");
 const manifestPath = path.join(siteDir, "content-manifest.json");
 const stylesSource = path.join(siteDir, "static-wiki.css");
 const stylesDist = path.join(distDir, "assets", "static-wiki.css");
+const transitionsSource = path.join(siteDir, "static-wiki-transitions.js");
+const transitionsDist = path.join(distDir, "assets", "static-wiki-transitions.js");
 
 const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
 const languages = manifest.site.languages;
@@ -33,6 +35,7 @@ for (const doc of docs) {
 
 fs.mkdirSync(distDir, { recursive: true });
 copyFile(stylesSource, stylesDist);
+copyFile(transitionsSource, transitionsDist);
 copyGeneratedSiteAssetToDist("assets/site/generated/manifest.json");
 
 emitRootIndex();
@@ -524,10 +527,12 @@ function baseDocument({ lang, title, output, body }) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${escapeHtml(title)}</title>
+  <script>document.documentElement.classList.add("js");</script>
   <link rel="stylesheet" href="${siteUrl(output, "assets/static-wiki.css")}">
 </head>
 <body>
 ${body}
+<script src="${siteUrl(output, "assets/static-wiki-transitions.js")}" defer></script>
 </body>
 </html>
 `;
