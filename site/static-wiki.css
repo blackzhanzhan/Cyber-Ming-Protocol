@@ -57,15 +57,20 @@ body {
     transition-delay: 75ms;
   }
 
-  .js.page-entering .home > *,
-  .js.page-entering .gate > *,
-  .js.page-entering .article > *,
+  .js.page-arriving .home > *,
+  .js.page-arriving .gate > *,
+  .js.page-arriving .article > * {
+    opacity: 0.72;
+    filter: blur(0.45px);
+    transform: translateY(3px);
+  }
+
   .js.page-leaving .home > *,
   .js.page-leaving .gate > *,
   .js.page-leaving .article > * {
-    opacity: 0;
-    filter: blur(1.2px);
-    transform: translateY(7px);
+    opacity: 0.42;
+    filter: blur(0.65px);
+    transform: translateY(3px);
   }
 
   .js.page-leaving .home > *,

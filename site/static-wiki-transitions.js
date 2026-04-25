@@ -1,12 +1,17 @@
 (function () {
   const root = document.documentElement;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const transitionDuration = 180;
+  const transitionDuration = 120;
+  const transitionKey = "cyberMingContentTransition";
   const ready = () => {
     document.body.classList.add("page-ready");
-    requestAnimationFrame(() => {
-      root.classList.remove("page-entering", "page-leaving");
-    });
+    root.classList.remove("page-leaving");
+    if (takeTransitionFlag()) {
+      root.classList.add("page-arriving");
+      requestAnimationFrame(() => root.classList.remove("page-arriving"));
+    } else {
+      root.classList.remove("page-arriving");
+    }
   };
 
   if (document.readyState === "loading") {
@@ -39,7 +44,8 @@
     if (!isSameSite(destination) || isSameDocumentHash(destination)) return;
 
     event.preventDefault();
-    root.classList.remove("page-entering");
+    setTransitionFlag();
+    root.classList.remove("page-arriving");
     root.classList.add("page-leaving");
     window.setTimeout(() => {
       window.location.href = destination.href;
@@ -58,5 +64,23 @@
     const next = new URL(url.href);
     next.hash = "";
     return current.href === next.href && url.hash;
+  }
+
+  function setTransitionFlag() {
+    try {
+      window.sessionStorage.setItem(transitionKey, "1");
+    } catch {
+      // Storage can be unavailable in hardened browser contexts.
+    }
+  }
+
+  function takeTransitionFlag() {
+    try {
+      const value = window.sessionStorage.getItem(transitionKey);
+      window.sessionStorage.removeItem(transitionKey);
+      return value === "1";
+    } catch {
+      return false;
+    }
   }
 }());

@@ -529,7 +529,7 @@ function baseDocument({ lang, title, output, body }) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${escapeHtml(title)}</title>
-  <script>document.documentElement.classList.add("js", "page-entering");</script>
+  <script>document.documentElement.classList.add("js");</script>
   <link rel="stylesheet" href="${siteUrl(output, "assets/static-wiki.css")}">
 </head>
 <body>
