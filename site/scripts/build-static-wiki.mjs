@@ -1,4 +1,4 @@
-import fs from "node:fs";
+﻿import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -147,29 +147,36 @@ function emitLanguageIndex(lang) {
   const comic = comicFor(output, featured, lang);
   const isZh = lang === "zh";
   const front = {
-    eyebrow: isZh ? "协议山门" : "Protocol Front Gate",
+    eyebrow: isZh ? "项目首页" : "Project Home",
     lead: isZh
-      ? "Cyber-Ming 是一套面向 AI Coding 的教学型治理协议：先立合同，再执行，再审计，以证据闭环替代黑盒自动化幻觉。"
-      : "Cyber-Ming is a teaching-first governance protocol for AI coding: contract first, execute second, audit with evidence, and keep the human center visible.",
-    enter: isZh ? "进入入口页" : "Enter The Entry Page",
-    overviewTitle: isZh ? "它解决什么" : "What It Solves",
+      ? "Cyber-Ming Protocol 是一套面向 AI Coding 的治理体系。它把人的裁断权、执行者的交付、审计者的判断和证据链放进同一个闭环，让复杂项目在可教学、可复盘、可继承的秩序中推进。"
+      : "Cyber-Ming Protocol is a governance system for AI coding. It keeps human judgment, executor delivery, auditor review, and evidence inside one teachable loop so complex projects can move with order, reviewability, and succession.",
+    enter: isZh ? "进入教学入口" : "Enter The Learning Entry",
+    switchLang: isZh ? "English" : "中文",
+    overviewTitle: isZh ? "这是什么体系" : "What This System Is",
     overviewBody: isZh
-      ? "这不是另一个 agent swarm，也不是把人降格成盖章者。它把开发协作拆成可审计的最小闭环：需求、提案、执行、证据、审计、裁断。"
-      : "It is not another agent swarm, and it does not turn the human into a rubber stamp. It teaches the smallest auditable loop: requirement, proposal, execution, evidence, audit, and judgment.",
-    interfaceTitle: isZh ? "主界面怎么理解" : "The Main Interface",
+      ? "它不是一个自动化工具展示页，而是一套项目治理方法：先明确皇权居中的裁断位置，再用原子合同约束执行，用独立审计校验事实，用起居注沉淀可继承的项目记忆。"
+      : "This is not a showcase for automation. It is a project governance method: human sovereignty at the center, atomic contracts for execution, independent audit for factual review, and chronicles for inheritable project memory.",
+    interfaceTitle: isZh ? "主界面承担什么" : "What The Main Interface Does",
     interfaceBody: isZh
-      ? "网站主界面是一张教学地图：先从入口页拿到可复制提示词，再沿六卷阅读协议、审计、分封、证据与边界。"
-      : "The site interface is a learning map: start with the copy-ready entry prompt, then move through the six sections for protocol, audit, delegation, evidence, and boundaries.",
-    installTitle: isZh ? "安装方式" : "Installation",
+      ? "首页承担项目门面与学习导览：先说明治理体系的定位，再给出安装和实践方式，最后把读者送入入口页与六卷 wiki。读者应当在这里知道自己将学习一套治理法，而不是浏览一个普通产品页。"
+      : "The homepage serves as both project front door and learning guide: it states the governance position, gives installation and practice steps, then routes readers into the entry page and six-section wiki.",
+    installTitle: isZh ? "安装与实践" : "Install And Practice",
     installBody: isZh
-      ? "仓库提供 npm CLI 与 Codex skill 形态。先安装协议包，再用 doctor 检查本地法统是否就绪。"
-      : "The repository ships as an npm CLI and Codex skill set. Install the protocol package, then run doctor to check the local setup.",
-    wikiTitle: isZh ? "教学 wiki 路径" : "Teaching Wiki Path",
+      ? "仓库提供 npm CLI 与 Codex skill 形态。安装后先运行 doctor 检查本地环境，再从入口页复制最小闭环提示词，按合同、执行、审计、证据的顺序练习。"
+      : "The repository ships as an npm CLI and Codex skill set. After installation, run doctor, then use the entry page to practice the minimal loop in contract, execution, audit, and evidence order.",
+    wikiTitle: isZh ? "进入教学 wiki" : "Enter The Teaching Wiki",
     wikiBody: isZh
-      ? "如果你已经知道自己要学协议，直接入入口页；如果你是在评估体系，先读下方六卷目录。"
-      : "If you already want to learn the protocol, enter the entry page. If you are evaluating the system, scan the six-section map below first.",
-    sectionKicker: isZh ? "六卷目录" : "Six-Section Map",
-    sectionTitle: isZh ? "从山门入殿，从入口页入卷" : "From Front Gate To Entry Page",
+      ? "如果你要学习这套治理体系，从入口页开始；如果你要评估完整方法论，继续阅读六卷目录。每一卷都对应一个治理问题，而不是松散文章集合。"
+      : "Start with the entry page to learn the system. Use the six-section map to evaluate the full methodology. Each section answers a governance problem, not a loose article cluster.",
+    sectionKicker: isZh ? "六卷教学目录" : "Six-Section Teaching Map",
+    sectionTitle: isZh ? "从入口页进入方法，从六卷目录理解体系" : "Enter Through The Primer, Understand Through The Map",
+    stripA: isZh ? "人的裁断权居中" : "Human judgment centered",
+    stripB: isZh ? "合同约束执行" : "Contracts govern execution",
+    stripC: isZh ? "证据闭环复盘" : "Evidence closes the loop",
+    stageA: isZh ? "入口页" : "Entry",
+    stageB: isZh ? "最小闭环" : "Minimal loop",
+    stageC: isZh ? "审计与证据" : "Audit and evidence",
   };
   const sectionList = sections.map((section) => {
     const sectionDocs = docsForSection(section.id, lang).filter((doc) => doc.type !== "auxiliary");
@@ -190,19 +197,19 @@ function emitLanguageIndex(lang) {
     <main class="home">
       <section class="hero front-hero intro-hero">
         <div class="hero-copy">
-          <p class="eyebrow">${lang === "zh" ? "教学知识库" : "Teaching Wiki"}</p>
-          <h1>${lang === "zh" ? "Cyber-Ming Protocol" : "Cyber-Ming Protocol"}</h1>
-          <p class="lead">${lang === "zh" ? "以漫画、合同、审计和证据链讲清 AI Coding 的最小治理闭环。" : "An illustrated teaching wiki for contract-first AI coding governance, audit loops, and evidence-based delivery."}</p>
+          <p class="eyebrow">${front.eyebrow}</p>
+          <h1>Cyber-Ming Protocol</h1>
+          <p class="lead">${front.lead}</p>
           <div class="hero-actions">
-            <a class="text-link" href="${siteUrl(output, `${slugPathForDoc(lang, featured)}index.html`)}">${lang === "zh" ? "从最小闭环开始" : "Start With The Loop"}</a>
-            <a class="text-link muted" href="${switchLanguageUrl(output, lang)}">${lang === "zh" ? "English" : "中文"}</a>
+            <a class="gate-link" href="${siteUrl(output, `${slugPathForDoc(lang, featured)}index.html`)}">${front.enter}</a>
+            <a class="text-link muted" href="${switchLanguageUrl(output, lang)}">${front.switchLang}</a>
           </div>
         </div>
       </section>
       <section class="contract-strip" aria-label="Site contract">
-        <span>${lang === "zh" ? "全量 wiki 搬迁" : "Full wiki migration"}</span>
-        <span>${lang === "zh" ? "中英双语切换" : "Manifest bilingual switch"}</span>
-        <span>${lang === "zh" ? "只用既有漫画" : "Existing comics only"}</span>
+        <span>${front.stripA}</span>
+        <span>${front.stripB}</span>
+        <span>${front.stripC}</span>
       </section>
       <section class="front-grid" aria-label="${isZh ? "首页介绍" : "Homepage overview"}">
         <article class="front-panel">
@@ -215,9 +222,9 @@ function emitLanguageIndex(lang) {
           <h2>${front.interfaceTitle}</h2>
           <p>${front.interfaceBody}</p>
           <ol class="stage-map">
-            <li>${isZh ? "入口页" : "Entry"}</li>
-            <li>${isZh ? "最小闭环" : "Minimal loop"}</li>
-            <li>${isZh ? "审计与证据" : "Audit and evidence"}</li>
+            <li>${front.stageA}</li>
+            <li>${front.stageB}</li>
+            <li>${front.stageC}</li>
           </ol>
         </article>
         <article class="front-panel command-panel">
@@ -254,7 +261,6 @@ cyber-ming doctor</code></pre>
     currentDoc: null,
   }));
 }
-
 function emitSectionIndex(lang, section) {
   const output = path.join(distDir, lang, section.slug, "index.html");
   const sectionDocs = docsForSection(section.id, lang).filter((doc) => doc.type !== "auxiliary");
@@ -629,3 +635,4 @@ function resolveHref(href, context) {
 function githubBlobUrl(repoPath) {
   return `https://github.com/blackzhanzhan/Cyber-Ming-Protocol/blob/main/${norm(repoPath).split("/").map(encodeURIComponent).join("/")}`;
 }
+
