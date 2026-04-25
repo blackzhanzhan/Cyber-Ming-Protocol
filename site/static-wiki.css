@@ -10,6 +10,8 @@
   --seal: #8f2e24;
   --jade: #1f665d;
   --blue: #253f5f;
+  --night: #1f1d1a;
+  --gold: #c49a4a;
   --shadow: 0 14px 32px rgba(52, 41, 28, 0.18);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
@@ -174,6 +176,66 @@ img {
   max-width: 880px;
 }
 
+.promo-hero {
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+  align-items: stretch;
+  border: 3px solid var(--line);
+  background: var(--paper-strong);
+  padding: clamp(22px, 4.8vw, 56px);
+  box-shadow: var(--shadow);
+}
+
+.promo-hero h1 {
+  max-width: 980px;
+  font-size: clamp(3.4rem, 7.4vw, 7.2rem);
+}
+
+.promo-hero .lead {
+  max-width: 960px;
+  color: #3d362d;
+  font-size: clamp(1.05rem, 1.45vw, 1.28rem);
+}
+
+.hero-ledger {
+  display: grid;
+  align-content: start;
+  gap: 18px;
+  border-left: 3px solid var(--line);
+  padding-left: clamp(18px, 3vw, 30px);
+}
+
+.ledger-title {
+  margin: 0;
+  color: var(--seal);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.hero-ledger dl {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+}
+
+.hero-ledger dl div {
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--soft-line);
+}
+
+.hero-ledger dt {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.hero-ledger dd {
+  margin: 4px 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.45rem;
+  font-weight: 800;
+}
+
 .hero-comic,
 .article-comic {
   margin: 0;
@@ -224,6 +286,30 @@ img {
   border-left: 2px solid var(--line);
 }
 
+.proof-banner {
+  display: grid;
+  grid-template-columns: minmax(150px, 260px) 1fr;
+  gap: 20px;
+  align-items: center;
+  margin: 24px 0 30px;
+  padding: 20px clamp(18px, 3vw, 28px);
+  border: 3px solid var(--line);
+  background: var(--night);
+  color: #fff4df;
+}
+
+.proof-banner .eyebrow {
+  margin: 0;
+  color: var(--gold);
+}
+
+.proof-banner p:last-child {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.25rem, 2.4vw, 2.2rem);
+  line-height: 1.28;
+}
+
 .front-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -234,7 +320,7 @@ img {
 .front-panel {
   border-top: 3px solid var(--line);
   border-bottom: 1px solid var(--soft-line);
-  padding: 18px 0 20px;
+  padding: 20px 0 22px;
 }
 
 .front-panel h2,
@@ -542,9 +628,18 @@ img {
 
   .hero,
   .front-grid,
+  .promo-hero,
+  .proof-banner,
   .section-band,
   .wiki-shell {
     grid-template-columns: 1fr;
+  }
+
+  .hero-ledger {
+    border-left: 0;
+    border-top: 3px solid var(--line);
+    padding-left: 0;
+    padding-top: 18px;
   }
 
   .sidebar {

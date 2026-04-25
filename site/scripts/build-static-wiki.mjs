@@ -147,20 +147,25 @@ function emitLanguageIndex(lang) {
   const comic = comicFor(output, featured, lang);
   const isZh = lang === "zh";
   const front = {
-    eyebrow: isZh ? "项目首页" : "Project Home",
+    eyebrow: isZh ? "AI Coding 治理体系" : "AI Coding Governance System",
+    headline: isZh ? "把 AI Coding 带回可裁断、可审计、可继承的工程秩序" : "Bring AI Coding Back Into Governable Engineering Order",
     lead: isZh
-      ? "Cyber-Ming Protocol 是一套面向 AI Coding 的治理体系。它把人的裁断权、执行者的交付、审计者的判断和证据链放进同一个闭环，让复杂项目在可教学、可复盘、可继承的秩序中推进。"
-      : "Cyber-Ming Protocol is a governance system for AI coding. It keeps human judgment, executor delivery, auditor review, and evidence inside one teachable loop so complex projects can move with order, reviewability, and succession.",
+      ? "Cyber-Ming Protocol 不是工具清单，而是一套面向真实项目的治理法。它把人的裁断权置于中央，以原子合同约束执行，以独立审计校验事实，以证据链和起居注保存可继承的项目记忆。"
+      : "Cyber-Ming Protocol is not a tool list. It is a governance method for real projects: human judgment at the center, atomic contracts for execution, independent audit for facts, and evidence plus chronicles for inheritable project memory.",
     enter: isZh ? "进入教学入口" : "Enter The Learning Entry",
     switchLang: isZh ? "English" : "中文",
+    proofTitle: isZh ? "为什么它值得学习" : "Why It Is Worth Learning",
+    proofBody: isZh
+      ? "当 AI Coding 从单人提示词变成多人、多窗口、多角色协作时，真正稀缺的不是更吵的自动化，而是能稳定判断完成事实的治理秩序。"
+      : "When AI coding becomes multi-person, multi-window, and multi-role work, the scarce thing is not louder automation. It is governance that can judge completion facts.",
     overviewTitle: isZh ? "这是什么体系" : "What This System Is",
     overviewBody: isZh
-      ? "它不是一个自动化工具展示页，而是一套项目治理方法：先明确皇权居中的裁断位置，再用原子合同约束执行，用独立审计校验事实，用起居注沉淀可继承的项目记忆。"
-      : "This is not a showcase for automation. It is a project governance method: human sovereignty at the center, atomic contracts for execution, independent audit for factual review, and chronicles for inheritable project memory.",
-    interfaceTitle: isZh ? "主界面承担什么" : "What The Main Interface Does",
+      ? "它是一套可教学的项目治理方法：皇权居中明确最终裁断，原子合同限定执行边界，独立审计隔离自证幻觉，起居注让后继者能读懂现场。"
+      : "It is a teachable project governance method: sovereign judgment defines the final call, atomic contracts bound execution, independent audit blocks self-certification, and chronicles preserve the working scene.",
+    interfaceTitle: isZh ? "首页承担什么" : "What The Homepage Does",
     interfaceBody: isZh
-      ? "首页承担项目门面与学习导览：先说明治理体系的定位，再给出安装和实践方式，最后把读者送入入口页与六卷 wiki。读者应当在这里知道自己将学习一套治理法，而不是浏览一个普通产品页。"
-      : "The homepage serves as both project front door and learning guide: it states the governance position, gives installation and practice steps, then routes readers into the entry page and six-section wiki.",
+      ? "首页同时承担项目门面和课程入口。它先提出治理主张，再给出可信结构、安装方式和学习路径，让访问者知道这里要学的是一套治理体系，而不是浏览普通产品说明。"
+      : "The homepage is both project front door and course entrance. It states the governance thesis, shows the trust structure, gives installation steps, and routes readers into the teaching wiki.",
     installTitle: isZh ? "安装与实践" : "Install And Practice",
     installBody: isZh
       ? "仓库提供 npm CLI 与 Codex skill 形态。安装后先运行 doctor 检查本地环境，再从入口页复制最小闭环提示词，按合同、执行、审计、证据的顺序练习。"
@@ -170,7 +175,7 @@ function emitLanguageIndex(lang) {
       ? "如果你要学习这套治理体系，从入口页开始；如果你要评估完整方法论，继续阅读六卷目录。每一卷都对应一个治理问题，而不是松散文章集合。"
       : "Start with the entry page to learn the system. Use the six-section map to evaluate the full methodology. Each section answers a governance problem, not a loose article cluster.",
     sectionKicker: isZh ? "六卷教学目录" : "Six-Section Teaching Map",
-    sectionTitle: isZh ? "从入口页进入方法，从六卷目录理解体系" : "Enter Through The Primer, Understand Through The Map",
+    sectionTitle: isZh ? "从入口页上手，从六卷目录理解完整法统" : "Start With The Primer, Understand The Full Method",
     stripA: isZh ? "人的裁断权居中" : "Human judgment centered",
     stripB: isZh ? "合同约束执行" : "Contracts govern execution",
     stripC: isZh ? "证据闭环复盘" : "Evidence closes the loop",
@@ -195,21 +200,34 @@ function emitLanguageIndex(lang) {
 
   const body = `
     <main class="home">
-      <section class="hero front-hero intro-hero">
+      <section class="hero front-hero intro-hero promo-hero">
         <div class="hero-copy">
           <p class="eyebrow">${front.eyebrow}</p>
-          <h1>Cyber-Ming Protocol</h1>
+          <h1>${front.headline}</h1>
           <p class="lead">${front.lead}</p>
           <div class="hero-actions">
             <a class="gate-link" href="${siteUrl(output, `${slugPathForDoc(lang, featured)}index.html`)}">${front.enter}</a>
             <a class="text-link muted" href="${switchLanguageUrl(output, lang)}">${front.switchLang}</a>
           </div>
         </div>
+        <aside class="hero-ledger" aria-label="${front.proofTitle}">
+          <p class="ledger-title">Cyber-Ming Protocol</p>
+          <dl>
+            <div><dt>${isZh ? "中心" : "Center"}</dt><dd>${isZh ? "人的裁断权" : "Human judgment"}</dd></div>
+            <div><dt>${isZh ? "执行" : "Execution"}</dt><dd>${isZh ? "原子合同" : "Atomic contract"}</dd></div>
+            <div><dt>${isZh ? "审计" : "Audit"}</dt><dd>${isZh ? "独立判断" : "Independent review"}</dd></div>
+            <div><dt>${isZh ? "记忆" : "Memory"}</dt><dd>${isZh ? "证据与起居注" : "Evidence and chronicles"}</dd></div>
+          </dl>
+        </aside>
       </section>
       <section class="contract-strip" aria-label="Site contract">
         <span>${front.stripA}</span>
         <span>${front.stripB}</span>
         <span>${front.stripC}</span>
+      </section>
+      <section class="proof-banner" aria-label="${front.proofTitle}">
+        <p class="eyebrow">${front.proofTitle}</p>
+        <p>${front.proofBody}</p>
       </section>
       <section class="front-grid" aria-label="${isZh ? "首页介绍" : "Homepage overview"}">
         <article class="front-panel">
