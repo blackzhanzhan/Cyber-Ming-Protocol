@@ -1,0 +1,570 @@
+{
+  "schemaVersion": 1,
+  "site": {
+    "name": "Cyber-Ming Illustrated Wiki",
+    "purpose": "Bilingual static teaching wiki generated from the repository Markdown sources.",
+    "defaultLanguage": "en",
+    "languages": ["en", "zh"],
+    "comicPolicy": "Use only existing finished comics from assets/visual-protocol/comics and assets/visual-protocol/comics-en. Do not generate homepage or article comics inside the site build."
+  },
+  "sections": [
+    {
+      "id": "00-entry",
+      "order": 0,
+      "slug": "00-entry",
+      "titles": {
+        "en": "Entry",
+        "zh": "开始这里与落地形态"
+      }
+    },
+    {
+      "id": "01-why",
+      "order": 1,
+      "slug": "01-why",
+      "titles": {
+        "en": "Why",
+        "zh": "哲学与坐标"
+      }
+    },
+    {
+      "id": "02-how",
+      "order": 2,
+      "slug": "02-how",
+      "titles": {
+        "en": "How",
+        "zh": "最小闭环与核心礼法"
+      }
+    },
+    {
+      "id": "03-deep-water",
+      "order": 3,
+      "slug": "03-deep-water",
+      "titles": {
+        "en": "Deep Water",
+        "zh": "治理扩展、吞吐补偿与边界"
+      }
+    },
+    {
+      "id": "04-evidence",
+      "order": 4,
+      "slug": "04-evidence",
+      "titles": {
+        "en": "Evidence",
+        "zh": "战报与样本"
+      }
+    },
+    {
+      "id": "reference",
+      "order": 5,
+      "slug": "reference",
+      "titles": {
+        "en": "Reference",
+        "zh": "参考"
+      }
+    }
+  ],
+  "docs": [
+    {
+      "id": "home",
+      "type": "home",
+      "section": "reference",
+      "order": 0,
+      "slug": "home",
+      "titles": {
+        "en": "Cyber-Ming Protocol",
+        "zh": "Cyber-Ming Protocol"
+      },
+      "sources": {
+        "en": "wiki/Home-en.md",
+        "zh": "wiki/Home.md"
+      },
+      "comics": {
+        "en": "assets/visual-protocol/comics-en/human-not-stamper.png",
+        "zh": "assets/visual-protocol/comics/human-not-stamper.png"
+      }
+    },
+    {
+      "id": "prompt-pack",
+      "type": "article",
+      "section": "00-entry",
+      "order": 0,
+      "slug": "prompt-pack",
+      "titles": {
+        "en": "Minimal Loop Guide",
+        "zh": "复制即用提示词包"
+      },
+      "sources": {
+        "en": "wiki-en/00-entry/prompt-pack.md",
+        "zh": "wiki/00-开始这里与落地形态/复制即用提示词包.md"
+      },
+      "comics": {
+        "en": "assets/visual-protocol/comics-en/minimal-loop-not-agent-team.png",
+        "zh": "assets/visual-protocol/comics/minimal-loop-not-agent-team.png"
+      }
+    },
+    {
+      "id": "stable-loop-guide",
+      "type": "article",
+      "section": "00-entry",
+      "order": 1,
+      "slug": "stable-loop-guide",
+      "titles": {
+        "en": "Minimal Stable Loop Guide",
+        "zh": "最小稳定闭环指南"
+      },
+      "sources": {
+        "en": "wiki-en/00-entry/stable-loop-guide.md",
+        "zh": "wiki/00-开始这里与落地形态/最小稳定闭环指南.md"
+      },
+      "comics": {
+        "en": "assets/visual-protocol/comics-en/stable-loop-not-one-sided.png",
+        "zh": "assets/visual-protocol/comics/stable-loop-not-one-sided.png"
+      }
+    },
+    {
+      "id": "three-things",
+      "type": "article",
+      "section": "00-entry",
+      "order": 2,
+      "slug": "three-things",
+      "titles": {
+        "en": "Protocol, Skill, and Web Audit Templates",
+        "zh": "协议、Skill-与-Web-审计模板：三者关系"
+      },
+      "sources": {
+        "en": "wiki-en/00-entry/three-things.md",
+        "zh": "wiki/00-开始这里与落地形态/协议、Skill-与-Web-审计模板：三者关系.md"
+      },
+      "comics": {
+        "en": "assets/visual-protocol/comics-en/dont-mix-protocol-skill-template.png",
+        "zh": "assets/visual-protocol/comics/dont-mix-protocol-skill-template.png"
+      }
+    },
+    {
+      "id": "comparison",
+      "type": "article",
+      "section": "00-entry",
+      "order": 3,
+      "slug": "comparison",
+      "titles": {
+        "en": "Comparison With Workflow, Spec-Driven, and Agent Teams",
+        "zh": "它和workflow、spec-driven、agent-team有什么异同"
+      },
+      "sources": {
+        "en": "wiki-en/00-entry/comparison.md",
+        "zh": "wiki/00-开始这里与落地形态/它和workflow、spec-driven、agent-team有什么异同.md"
+      },
+      "comics": {
+        "en": "assets/visual-protocol/comics-en/related-not-identical.png",
+        "zh": "assets/visual-protocol/comics/related-not-identical.png"
+      }
+    },
+    {
+      "id": "cs-vs-management",
+      "type": "article",
+      "section": "01-why",
+      "order": 0,
+      "slug": "cs-vs-management",
+      "titles": {
+        "en": "Why AI Coding Blurs CS and Management",
+        "zh": "为什么-AI-Coding-已经模糊了-CS-与管理学的界限"
+      },
+      "sources": {
+        "en": "wiki-en/01-why/cs-vs-management.md",
+        "zh": "wiki/01-哲学与坐标/为什么-AI-Coding-已经模糊了-CS-与管理学的界限.md"
+      },
+      "comics": {
+        "en": "assets/visual-protocol/comics-en/cs-vs-management.png",
+        "zh": "assets/visual-protocol/comics/cs-vs-management.png"
+      }
+    },
+    {
+      "id": "dual-distortion",
+      "type": "article",
+      "section": "01-why",
+      "order": 1,
+      "slug": "dual-distortion",
+      "titles": {
+        "en": "Dual Distortion In Black-Box Multi-Agent Work",
+        "zh": "黑盒多-Agent-的双重失真：技术失真与治理失真"
+      },
+      "sources": {
+        "en": "wiki-en/01-why/dual-distortion.md",
+        "zh": "wiki/01-哲学与坐标/黑盒多-Agent-的双重失真：技术失真与治理失真.md"
+      },
+      "comics": {
+        "en": "assets/visual-protocol/comics-en/double-distortion-not-single-bleed.png",
+        "zh": "assets/visual-protocol/comics/double-distortion-not-single-bleed.png"
+      }
+    },
+    {
+      "id": "methodology-coordinates",
+      "type": "article",
+      "section": "01-why",
+      "order": 2,
+      "slug": "methodology-coordinates",
+      "titles": {
+        "en": "Related Work And Methodology Coordinates",
+        "zh": "相关工作与方法论坐标"
+      },
+      "sources": {
+        "en": "wiki-en/01-why/methodology-coordinates.md",
+        "zh": "wiki/01-哲学与坐标/相关工作与方法论坐标.md"
+      },
+      "comics": {
+        "en": "assets/visual-protocol/comics-en/governance-layer-not-replacement.png",
+        "zh": "assets/visual-protocol/comics/governance-layer-not-replacement.png"
+      }
+    },
+    {
+      "id": "minimal-loop",
+      "type": "article",
+      "section": "02-how",
+      "order": 0,
+      "slug": "minimal-loop",
+      "titles": {
+        "en": "Minimal Loop",
+        "zh": "最小闭环：一次审计版与多次审计版"
+      },
+      "sources": {
+        "en": "wiki-en/02-how/minimal-loop.md",
+        "zh": "wiki/02-最小闭环与核心礼法/最小闭环：一次审计版与多次审计版.md"
+      },
+      "comics": {
+        "en": "assets/visual-protocol/comics-en/minimal-loop-not-agent-team.png",
+        "zh": "assets/visual-protocol/comics/minimal-loop-not-agent-team.png"
+      }
+    },
+    {
+      "id": "atomic-execution-contract-chronicles",
+      "type": "article",
+      "section": "02-how",
+      "order": 1,
+      "slug": "atomic-execution-contract-chronicles",
+      "titles": {
+        "en": "Atomic Execution Contract And Cyber Chronicles",
+        "zh": "核心礼法之一：原子执行合同与赛博起居注"
+      },
+      "sources": {
+        "en": "wiki-en/02-how/atomic-execution-contract-chronicles.md",
+        "zh": "wiki/02-最小闭环与核心礼法/核心礼法之一：原子执行合同与赛博起居注.md"
+      },
+      "comics": {
+        "en": "assets/visual-protocol/comics-en/atomic-contract-not-module-slogan.png",
+        "zh": "assets/visual-protocol/comics/atomic-contract-not-module-slogan.png"
+      }
+    },
+    {
+      "id": "white-box-reconciliation",
+      "type": "article",
+      "section": "02-how",
+      "order": 2,
+      "slug": "white-box-reconciliation",
+      "titles": {
+        "en": "White-Box Physical Reconciliation",
+        "zh": "白盒物理对账：什么算完成事实"
+      },
+      "sources": {
+        "en": "wiki-en/02-how/white-box-reconciliation.md",
+        "zh": "wiki/02-最小闭环与核心礼法/白盒物理对账：什么算完成事实.md"
+      },
+      "comics": {
+        "en": "assets/visual-protocol/comics-en/what-counts-as-completion-fact.png",
+        "zh": "assets/visual-protocol/comics/what-counts-as-completion-fact.png"
+      }
+    },
+    {
+      "id": "scout-mechanism",
+      "type": "article",
+      "section": "02-how",
+      "order": 3,
+      "slug": "scout-mechanism",
+      "titles": {
+        "en": "Scout Mechanism",
+        "zh": "赛博探马机制：先试链路，再上大军"
+      },
+      "sources": {
+        "en": "wiki-en/02-how/scout-mechanism.md",
+        "zh": "wiki/02-最小闭环与核心礼法/赛博探马机制：先试链路，再上大军.md"
+      },
+      "comics": {
+        "en": "assets/visual-protocol/comics-en/what-counts-as-scout.png",
+        "zh": "assets/visual-protocol/comics/what-counts-as-scout.png"
+      }
+    },
+    {
+      "id": "dual-track-audit",
+      "type": "article",
+      "section": "03-deep-water",
+      "order": 0,
+      "slug": "dual-track-audit",
+      "titles": {
+        "en": "Dual-Track Audit And Human Sovereignty",
+        "zh": "双轨隔离审计与皇权居中"
+      },
+      "sources": {
+        "en": "wiki-en/03-deep-water/dual-track-audit.md",
+        "zh": "wiki/03-治理扩展、吞吐补偿与边界/双轨隔离审计与皇权居中.md"
+      },
+      "comics": {
+        "en": "assets/visual-protocol/comics-en/dual-track-not-self-review.png",
+        "zh": "assets/visual-protocol/comics/dual-track-not-self-review.png"
+      }
+    },
+    {
+      "id": "seven-stars-renewal",
+      "type": "article",
+      "section": "03-deep-water",
+      "order": 1,
+      "slug": "seven-stars-renewal",
+      "titles": {
+        "en": "Seven-Stars Renewal",
+        "zh": "七星灯续命法"
+      },
+      "sources": {
+        "en": "wiki-en/03-deep-water/seven-stars-renewal.md",
+        "zh": "wiki/03-治理扩展、吞吐补偿与边界/七星灯续命法.md"
+      },
+      "comics": {
+        "en": "assets/visual-protocol/comics-en/renewal-read-runtime-first.png",
+        "zh": "assets/visual-protocol/comics/renewal-read-runtime-first.png"
+      }
+    },
+    {
+      "id": "cognitive-debt",
+      "type": "article",
+      "section": "03-deep-water",
+      "order": 2,
+      "slug": "cognitive-debt",
+      "titles": {
+        "en": "Cyber Cognitive Debt",
+        "zh": "赛博认知债务：剪刀差、察觉信号与可信偿还"
+      },
+      "sources": {
+        "en": "wiki-en/03-deep-water/cognitive-debt.md",
+        "zh": "wiki/03-治理扩展、吞吐补偿与边界/赛博认知债务：剪刀差、察觉信号与可信偿还.md"
+      },
+      "comics": {
+        "en": "assets/visual-protocol/comics-en/cognitive-debt-from-scissor-gap.png",
+        "zh": "assets/visual-protocol/comics/cognitive-debt-from-scissor-gap.png"
+      }
+    },
+    {
+      "id": "pulse-enfeoffment",
+      "type": "article",
+      "section": "03-deep-water",
+      "order": 3,
+      "slug": "pulse-enfeoffment",
+      "titles": {
+        "en": "Pulse Enfeoffment",
+        "zh": "脉冲分封制：高治理下的吞吐补偿"
+      },
+      "sources": {
+        "en": "wiki-en/03-deep-water/pulse-enfeoffment.md",
+        "zh": "wiki/03-治理扩展、吞吐补偿与边界/脉冲分封制：高治理下的吞吐补偿.md"
+      },
+      "comics": {
+        "en": "assets/visual-protocol/comics-en/contract-driven-pulse.png",
+        "zh": "assets/visual-protocol/comics/contract-driven-pulse.png"
+      }
+    },
+    {
+      "id": "worktree-enfeoffment",
+      "type": "article",
+      "section": "03-deep-water",
+      "order": 4,
+      "slug": "worktree-enfeoffment",
+      "titles": {
+        "en": "Worktree Enfeoffment",
+        "zh": "Worktree-分封制：封地、入京与主干纯度"
+      },
+      "sources": {
+        "en": "wiki-en/03-deep-water/worktree-enfeoffment.md",
+        "zh": "wiki/03-治理扩展、吞吐补偿与边界/Worktree-分封制：封地、入京与主干纯度.md"
+      },
+      "comics": {
+        "en": "assets/visual-protocol/comics-en/worktree-feudal-not-git-trick.png",
+        "zh": "assets/visual-protocol/comics/worktree-feudal-not-git-trick.png"
+      }
+    },
+    {
+      "id": "parent-contracts",
+      "type": "article",
+      "section": "03-deep-water",
+      "order": 5,
+      "slug": "parent-contracts",
+      "titles": {
+        "en": "Parent Contracts",
+        "zh": "父合同为什么不能被子合同静默替代"
+      },
+      "sources": {
+        "en": "wiki-en/03-deep-water/parent-contracts.md",
+        "zh": "wiki/03-治理扩展、吞吐补偿与边界/父合同为什么不能被子合同静默替代.md"
+      },
+      "comics": {
+        "en": "assets/visual-protocol/comics-en/parent-child-contract.png",
+        "zh": "assets/visual-protocol/comics/parent-child-contract.png"
+      }
+    },
+    {
+      "id": "free-development-mode",
+      "type": "article",
+      "section": "03-deep-water",
+      "order": 6,
+      "slug": "free-development-mode",
+      "titles": {
+        "en": "Free Development Mode",
+        "zh": "自由开发模式：在不确定业务中继续可控推进"
+      },
+      "sources": {
+        "en": "wiki-en/03-deep-water/free-development-mode.md",
+        "zh": "wiki/03-治理扩展、吞吐补偿与边界/自由开发模式：在不确定业务中继续可控推进.md"
+      },
+      "comics": {
+        "en": "assets/visual-protocol/comics-en/free-development-not-chaos.png",
+        "zh": "assets/visual-protocol/comics/free-development-not-chaos.png"
+      }
+    },
+    {
+      "id": "boundaries",
+      "type": "article",
+      "section": "03-deep-water",
+      "order": 7,
+      "slug": "boundaries",
+      "titles": {
+        "en": "Boundaries And Unresolved Battlefields",
+        "zh": "边界与未解决战场"
+      },
+      "sources": {
+        "en": "wiki-en/03-deep-water/boundaries.md",
+        "zh": "wiki/03-治理扩展、吞吐补偿与边界/边界与未解决战场.md"
+      },
+      "comics": {
+        "en": "assets/visual-protocol/comics-en/function-census-governance-frontier.png",
+        "zh": "assets/visual-protocol/comics/function-census-governance-frontier.png"
+      }
+    },
+    {
+      "id": "coder-to-governor",
+      "type": "article",
+      "section": "03-deep-water",
+      "order": 8,
+      "slug": "coder-to-governor",
+      "titles": {
+        "en": "From Coder To Governor",
+        "zh": "从编码者到治理者：这套协议要求开发者具备什么"
+      },
+      "sources": {
+        "en": "wiki-en/03-deep-water/coder-to-governor.md",
+        "zh": "wiki/03-治理扩展、吞吐补偿与边界/从编码者到治理者：这套协议要求开发者具备什么.md"
+      },
+      "comics": {
+        "en": "assets/visual-protocol/comics-en/six-governance-abilities.png",
+        "zh": "assets/visual-protocol/comics/six-governance-abilities.png"
+      }
+    },
+    {
+      "id": "battle-report-1",
+      "type": "article",
+      "section": "04-evidence",
+      "order": 0,
+      "slug": "battle-report-1",
+      "titles": {
+        "en": "Battle Report 1",
+        "zh": "战报一：从伪完成到真实验收（脱敏版）"
+      },
+      "sources": {
+        "en": "wiki-en/04-evidence/battle-report-1.md",
+        "zh": "wiki/04-战报与样本/战报一：从伪完成到真实验收（脱敏版）.md"
+      },
+      "comics": {
+        "en": "assets/visual-protocol/comics-en/summary-not-completion.png",
+        "zh": "assets/visual-protocol/comics/summary-not-completion.png"
+      }
+    },
+    {
+      "id": "chronicles-sample",
+      "type": "article",
+      "section": "04-evidence",
+      "order": 1,
+      "slug": "chronicles-sample",
+      "titles": {
+        "en": "Cyber Chronicles Sample",
+        "zh": "赛博起居注样本：一天内的三次系统跃迁（脱敏版）"
+      },
+      "sources": {
+        "en": "wiki-en/04-evidence/chronicles-sample.md",
+        "zh": "wiki/04-战报与样本/赛博起居注样本：一天内的三次系统跃迁（脱敏版）.md"
+      },
+      "comics": {
+        "en": "assets/visual-protocol/comics-en/journal-is-not-accessory.png",
+        "zh": "assets/visual-protocol/comics/journal-is-not-accessory.png"
+      }
+    },
+    {
+      "id": "execution-fuel",
+      "type": "article",
+      "section": "04-evidence",
+      "order": 2,
+      "slug": "execution-fuel",
+      "titles": {
+        "en": "Why Imperial Coding Narrative Can Become Execution Fuel",
+        "zh": "为什么帝王-Coding-叙事可以成为执行燃料（以及如何安全入戏）"
+      },
+      "sources": {
+        "en": "wiki-en/04-evidence/execution-fuel.md",
+        "zh": "wiki/04-战报与样本/为什么帝王-Coding-叙事可以成为执行燃料（以及如何安全入戏）.md"
+      },
+      "comics": {
+        "en": "assets/visual-protocol/comics-en/execution-is-not-judgment.png",
+        "zh": "assets/visual-protocol/comics/execution-is-not-judgment.png"
+      }
+    },
+    {
+      "id": "glossary",
+      "type": "reference",
+      "section": "reference",
+      "order": 1,
+      "slug": "glossary",
+      "translationStatus": {
+        "en": "pending",
+        "zh": "ready"
+      },
+      "titles": {
+        "en": "Glossary",
+        "zh": "术语表"
+      },
+      "sources": {
+        "en": null,
+        "zh": "wiki/术语表.md"
+      },
+      "comics": {
+        "en": null,
+        "zh": null
+      }
+    },
+    {
+      "id": "sidebar",
+      "type": "auxiliary",
+      "section": "reference",
+      "order": 2,
+      "slug": "sidebar",
+      "translationStatus": {
+        "en": "not_applicable",
+        "zh": "ready"
+      },
+      "titles": {
+        "en": "Sidebar",
+        "zh": "侧边栏"
+      },
+      "sources": {
+        "en": null,
+        "zh": "wiki/_Sidebar.md"
+      },
+      "comics": {
+        "en": null,
+        "zh": null
+      }
+    }
+  ]
+}
