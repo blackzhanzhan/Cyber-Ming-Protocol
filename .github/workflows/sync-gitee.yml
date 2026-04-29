@@ -21,7 +21,7 @@ jobs:
 
       - name: Build site
         run: |
-          npm ci
+          npm install
           npm run site:build
 
       - name: Push built site to Gitee pages branch
