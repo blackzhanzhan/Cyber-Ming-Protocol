@@ -1,0 +1,38 @@
+name: Sync to Gitee
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Build site
+        run: |
+          npm ci
+          npm run site:build
+
+      - name: Push built site to Gitee pages branch
+        env:
+          GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
+        run: |
+          cd site/dist
+          git init
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add -A
+          git commit -m "deploy $(date)"
+          git remote add origin https://oauth2:${GITEE_TOKEN}@gitee.com/zhou-zhanyue/Cyber-Ming-Protocol.git
+          git push -f origin main:gitee-pages
