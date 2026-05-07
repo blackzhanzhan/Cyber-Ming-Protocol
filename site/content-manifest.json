@@ -426,10 +426,29 @@
       }
     },
     {
-      "id": "boundaries",
+      "id": "architecture-constitution-hooks",
       "type": "article",
       "section": "03-deep-water",
       "order": 7,
+      "slug": "architecture-constitution-hooks",
+      "titles": {
+        "en": "Architecture Constitution And Contract Hooks",
+        "zh": "架构宪法与合同Hook：让架构约束计划与执行"
+      },
+      "sources": {
+        "en": "wiki-en/03-deep-water/architecture-constitution-hooks.md",
+        "zh": "wiki/03-治理扩展、吞吐补偿与边界/架构宪法与合同Hook：让架构约束计划与执行.md"
+      },
+      "comics": {
+        "en": "assets/visual-protocol/comics-en/atomic-contract-not-module-slogan.png",
+        "zh": "assets/visual-protocol/comics/atomic-contract-not-module-slogan.png"
+      }
+    },
+    {
+      "id": "boundaries",
+      "type": "article",
+      "section": "03-deep-water",
+      "order": 8,
       "slug": "boundaries",
       "titles": {
         "en": "Boundaries And Unresolved Battlefields",
@@ -448,7 +467,7 @@
       "id": "coder-to-governor",
       "type": "article",
       "section": "03-deep-water",
-      "order": 8,
+      "order": 9,
       "slug": "coder-to-governor",
       "titles": {
         "en": "From Coder To Governor",
