@@ -1,7 +1,7 @@
 {
   "name": "@blackzhanzhan/cyber-ming",
-  "version": "0.2.0-beta.4",
-  "description": "Installer and starter for the Cyber-Ming Protocol governance skills.",
+  "version": "0.2.0-beta.5",
+  "description": "Installer, starter, and runtime-governance bundle for Cyber-Ming Protocol skills.",
   "bin": {
     "cyber-ming": "bin/cyber-ming.js"
   },
@@ -13,12 +13,15 @@
     "bin",
     "installer",
     "skill",
+    "!skill/**/__pycache__/**",
+    "!skill/**/*.pyc",
     "starter",
     "BOOTSTRAP.md",
     "bootstrap",
     "web-audit-templates",
     "dev_repo/README.md",
-    "dev_repo/architecture"
+    "dev_repo/architecture",
+    "scripts/validate_dev_repo_runtime.py"
   ],
   "scripts": {
     "cyber-ming": "node bin/cyber-ming.js",
@@ -35,6 +38,10 @@
     "codex",
     "cursor",
     "opencode",
+    "contract-hooks",
+    "architecture-governance",
+    "data-model",
+    "er-diagrams",
     "cli",
     "developer-tools"
   ],

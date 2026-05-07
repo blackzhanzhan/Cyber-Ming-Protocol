@@ -15,9 +15,11 @@ This workspace uses **Cyber-Ming-Protocol**.
 - Keep Cyber-Ming's sovereign/imperial narrative available as style, while keeping operational instructions readable in the user's language.
 - If `dev_repo/state.json`, `journal.jsonl`, `evidence_index.json`, or `tree.md` exist, treat them as current runtime truth.
 - If `dev_repo/architecture/` exists, treat it as current architecture truth before planning broad changes.
+- If `dev_repo/architecture/data-model/` exists, treat it as current data-model truth before planning durable data, schema, migration, or persistence changes.
 - In fresh or takeover sessions, reconstruct state and initialize/read architecture truth before edits.
 - Treat host plan/ask modes as `plan-start` hook surfaces only. Compile plans into Cyber-Ming contracts before execution.
 - If a change alters architecture boundaries, responsibilities, dependencies, runtime flows, or invariants, use an architecture amendment contract rather than a normal implementation contract.
+- If a change alters entities, relationships, identity, cardinality, source/derived status, migrations, backfills, or persistence semantics, use an ER/data-model amendment contract rather than a normal implementation contract.
 
 Recommended first prompt:
 
@@ -31,3 +33,5 @@ Reference docs live at:
 - `{{DOCS_ROOT}}/bootstrap/ide-executor.md`
 - `{{DOCS_ROOT}}/bootstrap/web-auditor.md`
 - `{{DOCS_ROOT}}/dev_repo-runtime.md`
+- `{{DOCS_ROOT}}/architecture/README.md`
+- `{{DOCS_ROOT}}/architecture/data-model/README.md`

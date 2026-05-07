@@ -43,6 +43,7 @@ function copyStarterDocs(repoRoot, docsRoot) {
   ensureDir(docsRoot);
   copyDir(path.join(repoRoot, "bootstrap"), path.join(docsRoot, "bootstrap"));
   copyDir(path.join(repoRoot, "web-audit-templates"), path.join(docsRoot, "web-audit-templates"));
+  copyDir(path.join(repoRoot, "dev_repo", "architecture"), path.join(docsRoot, "architecture"));
   writeFile(path.join(docsRoot, "BOOTSTRAP.md"), fs.readFileSync(path.join(repoRoot, "BOOTSTRAP.md"), "utf8"));
   writeFile(
     path.join(docsRoot, "dev_repo-runtime.md"),
