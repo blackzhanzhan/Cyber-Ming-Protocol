@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>数据宪法与 ER 图</title>
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="stylesheet" href="../../../assets/static-wiki.css">
+</head>
+<body>
+
+      <header class="topbar">
+        <a class="top-brand" href="../../index.html">Cyber-Ming</a>
+        <nav class="top-nav"><a class="" href="../../00-entry/index.html">开始这里与落地形态</a><a class="" href="../../01-why/index.html">哲学与坐标</a><a class="" href="../../02-how/index.html">最小闭环与核心礼法</a><a class="active" href="../index.html">治理扩展、吞吐补偿与边界</a><a class="" href="../../04-evidence/index.html">战报与样本</a><a class="" href="../../reference/index.html">参考</a></nav>
+        <a class="lang-switch" href="../../../en/03-deep-water/data-model-constitution/index.html">English</a>
+      </header>
+      
+    <main class="wiki-shell">
+      
+    <aside class="sidebar" aria-label="目录">
+      <a class="brand-mark" href="../../index.html">Cyber-Ming</a>
+      <nav>
+        
+          <a class="" href="../../00-entry/index.html">
+            <span>00</span>
+            开始这里与落地形态
+          </a>
+        
+          <a class="" href="../../01-why/index.html">
+            <span>01</span>
+            哲学与坐标
+          </a>
+        
+          <a class="" href="../../02-how/index.html">
+            <span>02</span>
+            最小闭环与核心礼法
+          </a>
+        
+          <a class="active" href="../index.html">
+            <span>03</span>
+            治理扩展、吞吐补偿与边界
+          </a>
+        
+          <a class="" href="../../04-evidence/index.html">
+            <span>04</span>
+            战报与样本
+          </a>
+        
+          <a class="" href="../../reference/index.html">
+            <span>05</span>
+            参考
+          </a>
+        
+      </nav>
+    </aside>
+  
+      <article class="article">
+        <nav class="crumbs">
+          <a href="../../index.html">中文</a>
+          <a href="../index.html">治理扩展、吞吐补偿与边界</a>
+        </nav>
+        <header class="article-head">
+          <p class="eyebrow">治理扩展、吞吐补偿与边界</p>
+          <h1>数据宪法与 ER 图</h1>
+          <div class="article-tools">
+            <a href="../../../en/03-deep-water/data-model-constitution/index.html">English</a><a aria-current="true" href="./index.html">中文</a>
+          </div>
+        </header>
+        <figure class="article-comic"><img src="../../../assets/visual-protocol/comics/cognitive-debt-from-scissor-gap.png" alt="数据宪法与 ER 图"></figure>
+        <div class="markdown-body">
+          <h1>数据宪法与 ER 图：让业务事实可维护</h1>
+<h2>目录</h2>
+<ul><li><a href="#这页解决什么问题">这页解决什么问题</a></li><li><a href="#最短定义">最短定义</a></li><li><a href="#为什么架构图还不够">为什么架构图还不够</a></li><li><a href="#数据宪法放在哪里">数据宪法放在哪里</a></li><li><a href="#接手旧项目时如何初始化-er-图">接手旧项目时如何初始化 ER 图</a></li><li><a href="#er-图详细到什么程度">ER 图详细到什么程度</a></li><li><a href="#普通合同与数据模型修宪合同">普通合同与数据模型修宪合同</a></li><li><a href="#迁移回填与来源事实">迁移、回填与来源事实</a></li><li><a href="#一句话压舱">一句话压舱</a></li><li><a href="#相关页面">相关页面</a></li></ul>
+<h2>这页解决什么问题</h2>
+<p>架构宪法能约束模块边界、依赖方向和运行流，但它还不能完整回答一个更贴近业务事实的问题：</p>
+<p><strong>这个系统里到底有哪些持久实体，它们怎样关联，哪些事实是来源，哪些只是派生、缓存或投影？</strong></p>
+<p>这类问题如果没有外置成 ER/data-model 层，agent 很容易在普通实现里顺手改掉：</p>
+<ul><li>主键、外键、唯一约束或状态字段含义</li><li>实体之间的关系和基数</li><li>源数据与派生数据的边界</li><li>迁移、回填和兼容策略</li><li>API / ORM / schema 背后的持久化语义</li></ul>
+<p>这些变化看上去像实现细节，实际上是在改变业务事实。它们应该有更改宪法的严肃感。</p>
+<h2>最短定义</h2>
+<blockquote><p>架构宪法管系统边界，数据宪法管持久事实。 ER 可以变，但必须通过 <code>data-model-amend</code>，不能混进普通施工合同。</p></blockquote>
+<p>普通合同要声明：</p>
+<ul><li><code>affected_data_entities</code></li><li><code>unchanged_data_entities</code></li><li><code>data_model_delta</code></li><li><code>requires_er_amendment</code></li><li><code>migration_required</code></li><li><code>backfill_required</code></li></ul>
+<p>这不是给合同加表演字段，而是让计划和执行都承认：数据事实一旦变动，认知债务和迁移债务会立刻出现。</p>
+<h2>为什么架构图还不够</h2>
+<p>架构图能告诉 agent：</p>
+<ul><li>哪些模块负责什么</li><li>文件归属哪里</li><li>依赖方向是否健康</li><li>哪些接口不能随手改</li></ul>
+<p>但 ER 图告诉 agent 另一组事实：</p>
+<ul><li><code>User</code>、<code>Order</code>、<code>Contract</code>、<code>Evidence</code> 这类实体是否真实存在</li><li>一个实体是否拥有另一个实体</li><li>关系是一对一、一对多还是多对多</li><li>删除、归档、折叠、重命名时会影响哪些历史记录</li><li>哪个字段是来源事实，哪个字段只是展示投影</li></ul>
+<p>架构图减少“代码在哪里”的认知债务；ER 图减少“业务事实是什么”的认知债务。两层合在一起，agent 才不容易把系统改得能跑但事实变形。</p>
+<h2>数据宪法放在哪里</h2>
+<p>推荐放在：</p>
+<pre><code class="language-text">dev_repo/architecture/data-model/
+|-- README.md
+|-- ER.md
+|-- er.mmd
+|-- entities.json
+|-- relationships.json
+|-- invariants.md
+`-- migrations.md</code></pre>
+<p>其中：</p>
+<ul><li><code>ER.md</code> 给人和 agent 读，解释实体、关系、来源与派生规则。</li><li><code>er.mmd</code> 是 Mermaid ER 图，用于快速视觉参考。</li><li><code>entities.json</code> 是实体目录，记录身份、状态、来源、所有者、置信度。</li><li><code>relationships.json</code> 是关系目录，记录基数、引用字段、删除语义。</li><li><code>invariants.md</code> 写普通合同不能破坏的数据不变量。</li><li><code>migrations.md</code> 写迁移、回填和兼容预期。</li></ul>
+<h2>接手旧项目时如何初始化 ER 图</h2>
+<p>接手旧项目时，不要先假设自己知道数据模型。</p>
+<p>最小顺序是：</p>
+<ol><li>找真实来源：schema、ORM、migration、fixture、API contract、运行时文件、导入导出格式。</li><li>抽核心实体：只抽持久事实，不抽每个 DTO、临时对象或前端 view-model。</li><li>抽关系：记录基数、引用字段、删除或归档语义。</li><li>抽身份与状态：主键、唯一约束、外键式引用、枚举和状态机字段。</li><li>区分来源与派生：source、derived、cache、projection、generated 要写清楚。</li><li>标注置信度：<code>confirmed</code>、<code>inferred</code>、<code>unknown</code>。</li></ol>
+<p>如果没有 schema 或 migration，就写 <code>unknown</code> / <code>inferred</code>。不要把猜测写成 <code>confirmed</code>。旧项目的第一版 ER 图可以不完整，但不能假装全知。</p>
+<h2>ER 图详细到什么程度</h2>
+<p>合适标准是：</p>
+<p><strong>详细到 agent 能判断数据变化是否需要修宪、是否需要迁移、是否会破坏兼容；不要详细到每个 DTO 和每个临时字段都入图。</strong></p>
+<p>每个实体至少回答：</p>
+<pre><code class="language-yaml">entity_id:
+purpose:
+owning_architecture_node:
+source_or_derived:
+source_artifacts:
+identity:
+state_fields:
+derived_from:
+migration_notes:
+requires_amendment_when:
+confidence:</code></pre>
+<p>每条关系至少回答：</p>
+<pre><code class="language-yaml">relationship_id:
+from_entity:
+to_entity:
+cardinality:
+reference_fields:
+deletion_semantics:
+requires_amendment_when:
+confidence:</code></pre>
+<p>这比“数据库表清单”更能降认知债务，也比“全字段大全”更轻。</p>
+<h2>普通合同与数据模型修宪合同</h2>
+<p>普通合同可以在现有 ER 宪法下施工。</p>
+<p>例如：</p>
+<pre><code class="language-yaml">affected_data_entities:
+  - contract
+unchanged_data_entities:
+  - campaign
+  - evidence_item
+data_model_delta: none
+requires_er_amendment: false
+migration_required: false
+backfill_required: false</code></pre>
+<p>当变化触及下面任意一类，就要进入修宪合同：</p>
+<ul><li>新增、删除、重命名或改归属实体</li><li>改关系方向、基数、删除语义</li><li>改主键、外键式引用、唯一约束</li><li>改状态字段、枚举含义、状态机语义</li><li>把来源数据改成派生/缓存/投影，或反过来</li><li>新增 migration、backfill、compatibility 逻辑</li><li>API / ORM / schema 变化影响持久化语义</li></ul>
+<p>修宪合同必须写明：哪部分变，哪部分不变，为什么现在的模型不够，如何迁移和回填，如何证明兼容。</p>
+<h2>迁移、回填与来源事实</h2>
+<p>数据模型最容易制造暗债的地方，是“代码改了，但旧事实怎么办”。</p>
+<p>所以合同里要明确：</p>
+<ul><li><code>migration_required</code>: 旧数据结构是否需要转换。</li><li><code>backfill_required</code>: 旧记录是否需要补字段、补索引、重算派生值。</li><li><code>compatibility_expectations</code>: 旧版本文件、记录、API payload 是否仍可读。</li><li><code>source_or_derived</code>: 这个字段或实体到底是来源事实，还是派生结果。</li></ul>
+<p>如果来源和派生冲突，先修来源事实，再更新投影。不要让生成物反过来统治事实。</p>
+<h2>一句话压舱</h2>
+<p>架构宪法让 agent 知道系统如何站立；数据宪法让 agent 知道事实如何相连。</p>
+<p>它们共同把“我大概知道怎么改”变成“我知道哪些东西能改、哪些东西要修宪、改完以后旧事实如何继续成立”。</p>
+<h2>相关页面</h2>
+<ul><li><a href="../architecture-constitution-hooks/index.html">架构宪法与合同 Hook</a></li><li><a href="https://github.com/blackzhanzhan/Cyber-Ming-Protocol/blob/main/dev_repo/README.md">Campaign Runtime 说明</a></li><li><a href="../cognitive-debt/index.html">赛博认知债务</a></li></ul>
+        </div>
+        
+    <footer class="article-nav">
+      <a href="../architecture-constitution-hooks/index.html"><small>上一章</small><span>架构宪法与合同Hook：让架构约束计划与执行</span></a>
+      <a href="../boundaries/index.html"><small>下一章</small><span>边界与未解决战场</span></a>
+    </footer>
+  
+      </article>
+    </main>
+  
+    
+<script src="../../../assets/static-wiki-transitions.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Model Constitution And ER Diagrams</title>
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="stylesheet" href="../../../assets/static-wiki.css">
+</head>
+<body>
+
+      <header class="topbar">
+        <a class="top-brand" href="../../index.html">Cyber-Ming</a>
+        <nav class="top-nav"><a class="" href="../../00-entry/index.html">Entry</a><a class="" href="../../01-why/index.html">Why</a><a class="" href="../../02-how/index.html">How</a><a class="active" href="../index.html">Deep Water</a><a class="" href="../../04-evidence/index.html">Evidence</a><a class="" href="../../reference/index.html">Reference</a></nav>
+        <a class="lang-switch" href="../../../zh/03-deep-water/data-model-constitution/index.html">中文</a>
+      </header>
+      
+    <main class="wiki-shell">
+      
+    <aside class="sidebar" aria-label="Contents">
+      <a class="brand-mark" href="../../index.html">Cyber-Ming</a>
+      <nav>
+        
+          <a class="" href="../../00-entry/index.html">
+            <span>00</span>
+            Entry
+          </a>
+        
+          <a class="" href="../../01-why/index.html">
+            <span>01</span>
+            Why
+          </a>
+        
+          <a class="" href="../../02-how/index.html">
+            <span>02</span>
+            How
+          </a>
+        
+          <a class="active" href="../index.html">
+            <span>03</span>
+            Deep Water
+          </a>
+        
+          <a class="" href="../../04-evidence/index.html">
+            <span>04</span>
+            Evidence
+          </a>
+        
+          <a class="" href="../../reference/index.html">
+            <span>05</span>
+            Reference
+          </a>
+        
+      </nav>
+    </aside>
+  
+      <article class="article">
+        <nav class="crumbs">
+          <a href="../../index.html">English</a>
+          <a href="../index.html">Deep Water</a>
+        </nav>
+        <header class="article-head">
+          <p class="eyebrow">Deep Water</p>
+          <h1>Data Model Constitution And ER Diagrams</h1>
+          <div class="article-tools">
+            <a aria-current="true" href="./index.html">English</a><a href="../../../zh/03-deep-water/data-model-constitution/index.html">中文</a>
+          </div>
+        </header>
+        <figure class="article-comic"><img src="../../../assets/visual-protocol/comics-en/cognitive-debt-from-scissor-gap.png" alt="Data Model Constitution And ER Diagrams"></figure>
+        <div class="markdown-body">
+          <h1>Data Model Constitution And ER Diagrams</h1>
+<h2>Table Of Contents</h2>
+<ul><li><a href="#what-this-page-solves">What This Page Solves</a></li><li><a href="#shortest-definition">Shortest Definition</a></li><li><a href="#why-architecture-is-not-enough">Why Architecture Is Not Enough</a></li><li><a href="#where-the-data-constitution-lives">Where The Data Constitution Lives</a></li><li><a href="#initializing-er-during-old-project-takeover">Initializing ER During Old-Project Takeover</a></li><li><a href="#how-detailed-the-er-map-should-be">How Detailed The ER Map Should Be</a></li><li><a href="#ordinary-contracts-and-data-model-amendment-contracts">Ordinary Contracts And Data-Model Amendment Contracts</a></li><li><a href="#migration-backfill-and-source-truth">Migration, Backfill, And Source Truth</a></li><li><a href="#one-line-conclusion">One-Line Conclusion</a></li><li><a href="#related-pages">Related Pages</a></li></ul>
+<h2>What This Page Solves</h2>
+<p>The architecture constitution constrains module boundaries, dependency direction, and runtime flows. It does not fully answer a different question:</p>
+<p><strong>Which durable entities exist, how are they related, and which facts are source truth instead of derived, cached, projected, or generated data?</strong></p>
+<p>Without an ER/data-model layer, ordinary implementation can quietly change:</p>
+<ul><li>primary keys, foreign-key-like references, unique constraints, or status meaning</li><li>entity relationships and cardinality</li><li>source data versus derived data boundaries</li><li>migration, backfill, and compatibility behavior</li><li>persistence semantics behind APIs, ORMs, schemas, or runtime files</li></ul>
+<p>Those changes may look like implementation details, but they change business facts. They deserve constitutional seriousness.</p>
+<h2>Shortest Definition</h2>
+<blockquote><p>The architecture constitution governs system boundaries. The data-model constitution governs durable facts.</p></blockquote>
+<p>ER can change, but it should route through <code>data-model-amend</code>, not through an ordinary implementation contract.</p>
+<p>Ordinary contracts should declare:</p>
+<ul><li><code>affected_data_entities</code></li><li><code>unchanged_data_entities</code></li><li><code>data_model_delta</code></li><li><code>requires_er_amendment</code></li><li><code>migration_required</code></li><li><code>backfill_required</code></li></ul>
+<p>These are not ceremonial fields. They make planning and execution admit that data change creates cognitive debt and migration debt immediately.</p>
+<h2>Why Architecture Is Not Enough</h2>
+<p>An architecture map tells an agent:</p>
+<ul><li>which modules own which responsibilities</li><li>which files belong where</li><li>whether dependency direction is healthy</li><li>which interfaces should not change casually</li></ul>
+<p>An ER map tells an agent:</p>
+<ul><li>whether entities such as <code>User</code>, <code>Order</code>, <code>Contract</code>, or <code>Evidence</code> truly exist</li><li>whether one entity owns or references another</li><li>whether a relationship is one-to-one, one-to-many, or many-to-many</li><li>what deletion, archival, folding, or renaming does to history</li><li>which fields are source facts and which are projections</li></ul>
+<p>Architecture maps reduce &quot;where is the code?&quot; debt. ER maps reduce &quot;what are the business facts?&quot; debt.</p>
+<h2>Where The Data Constitution Lives</h2>
+<p>Recommended location:</p>
+<pre><code class="language-text">dev_repo/architecture/data-model/
+|-- README.md
+|-- ER.md
+|-- er.mmd
+|-- entities.json
+|-- relationships.json
+|-- invariants.md
+`-- migrations.md</code></pre>
+<p>The files have different jobs:</p>
+<ul><li><code>ER.md</code>: human-readable entity and relationship explanation.</li><li><code>er.mmd</code>: Mermaid ER diagram for quick visual reference.</li><li><code>entities.json</code>: machine-readable entity catalogue.</li><li><code>relationships.json</code>: machine-readable relationship catalogue.</li><li><code>invariants.md</code>: data-model red lines for ordinary contracts.</li><li><code>migrations.md</code>: migration, backfill, and compatibility expectations.</li></ul>
+<h2>Initializing ER During Old-Project Takeover</h2>
+<p>During old-project takeover, do not assume the data model is already understood.</p>
+<p>Minimum census order:</p>
+<ol><li>Find real sources: schemas, ORMs, migrations, fixtures, API contracts, runtime files, import/export formats.</li><li>Extract core entities: durable facts only, not every DTO, temporary object, or frontend view-model.</li><li>Extract relationships: cardinality, reference fields, deletion or archival semantics.</li><li>Extract identity and state: primary keys, unique constraints, foreign-key-like references, enums, and state-machine fields.</li><li>Separate source and derived data: source, derived, cache, projection, and generated data should not blur together.</li><li>Mark confidence: <code>confirmed</code>, <code>inferred</code>, or <code>unknown</code>.</li></ol>
+<p>If no schema or migration exists, write <code>unknown</code> or <code>inferred</code>. Do not turn guesses into <code>confirmed</code> facts.</p>
+<h2>How Detailed The ER Map Should Be</h2>
+<p>The useful standard is:</p>
+<p><strong>Detailed enough for an agent to decide whether a data change needs amendment, migration, compatibility work, or backfill; not so detailed that every DTO and temporary field enters the map.</strong></p>
+<p>Every entity should answer:</p>
+<pre><code class="language-yaml">entity_id:
+purpose:
+owning_architecture_node:
+source_or_derived:
+source_artifacts:
+identity:
+state_fields:
+derived_from:
+migration_notes:
+requires_amendment_when:
+confidence:</code></pre>
+<p>Every relationship should answer:</p>
+<pre><code class="language-yaml">relationship_id:
+from_entity:
+to_entity:
+cardinality:
+reference_fields:
+deletion_semantics:
+requires_amendment_when:
+confidence:</code></pre>
+<p>That is more useful than a plain table list and lighter than a complete field encyclopedia.</p>
+<h2>Ordinary Contracts And Data-Model Amendment Contracts</h2>
+<p>An ordinary contract works under the existing ER/data-model constitution.</p>
+<p>Example:</p>
+<pre><code class="language-yaml">affected_data_entities:
+  - contract
+unchanged_data_entities:
+  - campaign
+  - evidence_item
+data_model_delta: none
+requires_er_amendment: false
+migration_required: false
+backfill_required: false</code></pre>
+<p>A data-model amendment is required when work changes:</p>
+<ul><li>entity existence, name, ownership, or identity</li><li>relationship direction, cardinality, or deletion semantics</li><li>primary keys, foreign-key-like references, unique constraints, status fields, enums, or state-machine meaning</li><li>source data versus derived/cache/projection status</li><li>migration, backfill, or compatibility behavior</li><li>API, ORM, schema, or runtime persistence semantics</li></ul>
+<p>The amendment contract must state what changes, what stays unchanged, why the current model is insufficient, how migration/backfill works, and how compatibility is proven.</p>
+<h2>Migration, Backfill, And Source Truth</h2>
+<p>Data models create hidden debt when code changes but old facts remain unclear.</p>
+<p>Contracts should explicitly state:</p>
+<ul><li><code>migration_required</code>: whether existing data shape must be converted.</li><li><code>backfill_required</code>: whether existing records need new fields, indexes, or regenerated derived values.</li><li><code>compatibility_expectations</code>: whether old files, records, or API payloads remain readable.</li><li><code>source_or_derived</code>: whether the entity or field is source truth or derived output.</li></ul>
+<p>If source and derived artifacts disagree, repair the source first, then update the projection. Generated output should not rule the facts.</p>
+<h2>One-Line Conclusion</h2>
+<p>The architecture constitution tells agents how the system stands. The data-model constitution tells agents how facts connect.</p>
+<p>Together, they turn &quot;I roughly know how to change this&quot; into &quot;I know what can change normally, what needs amendment, and how old facts remain true afterward.&quot;</p>
+<h2>Related Pages</h2>
+<ul><li><a href="../architecture-constitution-hooks/index.html">Architecture Constitution And Contract Hooks</a></li><li><a href="../cognitive-debt/index.html">Cyber Cognitive Debt</a></li><li><a href="https://github.com/blackzhanzhan/Cyber-Ming-Protocol/blob/main/dev_repo/README.md">Campaign Runtime Guide</a></li></ul>
+        </div>
+        
+    <footer class="article-nav">
+      <a href="../architecture-constitution-hooks/index.html"><small>Previous</small><span>Architecture Constitution And Contract Hooks</span></a>
+      <a href="../boundaries/index.html"><small>Next</small><span>Boundaries And Unresolved Battlefields</span></a>
+    </footer>
+  
+      </article>
+    </main>
+  
+    
+<script src="../../../assets/static-wiki-transitions.js" defer></script>
+</body>
+</html>
