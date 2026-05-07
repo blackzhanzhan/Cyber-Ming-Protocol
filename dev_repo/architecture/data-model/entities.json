@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "project": "Cyber-Ming-Protocol",
+  "detail_standard": "agent-actionable data model",
+  "confidence_legend": {
+    "confirmed": "Proven directly by code, config, schemas, migrations, fixtures, or runtime files.",
+    "inferred": "Reconstructed from naming, file layout, documentation, or observed usage.",
+    "unknown": "Requires a future probe or human confirmation."
+  },
+  "entities": [
+    {
+      "entity_id": "campaign",
+      "display_name": "Campaign",
+      "purpose": "Root unit of serious work tracked by the repository runtime.",
+      "owning_architecture_node": "dev-runtime-truth",
+      "source_or_derived": "source",
+      "source_artifacts": ["dev_repo/state.json"],
+      "identity": {
+        "primary_key": "campaign_id",
+        "foreign_keys": ["root_contract_id", "active_contract_id"],
+        "unique_constraints": ["campaign_id"]
+      },
+      "state_fields": ["status"],
+      "derived_from": [],
+      "migration_notes": "Runtime bootstrap must preserve existing campaign identity and active contract fields.",
+      "requires_amendment_when": [
+        "Changing campaign identity",
+        "Changing root or active contract reference semantics",
+        "Changing campaign status meaning"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "entity_id": "contract",
+      "display_name": "Contract",
+      "purpose": "Approved execution boundary with parent/child return semantics, verification, evidence, and commit unit.",
+      "owning_architecture_node": "dev-runtime-truth",
+      "source_or_derived": "source",
+      "source_artifacts": ["dev_repo/state.json", "dev_repo/journal.jsonl"],
+      "identity": {
+        "primary_key": "contract_id",
+        "foreign_keys": ["parent_contract_id", "root_campaign", "return_to"],
+        "unique_constraints": ["contract_id"]
+      },
+      "state_fields": ["status"],
+      "derived_from": [],
+      "migration_notes": "Contract tree changes must retain parent/child return semantics and historical evidence.",
+      "requires_amendment_when": [
+        "Changing contract identity",
+        "Changing parent/child cardinality",
+        "Changing status lifecycle semantics",
+        "Changing architecture or data-model delta fields"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "entity_id": "evidence_item",
+      "display_name": "Evidence Item",
+      "purpose": "Durable proof for assertions, verification commands, artifacts, and commits.",
+      "owning_architecture_node": "dev-runtime-truth",
+      "source_or_derived": "source",
+      "source_artifacts": ["dev_repo/evidence_index.json", "dev_repo/journal.jsonl"],
+      "identity": {
+        "primary_key": "evidence_id",
+        "foreign_keys": ["contract_id"],
+        "unique_constraints": ["evidence_id"]
+      },
+      "state_fields": [],
+      "derived_from": [],
+      "migration_notes": "Evidence rewrites must preserve assertion-to-artifact traceability.",
+      "requires_amendment_when": [
+        "Changing evidence identity",
+        "Changing assertion or artifact reference semantics",
+        "Changing evidence retention expectations"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "entity_id": "journal_entry",
+      "display_name": "Journal Entry",
+      "purpose": "Append-only runtime chronicle for events, evidence, collapsed branches, and execution notes.",
+      "owning_architecture_node": "dev-runtime-truth",
+      "source_or_derived": "source",
+      "source_artifacts": ["dev_repo/journal.jsonl"],
+      "identity": {
+        "primary_key": "journal_entry_id",
+        "foreign_keys": ["contract_id"],
+        "unique_constraints": []
+      },
+      "state_fields": ["event_type"],
+      "derived_from": [],
+      "migration_notes": "Journal format changes must preserve append-only readability or provide conversion guidance.",
+      "requires_amendment_when": [
+        "Changing append-only semantics",
+        "Changing event identity or timestamp semantics",
+        "Changing contract linkage"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "entity_id": "architecture_node",
+      "display_name": "Architecture Node",
+      "purpose": "Agent-actionable subsystem, component, flow, or invariant boundary.",
+      "owning_architecture_node": "dev-runtime-truth",
+      "source_or_derived": "source",
+      "source_artifacts": ["dev_repo/architecture/graph.json", "dev_repo/architecture/index.json"],
+      "identity": {
+        "primary_key": "node_id",
+        "foreign_keys": [],
+        "unique_constraints": ["node_id"]
+      },
+      "state_fields": ["confidence"],
+      "derived_from": [],
+      "migration_notes": "Architecture node changes must keep graph, index, diagrams, and invariants aligned.",
+      "requires_amendment_when": [
+        "Changing node identity",
+        "Changing ownership boundaries",
+        "Changing dependency or public interface semantics"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "entity_id": "data_entity",
+      "display_name": "Data Entity",
+      "purpose": "Agent-actionable persistent business or protocol fact tracked by the ER/data-model constitution.",
+      "owning_architecture_node": "dev-runtime-truth",
+      "source_or_derived": "source",
+      "source_artifacts": ["dev_repo/architecture/data-model/entities.json"],
+      "identity": {
+        "primary_key": "entity_id",
+        "foreign_keys": ["owning_architecture_node"],
+        "unique_constraints": ["entity_id"]
+      },
+      "state_fields": ["source_or_derived", "confidence"],
+      "derived_from": [],
+      "migration_notes": "Entity additions, removals, or identity changes require ER/data-model amendment.",
+      "requires_amendment_when": [
+        "Adding or deleting an entity",
+        "Changing source versus derived status",
+        "Changing identity, ownership, or confidence semantics"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "entity_id": "data_relationship",
+      "display_name": "Data Relationship",
+      "purpose": "Cardinality, reference, and deletion semantics between data entities.",
+      "owning_architecture_node": "dev-runtime-truth",
+      "source_or_derived": "source",
+      "source_artifacts": ["dev_repo/architecture/data-model/relationships.json"],
+      "identity": {
+        "primary_key": "relationship_id",
+        "foreign_keys": ["from_entity", "to_entity"],
+        "unique_constraints": ["relationship_id"]
+      },
+      "state_fields": ["cardinality", "confidence"],
+      "derived_from": [],
+      "migration_notes": "Relationship changes must preserve compatibility or specify migration and backfill.",
+      "requires_amendment_when": [
+        "Changing cardinality",
+        "Changing deletion semantics",
+        "Changing source or target entity"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "entity_id": "installed_manifest",
+      "display_name": "Installed Manifest",
+      "purpose": "Record of installed Cyber-Ming assets in a host or project environment.",
+      "owning_architecture_node": "cli-installer",
+      "source_or_derived": "source",
+      "source_artifacts": ["adopter workspace manifest"],
+      "identity": {
+        "primary_key": "manifest_id",
+        "foreign_keys": [],
+        "unique_constraints": ["install_root"]
+      },
+      "state_fields": ["host"],
+      "derived_from": [],
+      "migration_notes": "Installer manifest schema changes must preserve upgrade and doctor compatibility.",
+      "requires_amendment_when": [
+        "Changing manifest identity",
+        "Changing install root or host semantics",
+        "Changing asset record semantics"
+      ],
+      "confidence": "inferred"
+    },
+    {
+      "entity_id": "installed_asset",
+      "display_name": "Installed Asset",
+      "purpose": "A single protocol file, skill, starter block, or documentation asset recorded by an installed manifest.",
+      "owning_architecture_node": "cli-installer",
+      "source_or_derived": "source",
+      "source_artifacts": ["adopter workspace manifest"],
+      "identity": {
+        "primary_key": "asset_id",
+        "foreign_keys": ["manifest_id"],
+        "unique_constraints": ["manifest_id", "target_path"]
+      },
+      "state_fields": ["asset_type"],
+      "derived_from": [],
+      "migration_notes": "Installed asset schema changes must preserve idempotent reinstall behavior.",
+      "requires_amendment_when": [
+        "Changing installed asset identity",
+        "Changing target path uniqueness",
+        "Changing asset type semantics"
+      ],
+      "confidence": "inferred"
+    }
+  ]
+}

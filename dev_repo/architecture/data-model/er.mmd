@@ -1,0 +1,77 @@
+erDiagram
+    CAMPAIGN ||--o{ CONTRACT : contains
+    CONTRACT ||--o{ CONTRACT : parents
+    CONTRACT ||--o{ EVIDENCE_ITEM : produces
+    CONTRACT ||--o{ JOURNAL_ENTRY : records
+    CONTRACT }o--o{ ARCHITECTURE_NODE : affects
+    CONTRACT }o--o{ DATA_ENTITY : affects
+    ARCHITECTURE_NODE ||--o{ DATA_ENTITY : owns
+    DATA_ENTITY ||--o{ DATA_RELATIONSHIP : source_of
+    DATA_ENTITY ||--o{ DATA_RELATIONSHIP : target_of
+    INSTALLED_MANIFEST ||--o{ INSTALLED_ASSET : records
+
+    CAMPAIGN {
+      string campaign_id PK
+      string root_contract_id FK
+      string active_contract_id FK
+      string status
+    }
+
+    CONTRACT {
+      string contract_id PK
+      string parent_contract_id FK
+      string root_campaign FK
+      string status
+      string return_to
+      string summary
+    }
+
+    EVIDENCE_ITEM {
+      string evidence_id PK
+      string contract_id FK
+      string assertion
+      string artifact
+      string confidence
+    }
+
+    JOURNAL_ENTRY {
+      string journal_entry_id PK
+      string contract_id FK
+      string event_type
+      string timestamp
+    }
+
+    ARCHITECTURE_NODE {
+      string node_id PK
+      string layer
+      string confidence
+    }
+
+    DATA_ENTITY {
+      string entity_id PK
+      string owning_architecture_node FK
+      string source_or_derived
+      string confidence
+    }
+
+    DATA_RELATIONSHIP {
+      string relationship_id PK
+      string from_entity FK
+      string to_entity FK
+      string cardinality
+      string confidence
+    }
+
+    INSTALLED_MANIFEST {
+      string manifest_id PK
+      string install_root
+      string host
+      string confidence
+    }
+
+    INSTALLED_ASSET {
+      string asset_id PK
+      string manifest_id FK
+      string target_path
+      string asset_type
+    }

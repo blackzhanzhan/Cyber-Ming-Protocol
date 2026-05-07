@@ -26,6 +26,14 @@ These invariants are ordinary-contract red lines. If a change needs to alter one
 - Architecture diagrams and machine-readable graph/index files must not contradict each other.
 - The architecture graph should stay agent-actionable: subsystem, component, critical flow, and invariant level by default.
 
+## Data Model Invariants
+
+- Data-model truth lives under `dev_repo/architecture/data-model/**` as part of the architecture constitution.
+- ER/data-model artifacts must distinguish source data from derived, cached, projected, or generated data.
+- Ordinary implementation contracts that can touch durable data semantics must declare affected data entities and data-model delta.
+- Data-model amendment contracts are required for entity, relationship, identity, uniqueness, status, enum, state-machine, source/derived, migration, backfill, or persistence semantics changes.
+- If real schema, ORM, migrations, fixtures, or API contracts exist, the ER model must bind to them. If they do not exist, use `unknown` or `inferred`; do not invent `confirmed` entities.
+
 ## Installer Invariants
 
 - Project installs should be possible even when a host binary is not present.

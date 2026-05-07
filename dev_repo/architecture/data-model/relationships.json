@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "project": "Cyber-Ming-Protocol",
+  "relationships": [
+    {
+      "relationship_id": "campaign-contains-contract",
+      "from_entity": "campaign",
+      "to_entity": "contract",
+      "cardinality": "one-to-many",
+      "reference_fields": ["campaign.campaign_id", "contract.root_campaign"],
+      "deletion_semantics": "contracts are historical runtime records and must not be silently deleted when a campaign closes",
+      "source_artifacts": ["dev_repo/state.json", "dev_repo/journal.jsonl"],
+      "requires_amendment_when": [
+        "Changing root campaign reference semantics",
+        "Allowing contracts to outlive campaign identity without a historical link"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "relationship_id": "contract-parent-child",
+      "from_entity": "contract",
+      "to_entity": "contract",
+      "cardinality": "zero-or-one-parent-to-many-children",
+      "reference_fields": ["contract.parent_contract_id", "contract.return_to"],
+      "deletion_semantics": "completed child branches may be collapsed from live tree but preserved in journal and evidence history",
+      "source_artifacts": ["dev_repo/state.json", "dev_repo/tree.md", "dev_repo/journal.jsonl"],
+      "requires_amendment_when": [
+        "Changing parent cardinality",
+        "Changing return_to semantics",
+        "Deleting historical child evidence"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "relationship_id": "contract-produces-evidence",
+      "from_entity": "contract",
+      "to_entity": "evidence_item",
+      "cardinality": "one-to-many",
+      "reference_fields": ["evidence_item.contract_id"],
+      "deletion_semantics": "evidence may be superseded by newer evidence but must not be removed without recording why",
+      "source_artifacts": ["dev_repo/evidence_index.json", "dev_repo/journal.jsonl"],
+      "requires_amendment_when": [
+        "Changing contract-to-evidence traceability",
+        "Changing evidence retention policy"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "relationship_id": "contract-records-journal-entry",
+      "from_entity": "contract",
+      "to_entity": "journal_entry",
+      "cardinality": "one-to-many",
+      "reference_fields": ["journal_entry.contract_id"],
+      "deletion_semantics": "journal entries are append-only unless an explicit migration records the conversion",
+      "source_artifacts": ["dev_repo/journal.jsonl"],
+      "requires_amendment_when": [
+        "Changing append-only journal semantics",
+        "Changing journal-to-contract linkage"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "relationship_id": "contract-affects-architecture-node",
+      "from_entity": "contract",
+      "to_entity": "architecture_node",
+      "cardinality": "many-to-many",
+      "reference_fields": ["affected_architecture_nodes", "unchanged_architecture_nodes"],
+      "deletion_semantics": "architecture deltas must remain reviewable even if nodes are later renamed through amendment",
+      "source_artifacts": ["skill/*/SKILL.md", "dev_repo/architecture/index.json"],
+      "requires_amendment_when": [
+        "Changing architecture contract field semantics",
+        "Changing architecture node identity"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "relationship_id": "contract-affects-data-entity",
+      "from_entity": "contract",
+      "to_entity": "data_entity",
+      "cardinality": "many-to-many",
+      "reference_fields": ["affected_data_entities", "unchanged_data_entities"],
+      "deletion_semantics": "data-model deltas must remain reviewable even if entities are later renamed through amendment",
+      "source_artifacts": ["skill/*/SKILL.md", "dev_repo/architecture/data-model/entities.json"],
+      "requires_amendment_when": [
+        "Changing data-model contract field semantics",
+        "Changing data entity identity"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "relationship_id": "architecture-node-owns-data-entity",
+      "from_entity": "architecture_node",
+      "to_entity": "data_entity",
+      "cardinality": "one-to-many",
+      "reference_fields": ["data_entity.owning_architecture_node"],
+      "deletion_semantics": "entity ownership changes require data-model amendment and may also require architecture amendment",
+      "source_artifacts": ["dev_repo/architecture/graph.json", "dev_repo/architecture/data-model/entities.json"],
+      "requires_amendment_when": [
+        "Changing entity ownership",
+        "Splitting or merging owning architecture nodes"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "relationship_id": "data-entity-links-relationship",
+      "from_entity": "data_entity",
+      "to_entity": "data_relationship",
+      "cardinality": "one-to-many-as-source-or-target",
+      "reference_fields": ["data_relationship.from_entity", "data_relationship.to_entity"],
+      "deletion_semantics": "entity deletion requires retiring or migrating all relationships first",
+      "source_artifacts": ["dev_repo/architecture/data-model/relationships.json"],
+      "requires_amendment_when": [
+        "Changing relationship source or target",
+        "Deleting an entity that still participates in relationships"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "relationship_id": "manifest-records-installed-asset",
+      "from_entity": "installed_manifest",
+      "to_entity": "installed_asset",
+      "cardinality": "one-to-many",
+      "reference_fields": ["installed_asset.manifest_id"],
+      "deletion_semantics": "asset records should remain compatible with reinstall and doctor checks",
+      "source_artifacts": ["adopter workspace manifest"],
+      "requires_amendment_when": [
+        "Changing manifest asset cardinality",
+        "Changing installed path uniqueness"
+      ],
+      "confidence": "inferred"
+    }
+  ]
+}

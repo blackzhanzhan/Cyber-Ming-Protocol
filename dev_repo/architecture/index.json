@@ -24,7 +24,8 @@
     ".github/workflows/pages.yml": ["static-teaching-site"],
     ".github/workflows/sync-gitee.yml": ["static-teaching-site"],
     "dev_repo/**": ["dev-runtime-truth"],
-    "dev_repo/architecture/**": ["dev-runtime-truth"]
+    "dev_repo/architecture/**": ["dev-runtime-truth"],
+    "dev_repo/architecture/data-model/**": ["dev-runtime-truth"]
   },
   "entrypoints": {
     "cli": {
@@ -57,7 +58,13 @@
       "affected_architecture_nodes",
       "unchanged_architecture_nodes",
       "architecture_delta",
-      "requires_architecture_amendment"
+      "requires_architecture_amendment",
+      "affected_data_entities",
+      "unchanged_data_entities",
+      "data_model_delta",
+      "requires_er_amendment",
+      "migration_required",
+      "backfill_required"
     ],
     "amendment_contract_fields": [
       "change_reason",
@@ -66,6 +73,19 @@
       "new_boundaries",
       "migration_expectations",
       "architecture_artifacts_to_update",
+      "verification"
+    ],
+    "data_model_amendment_contract_fields": [
+      "change_reason",
+      "changed_entities",
+      "unchanged_entities",
+      "changed_relationships",
+      "unchanged_relationships",
+      "source_vs_derived_changes",
+      "migration_required",
+      "backfill_required",
+      "compatibility_expectations",
+      "data_model_artifacts_to_update",
       "verification"
     ]
   }
