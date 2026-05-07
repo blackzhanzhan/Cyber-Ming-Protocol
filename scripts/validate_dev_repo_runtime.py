@@ -21,6 +21,16 @@ REQUIRED_ARCHITECTURE_FILES = [
     "dev_repo/architecture/invariants.md",
 ]
 
+REQUIRED_DATA_MODEL_FILES = [
+    "dev_repo/architecture/data-model/README.md",
+    "dev_repo/architecture/data-model/ER.md",
+    "dev_repo/architecture/data-model/er.mmd",
+    "dev_repo/architecture/data-model/entities.json",
+    "dev_repo/architecture/data-model/relationships.json",
+    "dev_repo/architecture/data-model/invariants.md",
+    "dev_repo/architecture/data-model/migrations.md",
+]
+
 REQUIRED_NODE_FIELDS = [
     "node_id",
     "purpose",
@@ -43,6 +53,15 @@ ORDINARY_CONTRACT_FIELDS = [
     "requires_architecture_amendment",
 ]
 
+DATA_MODEL_CONTRACT_FIELDS = [
+    "affected_data_entities",
+    "unchanged_data_entities",
+    "data_model_delta",
+    "requires_er_amendment",
+    "migration_required",
+    "backfill_required",
+]
+
 AMENDMENT_CONTRACT_FIELDS = [
     "change_reason",
     "changed_nodes",
@@ -52,6 +71,50 @@ AMENDMENT_CONTRACT_FIELDS = [
     "architecture_artifacts_to_update",
     "verification",
 ]
+
+DATA_MODEL_AMENDMENT_CONTRACT_FIELDS = [
+    "change_reason",
+    "changed_entities",
+    "unchanged_entities",
+    "changed_relationships",
+    "unchanged_relationships",
+    "source_vs_derived_changes",
+    "migration_required",
+    "backfill_required",
+    "compatibility_expectations",
+    "data_model_artifacts_to_update",
+    "verification",
+]
+
+REQUIRED_ENTITY_FIELDS = [
+    "entity_id",
+    "display_name",
+    "purpose",
+    "owning_architecture_node",
+    "source_or_derived",
+    "source_artifacts",
+    "identity",
+    "state_fields",
+    "derived_from",
+    "migration_notes",
+    "requires_amendment_when",
+    "confidence",
+]
+
+REQUIRED_RELATIONSHIP_FIELDS = [
+    "relationship_id",
+    "from_entity",
+    "to_entity",
+    "cardinality",
+    "reference_fields",
+    "deletion_semantics",
+    "source_artifacts",
+    "requires_amendment_when",
+    "confidence",
+]
+
+VALID_CONFIDENCE = {"confirmed", "inferred", "unknown"}
+VALID_SOURCE_TYPES = {"source", "derived", "cache", "projection", "generated", "unknown"}
 
 
 def read_json(path: Path, errors: list[str]):
@@ -147,14 +210,103 @@ def validate_architecture(root: Path, errors: list[str]) -> None:
         if isinstance(requirements, dict):
             ordinary = requirements.get("ordinary_contract_fields", [])
             amendment = requirements.get("amendment_contract_fields", [])
+            data_amendment = requirements.get("data_model_amendment_contract_fields", [])
             for field in ORDINARY_CONTRACT_FIELDS:
                 if field not in ordinary:
                     errors.append(f"ordinary contract requirements missing field: {field}")
+            for field in DATA_MODEL_CONTRACT_FIELDS:
+                if field not in ordinary:
+                    errors.append(f"ordinary contract requirements missing data-model field: {field}")
             for field in AMENDMENT_CONTRACT_FIELDS:
                 if field not in amendment:
                     errors.append(f"amendment contract requirements missing field: {field}")
+            for field in DATA_MODEL_AMENDMENT_CONTRACT_FIELDS:
+                if field not in data_amendment:
+                    errors.append(f"data-model amendment contract requirements missing field: {field}")
         else:
             errors.append("dev_repo/architecture/index.json contract_requirements must be an object")
+
+
+def validate_data_model(root: Path, errors: list[str]) -> None:
+    entities_doc = read_json(root / "dev_repo/architecture/data-model/entities.json", errors)
+    relationships_doc = read_json(root / "dev_repo/architecture/data-model/relationships.json", errors)
+
+    entity_ids: set[str] = set()
+
+    if isinstance(entities_doc, dict):
+        require_keys(
+            entities_doc,
+            ["schema_version", "project", "detail_standard", "confidence_legend", "entities"],
+            "dev_repo/architecture/data-model/entities.json",
+            errors,
+        )
+        entities = entities_doc.get("entities")
+        if not isinstance(entities, list):
+            errors.append("dev_repo/architecture/data-model/entities.json entities must be a list")
+        else:
+            for position, entity in enumerate(entities):
+                if not isinstance(entity, dict):
+                    errors.append(f"data entity at index {position} must be an object")
+                    continue
+                require_keys(entity, REQUIRED_ENTITY_FIELDS, f"data entity {position}", errors)
+                entity_id = entity.get("entity_id")
+                if not isinstance(entity_id, str) or not entity_id:
+                    errors.append(f"data entity {position} must have a non-empty entity_id")
+                elif entity_id in entity_ids:
+                    errors.append(f"duplicate data entity_id: {entity_id}")
+                else:
+                    entity_ids.add(entity_id)
+
+                if entity.get("confidence") not in VALID_CONFIDENCE:
+                    errors.append(f"data entity {entity_id} has invalid confidence: {entity.get('confidence')}")
+                if entity.get("source_or_derived") not in VALID_SOURCE_TYPES:
+                    errors.append(
+                        f"data entity {entity_id} has invalid source_or_derived: {entity.get('source_or_derived')}"
+                    )
+                identity = entity.get("identity")
+                if isinstance(identity, dict):
+                    require_keys(
+                        identity,
+                        ["primary_key", "foreign_keys", "unique_constraints"],
+                        f"data entity {entity_id} identity",
+                        errors,
+                    )
+                else:
+                    errors.append(f"data entity {entity_id} identity must be an object")
+
+    if isinstance(relationships_doc, dict):
+        require_keys(
+            relationships_doc,
+            ["schema_version", "project", "relationships"],
+            "dev_repo/architecture/data-model/relationships.json",
+            errors,
+        )
+        relationships = relationships_doc.get("relationships")
+        if not isinstance(relationships, list):
+            errors.append("dev_repo/architecture/data-model/relationships.json relationships must be a list")
+        else:
+            seen_relationships: set[str] = set()
+            for position, relationship in enumerate(relationships):
+                if not isinstance(relationship, dict):
+                    errors.append(f"data relationship at index {position} must be an object")
+                    continue
+                require_keys(relationship, REQUIRED_RELATIONSHIP_FIELDS, f"data relationship {position}", errors)
+                relationship_id = relationship.get("relationship_id")
+                if not isinstance(relationship_id, str) or not relationship_id:
+                    errors.append(f"data relationship {position} must have a non-empty relationship_id")
+                elif relationship_id in seen_relationships:
+                    errors.append(f"duplicate data relationship_id: {relationship_id}")
+                else:
+                    seen_relationships.add(relationship_id)
+
+                if relationship.get("confidence") not in VALID_CONFIDENCE:
+                    errors.append(
+                        f"data relationship {relationship_id} has invalid confidence: {relationship.get('confidence')}"
+                    )
+                for side in ("from_entity", "to_entity"):
+                    referenced = relationship.get(side)
+                    if entity_ids and referenced not in entity_ids:
+                        errors.append(f"data relationship {relationship_id} references unknown {side}: {referenced}")
 
 
 def main() -> int:
@@ -163,14 +315,17 @@ def main() -> int:
 
     require_paths(root, REQUIRED_RUNTIME_FILES, errors)
     require_paths(root, REQUIRED_ARCHITECTURE_FILES, errors)
+    require_paths(root, REQUIRED_DATA_MODEL_FILES, errors)
 
     if not errors:
         validate_runtime(root, errors)
         validate_architecture(root, errors)
+        validate_data_model(root, errors)
 
     report = {
         "runtime_files": REQUIRED_RUNTIME_FILES,
         "architecture_files": REQUIRED_ARCHITECTURE_FILES,
+        "data_model_files": REQUIRED_DATA_MODEL_FILES,
         "errors": errors,
     }
     print(json.dumps(report, ensure_ascii=False, indent=2))
