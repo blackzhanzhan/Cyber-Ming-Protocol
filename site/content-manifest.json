@@ -445,10 +445,29 @@
       }
     },
     {
-      "id": "boundaries",
+      "id": "data-model-constitution",
       "type": "article",
       "section": "03-deep-water",
       "order": 8,
+      "slug": "data-model-constitution",
+      "titles": {
+        "en": "Data Model Constitution And ER Diagrams",
+        "zh": "数据宪法与 ER 图"
+      },
+      "sources": {
+        "en": "wiki-en/03-deep-water/data-model-constitution.md",
+        "zh": "wiki/03-治理扩展、吞吐补偿与边界/数据宪法与ER图：让业务事实可维护.md"
+      },
+      "comics": {
+        "en": "assets/visual-protocol/comics-en/cognitive-debt-from-scissor-gap.png",
+        "zh": "assets/visual-protocol/comics/cognitive-debt-from-scissor-gap.png"
+      }
+    },
+    {
+      "id": "boundaries",
+      "type": "article",
+      "section": "03-deep-water",
+      "order": 9,
       "slug": "boundaries",
       "titles": {
         "en": "Boundaries And Unresolved Battlefields",
@@ -467,7 +486,7 @@
       "id": "coder-to-governor",
       "type": "article",
       "section": "03-deep-water",
-      "order": 9,
+      "order": 10,
       "slug": "coder-to-governor",
       "titles": {
         "en": "From Coder To Governor",
