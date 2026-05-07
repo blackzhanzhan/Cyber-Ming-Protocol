@@ -1,18 +1,21 @@
 ---
 name: free-development-mode
-description: Use only after the user explicitly activates 自由开发模式. Execute directly under red-line control, choose routes pragmatically, and explicitly avoid drift, fake completion, and poisoned methods without re-entering approval-first ceremony by default.
+description: Use only after the user explicitly activates free development mode / 自由开发模式. Execute directly under red-line control, choose routes pragmatically, and explicitly avoid drift, fake completion, and poisoned methods without re-entering approval-first ceremony by default.
 ---
 
 # Free Development Mode
 
 ## Role
 
-This skill is the dedicated execution route for `自由开发模式`.
+This skill is the dedicated execution route for `free development mode` / `自由开发模式`.
 
 It is not the default implementation workflow.
 
 It only activates after an explicit user opt-in such as:
 
+- `enter free development mode`
+- `use free development mode`
+- `switch to free development mode`
 - `开启自由开发模式`
 - `进入自由开发`
 - `自由长时开发模式`
@@ -33,6 +36,7 @@ Long-running execution is allowed in this mode only when:
 - no hard red line is crossed
 - the executor does not quietly mutate the requirement
 - engineering discipline stays intact
+- architecture discipline stays intact: ordinary implementation cannot smuggle architecture changes.
 
 Free-development mode now absorbs:
 
@@ -53,6 +57,7 @@ Before a long autonomous push, state only these things:
 2. the likely branch paths you may need
 3. the routes you must avoid
 4. the fake methods / poison methods you will not use
+5. the architecture nodes you expect to touch, and whether any amendment contract may be required
 
 Do not re-outline the whole project unless a red line forces replanning.
 
@@ -63,11 +68,12 @@ When a problem is complex, choose one primary route and keep moving until eviden
 Preferred route order:
 
 1. same-case / replay-first
-2. probe-first when the real uncertainty is operational rather than architectural
-3. end-to-end truth path
-4. smallest live blocker first
-5. rollback or cleanup before expansion
-6. bounded concurrency only after parity is green
+2. architecture census or amendment contract when the real uncertainty is architectural
+3. probe-first when the real uncertainty is operational rather than architectural
+4. end-to-end truth path
+5. smallest live blocker first
+6. rollback or cleanup before expansion
+7. bounded concurrency only after parity is green
 
 `probe-first-scout` should be used aggressively in free development mode whenever:
 
@@ -116,6 +122,7 @@ These are especially dangerous and should be treated as anti-patterns:
 - allowing provider recovery or online recompute inside replay paths that must be deterministic
 - introducing high-coupling temporary scripts that route around the framework instead of through it
 - mutating architecture through convenience hacks that no longer match the stated mainline
+- changing subsystem boundaries, public interfaces, dependency direction, runtime flow, or invariants without an architecture amendment contract
 - declaring branch experiments “successful” without a reintegration proof on the actual mainline
 
 ## Long-Running Execution Posture
@@ -136,7 +143,9 @@ Additional long-running harness rules:
 - maintain `dev_repo/journal.jsonl`
 - maintain `dev_repo/evidence_index.json`
 - maintain `dev_repo/tree.md`
+- maintain `dev_repo/architecture/` when architecture truth exists or when old-project takeover requires it
 - if those four siblings do not exist yet, bootstrap them first via `../global_rules/scripts/bootstrap_dev_repo_runtime.py`
+- if architecture truth is absent and the work requires broad planning in an old project, initialize architecture census before broad implementation
 - do not stop voluntarily unless a real blocker appears, verification fails, or continuing would be dishonest
 - every stop must write the exact blocker class and the next exact action
 - if new evidence invalidates a prior local pass, reopen it explicitly instead of defending it
@@ -213,6 +222,7 @@ Framework rule:
 - free development does not relax architecture discipline
 - code must still move through the real framework path
 - temporary scripts may assist probes, audits, or artifact inspection, but must not become hidden production paths
+- architecture can change, but only through an explicit amendment path that says what changes, what stays unchanged, why it changes, and how it is verified
 
 ## Strict Interpretation Addendum
 

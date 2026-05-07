@@ -28,12 +28,16 @@ Prerequisite: read and obey the repository parent policy at `skill/global_rules/
 - If the project exposes an execution lock such as `active_contract.json`, treat it as the current execution truth and continue from it rather than narrating a fresh broad contract.
 - If the project also exposes a contract runner such as `openclaw_harness_contract_runner.py`, use it as the default execution-state transition entrypoint.
 
-## Explicit Submode: 一口气模式
+## Explicit Submode: One-Breath Mode / 一口气模式
 
 This submode is **not** the default.
 
 It activates only when the user explicitly says things like:
 
+- `one-breath mode`
+- `push continuously`
+- `do not stop; finish the approved checklist`
+- `continue until blocked`
 - `一口气模式`
 - `开启一口气模式`
 - `用一口气模式推进`
@@ -49,10 +53,10 @@ When active, add these stronger rules on top of the normal executor discipline:
 - do not inflate the pause into a fresh broad plan unless continuing would be dishonest
 - do not pause externally just because one commit or one slice has completed; archive it and keep moving
 - write detailed slice-level bookkeeping into harness artifacts rather than turning every slice boundary into a conversational stop
-- use progress reports only in this structure:
-  - `已证明`
-  - `未证明`
-  - `为什么没做成`
+- use progress reports only in this structure, translated to the user's working language:
+  - `Proven` / `已证明`
+  - `Not Proven` / `未证明`
+  - `Why It Did Not Complete` / `为什么没做成`
 
 Add these four hard gates:
 
@@ -73,7 +77,7 @@ In this submode, the executor should bias toward reducing interruption cost rath
 
 ## Workflow Per Slice
 1. If an active contract exists, run one `contract_runner cycle` first to synchronize drift before touching code.
-2. Restate the current slice ID, allowed files, no-touch scope, planned `Red Line`, planned `Commit Action`, and current contract-tree position:
+2. Restate the current slice ID, allowed files, no-touch scope, planned `Red Line`, planned `Commit Action`, affected architecture nodes, planned `architecture_delta`, amendment status, and current contract-tree position:
   - `contract_id`
   - `parent_contract_id`
   - `root_campaign`
@@ -81,12 +85,13 @@ In this submode, the executor should bias toward reducing interruption cost rath
   - `return_to`
 3. Modify only the allowed scope.
 4. Run the planned `Green Tests`, and where the YAML defines a white-box chain, run the planned `red_test` / `green_test` sequence against the same case.
-5. Collect target artifacts by assertion, note whether any `Red Line` was crossed, and record whether the same red case truly turned green.
+5. Collect target artifacts by assertion, note whether any `Red Line` was crossed, record whether the same red case truly turned green, and record the actual `architecture_delta`.
 6. Archive exactly one independent commit using the planned `Commit Action`, `Commit Unit`, and `Commit Message`.
-7. If an active contract exists, advance it through `contract_runner complete-current` instead of leaving slice closure to oral narration.
-8. Report `git status --short`.
-9. Package the minimum evidence bundle for Web-side review.
-10. If this slice was a child contract, explicitly state whether execution now:
+7. If architecture files changed, verify `dev_repo/architecture/graph.json` and `dev_repo/architecture/index.json` parse and that diagrams/ADRs named in the contract were updated.
+8. If an active contract exists, advance it through `contract_runner complete-current` instead of leaving slice closure to oral narration.
+9. Report `git status --short`.
+10. Package the minimum evidence bundle for Web-side review.
+11. If this slice was a child contract, explicitly state whether execution now:
   - returns to the parent
   - remains blocked
   - or requires a narrower child delta
@@ -109,6 +114,8 @@ If these files exist and the executor skips them without a red-line reason, that
   - which red line was crossed
   - which prior assumption failed
   - why continuing would now be dishonest or scope-breaking
+- If execution discovers an architecture change not declared in the active contract, stop ordinary execution and open the smallest architecture amendment delta contract.
+- If an architecture amendment closes, explicitly return to the parent contract through `return_to` before continuing ordinary implementation.
 - Prefer a **delta replan** over a full fresh contract:
   - keep already-completed slices settled
   - only replace the invalidated tail of the plan
@@ -120,6 +127,8 @@ If these files exist and the executor skips them without a red-line reason, that
 Stop immediately if any of the following happens:
 - verification fails
 - scope drift occurs
+- architecture delta differs from the approved contract
+- an architecture amendment is required but not active
 - a new structural red line appears
 - the slice needs replanning
 - a required secret is missing
@@ -136,22 +145,31 @@ Do **not** stop just because:
 
 ## Campaign Runtime Discipline
 - If a runtime container exists, keep it current instead of relying on oral summaries.
+- If `dev_repo/architecture/` exists, keep architecture delta current instead of relying on oral summaries.
 - The executor should always be able to answer:
   - what root campaign is active
   - which child contract is in progress
   - what each visible contract is doing in one line
   - what parent step execution must return to
+  - which architecture nodes this slice touched
+  - whether an architecture amendment was required
 - A pause without a clear `return_to` is execution drift.
 - If the runtime container does not exist yet, the executor should bootstrap:
   - `dev_repo/state.json`
   - `dev_repo/journal.jsonl`
   - `dev_repo/evidence_index.json`
   - `dev_repo/tree.md`
+  - `dev_repo/architecture/README.md`
+  - `dev_repo/architecture/ARCHITECTURE.md`
+  - `dev_repo/architecture/graph.json`
+  - `dev_repo/architecture/index.json`
+  - `dev_repo/architecture/invariants.md`
 - Those files should live directly under `dev_repo/`, not inside a nested runtime directory.
 - Prefer the shared helper at `../global_rules/scripts/bootstrap_dev_repo_runtime.py`.
   before normal slice execution continues.
 
 ## Output Style
 - Imperial shell is allowed.
+- Plain English shell is the default for English users, but Cyber-Ming court color may remain as light narrative framing.
 - Technical body must stay explicit: files, commands, red/green verification results, artifacts by assertion, commit action, commit hash, and git status must remain legible.
 - Do not self-certify final completion. Report evidence; do not pronounce the last verdict.

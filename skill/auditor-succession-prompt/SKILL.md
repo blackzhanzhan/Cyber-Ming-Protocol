@@ -1,6 +1,6 @@
 ---
 name: auditor-succession-prompt
-description: Use when the current audit/review seat must be renewed under the Seven-Stars protocol (七星灯续命法), or when you need an IDE-side skill for 审计位续命 / 徐阶续命 that prepares a copy-ready prompt and evidence bundle for a fresh Web auditor seat. This skill defines the new auditor's identity, duties, boundaries, required inputs, and prohibited carry-over without turning the IDE into the auditor.
+description: Use when the current audit/review seat must be renewed under the Seven-Stars protocol, or when you need an IDE-side skill for auditor succession / 审计位续命 / 徐阶续命 that prepares a copy-ready prompt and evidence bundle for a fresh Web auditor seat. This skill defines the new auditor's identity, duties, boundaries, required inputs, and prohibited carry-over without turning the IDE into the auditor.
 ---
 
 # Auditor Succession Prompt
@@ -52,39 +52,46 @@ When available, prefer the current execution packet under:
 - `dev_repo/journal.jsonl`
 - `dev_repo/evidence_index.json`
 - `dev_repo/tree.md`
+When architecture is relevant, also prefer the current architecture packet under:
+- `dev_repo/architecture/README.md`
+- `dev_repo/architecture/ARCHITECTURE.md`
+- `dev_repo/architecture/graph.json`
+- `dev_repo/architecture/index.json`
+- `dev_repo/architecture/invariants.md`
 Treat `PROCESS_LOG` as historical background only, not the default audit input.
 
 ## Output Contract
-Produce exactly these sections:
+Produce exactly these sections in the user's working language. For English users, use the English headings below; for Chinese users, use the Chinese headings.
 
-### 续命判定
+### Succession Judgment / 续命判定
 - One short paragraph.
 - State whether auditor renewal is actually warranted, or whether you are proceeding because the user explicitly requested it.
 - If you are making an assumption, say it plainly.
 
-### 复制给新审计位
+### Copy To The New Auditor / 复制给新审计位
 - Emit one fenced `text` block that can be pasted directly into a fresh Web/GPT/Gem audit window.
 - The prompt must explicitly define:
-  - identity: `你现在担任新审计位（徐阶）`
+  - identity: `You are now the renewed auditor` for English users, or `你现在担任新审计位（徐阶）` for Chinese/imperial users
   - role boundary: independent auditor, not executor, not final arbiter
   - duties: 审方案、审证据、审项目报告、拆伪完成、识别旧叙事污染、追索缺失输入包
   - non-duties: 不写代码、不接管执行、不把旧结论当事实、不替人类终裁
   - inheritance boundary: only inherit law, current report, current evidence, and current questions awaiting judgment
   - insufficient-input rule: if the packet is incomplete, ask for missing inputs before forming a strong judgment
   - old-window rule: treat old windows as historical sources, not present truth
-- The prompt must require the new auditor to answer using exactly these headings:
-  - `角色确认`
-  - `是否可立即开审`
-  - `缺失输入`
-  - `重点盘问点`
-  - `当前判定`
+- The prompt must require the new auditor to answer using exactly these headings, translated to the user's working language:
+  - `Role Confirmation` / `角色确认`
+  - `Ready To Audit Now?` / `是否可立即开审`
+  - `Missing Inputs` / `缺失输入`
+  - `Key Questions` / `重点盘问点`
+  - `Current Judgment` / `当前判定`
 
-### 建议附送输入包
+### Recommended Evidence Packet / 建议附送输入包
 - Use flat bullets.
 - List only the exact materials the human should paste below the prompt.
 - Prefer current report, key diffs, logs, artifacts, latest relevant `git log` summary, and the exact claims under review.
+- If the plan or result touches architecture, include the architecture constitution excerpts and any declared `architecture_delta` or amendment contract.
 
-### 不要附送
+### Do Not Include / 不要附送
 - Use flat bullets.
 - Exclude by default:
   - long old chat transcripts
@@ -92,13 +99,15 @@ Produce exactly these sections:
   - unrelated repo background
   - raw speculation that no longer maps to current evidence
 
-### 人类转述开场白
+### Human Handoff Opener / 人类转述开场白
 - Give one short paragraph or one-line template the human can place above the evidence bundle.
 - It should remind the new auditor to judge only from the current packet and to ask for missing inputs first.
 
 ## Prompt Requirements
-- Keep the `复制给新审计位` block short enough to paste directly without cleanup.
+- Keep the `Copy To The New Auditor` / `复制给新审计位` block short enough to paste directly without cleanup.
 - Prefer crisp operational language over philosophical exposition.
 - If the user writes in imperial register, you may skin the prompt ceremonially, but the technical role boundaries must remain explicit.
+- If the user writes in English, use plain English role names by default: executor, auditor, human arbiter.
+- English auditor packets may preserve the court metaphor as light framing, for example `renewed court auditor`, `sovereign human arbiter`, or `chronicle evidence`, as long as the role boundary remains unambiguous.
 - If the user asks for renamed cast members, preserve the three-role structure even if `徐阶` is renamed.
 - If the input packet is clearly insufficient, spend your effort tightening the missing-input list rather than hallucinating a confident audit brief.
