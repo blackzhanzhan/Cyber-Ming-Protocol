@@ -26,10 +26,12 @@ Prerequisite: read and obey the repository parent policy at `skill/global_rules/
 ## Workflow
 1. If `dev_repo/state.json` and `dev_repo/tree.md` exist, read them first as the current process truth.
 2. If `dev_repo/architecture/` exists, read `README.md`, `ARCHITECTURE.md`, `graph.json`, `index.json`, and `invariants.md` before relying on oral or README-level architecture claims.
-3. If `dev_repo/architecture/` does not exist and the user is taking over an old project, mark `architecture_census_required` as the first implementation precondition. Do not pretend a project can be planned safely from process truth alone.
-4. Read the most recent 10-30 commits and cluster them by engineering theme.
-5. Read the core architecture and process documents actually governing the current project state.
-6. Inspect only the mainline code paths needed to understand current delivery status and architecture shape.
+3. If `dev_repo/architecture/data-model/` exists, read `README.md`, `ER.md`, `entities.json`, `relationships.json`, and `invariants.md` before relying on oral or README-level data claims.
+4. If `dev_repo/architecture/` does not exist and the user is taking over an old project, mark `architecture_census_required` as the first implementation precondition. Do not pretend a project can be planned safely from process truth alone.
+5. If durable data semantics exist but `dev_repo/architecture/data-model/` does not exist, mark `data_model_census_required` as the first implementation precondition before broad data-changing work.
+6. Read the most recent 10-30 commits and cluster them by engineering theme.
+7. Read the core architecture, data-model, and process documents actually governing the current project state.
+8. Inspect only the mainline code paths needed to understand current delivery status, architecture shape, and durable data shape.
 7. Produce a short brief using headings in the user's working language. Use `Stage`, `Completed`, `Architecture`, `Bottleneck`, `Next Step` for English users, or `阶段`, `已完成`, `架构`, `瓶颈`, `下一步` for Chinese users.
 
 ## Architecture Census Standard
@@ -54,7 +56,31 @@ Prerequisite: read and obey the repository parent policy at `skill/global_rules/
   - `confidence`
 - Use `confirmed`, `inferred`, and `unknown` confidence labels. Do not forge certainty while reconstructing an inherited codebase.
 
+## Data Model Census Standard
+- Old-project takeover should initialize an ER/data-model map before broad data-changing implementation.
+- The census should be detailed enough for a later agent to plan migrations and persistence changes safely, but not so detailed that every DTO becomes an entity.
+- Prefer six layers:
+  - core entities
+  - relationships and cardinality
+  - identity, uniqueness, status, and foreign-key-like references
+  - source data versus derived/cache/projection data
+  - owning architecture nodes
+  - migration, backfill, compatibility, and evidence responsibilities
+- Every data entity should capture:
+  - `purpose`
+  - `owning_architecture_node`
+  - `source_or_derived`
+  - `source_artifacts`
+  - `identity`
+  - `state_fields`
+  - `derived_from`
+  - `migration_notes`
+  - `requires_amendment_when`
+  - `confidence`
+- Bind to real schema, ORM, migrations, fixtures, and API contracts when they exist. Use `confirmed`, `inferred`, and `unknown` confidence labels. Do not forge certainty while reconstructing an inherited codebase.
+
 ## Output Standard
+- Include a `Data Model` section when ER/data-model truth exists or when `data_model_census_required` is true.
 - `Stage` / `阶段`: current delivery stage based on recent execution evidence.
 - `Completed` / `已完成`: concrete capabilities already landed.
 - `Architecture` / `架构`: architecture constitution status, known subsystems, and whether an initialization census is required.
@@ -65,6 +91,7 @@ Prerequisite: read and obey the repository parent policy at `skill/global_rules/
 - Prefer recent execution evidence over old architectural intent.
 - Prefer `dev_repo/{state.json,tree.md,journal.jsonl,evidence_index.json}` over `PROCESS_LOG` when reconstructing the present tense.
 - Prefer `dev_repo/architecture/*` over README-level architecture summaries when reconstructing system shape.
+- Prefer `dev_repo/architecture/data-model/*` over README-level data summaries when reconstructing durable data shape.
 - Do not guess; anchor every claim in commits, docs, or current code.
 - Keep the brief concise enough to be pasted directly into a fresh execution window as the current project snapshot.
 - Default to plain technical register in the user's language; an imperial outer shell is allowed only when requested or clearly matched by the user's register.

@@ -38,10 +38,13 @@ Required reads:
 - repository starter law
 - `dev_repo/state.json`, `journal.jsonl`, `evidence_index.json`, `tree.md` when present
 - `dev_repo/architecture/README.md`, `ARCHITECTURE.md`, `graph.json`, `index.json`, `invariants.md` when present
+- `dev_repo/architecture/data-model/README.md`, `ER.md`, `entities.json`, `relationships.json`, `invariants.md`, `migrations.md` when present
 
 If runtime truth is missing, downstream execution should bootstrap it.
 
 If architecture truth is missing during old-project takeover, downstream planning must open or require an architecture census before broad implementation.
+
+If data-model truth is missing during old-project takeover and durable data semantics matter, downstream planning must open or require an ER/data-model census before broad data-changing implementation.
 
 ### `plan-start`
 
@@ -49,7 +52,7 @@ Use when the user asks for a plan, asks to implement, or the host enters plannin
 
 Required action:
 
-- identify whether the request is ordinary implementation, probe, takeover, free development, or architecture amendment
+- identify whether the request is ordinary implementation, probe, takeover, free development, architecture amendment, or data-model amendment
 - route to the smallest valid downstream skill
 
 ### `plan-compile`
@@ -64,9 +67,18 @@ Required output:
   - `unchanged_architecture_nodes`
   - `architecture_delta`
   - `requires_architecture_amendment`
+- data-model fields:
+  - `affected_data_entities`
+  - `unchanged_data_entities`
+  - `data_model_delta`
+  - `requires_er_amendment`
+  - `migration_required`
+  - `backfill_required`
 - explicit red lines, tests, evidence, commit unit, and approval gate
 
 If the host plan changes architecture without declaring it, reject the plan and route to `architecture-amend`.
+
+If the host plan changes durable data semantics without declaring it, reject the plan and route to `data-model-amend`.
 
 ### `contract-activate`
 
@@ -76,7 +88,8 @@ Required action:
 
 - confirm the active contract and current slice
 - confirm architecture amendment status
-- do not edit until the active slice has allowed files, red line, green tests, and architecture fields
+- confirm ER/data-model amendment status
+- do not edit until the active slice has allowed files, red line, green tests, architecture fields, and data-model fields
 
 ### `exec-start`
 
@@ -87,7 +100,9 @@ Required checks:
 - active slice id
 - allowed files and no-touch scope
 - affected architecture nodes
+- affected data entities
 - whether the change is ordinary or amendment-level
+- whether migration or backfill is required
 - planned verification and evidence
 
 ### `exec-close`
@@ -99,7 +114,9 @@ Required records:
 - green/red verification outcome
 - evidence artifacts
 - `architecture_delta`
+- `data_model_delta`
 - architecture files updated or explicit statement that no architecture update was required
+- ER/data-model files updated or explicit statement that no ER/data-model update was required
 - commit hash or unarchived status
 - `git status --short`
 
@@ -114,6 +131,18 @@ Required route:
 - update `dev_repo/architecture/graph.json`, `index.json`, diagrams, invariants, and ADRs as applicable
 - return to the parent contract after the amendment closes
 
+### `data-model-amend`
+
+Use when a change alters entities, relationships, identity, cardinality, source/derived status, persistence semantics, migration, backfill, compatibility, or data evidence responsibilities.
+
+Required route:
+
+- open an ER/data-model amendment contract
+- state what entities and relationships change and what remains unchanged
+- state migration, backfill, and compatibility expectations
+- update `dev_repo/architecture/data-model/ER.md`, `er.mmd`, `entities.json`, `relationships.json`, `invariants.md`, and `migrations.md` as applicable
+- return to the parent contract after the amendment closes
+
 ## Routing Table
 
 | Situation | Hook | Downstream Skill |
@@ -124,6 +153,7 @@ Required route:
 | Unknown operational boundary | `plan-start` | `probe-first-scout` |
 | Explicit free development mode | `contract-activate` / continuous hooks | `free-development-mode` |
 | Architecture boundary changes | `architecture-amend` | `approval-first-planner` as amendment contract |
+| ER/data-model changes | `data-model-amend` | `approval-first-planner` as data-model amendment contract |
 
 ## Stop Conditions
 
@@ -131,8 +161,10 @@ Stop and request a narrower contract when:
 
 - no active contract exists but edits are about to begin
 - architecture truth is missing and the task requires broad planning in an old project
+- data-model truth is missing and the task requires broad data-changing work in an old project
 - a host plan tries to change architecture without an amendment contract
-- allowed files or affected architecture nodes cannot be stated
+- a host plan tries to change durable data semantics without an ER/data-model amendment contract
+- allowed files, affected architecture nodes, or affected data entities cannot be stated
 - verification evidence cannot be attached to the contract
 
 ## Output Style

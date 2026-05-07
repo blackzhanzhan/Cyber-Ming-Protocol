@@ -41,6 +41,11 @@ Each atomic slice must expose at least these fields:
 - `Affected Architecture Nodes`
 - `Architecture Delta`
 - `Amendment Required`
+- `Affected Data Entities`
+- `Data Model Delta`
+- `ER Amendment Required`
+- `Migration Required`
+- `Backfill Required`
 
 ## Required YAML Shape
 The acceptance YAML block must not collapse governance red lines and white-box test chains into one blur.
@@ -57,6 +62,12 @@ It must distinguish:
 - `unchanged_architecture_nodes`
 - `architecture_delta`
 - `requires_architecture_amendment`
+- `affected_data_entities`
+- `unchanged_data_entities`
+- `data_model_delta`
+- `requires_er_amendment`
+- `migration_required`
+- `backfill_required`
 
 The YAML bridge should follow the user's working language:
 
@@ -75,7 +86,13 @@ The YAML bridge should follow the user's working language:
   - `dev_repo/architecture/graph.json`
   - `dev_repo/architecture/index.json`
   - `dev_repo/architecture/invariants.md`
+  - `dev_repo/architecture/data-model/README.md` when present
+  - `dev_repo/architecture/data-model/ER.md` when present
+  - `dev_repo/architecture/data-model/entities.json` when present
+  - `dev_repo/architecture/data-model/relationships.json` when present
+  - `dev_repo/architecture/data-model/invariants.md` when present
 - If an old-project takeover lacks `dev_repo/architecture/`, make architecture census the first slice or a precondition before broad implementation.
+- If durable data semantics exist but `dev_repo/architecture/data-model/` is missing, make ER/data-model census the first slice or a precondition before broad data-changing implementation.
 - Prefer extending or branching the existing tree with:
   - `contract_id`
   - `parent_contract_id`
@@ -93,6 +110,8 @@ The YAML bridge should follow the user's working language:
 - Do not confuse `Red Line` with `red_test`: the former is a governance boundary, the latter is a white-box failing verification.
 - Do not confuse ordinary implementation with architecture amendment. If the requested change alters subsystem boundaries, module responsibilities, public interfaces, dependency direction, runtime flow, persistence/evidence model, governance invariants, or host adapter semantics, mark `Amendment Required` as `yes` and write an architecture amendment contract.
 - Ordinary contracts must still state which architecture nodes are touched, which nodes are intentionally unchanged, and why no amendment is needed.
+- Do not confuse ordinary implementation with ER/data-model amendment. If the requested change alters entities, relationships, cardinality, primary identity, foreign-key-like references, uniqueness, status, enum meaning, state-machine semantics, source/derived classification, persistence semantics, migrations, or backfills, mark `ER Amendment Required` as `yes` and write a data-model amendment contract.
+- Ordinary contracts must still state which data entities are touched, which data entities are intentionally unchanged, and why no ER amendment is needed.
 - Amendment contracts must state:
   - what changes
   - what stays unchanged
@@ -101,6 +120,15 @@ The YAML bridge should follow the user's working language:
   - migration and compatibility expectations
   - architecture artifacts to update
   - verification for the architecture change.
+- Data-model amendment contracts must state:
+  - changed entities and relationships
+  - unchanged entities and relationships
+  - why the current ER/data model is insufficient
+  - source-versus-derived changes
+  - migration and backfill expectations
+  - compatibility expectations for existing data
+  - ER/data-model artifacts to update
+  - verification for the data-model change.
 - Prefer a red-line-first contract:
   - identify the 1-3 red lines that actually decide whether the current plan survives
   - make later slices conditional on those red lines staying false
@@ -136,6 +164,14 @@ The YAML bridge should follow the user's working language:
   - `dev_repo/architecture/graph.json`
   - `dev_repo/architecture/index.json`
   - `dev_repo/architecture/invariants.md`
+- Data-model truth may live in repo-managed paths such as:
+  - `dev_repo/architecture/data-model/README.md`
+  - `dev_repo/architecture/data-model/ER.md`
+  - `dev_repo/architecture/data-model/er.mmd`
+  - `dev_repo/architecture/data-model/entities.json`
+  - `dev_repo/architecture/data-model/relationships.json`
+  - `dev_repo/architecture/data-model/invariants.md`
+  - `dev_repo/architecture/data-model/migrations.md`
 - The planner must always make the return path clear:
   - if this contract succeeds, where execution goes next
   - if this contract is a child, which parent step resumes afterward

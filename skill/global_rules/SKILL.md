@@ -138,13 +138,14 @@ Parallel experimentation rule:
 - Contract writing and contract execution should be triggered by an explicit runtime hook, not by agent mood or voluntary memory.
 - Host-native planning surfaces such as Claude Code plan mode, Codex ask/plan-like mode, Cursor planning, or other "think before edit" modes are not the contract itself. They are the entry surface for `plan-start`.
 - The stable lifecycle is:
-  - `bootstrap-read`: read repository law, runtime truth, and architecture truth before promising work.
+  - `bootstrap-read`: read repository law, runtime truth, architecture truth, and data-model truth before promising work.
   - `plan-start`: enter the host planning surface and route to the contract layer.
-  - `plan-compile`: convert the host plan into an Atomic Execution Contract with boundary, evidence, commit, and architecture fields.
+  - `plan-compile`: convert the host plan into an Atomic Execution Contract with boundary, evidence, commit, architecture, and data-model fields.
   - `contract-activate`: treat only a validated and approved contract as the execution lock.
-  - `exec-start`: before editing, confirm the active slice, allowed files, affected architecture nodes, and red lines.
-  - `exec-close`: after verification, record evidence, runtime state, architecture delta, and commit state.
+  - `exec-start`: before editing, confirm the active slice, allowed files, affected architecture nodes, affected data entities, and red lines.
+  - `exec-close`: after verification, record evidence, runtime state, architecture delta, data-model delta, and commit state.
   - `architecture-amend`: when a planned change alters architecture boundaries, responsibilities, dependencies, runtime flows, or invariants, upgrade to an amendment contract before continuing.
+  - `data-model-amend`: when a planned change alters entities, relationships, identity, cardinality, source/derived status, migration, or backfill expectations, upgrade to an ER/data-model amendment contract before continuing.
 - If a host cannot provide a hard technical hook, the starter, skill, or helper must still present a named manual hook. Do not pretend manual discipline is the same as programmatic enforcement.
 - If an agent starts implementing from a free-form plan without passing through `plan-compile` and `contract-activate`, that is execution drift.
 
@@ -159,6 +160,7 @@ Parallel experimentation rule:
   - `dev_repo/architecture/invariants.md`
   - `dev_repo/architecture/diagrams/`
   - `dev_repo/architecture/decisions/`
+  - `dev_repo/architecture/data-model/`
 - Architecture truth is not a replacement for runtime truth. Runtime truth answers "what campaign and contract are active"; architecture truth answers "what system exists, where its boundaries are, and what must not drift."
 - The useful detail level is agent-actionable architecture:
   - system context
@@ -185,6 +187,45 @@ Parallel experimentation rule:
   - `unchanged_architecture_nodes`
   - `architecture_delta`
   - whether an amendment contract is required.
+  - `affected_data_entities`
+  - `unchanged_data_entities`
+  - `data_model_delta`
+  - `requires_er_amendment`
+  - `migration_required`
+  - `backfill_required`
+
+## Data Model Constitution Law
+
+- Serious projects should externalize durable data truth alongside architecture truth.
+- When a repo uses `dev_repo/architecture/`, the data-model constitution should live under:
+  - `dev_repo/architecture/data-model/README.md`
+  - `dev_repo/architecture/data-model/ER.md`
+  - `dev_repo/architecture/data-model/er.mmd`
+  - `dev_repo/architecture/data-model/entities.json`
+  - `dev_repo/architecture/data-model/relationships.json`
+  - `dev_repo/architecture/data-model/invariants.md`
+  - `dev_repo/architecture/data-model/migrations.md`
+- Data-model truth is not a replacement for code, schemas, migrations, fixtures, or API contracts. It is the agent-actionable index that binds contracts to those facts.
+- The useful detail level is agent-actionable ER:
+  - core entities
+  - relationships and cardinality
+  - identity, status, uniqueness, and foreign-key-like references
+  - source data versus derived, cached, projected, or generated data
+  - owning architecture nodes
+  - migration, backfill, compatibility, and evidence responsibilities
+- Do not force every DTO, local variable, or transient view-model into the ER graph. Lower-level schema maps are allowed only where they reduce migration ambiguity or data corruption risk.
+- Every data entity should be able to answer:
+  - `purpose`
+  - `owning_architecture_node`
+  - `source_or_derived`
+  - `source_artifacts`
+  - `identity`
+  - `state_fields`
+  - `derived_from`
+  - `migration_notes`
+  - `requires_amendment_when`
+  - `confidence`
+- `confidence` must distinguish confirmed facts from inferred or unknown data-model claims. Do not forge certainty during old-project takeover.
 
 ## Architecture Amendment Contract Law
 
@@ -208,6 +249,28 @@ Parallel experimentation rule:
   - how the architecture change will be verified.
 - If ordinary execution discovers an architecture-change need, stop the current slice or open the smallest child amendment contract. After the amendment closes, return to the parent contract through an explicit `return_to`.
 - The spirit is constitutional seriousness, not architectural freeze: architecture is changeable, but only through a visible amendment path.
+
+## Data Model Amendment Contract Law
+
+- Data models may change, but they must not be smuggled through ordinary implementation.
+- A change requires an ER/data-model amendment contract when it changes any of these:
+  - entity existence, name, ownership, or identity
+  - relationship direction, cardinality, or deletion semantics
+  - primary key, foreign-key-like reference, uniqueness, status, enum, or state-machine meaning
+  - source data versus derived, cached, projected, or generated status
+  - persistence semantics exposed through API, ORM, schema, migration, or runtime truth
+  - migration, backfill, compatibility, or evidence responsibilities
+- A data-model amendment contract must state:
+  - what entities and relationships change
+  - what entities and relationships stay unchanged
+  - why the current model is insufficient
+  - source-versus-derived changes
+  - migration and backfill expectations
+  - compatibility expectations for existing data
+  - which ER, entity, relationship, invariant, and migration artifacts must be updated
+  - how the data-model change will be verified.
+- If ordinary execution discovers an ER/data-model change need, stop the current slice or open the smallest child data-model amendment contract. After the amendment closes, return to the parent contract through an explicit `return_to`.
+- The spirit is constitutional seriousness, not data-model freeze: ER is changeable, but only through a visible amendment path.
 
 ## Dual Register Principle
 - This protocol has one invariant skeleton and two surface registers:
@@ -243,6 +306,7 @@ Parallel experimentation rule:
   - `evidence_index.json`
   - `tree.md`
 - For old-project takeover and serious forward development, the runtime should also expose an architecture constitution under `dev_repo/architecture/`.
+  The architecture constitution should include data-model truth under `dev_repo/architecture/data-model/` when durable entities, relationships, schemas, migrations, runtime state, or installer manifests matter.
 - When a repo chooses to store development-process truth inside a dedicated folder such as `dev_repo/`, prefer:
   - `dev_repo/state.json`
   - `dev_repo/journal.jsonl`
@@ -262,6 +326,12 @@ Parallel experimentation rule:
   - which dependencies and public interfaces matter
   - which invariants ordinary contracts must preserve
   - when an architecture amendment contract is required.
+- The current data-model truth should answer:
+  - which durable entities and relationships exist
+  - which files, schemas, migrations, APIs, or runtime artifacts prove them
+  - which facts are source data versus derived/cache/projection data
+  - which migrations or backfills are required
+  - when an ER/data-model amendment contract is required.
 
 ## Contract Tree Law
 - Contracts should form an explicit parent/child tree.
@@ -312,6 +382,7 @@ Parallel experimentation rule:
   - `dev_repo/evidence_index.json`
   - `dev_repo/tree.md`
 - When entering an old or unknown project that lacks architecture-truth scaffolding, initialize `dev_repo/architecture/` before broad planning.
+- When entering an old or unknown project with durable data semantics but no ER/data-model truth, initialize `dev_repo/architecture/data-model/` before broad data-changing implementation.
 - Initial architecture census should be honest about confidence:
   - `confirmed` for facts directly proven by code, config, or scripts
   - `inferred` for naming/call-graph based reconstruction

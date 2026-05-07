@@ -25,7 +25,8 @@ Your response must include:
 4. explicit no-touch scope
 5. target artifacts or logs to bring back
 6. architecture uncertainty or affected architecture nodes, if any
-7. an approval gate before writing probe code
+7. data-model uncertainty or affected data entities, if any
+8. an approval gate before writing probe code
 
 ## Planning Rules
 - Prefer the smallest probe that can answer the operational uncertainty.
@@ -33,8 +34,11 @@ Your response must include:
 - Keep the probe isolated from mainline behavior and broad refactors.
 - If the repo has no `dev_repo/` runtime yet, make runtime bootstrap an explicit precondition or first micro-slice instead of silently probing without process truth.
 - If the repo has no `dev_repo/architecture/` and the uncertainty is architectural rather than operational, make architecture census the first precondition instead of pretending a small runtime probe can solve it.
+- If durable data semantics are unknown and the probe may affect persistence, schemas, migrations, runtime state, or API data contracts, make ER/data-model census the first precondition instead of pretending a small runtime probe can solve it.
 - If the probe may change architecture boundaries, public interfaces, dependency direction, runtime flow, or invariants, it is not a probe-only task; route to an architecture amendment contract.
+- If the probe may change entities, relationships, cardinality, identity, source/derived classification, migration, or backfill semantics, it is not a probe-only task; route to a data-model amendment contract.
 - A probe may mark architecture nodes as `unknown`, but it must not silently rewrite `graph.json`, `index.json`, or `invariants.md` unless the approved probe explicitly owns those files.
+- A probe may mark data entities or relationships as `unknown`, but it must not silently rewrite `entities.json`, `relationships.json`, `ER.md`, or `invariants.md` unless the approved probe explicitly owns those files.
 - If the user writes imperially, the outer shell may be ceremonial, but the probe plan must remain technically explicit.
 - If the user writes in English, use plain English operational language and avoid Chinese-only ritual terms.
 
@@ -44,5 +48,7 @@ Your response must include:
 - exact command or minimal script boundary
 - affected or uncertain architecture nodes
 - architecture facts to mark `confirmed`, `inferred`, or `unknown`
+- affected or uncertain data entities and relationships
+- data-model facts to mark `confirmed`, `inferred`, or `unknown`
 - evidence to capture
 - replanning trigger after probe returns

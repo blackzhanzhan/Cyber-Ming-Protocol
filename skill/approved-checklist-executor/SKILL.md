@@ -77,7 +77,7 @@ In this submode, the executor should bias toward reducing interruption cost rath
 
 ## Workflow Per Slice
 1. If an active contract exists, run one `contract_runner cycle` first to synchronize drift before touching code.
-2. Restate the current slice ID, allowed files, no-touch scope, planned `Red Line`, planned `Commit Action`, affected architecture nodes, planned `architecture_delta`, amendment status, and current contract-tree position:
+2. Restate the current slice ID, allowed files, no-touch scope, planned `Red Line`, planned `Commit Action`, affected architecture nodes, planned `architecture_delta`, affected data entities, planned `data_model_delta`, amendment status, migration/backfill status, and current contract-tree position:
   - `contract_id`
   - `parent_contract_id`
   - `root_campaign`
@@ -85,13 +85,14 @@ In this submode, the executor should bias toward reducing interruption cost rath
   - `return_to`
 3. Modify only the allowed scope.
 4. Run the planned `Green Tests`, and where the YAML defines a white-box chain, run the planned `red_test` / `green_test` sequence against the same case.
-5. Collect target artifacts by assertion, note whether any `Red Line` was crossed, record whether the same red case truly turned green, and record the actual `architecture_delta`.
+5. Collect target artifacts by assertion, note whether any `Red Line` was crossed, record whether the same red case truly turned green, and record the actual `architecture_delta` and `data_model_delta`.
 6. Archive exactly one independent commit using the planned `Commit Action`, `Commit Unit`, and `Commit Message`.
 7. If architecture files changed, verify `dev_repo/architecture/graph.json` and `dev_repo/architecture/index.json` parse and that diagrams/ADRs named in the contract were updated.
-8. If an active contract exists, advance it through `contract_runner complete-current` instead of leaving slice closure to oral narration.
-9. Report `git status --short`.
-10. Package the minimum evidence bundle for Web-side review.
-11. If this slice was a child contract, explicitly state whether execution now:
+8. If ER/data-model files changed, verify `dev_repo/architecture/data-model/entities.json` and `dev_repo/architecture/data-model/relationships.json` parse and that `ER.md`, `er.mmd`, invariants, or migration notes named in the contract were updated.
+9. If an active contract exists, advance it through `contract_runner complete-current` instead of leaving slice closure to oral narration.
+10. Report `git status --short`.
+11. Package the minimum evidence bundle for Web-side review.
+12. If this slice was a child contract, explicitly state whether execution now:
   - returns to the parent
   - remains blocked
   - or requires a narrower child delta
@@ -116,6 +117,8 @@ If these files exist and the executor skips them without a red-line reason, that
   - why continuing would now be dishonest or scope-breaking
 - If execution discovers an architecture change not declared in the active contract, stop ordinary execution and open the smallest architecture amendment delta contract.
 - If an architecture amendment closes, explicitly return to the parent contract through `return_to` before continuing ordinary implementation.
+- If execution discovers an ER/data-model change not declared in the active contract, stop ordinary execution and open the smallest data-model amendment delta contract.
+- If a data-model amendment closes, explicitly return to the parent contract through `return_to` before continuing ordinary implementation.
 - Prefer a **delta replan** over a full fresh contract:
   - keep already-completed slices settled
   - only replace the invalidated tail of the plan
@@ -129,6 +132,9 @@ Stop immediately if any of the following happens:
 - scope drift occurs
 - architecture delta differs from the approved contract
 - an architecture amendment is required but not active
+- data-model delta differs from the approved contract
+- an ER/data-model amendment is required but not active
+- migration or backfill is required but not declared in the approved contract
 - a new structural red line appears
 - the slice needs replanning
 - a required secret is missing
@@ -146,6 +152,7 @@ Do **not** stop just because:
 ## Campaign Runtime Discipline
 - If a runtime container exists, keep it current instead of relying on oral summaries.
 - If `dev_repo/architecture/` exists, keep architecture delta current instead of relying on oral summaries.
+- If `dev_repo/architecture/data-model/` exists, keep data-model delta current instead of relying on oral summaries.
 - The executor should always be able to answer:
   - what root campaign is active
   - which child contract is in progress
@@ -153,6 +160,9 @@ Do **not** stop just because:
   - what parent step execution must return to
   - which architecture nodes this slice touched
   - whether an architecture amendment was required
+  - which data entities this slice touched
+  - whether an ER/data-model amendment was required
+  - whether migration or backfill was required
 - A pause without a clear `return_to` is execution drift.
 - If the runtime container does not exist yet, the executor should bootstrap:
   - `dev_repo/state.json`
@@ -164,6 +174,13 @@ Do **not** stop just because:
   - `dev_repo/architecture/graph.json`
   - `dev_repo/architecture/index.json`
   - `dev_repo/architecture/invariants.md`
+  - `dev_repo/architecture/data-model/README.md`
+  - `dev_repo/architecture/data-model/ER.md`
+  - `dev_repo/architecture/data-model/er.mmd`
+  - `dev_repo/architecture/data-model/entities.json`
+  - `dev_repo/architecture/data-model/relationships.json`
+  - `dev_repo/architecture/data-model/invariants.md`
+  - `dev_repo/architecture/data-model/migrations.md`
 - Those files should live directly under `dev_repo/`, not inside a nested runtime directory.
 - Prefer the shared helper at `../global_rules/scripts/bootstrap_dev_repo_runtime.py`.
   before normal slice execution continues.

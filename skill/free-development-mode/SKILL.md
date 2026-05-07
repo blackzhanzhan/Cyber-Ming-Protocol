@@ -37,6 +37,7 @@ Long-running execution is allowed in this mode only when:
 - the executor does not quietly mutate the requirement
 - engineering discipline stays intact
 - architecture discipline stays intact: ordinary implementation cannot smuggle architecture changes.
+- data-model discipline stays intact: ordinary implementation cannot smuggle ER, migration, backfill, or persistence semantics changes.
 
 Free-development mode now absorbs:
 
@@ -57,7 +58,7 @@ Before a long autonomous push, state only these things:
 2. the likely branch paths you may need
 3. the routes you must avoid
 4. the fake methods / poison methods you will not use
-5. the architecture nodes you expect to touch, and whether any amendment contract may be required
+5. the architecture nodes and data entities you expect to touch, and whether any amendment contract may be required
 
 Do not re-outline the whole project unless a red line forces replanning.
 
@@ -69,11 +70,12 @@ Preferred route order:
 
 1. same-case / replay-first
 2. architecture census or amendment contract when the real uncertainty is architectural
-3. probe-first when the real uncertainty is operational rather than architectural
-4. end-to-end truth path
-5. smallest live blocker first
-6. rollback or cleanup before expansion
-7. bounded concurrency only after parity is green
+3. ER/data-model census or amendment contract when the real uncertainty is durable data semantics
+4. probe-first when the real uncertainty is operational rather than architectural or data-model-shaped
+5. end-to-end truth path
+6. smallest live blocker first
+7. rollback or cleanup before expansion
+8. bounded concurrency only after parity is green
 
 `probe-first-scout` should be used aggressively in free development mode whenever:
 
@@ -123,6 +125,7 @@ These are especially dangerous and should be treated as anti-patterns:
 - introducing high-coupling temporary scripts that route around the framework instead of through it
 - mutating architecture through convenience hacks that no longer match the stated mainline
 - changing subsystem boundaries, public interfaces, dependency direction, runtime flow, or invariants without an architecture amendment contract
+- mutating ER, entity identity, relationship cardinality, source/derived status, migration, or backfill semantics without a data-model amendment contract
 - declaring branch experiments “successful” without a reintegration proof on the actual mainline
 
 ## Long-Running Execution Posture
@@ -144,8 +147,10 @@ Additional long-running harness rules:
 - maintain `dev_repo/evidence_index.json`
 - maintain `dev_repo/tree.md`
 - maintain `dev_repo/architecture/` when architecture truth exists or when old-project takeover requires it
+- maintain `dev_repo/architecture/data-model/` when durable data truth exists or when old-project takeover requires it
 - if those four siblings do not exist yet, bootstrap them first via `../global_rules/scripts/bootstrap_dev_repo_runtime.py`
 - if architecture truth is absent and the work requires broad planning in an old project, initialize architecture census before broad implementation
+- if data-model truth is absent and the work requires broad data-changing implementation in an old project, initialize ER/data-model census before broad implementation
 - do not stop voluntarily unless a real blocker appears, verification fails, or continuing would be dishonest
 - every stop must write the exact blocker class and the next exact action
 - if new evidence invalidates a prior local pass, reopen it explicitly instead of defending it
@@ -220,9 +225,11 @@ A result is only real when the active mainline is green on the target surface wi
 Framework rule:
 
 - free development does not relax architecture discipline
+- free development does not relax data-model discipline
 - code must still move through the real framework path
 - temporary scripts may assist probes, audits, or artifact inspection, but must not become hidden production paths
 - architecture can change, but only through an explicit amendment path that says what changes, what stays unchanged, why it changes, and how it is verified
+- data models can change, but only through an explicit amendment path that says what entities and relationships change, what stays unchanged, why it changes, whether migration/backfill is required, and how it is verified
 
 ## Strict Interpretation Addendum
 
