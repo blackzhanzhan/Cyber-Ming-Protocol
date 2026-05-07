@@ -17,11 +17,13 @@
     "BOOTSTRAP.md",
     "bootstrap",
     "web-audit-templates",
-    "dev_repo/README.md"
+    "dev_repo/README.md",
+    "dev_repo/architecture"
   ],
   "scripts": {
     "cyber-ming": "node bin/cyber-ming.js",
     "doctor": "node bin/cyber-ming.js doctor",
+    "runtime:validate": "python scripts/validate_dev_repo_runtime.py",
     "site:validate": "node site/scripts/validate-content-manifest.mjs",
     "site:build": "node site/scripts/build-static-wiki.mjs",
     "site:check": "node site/scripts/validate-content-manifest.mjs && node site/scripts/build-static-wiki.mjs && node site/scripts/validate-dist.mjs"
