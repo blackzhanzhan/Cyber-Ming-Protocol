@@ -1,0 +1,326 @@
+{
+  "schema_version": 1,
+  "project": "Cyber-Ming-Protocol",
+  "detail_standard": "agent-actionable architecture",
+  "confidence_legend": {
+    "confirmed": "Proven directly by code, config, scripts, or runtime evidence.",
+    "inferred": "Reconstructed from naming, file layout, imports, or commit history.",
+    "unknown": "Requires a future probe or human confirmation."
+  },
+  "nodes": [
+    {
+      "node_id": "protocol-docs",
+      "layer": "subsystem",
+      "purpose": "Human-readable governance methodology, bootstrap law, wiki content, articles, and audit templates.",
+      "owned_files": [
+        "README.md",
+        "BOOTSTRAP.md",
+        "bootstrap/**",
+        "wiki/**",
+        "wiki-en/**",
+        "article/**",
+        "web-audit-templates/**"
+      ],
+      "public_interfaces": [
+        "Repository README",
+        "BOOTSTRAP.md",
+        "wiki and wiki-en pages",
+        "web-audit-templates"
+      ],
+      "depends_on": [],
+      "depended_on_by": [
+        "skill-policy-layer",
+        "cli-installer",
+        "static-teaching-site",
+        "contract-hook-runtime"
+      ],
+      "invariants": [
+        "Repository law outranks session residue.",
+        "Web audit remains separate from IDE execution.",
+        "Completion requires evidence, not summaries."
+      ],
+      "allowed_change_types": [
+        "documentation refinement",
+        "new doctrine page",
+        "translation synchronization"
+      ],
+      "requires_amendment_when": [
+        "Changing role separation",
+        "Changing the contract lifecycle",
+        "Changing completion authority or evidence standard"
+      ],
+      "verification": [
+        "npm run site:validate",
+        "npm run site:check when site output is affected"
+      ],
+      "known_debt": [
+        "Some generated/static publication artifacts are present as untracked working-tree files."
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "node_id": "skill-policy-layer",
+      "layer": "subsystem",
+      "purpose": "Host-readable skills that encode planning, execution, takeover, scouting, free development, and global rules.",
+      "owned_files": [
+        "skill/*/SKILL.md",
+        "skill/global_rules/scripts/**"
+      ],
+      "public_interfaces": [
+        "SKILL.md trigger descriptions",
+        "bootstrap_dev_repo_runtime.py"
+      ],
+      "depends_on": [
+        "protocol-docs",
+        "dev-runtime-truth"
+      ],
+      "depended_on_by": [
+        "cli-installer",
+        "contract-hook-runtime"
+      ],
+      "invariants": [
+        "No file edits before approval in contract mode.",
+        "One slice, one verification, one commit.",
+        "Free development mode must be explicitly activated."
+      ],
+      "allowed_change_types": [
+        "skill workflow refinement",
+        "new skill addition",
+        "runtime helper extension"
+      ],
+      "requires_amendment_when": [
+        "Changing default execution route",
+        "Changing approval-first discipline",
+        "Changing runtime truth schema"
+      ],
+      "verification": [
+        "node bin/cyber-ming.js doctor --all --project",
+        "python skill/global_rules/scripts/bootstrap_dev_repo_runtime.py --repo-root ."
+      ],
+      "known_debt": [],
+      "confidence": "confirmed"
+    },
+    {
+      "node_id": "contract-hook-runtime",
+      "layer": "subsystem",
+      "purpose": "Stable hook layer that routes host plan/ask surfaces into Cyber-Ming contract lifecycle.",
+      "owned_files": [
+        "skill/contract-hook-router/SKILL.md",
+        "starter/common.md",
+        "starter/cursor-starter.mdc",
+        "BOOTSTRAP.md",
+        "bootstrap/ide-executor.md"
+      ],
+      "public_interfaces": [
+        "bootstrap-read",
+        "plan-start",
+        "plan-compile",
+        "contract-activate",
+        "exec-start",
+        "exec-close",
+        "architecture-amend"
+      ],
+      "depends_on": [
+        "protocol-docs",
+        "skill-policy-layer",
+        "dev-runtime-truth"
+      ],
+      "depended_on_by": [
+        "cli-installer"
+      ],
+      "invariants": [
+        "Host-native plan mode is not itself a contract.",
+        "Architecture change requires amendment contract.",
+        "Manual hooks must not be described as programmatic enforcement."
+      ],
+      "allowed_change_types": [
+        "host hook wording",
+        "manual hook routing",
+        "future programmatic hook support"
+      ],
+      "requires_amendment_when": [
+        "Adding or removing lifecycle hook stages",
+        "Changing what counts as execution authority"
+      ],
+      "verification": [
+        "starter files include hook law",
+        "contract-hook-router skill is installed by CLI"
+      ],
+      "known_debt": [
+        "Current host integration is primarily starter/skill mediated; programmatic host hooks remain future work."
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "node_id": "cli-installer",
+      "layer": "subsystem",
+      "purpose": "Install Cyber-Ming skills, starter entries, docs, and project helper files into supported hosts.",
+      "owned_files": [
+        "bin/cyber-ming.js",
+        "installer/lib/**",
+        "starter/project-helper.js",
+        "package.json"
+      ],
+      "public_interfaces": [
+        "cyber-ming CLI",
+        "init command",
+        "doctor command",
+        "runtime adapters"
+      ],
+      "depends_on": [
+        "skill-policy-layer",
+        "protocol-docs",
+        "contract-hook-runtime"
+      ],
+      "depended_on_by": [],
+      "invariants": [
+        "Project installs must be possible without global host binaries.",
+        "Managed starter blocks must be upserted rather than duplicated.",
+        "Installed manifests must record target paths."
+      ],
+      "allowed_change_types": [
+        "new adapter",
+        "doctor output refinement",
+        "install asset addition"
+      ],
+      "requires_amendment_when": [
+        "Changing install target layout",
+        "Changing supported host semantics",
+        "Changing starter block ownership"
+      ],
+      "verification": [
+        "node bin/cyber-ming.js doctor --all --project"
+      ],
+      "known_debt": [
+        "No dedicated automated installer smoke test is currently present."
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "node_id": "static-teaching-site",
+      "layer": "subsystem",
+      "purpose": "Generate, validate, and publish the bilingual illustrated teaching wiki.",
+      "owned_files": [
+        "site/**",
+        "assets/site/generated/**",
+        "assets/visual-protocol/**",
+        ".github/workflows/pages.yml",
+        ".github/workflows/sync-gitee.yml"
+      ],
+      "public_interfaces": [
+        "npm run site:validate",
+        "npm run site:build",
+        "npm run site:check",
+        "GitHub Pages artifact"
+      ],
+      "depends_on": [
+        "protocol-docs"
+      ],
+      "depended_on_by": [],
+      "invariants": [
+        "Site build uses only approved comics and generated site assets.",
+        "Content manifest must cover wiki markdown sources.",
+        "Generated dist must not link outside dist for local assets."
+      ],
+      "allowed_change_types": [
+        "manifest update",
+        "page generator refinement",
+        "style update",
+        "publication workflow update"
+      ],
+      "requires_amendment_when": [
+        "Changing source-of-truth strategy for docs",
+        "Changing publication artifact policy",
+        "Replacing the static build architecture"
+      ],
+      "verification": [
+        "npm run site:check"
+      ],
+      "known_debt": [
+        "The working tree contains untracked docs output and root site files that need artifact policy resolution."
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "node_id": "dev-runtime-truth",
+      "layer": "subsystem",
+      "purpose": "Repository-managed runtime truth for contracts, evidence, journal, tree, and architecture constitution.",
+      "owned_files": [
+        "dev_repo/state.json",
+        "dev_repo/journal.jsonl",
+        "dev_repo/evidence_index.json",
+        "dev_repo/tree.md",
+        "dev_repo/README.md",
+        "dev_repo/architecture/**"
+      ],
+      "public_interfaces": [
+        "state.json",
+        "journal.jsonl",
+        "evidence_index.json",
+        "tree.md",
+        "architecture graph and index"
+      ],
+      "depends_on": [],
+      "depended_on_by": [
+        "skill-policy-layer",
+        "contract-hook-runtime"
+      ],
+      "invariants": [
+        "Runtime truth must outrank oral summaries.",
+        "Architecture truth must distinguish confirmed, inferred, and unknown claims.",
+        "Architecture amendment is required for boundary, dependency, responsibility, or invariant changes."
+      ],
+      "allowed_change_types": [
+        "new contract entry",
+        "evidence index update",
+        "architecture census update",
+        "ADR addition"
+      ],
+      "requires_amendment_when": [
+        "Changing runtime schema",
+        "Changing architecture graph schema",
+        "Changing amendment criteria"
+      ],
+      "verification": [
+        "JSON parse validation",
+        "architecture invariant review"
+      ],
+      "known_debt": [
+        "Runtime truth files may be absent in older adopters until bootstrap runs."
+      ],
+      "confidence": "confirmed"
+    }
+  ],
+  "edges": [
+    {
+      "from": "protocol-docs",
+      "to": "skill-policy-layer",
+      "type": "governs"
+    },
+    {
+      "from": "skill-policy-layer",
+      "to": "contract-hook-runtime",
+      "type": "implements-rules"
+    },
+    {
+      "from": "contract-hook-runtime",
+      "to": "cli-installer",
+      "type": "installed-by"
+    },
+    {
+      "from": "protocol-docs",
+      "to": "static-teaching-site",
+      "type": "source-content"
+    },
+    {
+      "from": "dev-runtime-truth",
+      "to": "skill-policy-layer",
+      "type": "runtime-input"
+    },
+    {
+      "from": "dev-runtime-truth",
+      "to": "contract-hook-runtime",
+      "type": "architecture-input"
+    }
+  ]
+}

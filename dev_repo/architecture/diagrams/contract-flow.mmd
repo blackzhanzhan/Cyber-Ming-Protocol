@@ -1,0 +1,19 @@
+flowchart TD
+  PlanMode["Host plan / ask mode"]
+  Router["contract-hook-router\nplan-start"]
+  Planner["approval-first-planner\nplan-compile"]
+  Contract["Approved Atomic Execution Contract"]
+  Executor["approved-checklist-executor\nexec-start"]
+  Verify["Verification + evidence"]
+  Close["exec-close\nruntime + architecture_delta + commit"]
+  Amend["architecture-amend\namendment contract"]
+
+  PlanMode --> Router
+  Router --> Planner
+  Planner --> Contract
+  Contract --> Executor
+  Executor --> Verify
+  Verify --> Close
+  Executor -->|"architecture boundary changes"| Amend
+  Amend --> Planner
+  Amend -->|"return_to parent contract"| Executor

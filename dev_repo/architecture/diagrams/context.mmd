@@ -1,0 +1,20 @@
+flowchart LR
+  Human["Human final arbiter"]
+  IDE["IDE executor hosts\nClaude Code / Codex / Cursor / OpenCode"]
+  Web["Web auditor"]
+  Repo["Cyber-Ming-Protocol repository"]
+  Runtime["dev_repo runtime truth"]
+  Architecture["dev_repo architecture constitution"]
+  Site["Static teaching site"]
+  Npm["npm CLI package"]
+
+  Human --> IDE
+  Human --> Web
+  IDE --> Repo
+  Web --> Repo
+  Repo --> Runtime
+  Repo --> Architecture
+  Repo --> Site
+  Repo --> Npm
+  Runtime --> IDE
+  Architecture --> IDE

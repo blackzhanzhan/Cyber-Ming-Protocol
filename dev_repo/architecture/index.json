@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "project": "Cyber-Ming-Protocol",
+  "file_index": {
+    "README.md": ["protocol-docs"],
+    "BOOTSTRAP.md": ["protocol-docs", "contract-hook-runtime"],
+    "bootstrap/**": ["protocol-docs", "contract-hook-runtime"],
+    "wiki/**": ["protocol-docs", "static-teaching-site"],
+    "wiki-en/**": ["protocol-docs", "static-teaching-site"],
+    "article/**": ["protocol-docs"],
+    "web-audit-templates/**": ["protocol-docs"],
+    "skill/*/SKILL.md": ["skill-policy-layer"],
+    "skill/contract-hook-router/SKILL.md": ["contract-hook-runtime", "skill-policy-layer"],
+    "skill/global_rules/scripts/**": ["skill-policy-layer", "dev-runtime-truth"],
+    "starter/common.md": ["contract-hook-runtime", "cli-installer"],
+    "starter/cursor-starter.mdc": ["contract-hook-runtime", "cli-installer"],
+    "starter/project-helper.js": ["cli-installer"],
+    "bin/cyber-ming.js": ["cli-installer"],
+    "installer/lib/**": ["cli-installer"],
+    "package.json": ["cli-installer", "static-teaching-site"],
+    "site/**": ["static-teaching-site"],
+    "assets/site/generated/**": ["static-teaching-site"],
+    "assets/visual-protocol/**": ["static-teaching-site", "protocol-docs"],
+    ".github/workflows/pages.yml": ["static-teaching-site"],
+    ".github/workflows/sync-gitee.yml": ["static-teaching-site"],
+    "dev_repo/**": ["dev-runtime-truth"],
+    "dev_repo/architecture/**": ["dev-runtime-truth"]
+  },
+  "entrypoints": {
+    "cli": {
+      "files": ["bin/cyber-ming.js", "installer/lib/cli.js"],
+      "architecture_nodes": ["cli-installer"]
+    },
+    "installer_adapters": {
+      "files": ["installer/lib/adapters.js"],
+      "architecture_nodes": ["cli-installer", "contract-hook-runtime"]
+    },
+    "skill_bootstrap": {
+      "files": ["skill/global_rules/SKILL.md", "skill/contract-hook-router/SKILL.md"],
+      "architecture_nodes": ["skill-policy-layer", "contract-hook-runtime"]
+    },
+    "runtime_bootstrap": {
+      "files": ["skill/global_rules/scripts/bootstrap_dev_repo_runtime.py"],
+      "architecture_nodes": ["skill-policy-layer", "dev-runtime-truth"]
+    },
+    "site_build": {
+      "files": ["site/scripts/build-static-wiki.mjs", "site/content-manifest.json"],
+      "architecture_nodes": ["static-teaching-site"]
+    },
+    "site_validation": {
+      "files": ["site/scripts/validate-content-manifest.mjs", "site/scripts/validate-dist.mjs"],
+      "architecture_nodes": ["static-teaching-site"]
+    }
+  },
+  "contract_requirements": {
+    "ordinary_contract_fields": [
+      "affected_architecture_nodes",
+      "unchanged_architecture_nodes",
+      "architecture_delta",
+      "requires_architecture_amendment"
+    ],
+    "amendment_contract_fields": [
+      "change_reason",
+      "changed_nodes",
+      "unchanged_nodes",
+      "new_boundaries",
+      "migration_expectations",
+      "architecture_artifacts_to_update",
+      "verification"
+    ]
+  }
+}

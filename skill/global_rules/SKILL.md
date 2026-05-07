@@ -10,16 +10,25 @@ description: Parent policy layer for approval-first coding workflows under both 
 - It defines invariant red lines and shared protocol structure.
 - It is not the primary task workflow and should not be treated as a one-file operating system.
 
+## Language And Register
+- Default to the user's working language for all human-facing output.
+- For English authors, use native English protocol terms instead of forcing raw Chinese ceremony as the only path.
+- Preserve the imperial narrative as a first-class register. The protocol may speak in terms of sovereignty, court audit, edicts, chronicles, red lines, and imperial/court metaphor when that helps the user stay oriented.
+- Chinese imperial register is optional as a required surface form, but the sovereign-human narrative should remain available in every language.
+- If the user writes in Chinese or explicitly asks for imperial register, the outer shell may be fully ceremonial.
+- If the user writes in English, keep the technical body plain and operational, while allowing light imperial color such as `sovereign`, `court audit`, `edict`, or parenthetical Chinese aliases when useful.
+- Technical nouns, file paths, commands, API names, test names, and commit messages must remain legible in every register.
+
 ## Non-Negotiable Directives
-- All replies must begin with `吾皇万岁万岁万万岁`.
-- Do not call any file-writing or file-editing tool before explicit approval such as `准奏`, `同意`, or `执行`.
-- `脉冲准奏` or `连环执行` means an already approved checklist may continue automatically slice by slice until a blocker appears.
+- Do not require a fixed ceremonial greeting. Begin with the clearest useful response in the user's language.
+- Do not call any file-writing or file-editing tool before explicit approval such as `approve`, `approved`, `execute`, `go ahead`, `同意`, `准奏`, or `执行`.
+- `pulse approval`, `continuous execution`, `脉冲准奏`, or `连环执行` means an already approved checklist may continue automatically slice by slice until a blocker appears.
 - Before any implementation, inspect the relevant code, docs, and git context first.
 - Before any approved implementation, the planning layer must output:
-  - a Markdown table titled `最小改动原子执行合同`
-  - a YAML block titled `边界条件与测试用例键值对`
+  - a Markdown table titled `Minimal Atomic Execution Contract` for English users or `最小改动原子执行合同` for Chinese users
+  - a YAML block titled `Boundary Conditions And Test-Case Key Map` for English users or `边界条件与测试用例键值对` for Chinese users
 - The YAML block must act as a white-box acceptance bridge rather than a generic test dump. It must distinguish governance-layer `Red Line` / `red_line` from white-box `red_test` / `green_test`, and it must carry `assertions`, `same_case_requirement`, and `physical_evidence`.
-- In that YAML block, keep structural keys stable when needed for machine readability, but default all human-facing explanations, assertions, evidence labels, and acceptance strings to Chinese unless the user explicitly requests another language.
+- In that YAML block, keep structural keys stable when needed for machine readability, but write human-facing explanations, assertions, evidence labels, and acceptance strings in the user's working language. Use English by default for English requests.
 - Every approved atomic slice must expose one `Commit Action`, one `Commit Unit`, and one exact `Commit Message` before execution begins.
 - One slice, one verification, one commit, one `git status --short`.
 - Verified but unarchived work remains `史册债务`.
@@ -36,8 +45,8 @@ description: Parent policy layer for approval-first coding workflows under both 
 - If those three fields cannot be stated honestly, the executor should assume the campaign is still in motion.
 
 ## User-Activated Free Development Mode
-- `自由开发模式` is optional and must never auto-activate.
-- It may activate only after the user has aligned a high-friction or complex requirement and then explicitly opts in with language such as `开启自由开发模式`, `进入自由开发`, or an equally unambiguous instruction.
+- `free development mode` / `自由开发模式` is optional and must never auto-activate.
+- It may activate only after the user has aligned a high-friction or complex requirement and then explicitly opts in with language such as `enter free development mode`, `use free development mode`, `开启自由开发模式`, `进入自由开发`, or an equally unambiguous instruction.
 - Activation does not suspend any safety, honesty, evidence, repository, or red-line rules in this file.
 - Once activated, the executor should route into the dedicated `free-development-mode` skill rather than reusing approval-first planning language by habit.
 - The dedicated free-development skill owns:
@@ -52,7 +61,7 @@ description: Parent policy layer for approval-first coding workflows under both 
 - `One commit, one stop` is explicitly forbidden in this mode.
 - After explicit activation, the executor may continue across the next smallest valid steps without re-seeking approval for every micro-slice, unless a declared red line, scope break, or materially false assumption forces a stop.
 - Rollback is an encouraged cost-control tool in this mode, not a sign of failure.
-- `自由开发模式` ends when:
+- `free development mode` / `自由开发模式` ends when:
   - the user explicitly exits it
   - a hard red line requires re-alignment
   - the campaign reaches a real acceptance closeout
@@ -79,7 +88,7 @@ Default outputs:
 
 ### Route B: Free Development
 
-Use only after explicit user activation of `自由开发模式`.
+Use only after explicit user activation of `free development mode` / `自由开发模式`.
 
 Required route:
 - dedicated `free-development-mode` skill
@@ -124,6 +133,82 @@ Parallel experimentation rule:
   - continuing without replanning would be dishonest
 - If the project exposes a contract runner alongside that lock, the execution layer should prefer the runner as the canonical state-transition mechanism.
 
+## Contract Hook Law
+
+- Contract writing and contract execution should be triggered by an explicit runtime hook, not by agent mood or voluntary memory.
+- Host-native planning surfaces such as Claude Code plan mode, Codex ask/plan-like mode, Cursor planning, or other "think before edit" modes are not the contract itself. They are the entry surface for `plan-start`.
+- The stable lifecycle is:
+  - `bootstrap-read`: read repository law, runtime truth, and architecture truth before promising work.
+  - `plan-start`: enter the host planning surface and route to the contract layer.
+  - `plan-compile`: convert the host plan into an Atomic Execution Contract with boundary, evidence, commit, and architecture fields.
+  - `contract-activate`: treat only a validated and approved contract as the execution lock.
+  - `exec-start`: before editing, confirm the active slice, allowed files, affected architecture nodes, and red lines.
+  - `exec-close`: after verification, record evidence, runtime state, architecture delta, and commit state.
+  - `architecture-amend`: when a planned change alters architecture boundaries, responsibilities, dependencies, runtime flows, or invariants, upgrade to an amendment contract before continuing.
+- If a host cannot provide a hard technical hook, the starter, skill, or helper must still present a named manual hook. Do not pretend manual discipline is the same as programmatic enforcement.
+- If an agent starts implementing from a free-form plan without passing through `plan-compile` and `contract-activate`, that is execution drift.
+
+## Architecture Constitution Law
+
+- Serious projects should externalize architecture truth alongside process truth.
+- When a repo uses `dev_repo/`, the architecture constitution should live under:
+  - `dev_repo/architecture/README.md`
+  - `dev_repo/architecture/ARCHITECTURE.md`
+  - `dev_repo/architecture/graph.json`
+  - `dev_repo/architecture/index.json`
+  - `dev_repo/architecture/invariants.md`
+  - `dev_repo/architecture/diagrams/`
+  - `dev_repo/architecture/decisions/`
+- Architecture truth is not a replacement for runtime truth. Runtime truth answers "what campaign and contract are active"; architecture truth answers "what system exists, where its boundaries are, and what must not drift."
+- The useful detail level is agent-actionable architecture:
+  - system context
+  - major subsystems / containers
+  - maintainable components
+  - critical flows
+  - invariants and change rules
+- Do not force every function or every line into the architecture graph. Function-level maps are allowed only for unusually high-risk areas where they directly reduce planning ambiguity.
+- Every architecture node should be able to answer:
+  - `purpose`
+  - `owned_files`
+  - `public_interfaces`
+  - `depends_on`
+  - `depended_on_by`
+  - `invariants`
+  - `allowed_change_types`
+  - `requires_amendment_when`
+  - `verification`
+  - `known_debt`
+  - `confidence`
+- `confidence` must distinguish confirmed facts from inferred or unknown architecture. Do not forge certainty during old-project takeover.
+- Every implementation contract should state:
+  - `affected_architecture_nodes`
+  - `unchanged_architecture_nodes`
+  - `architecture_delta`
+  - whether an amendment contract is required.
+
+## Architecture Amendment Contract Law
+
+- Architecture may change, but it must not be smuggled through ordinary implementation.
+- A change requires an amendment contract when it changes any of these:
+  - subsystem boundaries
+  - module responsibilities
+  - public interfaces
+  - dependency direction
+  - runtime flow
+  - persistence or evidence model
+  - security, safety, or governance invariants
+  - host adapter semantics
+- An amendment contract must state:
+  - what changes
+  - what stays unchanged
+  - why the current architecture is insufficient
+  - the new boundary / dependency / flow model
+  - migration and compatibility expectations
+  - which diagrams, graph nodes, indexes, and ADRs must be updated
+  - how the architecture change will be verified.
+- If ordinary execution discovers an architecture-change need, stop the current slice or open the smallest child amendment contract. After the amendment closes, return to the parent contract through an explicit `return_to`.
+- The spirit is constitutional seriousness, not architectural freeze: architecture is changeable, but only through a visible amendment path.
+
 ## Dual Register Principle
 - This protocol has one invariant skeleton and two surface registers:
   - plain register
@@ -157,11 +242,13 @@ Parallel experimentation rule:
   - `journal.jsonl`
   - `evidence_index.json`
   - `tree.md`
+- For old-project takeover and serious forward development, the runtime should also expose an architecture constitution under `dev_repo/architecture/`.
 - When a repo chooses to store development-process truth inside a dedicated folder such as `dev_repo/`, prefer:
   - `dev_repo/state.json`
   - `dev_repo/journal.jsonl`
   - `dev_repo/evidence_index.json`
   - `dev_repo/tree.md`
+  - `dev_repo/architecture/`
 - Do not force `tmp/campaigns/` as the only valid location if the repo deliberately centralizes process truth elsewhere.
 - The current runtime truth should always answer:
   - what the root campaign is
@@ -169,6 +256,12 @@ Parallel experimentation rule:
   - whether a child contract has paused the parent
   - where execution returns after the child closes
 - It should also answer the minimum purpose of every visible contract without relying on chat sessions.
+- The current architecture truth should answer:
+  - which subsystems and components exist
+  - which files each architecture node owns
+  - which dependencies and public interfaces matter
+  - which invariants ordinary contracts must preserve
+  - when an architecture amendment contract is required.
 
 ## Contract Tree Law
 - Contracts should form an explicit parent/child tree.
@@ -218,6 +311,11 @@ Parallel experimentation rule:
   - `dev_repo/journal.jsonl`
   - `dev_repo/evidence_index.json`
   - `dev_repo/tree.md`
+- When entering an old or unknown project that lacks architecture-truth scaffolding, initialize `dev_repo/architecture/` before broad planning.
+- Initial architecture census should be honest about confidence:
+  - `confirmed` for facts directly proven by code, config, or scripts
+  - `inferred` for naming/call-graph based reconstruction
+  - `unknown` for areas that need a future probe.
 - Create those four siblings directly under `dev_repo/`.
 - Do not create nested runtime folders by default unless the user explicitly asks for multiple concurrent campaigns.
 - Prefer the shared helper at `scripts/bootstrap_dev_repo_runtime.py` relative to this skill directory.

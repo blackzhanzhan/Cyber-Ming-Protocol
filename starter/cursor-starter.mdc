@@ -10,9 +10,14 @@ This workspace uses **Cyber-Ming-Protocol**.
 
 - Bootstrap under repository law before editing.
 - Default to contract development before code changes.
-- Enter `自由开发模式` only when the user explicitly activates it.
+- Route planning through `contract-hook-router` when the skill is available.
+- Enter `free development mode` / `自由开发模式` only when the user explicitly activates it.
+- Keep Cyber-Ming's sovereign/imperial narrative available as style, while keeping operational instructions readable in the user's language.
 - If `dev_repo/state.json`, `journal.jsonl`, `evidence_index.json`, or `tree.md` exist, treat them as current runtime truth.
-- In fresh or takeover sessions, reconstruct state before edits.
+- If `dev_repo/architecture/` exists, treat it as current architecture truth before planning broad changes.
+- In fresh or takeover sessions, reconstruct state and initialize/read architecture truth before edits.
+- Treat host plan/ask modes as `plan-start` hook surfaces only. Compile plans into Cyber-Ming contracts before execution.
+- If a change alters architecture boundaries, responsibilities, dependencies, runtime flows, or invariants, use an architecture amendment contract rather than a normal implementation contract.
 
 Recommended first prompt:
 

@@ -18,6 +18,8 @@ Repository law must outrank current-session residue, historical dialogue residue
 - No host-neutral one-click installation is assumed here. If project-level skills are unsupported, fall back to the manual protocol instead of blocking the task.
 - The Web auditor still works from the protocol docs and `web-audit-templates/`; it does not require local execution-skill installation.
 - When serious execution begins, the executor-side skill stack may also bootstrap `dev_repo/` automatically so that runtime truth lives in repository artifacts rather than only in chat residue.
+- When taking over an old or unknown project, the executor should also initialize or read `dev_repo/architecture/` so architecture truth lives beside contract, evidence, and journal truth.
+- Host-native planning modes are only the planning surface. Cyber-Ming work should pass through the contract hook lifecycle: `bootstrap-read -> plan-start -> plan-compile -> contract-activate -> exec-start -> exec-close`, with `architecture-amend` when architecture changes.
 
 ## If You Are The IDE Executor
 
@@ -35,6 +37,8 @@ Bootstrap is successful only when both roles can state:
 
 - who executes, who audits, who arbitrates
 - the executor will not edit first; it will first provide the Atomic Execution Contract and boundaries
+- the executor will treat host plan mode as a contract hook surface, not as a substitute for the contract
+- old-project takeover includes architecture census or architecture-truth reading before broad implementation
 - the auditor will review plans and evidence, not implement
 - completion requires Web-side review of plan and result, not executor self-certification
 - when runtime artifacts such as `dev_repo/state.json` and `dev_repo/tree.md` exist, they outrank oral summaries as the current execution truth
